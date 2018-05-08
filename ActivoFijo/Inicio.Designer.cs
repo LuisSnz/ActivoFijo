@@ -85,60 +85,70 @@
             this.Articulos,
             this.Marcas,
             this.Familias});
+            this.Catalogos.Image = global::ActivoFijo.Properties.Resources.catalogo;
             this.Catalogos.Name = "Catalogos";
-            this.Catalogos.Size = new System.Drawing.Size(78, 21);
+            this.Catalogos.Size = new System.Drawing.Size(94, 21);
             this.Catalogos.Text = "Catalogos";
             // 
             // Areas
             // 
+            this.Areas.Image = global::ActivoFijo.Properties.Resources.areas;
             this.Areas.Name = "Areas";
             this.Areas.Size = new System.Drawing.Size(197, 22);
             this.Areas.Text = "Areas o Direcciones";
             // 
             // SubDirecciones
             // 
+            this.SubDirecciones.Image = global::ActivoFijo.Properties.Resources.subdirecciones;
             this.SubDirecciones.Name = "SubDirecciones";
             this.SubDirecciones.Size = new System.Drawing.Size(197, 22);
             this.SubDirecciones.Text = "SubDirecciones";
             // 
             // Departamentos
             // 
+            this.Departamentos.Image = global::ActivoFijo.Properties.Resources.departamentos;
             this.Departamentos.Name = "Departamentos";
             this.Departamentos.Size = new System.Drawing.Size(197, 22);
             this.Departamentos.Text = "Departamentos ";
             // 
             // Empleados
             // 
+            this.Empleados.Image = global::ActivoFijo.Properties.Resources.empleados;
             this.Empleados.Name = "Empleados";
             this.Empleados.Size = new System.Drawing.Size(197, 22);
             this.Empleados.Text = "Empleados";
             // 
             // Vehiculos
             // 
+            this.Vehiculos.Image = global::ActivoFijo.Properties.Resources.vehiculo;
             this.Vehiculos.Name = "Vehiculos";
             this.Vehiculos.Size = new System.Drawing.Size(197, 22);
             this.Vehiculos.Text = "Vehiculos";
             // 
             // Proveedores
             // 
+            this.Proveedores.Image = global::ActivoFijo.Properties.Resources.proveedores;
             this.Proveedores.Name = "Proveedores";
             this.Proveedores.Size = new System.Drawing.Size(197, 22);
             this.Proveedores.Text = "Proveedores";
             // 
             // Articulos
             // 
+            this.Articulos.Image = global::ActivoFijo.Properties.Resources.articulos;
             this.Articulos.Name = "Articulos";
             this.Articulos.Size = new System.Drawing.Size(197, 22);
             this.Articulos.Text = "Articulos";
             // 
             // Marcas
             // 
+            this.Marcas.Image = global::ActivoFijo.Properties.Resources._123;
             this.Marcas.Name = "Marcas";
             this.Marcas.Size = new System.Drawing.Size(197, 22);
             this.Marcas.Text = "Marcas";
             // 
             // Familias
             // 
+            this.Familias.Image = global::ActivoFijo.Properties.Resources._1234;
             this.Familias.Name = "Familias";
             this.Familias.Size = new System.Drawing.Size(197, 22);
             this.Familias.Text = "Familias";
@@ -148,32 +158,37 @@
             this.Activo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Bienes,
             this.BienesSF,
-            this.ImprimirEtiquetas,
-            this.BienesBaja});
+            this.BienesBaja,
+            this.ImprimirEtiquetas});
+            this.Activo.Image = global::ActivoFijo.Properties.Resources.casa;
             this.Activo.Name = "Activo";
-            this.Activo.Size = new System.Drawing.Size(59, 21);
+            this.Activo.Size = new System.Drawing.Size(75, 21);
             this.Activo.Text = "Activo";
             // 
             // Bienes
             // 
+            this.Bienes.Image = global::ActivoFijo.Properties.Resources.bienes;
             this.Bienes.Name = "Bienes";
             this.Bienes.Size = new System.Drawing.Size(200, 22);
             this.Bienes.Text = "Bienes";
             // 
             // BienesSF
             // 
+            this.BienesSF.Image = global::ActivoFijo.Properties.Resources.bienesSF;
             this.BienesSF.Name = "BienesSF";
             this.BienesSF.Size = new System.Drawing.Size(200, 22);
             this.BienesSF.Text = "Bienes sin Factura";
             // 
             // ImprimirEtiquetas
             // 
+            this.ImprimirEtiquetas.Image = global::ActivoFijo.Properties.Resources.codigobarras;
             this.ImprimirEtiquetas.Name = "ImprimirEtiquetas";
             this.ImprimirEtiquetas.Size = new System.Drawing.Size(200, 22);
             this.ImprimirEtiquetas.Text = "Imprimir Etiquetas";
             // 
             // BienesBaja
             // 
+            this.BienesBaja.Image = global::ActivoFijo.Properties.Resources.rechazado;
             this.BienesBaja.Name = "BienesBaja";
             this.BienesBaja.Size = new System.Drawing.Size(200, 22);
             this.BienesBaja.Text = "Bienes dados de baja";
@@ -183,18 +198,21 @@
             this.Reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Historico,
             this.ValorBienes});
+            this.Reportes.Image = global::ActivoFijo.Properties.Resources.catalogo;
             this.Reportes.Name = "Reportes";
-            this.Reportes.Size = new System.Drawing.Size(73, 21);
+            this.Reportes.Size = new System.Drawing.Size(89, 21);
             this.Reportes.Text = "Reportes";
             // 
             // Historico
             // 
+            this.Historico.Image = global::ActivoFijo.Properties.Resources.h;
             this.Historico.Name = "Historico";
             this.Historico.Size = new System.Drawing.Size(181, 22);
             this.Historico.Text = "Historico del Bien";
             // 
             // ValorBienes
             // 
+            this.ValorBienes.Image = global::ActivoFijo.Properties.Resources.Dinero;
             this.ValorBienes.Name = "ValorBienes";
             this.ValorBienes.Size = new System.Drawing.Size(181, 22);
             this.ValorBienes.Text = "Valor en Bienes";
@@ -203,12 +221,14 @@
             // 
             this.Configuracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ConfigurarImpresora});
+            this.Configuracion.Image = global::ActivoFijo.Properties.Resources.configuracion;
             this.Configuracion.Name = "Configuracion";
-            this.Configuracion.Size = new System.Drawing.Size(102, 21);
+            this.Configuracion.Size = new System.Drawing.Size(118, 21);
             this.Configuracion.Text = "Configuración";
             // 
             // ConfigurarImpresora
             // 
+            this.ConfigurarImpresora.Image = global::ActivoFijo.Properties.Resources.impresora;
             this.ConfigurarImpresora.Name = "ConfigurarImpresora";
             this.ConfigurarImpresora.Size = new System.Drawing.Size(212, 22);
             this.ConfigurarImpresora.Text = "Impresora de Etiquetas";
@@ -226,6 +246,7 @@
             // 
             // LogoLocal
             // 
+            this.LogoLocal.Image = global::ActivoFijo.Properties.Resources.logo_pirata;
             this.LogoLocal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LogoLocal.Location = new System.Drawing.Point(1056, 38);
             this.LogoLocal.Name = "LogoLocal";
@@ -236,6 +257,7 @@
             // 
             // LogoEstatal
             // 
+            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources._7da9c795_1ecb_4dd7_ba41_298ad0ca7a56;
             this.LogoEstatal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LogoEstatal.Location = new System.Drawing.Point(992, 335);
             this.LogoEstatal.Name = "LogoEstatal";
@@ -244,7 +266,7 @@
             this.LogoEstatal.TabIndex = 3;
             this.LogoEstatal.TabStop = false;
             // 
-            // Form1
+            // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,10 +275,10 @@
             this.Controls.Add(this.PanelBase);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1382, 764);
-            this.MinimumSize = new System.Drawing.Size(1364, 736);
-            this.Name = "Form1";
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
+            this.Name = "Inicio";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Activo Fijo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
