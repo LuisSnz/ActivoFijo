@@ -42,8 +42,8 @@
             this.Activo = new System.Windows.Forms.ToolStripMenuItem();
             this.Bienes = new System.Windows.Forms.ToolStripMenuItem();
             this.BienesSF = new System.Windows.Forms.ToolStripMenuItem();
-            this.ImprimirEtiquetas = new System.Windows.Forms.ToolStripMenuItem();
             this.BienesBaja = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImprimirEtiquetas = new System.Windows.Forms.ToolStripMenuItem();
             this.Reportes = new System.Windows.Forms.ToolStripMenuItem();
             this.Historico = new System.Windows.Forms.ToolStripMenuItem();
             this.ValorBienes = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,6 +96,7 @@
             this.Areas.Name = "Areas";
             this.Areas.Size = new System.Drawing.Size(197, 22);
             this.Areas.Text = "Areas o Direcciones";
+            this.Areas.Click += new System.EventHandler(this.Areas_Click);
             // 
             // SubDirecciones
             // 
@@ -103,6 +104,7 @@
             this.SubDirecciones.Name = "SubDirecciones";
             this.SubDirecciones.Size = new System.Drawing.Size(197, 22);
             this.SubDirecciones.Text = "SubDirecciones";
+            this.SubDirecciones.Click += new System.EventHandler(this.SubDirecciones_Click);
             // 
             // Departamentos
             // 
@@ -110,6 +112,7 @@
             this.Departamentos.Name = "Departamentos";
             this.Departamentos.Size = new System.Drawing.Size(197, 22);
             this.Departamentos.Text = "Departamentos ";
+            this.Departamentos.Click += new System.EventHandler(this.Departamentos_Click);
             // 
             // Empleados
             // 
@@ -117,6 +120,7 @@
             this.Empleados.Name = "Empleados";
             this.Empleados.Size = new System.Drawing.Size(197, 22);
             this.Empleados.Text = "Empleados";
+            this.Empleados.Click += new System.EventHandler(this.Empleados_Click);
             // 
             // Vehiculos
             // 
@@ -124,6 +128,7 @@
             this.Vehiculos.Name = "Vehiculos";
             this.Vehiculos.Size = new System.Drawing.Size(197, 22);
             this.Vehiculos.Text = "Vehiculos";
+            this.Vehiculos.Click += new System.EventHandler(this.Vehiculos_Click);
             // 
             // Proveedores
             // 
@@ -131,6 +136,7 @@
             this.Proveedores.Name = "Proveedores";
             this.Proveedores.Size = new System.Drawing.Size(197, 22);
             this.Proveedores.Text = "Proveedores";
+            this.Proveedores.Click += new System.EventHandler(this.Proveedores_Click);
             // 
             // Articulos
             // 
@@ -138,6 +144,7 @@
             this.Articulos.Name = "Articulos";
             this.Articulos.Size = new System.Drawing.Size(197, 22);
             this.Articulos.Text = "Articulos";
+            this.Articulos.Click += new System.EventHandler(this.Articulos_Click);
             // 
             // Marcas
             // 
@@ -145,6 +152,7 @@
             this.Marcas.Name = "Marcas";
             this.Marcas.Size = new System.Drawing.Size(197, 22);
             this.Marcas.Text = "Marcas";
+            this.Marcas.Click += new System.EventHandler(this.Marcas_Click);
             // 
             // Familias
             // 
@@ -152,6 +160,7 @@
             this.Familias.Name = "Familias";
             this.Familias.Size = new System.Drawing.Size(197, 22);
             this.Familias.Text = "Familias";
+            this.Familias.Click += new System.EventHandler(this.Familias_Click);
             // 
             // Activo
             // 
@@ -179,19 +188,19 @@
             this.BienesSF.Size = new System.Drawing.Size(200, 22);
             this.BienesSF.Text = "Bienes sin Factura";
             // 
-            // ImprimirEtiquetas
-            // 
-            this.ImprimirEtiquetas.Image = global::ActivoFijo.Properties.Resources.codigobarras;
-            this.ImprimirEtiquetas.Name = "ImprimirEtiquetas";
-            this.ImprimirEtiquetas.Size = new System.Drawing.Size(200, 22);
-            this.ImprimirEtiquetas.Text = "Imprimir Etiquetas";
-            // 
             // BienesBaja
             // 
             this.BienesBaja.Image = global::ActivoFijo.Properties.Resources.rechazado;
             this.BienesBaja.Name = "BienesBaja";
             this.BienesBaja.Size = new System.Drawing.Size(200, 22);
             this.BienesBaja.Text = "Bienes dados de baja";
+            // 
+            // ImprimirEtiquetas
+            // 
+            this.ImprimirEtiquetas.Image = global::ActivoFijo.Properties.Resources.codigobarras;
+            this.ImprimirEtiquetas.Name = "ImprimirEtiquetas";
+            this.ImprimirEtiquetas.Size = new System.Drawing.Size(200, 22);
+            this.ImprimirEtiquetas.Text = "Imprimir Etiquetas";
             // 
             // Reportes
             // 
@@ -282,6 +291,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Activo Fijo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.PanelBase.ResumeLayout(false);
