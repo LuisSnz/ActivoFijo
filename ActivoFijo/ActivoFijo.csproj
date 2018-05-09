@@ -67,6 +67,120 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activo\BienesBaja\BienesDadosDeBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesBaja\BienesDadosDeBaja.Designer.cs">
+      <DependentUpon>BienesDadosDeBaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesBaja\BuscarBienesDDBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesBaja\BuscarBienesDDBaja.Designer.cs">
+      <DependentUpon>BuscarBienesDDBaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesBaja\ModificarBienesDDBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesBaja\ModificarBienesDDBaja.Designer.cs">
+      <DependentUpon>ModificarBienesDDBaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesBaja\ReporteBienesDDBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesBaja\ReporteBienesDDBaja.Designer.cs">
+      <DependentUpon>ReporteBienesDDBaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesSF\BajaBienesSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesSF\BajaBienesSF.Designer.cs">
+      <DependentUpon>BajaBienesSF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesSF\BienesSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesSF\BienesSF.Designer.cs">
+      <DependentUpon>BienesSF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesSF\BuscarBienesSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesSF\BuscarBienesSF.Designer.cs">
+      <DependentUpon>BuscarBienesSF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesSF\ModificarBienesSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesSF\ModificarBienesSF.Designer.cs">
+      <DependentUpon>ModificarBienesSF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesSF\NuevoBienesSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesSF\NuevoBienesSF.Designer.cs">
+      <DependentUpon>NuevoBienesSF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\BienesSF\ReporteBienesSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesSF\ReporteBienesSF.Designer.cs">
+      <DependentUpon>ReporteBienesSF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\Bienes\BajaBienes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\Bienes\BajaBienes.Designer.cs">
+      <DependentUpon>BajaBienes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\Bienes\Bienes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\Bienes\Bienes.Designer.cs">
+      <DependentUpon>Bienes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\Bienes\BuscarBienes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\Bienes\BuscarBienes.Designer.cs">
+      <DependentUpon>BuscarBienes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\Bienes\ModificarBienes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\Bienes\ModificarBienes.Designer.cs">
+      <DependentUpon>ModificarBienes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\Bienes\NuevoBienes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\Bienes\NuevoBienes.Designer.cs">
+      <DependentUpon>NuevoBienes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\Bienes\ReporteBienes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\Bienes\ReporteBienes.Designer.cs">
+      <DependentUpon>ReporteBienes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\CambioBienes\CambioPorBien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\CambioBienes\CambioPorBien.Designer.cs">
+      <DependentUpon>CambioPorBien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\CambioBienes\CambioPorEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\CambioBienes\CambioPorEmpleado.Designer.cs">
+      <DependentUpon>CambioPorEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activo\ImprimirEtiquetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\ImprimirEtiquetas.Designer.cs">
+      <DependentUpon>ImprimirEtiquetas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auxiliares\Cargando.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +387,63 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Activo\BienesBaja\BienesDadosDeBaja.resx">
+      <DependentUpon>BienesDadosDeBaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesBaja\BuscarBienesDDBaja.resx">
+      <DependentUpon>BuscarBienesDDBaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesBaja\ModificarBienesDDBaja.resx">
+      <DependentUpon>ModificarBienesDDBaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesBaja\ReporteBienesDDBaja.resx">
+      <DependentUpon>ReporteBienesDDBaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesSF\BajaBienesSF.resx">
+      <DependentUpon>BajaBienesSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesSF\BienesSF.resx">
+      <DependentUpon>BienesSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesSF\BuscarBienesSF.resx">
+      <DependentUpon>BuscarBienesSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesSF\ModificarBienesSF.resx">
+      <DependentUpon>ModificarBienesSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesSF\NuevoBienesSF.resx">
+      <DependentUpon>NuevoBienesSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesSF\ReporteBienesSF.resx">
+      <DependentUpon>ReporteBienesSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\Bienes\BajaBienes.resx">
+      <DependentUpon>BajaBienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\Bienes\Bienes.resx">
+      <DependentUpon>Bienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\Bienes\BuscarBienes.resx">
+      <DependentUpon>BuscarBienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\Bienes\ModificarBienes.resx">
+      <DependentUpon>ModificarBienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\Bienes\NuevoBienes.resx">
+      <DependentUpon>NuevoBienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\Bienes\ReporteBienes.resx">
+      <DependentUpon>ReporteBienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\CambioBienes\CambioPorBien.resx">
+      <DependentUpon>CambioPorBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\CambioBienes\CambioPorEmpleado.resx">
+      <DependentUpon>CambioPorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\ImprimirEtiquetas.resx">
+      <DependentUpon>ImprimirEtiquetas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Auxiliares\Cargando.resx">
       <DependentUpon>Cargando.cs</DependentUpon>
     </EmbeddedResource>
@@ -401,6 +572,15 @@
     <Folder Include="Activo\BienesSF\" />
     <Folder Include="Activo\Bienes\" />
     <Folder Include="Activo\CambioBienes\" />
+    <Folder Include="Catalogos\Areas\" />
+    <Folder Include="Catalogos\Articulos\" />
+    <Folder Include="Catalogos\Departamentos\" />
+    <Folder Include="Catalogos\Empleados\" />
+    <Folder Include="Catalogos\Familias\" />
+    <Folder Include="Catalogos\Marcas\" />
+    <Folder Include="Catalogos\Proveedores\" />
+    <Folder Include="Catalogos\SubDirecciones\" />
+    <Folder Include="Catalogos\Vehiculos\" />
     <Folder Include="Informes\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
