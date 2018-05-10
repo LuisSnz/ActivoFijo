@@ -21,6 +21,7 @@ namespace ActivoFijo
             if (this.PanelBase.Controls.Count > 0)
             {
                 this.PanelBase.Controls.RemoveAt(0);
+            }
                 Form hi = hijo as Form;
                 hi.TopLevel = false;
                 hi.FormBorderStyle = FormBorderStyle.None;
@@ -30,7 +31,6 @@ namespace ActivoFijo
                 hi.Show();
                 LogoLocal.BringToFront();
                 LogoEstatal.BringToFront();
-            }
         }
         private void Areas_Click(object sender, EventArgs e)
         {
@@ -88,7 +88,16 @@ namespace ActivoFijo
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-
+            PanelBase.Width = this.Width;
+            PanelBase.Height = this.Height - 70;
+            Clases.Variables.GridHeight = this.Height - 130;
+            Clases.Variables.GridWidth = this.Width - (this.Width / 3);
+            LogoLocal.Location = new Point(this.Width - (this.Width / 5), 80);
+            LogoLocal.Height = this.Height / 3;
+            LogoLocal.Width = this.Width / 6;
+            LogoEstatal.Location = new Point(this.Width - (this.Width / 4), this.Height - (this.Height / 2));
+            LogoEstatal.Height = this.Height / 3;
+            LogoEstatal.Width = this.Width / 4;
         }
     }
 }
