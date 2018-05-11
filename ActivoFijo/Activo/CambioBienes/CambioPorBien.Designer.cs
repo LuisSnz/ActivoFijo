@@ -32,12 +32,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.CBNuevoResguardo = new System.Windows.Forms.ComboBox();
-            this.Cambiar = new System.Windows.Forms.Button();
             this.TBNuevoResguardo = new System.Windows.Forms.TextBox();
             this.TBDepartamentoA = new System.Windows.Forms.TextBox();
             this.TBResguardoA = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.Cambiar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TBObservaciones = new System.Windows.Forms.TextBox();
             this.TBArticulo = new System.Windows.Forms.TextBox();
@@ -102,18 +102,7 @@
             this.CBNuevoResguardo.Name = "CBNuevoResguardo";
             this.CBNuevoResguardo.Size = new System.Drawing.Size(282, 23);
             this.CBNuevoResguardo.TabIndex = 15;
-            // 
-            // Cambiar
-            // 
-            this.Cambiar.BackColor = System.Drawing.Color.White;
-            this.Cambiar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cambiar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cambiar.Location = new System.Drawing.Point(196, 253);
-            this.Cambiar.Name = "Cambiar";
-            this.Cambiar.Size = new System.Drawing.Size(126, 28);
-            this.Cambiar.TabIndex = 14;
-            this.Cambiar.Text = "Cambiar";
-            this.Cambiar.UseVisualStyleBackColor = false;
+            this.CBNuevoResguardo.SelectedIndexChanged += new System.EventHandler(this.CBNuevoResguardo_SelectedIndexChanged);
             // 
             // TBNuevoResguardo
             // 
@@ -164,6 +153,19 @@
             this.label16.Size = new System.Drawing.Size(95, 17);
             this.label16.TabIndex = 4;
             this.label16.Text = "Resguardo a:";
+            // 
+            // Cambiar
+            // 
+            this.Cambiar.BackColor = System.Drawing.Color.White;
+            this.Cambiar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Cambiar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cambiar.Location = new System.Drawing.Point(196, 253);
+            this.Cambiar.Name = "Cambiar";
+            this.Cambiar.Size = new System.Drawing.Size(126, 28);
+            this.Cambiar.TabIndex = 14;
+            this.Cambiar.Text = "Cambiar";
+            this.Cambiar.UseVisualStyleBackColor = false;
+            this.Cambiar.Click += new System.EventHandler(this.Cambiar_Click);
             // 
             // panel1
             // 
@@ -295,6 +297,7 @@
             this.Name = "CambioPorBien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio Por Bien";
+            this.Load += new System.EventHandler(this.CambioPorBien_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

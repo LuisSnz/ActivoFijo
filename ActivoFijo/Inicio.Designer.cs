@@ -179,6 +179,7 @@
             this.Bienes.Name = "Bienes";
             this.Bienes.Size = new System.Drawing.Size(200, 22);
             this.Bienes.Text = "Bienes";
+            this.Bienes.Click += new System.EventHandler(this.Bienes_Click);
             // 
             // BienesSF
             // 
@@ -186,6 +187,7 @@
             this.BienesSF.Name = "BienesSF";
             this.BienesSF.Size = new System.Drawing.Size(200, 22);
             this.BienesSF.Text = "Bienes sin Factura";
+            this.BienesSF.Click += new System.EventHandler(this.BienesSF_Click);
             // 
             // BienesBaja
             // 
@@ -193,6 +195,7 @@
             this.BienesBaja.Name = "BienesBaja";
             this.BienesBaja.Size = new System.Drawing.Size(200, 22);
             this.BienesBaja.Text = "Bienes dados de baja";
+            this.BienesBaja.Click += new System.EventHandler(this.BienesBaja_Click);
             // 
             // ImprimirEtiquetas
             // 
@@ -200,6 +203,7 @@
             this.ImprimirEtiquetas.Name = "ImprimirEtiquetas";
             this.ImprimirEtiquetas.Size = new System.Drawing.Size(200, 22);
             this.ImprimirEtiquetas.Text = "Imprimir Etiquetas";
+            this.ImprimirEtiquetas.Click += new System.EventHandler(this.ImprimirEtiquetas_Click);
             // 
             // Reportes
             // 

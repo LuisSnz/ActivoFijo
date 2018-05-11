@@ -79,6 +79,7 @@
             this.Cancelar.TabIndex = 23;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // panel2
             // 
@@ -262,6 +263,7 @@
             this.Guardar.TabIndex = 22;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // groupBox1
             // 
@@ -469,6 +471,7 @@
             this.Name = "ModificarBienes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Bienes";
+            this.Load += new System.EventHandler(this.ModificarBienes_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

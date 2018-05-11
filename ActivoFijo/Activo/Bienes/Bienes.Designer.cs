@@ -80,6 +80,7 @@
             this.Nuevo.Size = new System.Drawing.Size(44, 42);
             this.Nuevo.Text = "toolStripButton1";
             this.Nuevo.ToolTipText = "Nuevo";
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // Modificar
             // 
@@ -90,6 +91,7 @@
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.Text = "toolStripButton3";
             this.Modificar.ToolTipText = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Eliminar
             // 
@@ -100,6 +102,7 @@
             this.Eliminar.Size = new System.Drawing.Size(44, 42);
             this.Eliminar.Text = "toolStripButton4";
             this.Eliminar.ToolTipText = "Dar de baja";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -115,6 +118,7 @@
             this.Buscar.Size = new System.Drawing.Size(44, 42);
             this.Buscar.Text = "toolStripButton5";
             this.Buscar.ToolTipText = "Buscar";
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // toolStripSeparator2
             // 
@@ -130,6 +134,7 @@
             this.Excel.Size = new System.Drawing.Size(44, 42);
             this.Excel.Text = "toolStripButton6";
             this.Excel.ToolTipText = "Exportar a Excel";
+            this.Excel.Click += new System.EventHandler(this.Excel_Click);
             // 
             // Etiqueta
             // 
@@ -140,6 +145,7 @@
             this.Etiqueta.Size = new System.Drawing.Size(44, 42);
             this.Etiqueta.Text = "toolStripButton1";
             this.Etiqueta.ToolTipText = "Imprimir Etiqueta";
+            this.Etiqueta.Click += new System.EventHandler(this.Etiqueta_Click);
             // 
             // Imprimir
             // 
@@ -150,6 +156,7 @@
             this.Imprimir.Size = new System.Drawing.Size(44, 42);
             this.Imprimir.Text = "toolStripButton8";
             this.Imprimir.ToolTipText = "Imprimir";
+            this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
             // 
             // toolStripSeparator3
             // 
@@ -164,6 +171,7 @@
             this.CambioEmpleado.Name = "CambioEmpleado";
             this.CambioEmpleado.Size = new System.Drawing.Size(44, 42);
             this.CambioEmpleado.Text = "Cambio de Bien por Empleado";
+            this.CambioEmpleado.Click += new System.EventHandler(this.CambioEmpleado_Click);
             // 
             // CambioBien
             // 
@@ -173,6 +181,7 @@
             this.CambioBien.Name = "CambioBien";
             this.CambioBien.Size = new System.Drawing.Size(44, 42);
             this.CambioBien.Text = "Cambio por Bien Seleccionado";
+            this.CambioBien.Click += new System.EventHandler(this.CambioBien_Click);
             // 
             // GridBienes
             // 
@@ -193,6 +202,8 @@
             this.GridBienes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.GridBienes.Size = new System.Drawing.Size(950, 600);
             this.GridBienes.TabIndex = 5;
+            this.GridBienes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBienes_CellDoubleClick);
+            this.GridBienes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBienes_CellEnter);
             // 
             // Bienes
             // 
@@ -204,6 +215,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Bienes";
             this.Text = "Bienes";
+            this.Load += new System.EventHandler(this.Bienes_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridBienes)).EndInit();

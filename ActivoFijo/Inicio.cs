@@ -99,5 +99,29 @@ namespace ActivoFijo
             LogoEstatal.Height = this.Height / 3;
             LogoEstatal.Width = this.Width / 4;
         }
+
+        private void Bienes_Click(object sender, EventArgs e)
+        {
+            formularios(new Activo.Bienes.Bienes());
+            this.Text = "Sistema de activo Fijo - Bienes";
+        }
+
+        private void BienesSF_Click(object sender, EventArgs e)
+        {
+            formularios(new Activo.BienesSF.BienesSF());
+            this.Text = "Sistema de activo Fijo - Bienes sin Factura";
+        }
+
+        private void BienesBaja_Click(object sender, EventArgs e)
+        {
+            this.Text = "Sistema de activo Fijo - Bienes dados de Baja";
+            formularios(new Activo.BienesBaja.BienesDadosDeBaja());
+        }
+
+        private void ImprimirEtiquetas_Click(object sender, EventArgs e)
+        {
+            Activo.ImprimirEtiquetas imprimir = new Activo.ImprimirEtiquetas();
+            imprimir.ShowDialog();
+        }
     }
 }

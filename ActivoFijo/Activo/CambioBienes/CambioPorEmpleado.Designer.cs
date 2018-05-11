@@ -70,6 +70,7 @@
             this.CBIzquierdo.Name = "CBIzquierdo";
             this.CBIzquierdo.Size = new System.Drawing.Size(388, 25);
             this.CBIzquierdo.TabIndex = 1;
+            this.CBIzquierdo.SelectedIndexChanged += new System.EventHandler(this.CBIzquierdo_SelectedIndexChanged);
             // 
             // GridIzquierdo
             // 
@@ -110,6 +111,7 @@
             this.CBDerecho.Name = "CBDerecho";
             this.CBDerecho.Size = new System.Drawing.Size(388, 25);
             this.CBDerecho.TabIndex = 2;
+            this.CBDerecho.SelectedIndexChanged += new System.EventHandler(this.CBDerecho_SelectedIndexChanged);
             // 
             // GridDerecho
             // 
@@ -138,6 +140,7 @@
             this.Cancelar.TabIndex = 11;
             this.Cancelar.Text = "Cerrar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // toolStrip1
             // 
@@ -173,6 +176,7 @@
             this.PasarIzquierda.Text = "toolStripButton1";
             this.PasarIzquierda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.PasarIzquierda.ToolTipText = "Transferir Bien Seleccionado";
+            this.PasarIzquierda.Click += new System.EventHandler(this.PasarIzquierda_Click);
             // 
             // TodoIzquierda
             // 
@@ -183,6 +187,7 @@
             this.TodoIzquierda.Name = "TodoIzquierda";
             this.TodoIzquierda.Size = new System.Drawing.Size(75, 54);
             this.TodoIzquierda.Text = "Transferir todos los bienes";
+            this.TodoIzquierda.Click += new System.EventHandler(this.TodoIzquierda_Click);
             // 
             // PasarDerecha
             // 
@@ -194,6 +199,7 @@
             this.PasarDerecha.Size = new System.Drawing.Size(75, 54);
             this.PasarDerecha.Text = "toolStripButton3";
             this.PasarDerecha.ToolTipText = "Transferir Bien Seleccionado";
+            this.PasarDerecha.Click += new System.EventHandler(this.PasarDerecha_Click);
             // 
             // TodoDerecha
             // 
@@ -205,6 +211,7 @@
             this.TodoDerecha.Size = new System.Drawing.Size(75, 54);
             this.TodoDerecha.Text = "toolStripButton4";
             this.TodoDerecha.ToolTipText = "Transferir todos los bienes";
+            this.TodoDerecha.Click += new System.EventHandler(this.TodoDerecha_Click);
             // 
             // CambioPorEmpleado
             // 
@@ -222,6 +229,7 @@
             this.Name = "CambioPorEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio Por Empleado";
+            this.Load += new System.EventHandler(this.CambioPorEmpleado_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridIzquierdo)).EndInit();
             this.groupBox2.ResumeLayout(false);

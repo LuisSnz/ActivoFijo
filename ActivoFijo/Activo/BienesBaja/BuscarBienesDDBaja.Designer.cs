@@ -52,6 +52,7 @@
             this.Todo.TabIndex = 14;
             this.Todo.Text = "Mostrar Todo";
             this.Todo.UseVisualStyleBackColor = false;
+            this.Todo.Click += new System.EventHandler(this.Todo_Click);
             // 
             // Cancelar
             // 
@@ -64,6 +65,7 @@
             this.Cancelar.TabIndex = 13;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Buscar
             // 
@@ -76,6 +78,7 @@
             this.Buscar.TabIndex = 12;
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = false;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // groupBox1
             // 
@@ -114,6 +117,7 @@
             this.Empleado.TabIndex = 4;
             this.Empleado.Text = "Empleado";
             this.Empleado.UseVisualStyleBackColor = true;
+            this.Empleado.CheckedChanged += new System.EventHandler(this.Empleado_CheckedChanged);
             // 
             // Articulo
             // 
@@ -125,6 +129,7 @@
             this.Articulo.TabIndex = 3;
             this.Articulo.Text = "Articulo";
             this.Articulo.UseVisualStyleBackColor = true;
+            this.Articulo.CheckedChanged += new System.EventHandler(this.Articulo_CheckedChanged);
             // 
             // Motivo
             // 
@@ -136,6 +141,7 @@
             this.Motivo.TabIndex = 2;
             this.Motivo.Text = "Motivo de Baja";
             this.Motivo.UseVisualStyleBackColor = true;
+            this.Motivo.CheckedChanged += new System.EventHandler(this.Motivo_CheckedChanged);
             // 
             // Factura
             // 
@@ -147,6 +153,7 @@
             this.Factura.TabIndex = 1;
             this.Factura.Text = "No. Factura";
             this.Factura.UseVisualStyleBackColor = true;
+            this.Factura.CheckedChanged += new System.EventHandler(this.Factura_CheckedChanged);
             // 
             // Etiqueta
             // 
@@ -160,6 +167,7 @@
             this.Etiqueta.TabStop = true;
             this.Etiqueta.Text = "Etiqueta";
             this.Etiqueta.UseVisualStyleBackColor = true;
+            this.Etiqueta.CheckedChanged += new System.EventHandler(this.Etiqueta_CheckedChanged);
             // 
             // BuscarBienesDDBaja
             // 
@@ -178,6 +186,7 @@
             this.Name = "BuscarBienesDDBaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar";
+            this.Load += new System.EventHandler(this.BuscarBienesDDBaja_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

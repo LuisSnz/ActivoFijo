@@ -33,9 +33,9 @@
             this.Buscar = new System.Windows.Forms.ToolStripButton();
             this.Excel = new System.Windows.Forms.ToolStripButton();
             this.Imprimir = new System.Windows.Forms.ToolStripButton();
-            this.GridBienesDDBaja = new System.Windows.Forms.DataGridView();
+            this.GridBaja = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridBienesDDBaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBaja)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -63,6 +63,7 @@
             this.Modificar.Name = "Modificar";
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.ToolTipText = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Buscar
             // 
@@ -72,6 +73,7 @@
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(44, 42);
             this.Buscar.ToolTipText = "Buscar";
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // Excel
             // 
@@ -81,6 +83,7 @@
             this.Excel.Name = "Excel";
             this.Excel.Size = new System.Drawing.Size(44, 42);
             this.Excel.ToolTipText = "Exportar a Excel";
+            this.Excel.Click += new System.EventHandler(this.Excel_Click);
             // 
             // Imprimir
             // 
@@ -90,22 +93,23 @@
             this.Imprimir.Name = "Imprimir";
             this.Imprimir.Size = new System.Drawing.Size(44, 42);
             this.Imprimir.ToolTipText = "Imprimir";
+            this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
             // 
-            // GridBienesDDBaja
+            // GridBaja
             // 
-            this.GridBienesDDBaja.AllowUserToAddRows = false;
-            this.GridBienesDDBaja.AllowUserToDeleteRows = false;
-            this.GridBienesDDBaja.AllowUserToOrderColumns = true;
-            this.GridBienesDDBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.GridBienesDDBaja.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.GridBienesDDBaja.BackgroundColor = System.Drawing.Color.White;
-            this.GridBienesDDBaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GridBienesDDBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridBienesDDBaja.Location = new System.Drawing.Point(12, 48);
-            this.GridBienesDDBaja.Name = "GridBienesDDBaja";
-            this.GridBienesDDBaja.ReadOnly = true;
-            this.GridBienesDDBaja.Size = new System.Drawing.Size(875, 600);
-            this.GridBienesDDBaja.TabIndex = 2;
+            this.GridBaja.AllowUserToAddRows = false;
+            this.GridBaja.AllowUserToDeleteRows = false;
+            this.GridBaja.AllowUserToOrderColumns = true;
+            this.GridBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.GridBaja.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.GridBaja.BackgroundColor = System.Drawing.Color.White;
+            this.GridBaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridBaja.Location = new System.Drawing.Point(12, 48);
+            this.GridBaja.Name = "GridBaja";
+            this.GridBaja.ReadOnly = true;
+            this.GridBaja.Size = new System.Drawing.Size(875, 600);
+            this.GridBaja.TabIndex = 2;
             // 
             // BienesDadosDeBaja
             // 
@@ -113,13 +117,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.GridBienesDDBaja);
+            this.Controls.Add(this.GridBaja);
             this.Controls.Add(this.toolStrip1);
             this.Name = "BienesDadosDeBaja";
             this.Text = "Bienes Dados De Baja";
+            this.Load += new System.EventHandler(this.BienesDadosDeBaja_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridBienesDDBaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBaja)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,6 +136,6 @@
         private System.Windows.Forms.ToolStripButton Buscar;
         private System.Windows.Forms.ToolStripButton Excel;
         private System.Windows.Forms.ToolStripButton Imprimir;
-        private System.Windows.Forms.DataGridView GridBienesDDBaja;
+        private System.Windows.Forms.DataGridView GridBaja;
     }
 }

@@ -50,6 +50,7 @@
             this.Todo.TabIndex = 15;
             this.Todo.Text = "Mostrar Todo";
             this.Todo.UseVisualStyleBackColor = false;
+            this.Todo.Click += new System.EventHandler(this.Todo_Click);
             // 
             // Cancelar
             // 
@@ -62,6 +63,7 @@
             this.Cancelar.TabIndex = 14;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Buscar
             // 
@@ -74,6 +76,7 @@
             this.Buscar.TabIndex = 13;
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = false;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // groupBox1
             // 
@@ -111,6 +114,7 @@
             this.Empleado.TabIndex = 4;
             this.Empleado.Text = "Empleado";
             this.Empleado.UseVisualStyleBackColor = true;
+            this.Empleado.CheckedChanged += new System.EventHandler(this.Empleado_CheckedChanged);
             // 
             // Proveedor
             // 
@@ -122,6 +126,7 @@
             this.Proveedor.TabIndex = 3;
             this.Proveedor.Text = "Proveedor";
             this.Proveedor.UseVisualStyleBackColor = true;
+            this.Proveedor.CheckedChanged += new System.EventHandler(this.Proveedor_CheckedChanged);
             // 
             // Articulo
             // 
@@ -133,6 +138,7 @@
             this.Articulo.TabIndex = 2;
             this.Articulo.Text = "Articulo";
             this.Articulo.UseVisualStyleBackColor = true;
+            this.Articulo.CheckedChanged += new System.EventHandler(this.Articulo_CheckedChanged);
             // 
             // Etiqueta
             // 
@@ -146,6 +152,7 @@
             this.Etiqueta.TabStop = true;
             this.Etiqueta.Text = "Etiqueta";
             this.Etiqueta.UseVisualStyleBackColor = true;
+            this.Etiqueta.CheckedChanged += new System.EventHandler(this.Etiqueta_CheckedChanged);
             // 
             // BuscarBienesSF
             // 
@@ -164,6 +171,7 @@
             this.Name = "BuscarBienesSF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Bienes Sin Factura";
+            this.Load += new System.EventHandler(this.BuscarBienesSF_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
