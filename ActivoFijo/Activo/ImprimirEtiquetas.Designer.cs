@@ -33,6 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,13 +43,12 @@
             this.minimo = new System.Windows.Forms.NumericUpDown();
             this.maximo = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Cancelar
@@ -62,6 +62,7 @@
             this.Cancelar.TabIndex = 14;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Imprimir
             // 
@@ -73,6 +74,7 @@
             this.Imprimir.TabIndex = 13;
             this.Imprimir.Text = "Imprimir";
             this.Imprimir.UseVisualStyleBackColor = false;
+            this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
             // 
             // panel2
             // 
@@ -106,6 +108,16 @@
             this.label6.Size = new System.Drawing.Size(29, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "123";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ActivoFijo.Properties.Resources.barras;
+            this.pictureBox1.Location = new System.Drawing.Point(58, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // label5
             // 
@@ -206,16 +218,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = ">";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ActivoFijo.Properties.Resources.barras;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // ImprimirEtiquetas
             // 
             this.AcceptButton = this.Imprimir;
@@ -236,12 +238,12 @@
             this.Text = "ImprimirEtiquetas";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

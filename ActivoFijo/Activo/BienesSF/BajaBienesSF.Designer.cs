@@ -71,6 +71,7 @@
             this.Cancelar.TabIndex = 17;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Aceptar
             // 
@@ -83,6 +84,7 @@
             this.Aceptar.TabIndex = 16;
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = false;
+            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // panel2
             // 
@@ -309,6 +311,7 @@
             this.NoFunciona.TabStop = true;
             this.NoFunciona.Text = "No Funciona";
             this.NoFunciona.UseVisualStyleBackColor = true;
+            this.NoFunciona.CheckedChanged += new System.EventHandler(this.NoFunciona_CheckedChanged);
             // 
             // Robo
             // 
@@ -319,6 +322,7 @@
             this.Robo.TabIndex = 9;
             this.Robo.Text = "Robo";
             this.Robo.UseVisualStyleBackColor = true;
+            this.Robo.CheckedChanged += new System.EventHandler(this.Robo_CheckedChanged);
             // 
             // Extravio
             // 
@@ -329,6 +333,7 @@
             this.Extravio.TabIndex = 10;
             this.Extravio.Text = "Extravio";
             this.Extravio.UseVisualStyleBackColor = true;
+            this.Extravio.CheckedChanged += new System.EventHandler(this.Extravio_CheckedChanged);
             // 
             // Donacion
             // 
@@ -339,6 +344,7 @@
             this.Donacion.TabIndex = 11;
             this.Donacion.Text = "Donacion";
             this.Donacion.UseVisualStyleBackColor = true;
+            this.Donacion.CheckedChanged += new System.EventHandler(this.Donacion_CheckedChanged);
             // 
             // Error
             // 
@@ -349,6 +355,7 @@
             this.Error.TabIndex = 12;
             this.Error.Text = "Error de captura";
             this.Error.UseVisualStyleBackColor = true;
+            this.Error.CheckedChanged += new System.EventHandler(this.Error_CheckedChanged);
             // 
             // BajaBienesSF
             // 
@@ -367,6 +374,7 @@
             this.Name = "BajaBienesSF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dar de Baja Bien Sin Factura";
+            this.Load += new System.EventHandler(this.BajaBienesSF_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

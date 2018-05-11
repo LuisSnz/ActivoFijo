@@ -51,6 +51,7 @@
             this.Cancelar.TabIndex = 17;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // panel1
             // 
@@ -69,7 +70,8 @@
             // 
             // Motivo
             // 
-            this.Motivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Motivo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Motivo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Motivo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Motivo.FormattingEnabled = true;
             this.Motivo.Items.AddRange(new object[] {
@@ -140,6 +142,7 @@
             this.Guardar.TabIndex = 16;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // ModificarBienesDDBaja
             // 
@@ -157,6 +160,7 @@
             this.Name = "ModificarBienesDDBaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar";
+            this.Load += new System.EventHandler(this.ModificarBienesDDBaja_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

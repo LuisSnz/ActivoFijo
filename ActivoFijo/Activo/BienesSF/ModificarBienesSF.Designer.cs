@@ -77,6 +77,7 @@
             this.Cancelar.TabIndex = 29;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // panel2
             // 
@@ -259,6 +260,7 @@
             this.Guardar.TabIndex = 28;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // groupBox1
             // 
@@ -442,6 +444,7 @@
             this.MaximizeBox = false;
             this.Name = "ModificarBienesSF";
             this.Text = "Modificar Bien Sin Factura";
+            this.Load += new System.EventHandler(this.ModificarBienesSF_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

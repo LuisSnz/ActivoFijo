@@ -89,6 +89,7 @@
             this.Cancelar.TabIndex = 27;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Guardar
             // 
@@ -100,6 +101,7 @@
             this.Guardar.TabIndex = 26;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // groupBox1
             // 
@@ -191,6 +193,7 @@
             this.CBProveedor.Name = "CBProveedor";
             this.CBProveedor.Size = new System.Drawing.Size(379, 27);
             this.CBProveedor.TabIndex = 8;
+            this.CBProveedor.SelectedIndexChanged += new System.EventHandler(this.CBProveedor_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -292,6 +295,7 @@
             this.CBArticulo.Name = "CBArticulo";
             this.CBArticulo.Size = new System.Drawing.Size(379, 27);
             this.CBArticulo.TabIndex = 14;
+            this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
             // 
             // LBFamilia
             // 
@@ -408,6 +412,7 @@
             this.CBEmpleado.Name = "CBEmpleado";
             this.CBEmpleado.Size = new System.Drawing.Size(373, 27);
             this.CBEmpleado.TabIndex = 4;
+            this.CBEmpleado.SelectedIndexChanged += new System.EventHandler(this.CBEmpleado_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -469,6 +474,8 @@
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.Size = new System.Drawing.Size(127, 24);
             this.TBPrecio.TabIndex = 13;
+            this.TBPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBPrecio_KeyPress);
+            this.TBPrecio.Leave += new System.EventHandler(this.TBPrecio_Leave);
             // 
             // TBFactura
             // 
@@ -579,6 +586,7 @@
             this.Name = "NuevoBienes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Bien";
+            this.Load += new System.EventHandler(this.NuevoBienes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel4.ResumeLayout(false);

@@ -16,5 +16,44 @@ namespace ActivoFijo.Activo.BienesBaja
         {
             InitializeComponent();
         }
+
+        private void BienesDadosDeBaja_Load(object sender, EventArgs e)
+        {
+            GridBaja.Width = Clases.Variables.GridWidth;
+            GridBaja.Height = Clases.Variables.GridHeight;
+            Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
+                "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
+                " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
+                "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
+                " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM dbo.BajaBienes";
+            Clases.LLenadoGrids.llenarGrid(GridBaja, Clases.Variables.ConsultaBuscar, "BajaBienes");
+        }
+
+        private void Modificar_Click(object sender, EventArgs e)
+        {
+            ModificarBienesDDBaja modificar = new ModificarBienesDDBaja();
+            modificar.ShowDialog();
+            if (modificar.DialogResult == DialogResult.OK)
+                Clases.LLenadoGrids.llenarGrid(GridBaja, Clases.Variables.ConsultaBuscar, "BajaBienes");
+        }
+
+        private void Buscar_Click(object sender, EventArgs e)
+        {
+            BuscarBienesDDBaja buscar = new BuscarBienesDDBaja();
+            buscar.ShowDialog();
+            if (buscar.DialogResult == DialogResult.OK)
+                Clases.LLenadoGrids.llenarGrid(GridBaja, Clases.Variables.ConsultaBuscar, "BajaBienes");
+        }
+
+        private void Excel_Click(object sender, EventArgs e)
+        {
+            Clases.Excel.GridViewExcel(GridBaja);
+        }
+
+        private void Imprimir_Click(object sender, EventArgs e)
+        {
+            ReporteBienesDDBaja reporte = new ReporteBienesDDBaja();
+            reporte.ShowDialog();
+        }
     }
 }
