@@ -64,6 +64,7 @@
             this.Nuevo.Size = new System.Drawing.Size(44, 42);
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.ToolTipText = "Nuevo";
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // Modificar
             // 
@@ -74,6 +75,7 @@
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.Text = "Modificar";
             this.Modificar.ToolTipText = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Eliminar
             // 
@@ -84,6 +86,7 @@
             this.Eliminar.Size = new System.Drawing.Size(44, 42);
             this.Eliminar.Text = "Buscar";
             this.Eliminar.ToolTipText = "Buscar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Buscar
             // 
@@ -94,6 +97,7 @@
             this.Buscar.Size = new System.Drawing.Size(44, 42);
             this.Buscar.Text = "Eliminar";
             this.Buscar.ToolTipText = "Eliminar";
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // GridEmp
             // 
@@ -112,6 +116,8 @@
             this.GridEmp.ReadOnly = true;
             this.GridEmp.Size = new System.Drawing.Size(926, 600);
             this.GridEmp.TabIndex = 6;
+            this.GridEmp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEmp_CellDoubleClick);
+            this.GridEmp.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEmp_CellEnter);
             // 
             // Empleados
             // 
@@ -123,6 +129,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Empleados";
             this.Text = "Empleados";
+            this.Load += new System.EventHandler(this.Empleados_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridEmp)).EndInit();

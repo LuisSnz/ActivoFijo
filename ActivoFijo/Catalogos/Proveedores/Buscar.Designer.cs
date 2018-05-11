@@ -48,6 +48,7 @@
             this.MostrarTodo.TabIndex = 24;
             this.MostrarTodo.Text = "Mostrar todo";
             this.MostrarTodo.UseVisualStyleBackColor = false;
+            this.MostrarTodo.Click += new System.EventHandler(this.MostrarTodo_Click);
             // 
             // Cancelar
             // 
@@ -59,6 +60,7 @@
             this.Cancelar.TabIndex = 23;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Buscar
             // 
@@ -70,6 +72,7 @@
             this.Buscar.TabIndex = 22;
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = false;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // groupBox1
             // 
@@ -106,6 +109,7 @@
             this.radioRFC.TabIndex = 1;
             this.radioRFC.Text = "RFC";
             this.radioRFC.UseVisualStyleBackColor = true;
+            this.radioRFC.CheckedChanged += new System.EventHandler(this.radioRFC_CheckedChanged);
             // 
             // radioNombre
             // 
@@ -119,6 +123,7 @@
             this.radioNombre.TabStop = true;
             this.radioNombre.Text = "Nombre";
             this.radioNombre.UseVisualStyleBackColor = true;
+            this.radioNombre.CheckedChanged += new System.EventHandler(this.radioNombre_CheckedChanged);
             // 
             // BuscarProveedores
             // 
@@ -136,6 +141,7 @@
             this.Name = "BuscarProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Proveedores";
+            this.Load += new System.EventHandler(this.BuscarProveedores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

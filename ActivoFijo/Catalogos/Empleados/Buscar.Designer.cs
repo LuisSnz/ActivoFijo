@@ -49,6 +49,7 @@
             this.MostrarTodo.TabIndex = 20;
             this.MostrarTodo.Text = "Mostrar todo";
             this.MostrarTodo.UseVisualStyleBackColor = false;
+            this.MostrarTodo.Click += new System.EventHandler(this.MostrarTodo_Click);
             // 
             // Cancelar
             // 
@@ -60,6 +61,7 @@
             this.Cancelar.TabIndex = 19;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Buscar
             // 
@@ -71,6 +73,7 @@
             this.Buscar.TabIndex = 18;
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = false;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // groupBox1
             // 
@@ -97,6 +100,7 @@
             this.radioJefe.TabIndex = 2;
             this.radioJefe.Text = "Jefe";
             this.radioJefe.UseVisualStyleBackColor = true;
+            this.radioJefe.CheckedChanged += new System.EventHandler(this.radioJefe_CheckedChanged);
             // 
             // comboBuscar
             // 
@@ -119,6 +123,7 @@
             this.radioDeptos.TabIndex = 1;
             this.radioDeptos.Text = "Departamento";
             this.radioDeptos.UseVisualStyleBackColor = true;
+            this.radioDeptos.CheckedChanged += new System.EventHandler(this.radioDeptos_CheckedChanged);
             // 
             // radioNombre
             // 
@@ -132,6 +137,7 @@
             this.radioNombre.TabStop = true;
             this.radioNombre.Text = "Nombre";
             this.radioNombre.UseVisualStyleBackColor = true;
+            this.radioNombre.CheckedChanged += new System.EventHandler(this.radioNombre_CheckedChanged);
             // 
             // BuscarEmpleado
             // 
@@ -148,6 +154,7 @@
             this.Name = "BuscarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Empleado";
+            this.Load += new System.EventHandler(this.BuscarEmpleado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

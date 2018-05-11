@@ -62,6 +62,7 @@
             this.Nuevo.Size = new System.Drawing.Size(44, 42);
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.ToolTipText = "Nuevo";
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // Modificar
             // 
@@ -72,6 +73,7 @@
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.Text = "Modificar";
             this.Modificar.ToolTipText = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Eliminar
             // 
@@ -82,6 +84,7 @@
             this.Eliminar.Size = new System.Drawing.Size(44, 42);
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.ToolTipText = "Eliminar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // GridAreas
             // 
@@ -101,6 +104,8 @@
             this.GridAreas.ReadOnly = true;
             this.GridAreas.Size = new System.Drawing.Size(900, 600);
             this.GridAreas.TabIndex = 2;
+            this.GridAreas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridAreas_CellDoubleClick);
+            this.GridAreas.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridAreas_CellEnter);
             // 
             // Areas
             // 
@@ -112,6 +117,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Areas";
             this.Text = "Areas";
+            this.Load += new System.EventHandler(this.Areas_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridAreas)).EndInit();

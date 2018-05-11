@@ -50,6 +50,7 @@
             this.MostrarTodo.TabIndex = 20;
             this.MostrarTodo.Text = "Mostrar Todo";
             this.MostrarTodo.UseVisualStyleBackColor = false;
+            this.MostrarTodo.Click += new System.EventHandler(this.MostrarTodo_Click);
             // 
             // Buscar
             // 
@@ -61,6 +62,7 @@
             this.Buscar.TabIndex = 18;
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = false;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // Cancelar
             // 
@@ -72,6 +74,7 @@
             this.Cancelar.TabIndex = 19;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // panel1
             // 
@@ -116,6 +119,7 @@
             this.RBArticulo.TabStop = true;
             this.RBArticulo.Text = "Articulo";
             this.RBArticulo.UseVisualStyleBackColor = true;
+            this.RBArticulo.CheckedChanged += new System.EventHandler(this.RBArticulo_CheckedChanged);
             // 
             // RBFamilia
             // 
@@ -127,6 +131,7 @@
             this.RBFamilia.TabStop = true;
             this.RBFamilia.Text = "Familia";
             this.RBFamilia.UseVisualStyleBackColor = true;
+            this.RBFamilia.CheckedChanged += new System.EventHandler(this.RBFamilia_CheckedChanged);
             // 
             // BuscarArticulo
             // 
@@ -144,6 +149,7 @@
             this.Name = "BuscarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Articulo";
+            this.Load += new System.EventHandler(this.BuscarArticulo_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
