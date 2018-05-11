@@ -63,6 +63,7 @@
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(44, 42);
             this.Nuevo.Text = "Nuevo";
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // Modificar
             // 
@@ -72,6 +73,7 @@
             this.Modificar.Name = "Modificar";
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.Text = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Borrar
             // 
@@ -90,6 +92,7 @@
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(44, 42);
             this.Buscar.Text = "Buscar";
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // GVCatArticulos
             // 
@@ -108,6 +111,8 @@
             this.GVCatArticulos.ReadOnly = true;
             this.GVCatArticulos.Size = new System.Drawing.Size(840, 600);
             this.GVCatArticulos.TabIndex = 4;
+            this.GVCatArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVCatArticulos_CellDoubleClick);
+            this.GVCatArticulos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVCatArticulos_CellEnter);
             // 
             // Articulos
             // 
@@ -119,6 +124,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Articulos";
             this.Text = "Articulos";
+            this.Load += new System.EventHandler(this.Articulos_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GVCatArticulos)).EndInit();

@@ -16,5 +16,16 @@ namespace ActivoFijo.Catalogos.Empleados
         {
             InitializeComponent();
         }
+
+        private void Aceptar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

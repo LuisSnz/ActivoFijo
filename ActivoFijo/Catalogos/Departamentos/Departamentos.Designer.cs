@@ -62,6 +62,7 @@
             this.Nuevo.Size = new System.Drawing.Size(44, 42);
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.ToolTipText = "Nuevo";
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // Modificar
             // 
@@ -72,6 +73,7 @@
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.Text = "Modificar";
             this.Modificar.ToolTipText = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Eliminar
             // 
@@ -99,6 +101,8 @@
             this.GridDeptos.ReadOnly = true;
             this.GridDeptos.Size = new System.Drawing.Size(900, 600);
             this.GridDeptos.TabIndex = 6;
+            this.GridDeptos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDeptos_CellDoubleClick);
+            this.GridDeptos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDeptos_CellEnter);
             // 
             // Departamentos
             // 
@@ -112,6 +116,7 @@
             this.Name = "Departamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Departamentos";
+            this.Load += new System.EventHandler(this.Departamentos_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridDeptos)).EndInit();

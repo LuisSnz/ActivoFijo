@@ -59,6 +59,7 @@
             this.Imprimir.Name = "Imprimir";
             this.Imprimir.Size = new System.Drawing.Size(44, 42);
             this.Imprimir.Text = "Imprimir";
+            this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
             // 
             // Excel
             // 
@@ -68,6 +69,7 @@
             this.Excel.Name = "Excel";
             this.Excel.Size = new System.Drawing.Size(44, 42);
             this.Excel.Text = "Exportar a Excel";
+            this.Excel.Click += new System.EventHandler(this.Excel_Click);
             // 
             // GVVehiculos
             // 
@@ -97,6 +99,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Vehiculos";
             this.Text = "Vehiculos";
+            this.Load += new System.EventHandler(this.Vehiculos_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GVVehiculos)).EndInit();

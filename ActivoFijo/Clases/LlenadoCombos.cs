@@ -19,13 +19,10 @@ namespace ActivoFijo.Clases
                 cmd = new SqlCommand("select Descripcion from familia", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
-                CB.Text = "";
                 while (dr.Read())
                 {
                     CB.Items.Add(dr["Descripcion"].ToString());
                 }
-                //CB.SelectedIndex = 0;
-                //dr.Close();
                 cn.Close();
             }
             catch (Exception ex)
