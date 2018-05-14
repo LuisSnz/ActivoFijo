@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using BarcodeLib;
 using System.Data;
 using System.IO;
+using System.Reflection;
 
 namespace ActivoFijo.Clases
 {
@@ -65,8 +66,10 @@ namespace ActivoFijo.Clases
             String line;
             try
             {
-                string ruta = Path.Combine(Application.StartupPath, "ImpresoraEtiquetas.txt");
-                StreamReader sr = new StreamReader(ruta);
+                string ruta = Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName;
+                var recurso = "ConfigurarImpresora.txt";
+                string archivo = Path.Combine(ruta, recurso);
+                StreamReader sr = new StreamReader(archivo);
                 while ((line = sr.ReadLine()) != null)
                 {
                     Clases.Variables.ConfImpresora = line;
