@@ -1,6 +1,6 @@
-﻿namespace ActivoFijo.Catalogos.Empleados
+﻿namespace ActivoFijo.Auxiliares
 {
-    partial class Confirmar
+    partial class Confirmacion
     {
         /// <summary>
         /// Required designer variable.
@@ -36,11 +36,12 @@
             // Cancelar
             // 
             this.Cancelar.BackColor = System.Drawing.Color.White;
-            this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(148, 84);
+            this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancelar.Location = new System.Drawing.Point(122, 52);
             this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(86, 34);
-            this.Cancelar.TabIndex = 8;
+            this.Cancelar.Size = new System.Drawing.Size(86, 27);
+            this.Cancelar.TabIndex = 4;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -48,42 +49,42 @@
             // Aceptar
             // 
             this.Aceptar.BackColor = System.Drawing.Color.White;
-            this.Aceptar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Aceptar.Location = new System.Drawing.Point(38, 84);
+            this.Aceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Aceptar.Location = new System.Drawing.Point(12, 52);
             this.Aceptar.Name = "Aceptar";
-            this.Aceptar.Size = new System.Drawing.Size(86, 34);
-            this.Aceptar.TabIndex = 7;
+            this.Aceptar.Size = new System.Drawing.Size(86, 27);
+            this.Aceptar.TabIndex = 3;
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = false;
             this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 11);
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 60);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "¿Esta seguro que desea dar de baja el empleado seleccionado?";
+            this.label1.Size = new System.Drawing.Size(196, 36);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "¿Esta seguro que desea eliminar\r\n    el elemento seleccionado?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Confirmar
+            // Confirmacion
             // 
             this.AcceptButton = this.Aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(279, 129);
+            this.CancelButton = this.Cancelar;
+            this.ClientSize = new System.Drawing.Size(224, 84);
+            this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Aceptar);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximizeBox = false;
-            this.Name = "Confirmar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Confirmar";
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "Confirmacion";
+            this.Text = "Eliminar";
             this.ResumeLayout(false);
 
         }

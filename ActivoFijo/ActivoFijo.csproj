@@ -193,6 +193,12 @@
     <Compile Include="Auxiliares\ConfImpresora.Designer.cs">
       <DependentUpon>ConfImpresora.cs</DependentUpon>
     </Compile>
+    <Compile Include="Auxiliares\Confirmacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliares\Confirmacion.Designer.cs">
+      <DependentUpon>Confirmacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Areas\Areas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,12 +264,6 @@
     </Compile>
     <Compile Include="Catalogos\Empleados\Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Catalogos\Empleados\Confirmar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Catalogos\Empleados\Confirmar.Designer.cs">
-      <DependentUpon>Confirmar.cs</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\Empleados\Empleados.cs">
       <SubType>Form</SubType>
@@ -485,6 +485,9 @@
     <EmbeddedResource Include="Auxiliares\ConfImpresora.resx">
       <DependentUpon>ConfImpresora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Auxiliares\Confirmacion.resx">
+      <DependentUpon>Confirmacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Areas\Areas.resx">
       <DependentUpon>Areas.cs</DependentUpon>
     </EmbeddedResource>
@@ -517,9 +520,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Empleados\Buscar.resx">
       <DependentUpon>Buscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Catalogos\Empleados\Confirmar.resx">
-      <DependentUpon>Confirmar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Empleados\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>

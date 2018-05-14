@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ActivoFijo.Catalogos.Empleados
+namespace ActivoFijo.Auxiliares
 {
-    public partial class Confirmar : Form
+    public partial class Confirmacion : Form
     {
-        public Confirmar()
+        public Confirmacion()
         {
             InitializeComponent();
         }

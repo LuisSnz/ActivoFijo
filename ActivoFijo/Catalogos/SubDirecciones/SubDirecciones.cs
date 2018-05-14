@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ActivoFijo.Catalogos.SubDirecciones
 {
@@ -41,7 +36,28 @@ namespace ActivoFijo.Catalogos.SubDirecciones
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-
+            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
+            confirmacion.ShowDialog();
+            if (confirmacion.DialogResult == DialogResult.OK)
+            {
+                string ConnString = Clases.Variables.scon;
+                string SqlString = "Delete from subdireccion where ID=" + Clases.Variables.IdSubD;
+                try
+                {
+                    SqlConnection conn = new SqlConnection(ConnString);
+                    SqlCommand cmd = new SqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("SubDireccion eliminada correctamente.");
+                    Clases.LLenadoGrids.llenarGrid(GridSubD, Clases.Variables.ConsultaBuscar, "subdireccion");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El valor no se pudo eliminar. \n" + ex.ToString());
+                }
+            }
         }
 
         private void GridSubD_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

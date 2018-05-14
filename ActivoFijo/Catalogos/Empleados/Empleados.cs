@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -70,7 +64,7 @@ namespace ActivoFijo.Catalogos.Empleados
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            Confirmar confirmacion = new Confirmar();
+            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
             confirmacion.ShowDialog();
             if (confirmacion.DialogResult == DialogResult.OK)
             {

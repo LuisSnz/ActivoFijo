@@ -84,6 +84,7 @@
             this.Eliminar.Size = new System.Drawing.Size(44, 42);
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.ToolTipText = "Eliminar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // GridDeptos
             // 

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ActivoFijo.Catalogos.Familias
 {
@@ -41,7 +36,28 @@ namespace ActivoFijo.Catalogos.Familias
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-
+            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
+            confirmacion.ShowDialog();
+            if (confirmacion.DialogResult == DialogResult.OK)
+            {
+                string ConnString = Clases.Variables.scon;
+                string SqlString = "Delete from Familia where Id=" + Clases.Variables.IDFamilia;
+                try
+                {
+                    SqlConnection conn = new SqlConnection(ConnString);
+                    SqlCommand cmd = new SqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Familia eliminada correctamente.");
+                    Clases.LLenadoGrids.llenarGrid(GridFamilias, Clases.Variables.ConsultaBuscar, "Familia");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
+                }
+            }
         }
 
         private void GridFamilias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

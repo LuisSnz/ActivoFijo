@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ActivoFijo.Catalogos.Proveedores
 {
@@ -37,7 +32,28 @@ namespace ActivoFijo.Catalogos.Proveedores
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-
+            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
+            confirmacion.ShowDialog();
+            if (confirmacion.DialogResult == DialogResult.OK)
+            {
+                string ConnString = Clases.Variables.scon;
+                string SqlString = "Delete from Proveedores where Id=" + Clases.Variables.IdProveedores;
+                try
+                {
+                    SqlConnection conn = new SqlConnection(ConnString);
+                    SqlCommand cmd = new SqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Departamento eliminado correctamente.");
+                    Clases.LLenadoGrids.llenarGrid(GridProveedor, Clases.Variables.ConsultaBuscar, "Proveedores");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
+                }
+            }
         }
 
         private void Excel_Click(object sender, EventArgs e)

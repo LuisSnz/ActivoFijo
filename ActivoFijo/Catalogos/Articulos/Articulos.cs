@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace ActivoFijo.Catalogos.Articulos
@@ -65,6 +60,32 @@ namespace ActivoFijo.Catalogos.Articulos
             modificar.ShowDialog();
             if (modificar.DialogResult == DialogResult.OK)
                 Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "vArticulosCompras");
+        }
+
+        private void Borrar_Click(object sender, EventArgs e)
+        {
+            Auxiliares.Confirmacion Confirmacion = new Auxiliares.Confirmacion();
+            Confirmacion.ShowDialog();
+            if (Confirmacion.DialogResult == DialogResult.OK)
+            {
+                string ConnString = Clases.Variables.scon;
+                string SqlString = "Delete from CatArticulos where Descripcion='" + Clases.Variables.ArticuloDescripcion + "'";
+                try
+                {
+                    SqlConnection conn = new SqlConnection(ConnString);
+                    SqlCommand cmd = new SqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Articulo eliminado correctamente.");
+                    Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "vArticulosCompras");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
+                }
+            }
         }
     }
 }

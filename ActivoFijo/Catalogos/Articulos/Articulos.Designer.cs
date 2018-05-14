@@ -83,6 +83,7 @@
             this.Borrar.Name = "Borrar";
             this.Borrar.Size = new System.Drawing.Size(44, 42);
             this.Borrar.Text = "Eliminar";
+            this.Borrar.Click += new System.EventHandler(this.Borrar_Click);
             // 
             // Buscar
             // 
