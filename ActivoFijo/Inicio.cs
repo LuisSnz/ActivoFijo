@@ -123,5 +123,11 @@ namespace ActivoFijo
             Activo.ImprimirEtiquetas imprimir = new Activo.ImprimirEtiquetas();
             imprimir.ShowDialog();
         }
+
+        private void ConfigurarImpresora_Click(object sender, EventArgs e)
+        {
+            Auxiliares.ConfImpresora confImpresora = new Auxiliares.ConfImpresora();
+            confImpresora.ShowDialog();
+        }
     }
 }

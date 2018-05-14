@@ -187,6 +187,12 @@
     <Compile Include="Auxiliares\Cargando.Designer.cs">
       <DependentUpon>Cargando.cs</DependentUpon>
     </Compile>
+    <Compile Include="Auxiliares\ConfImpresora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliares\ConfImpresora.Designer.cs">
+      <DependentUpon>ConfImpresora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Areas\Areas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -447,6 +453,9 @@
     <EmbeddedResource Include="Auxiliares\Cargando.resx">
       <DependentUpon>Cargando.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Auxiliares\ConfImpresora.resx">
+      <DependentUpon>ConfImpresora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Areas\Areas.resx">
       <DependentUpon>Areas.cs</DependentUpon>
     </EmbeddedResource>
@@ -568,19 +577,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Activo\BienesBaja\" />
-    <Folder Include="Activo\BienesSF\" />
-    <Folder Include="Activo\Bienes\" />
-    <Folder Include="Activo\CambioBienes\" />
-    <Folder Include="Catalogos\Areas\" />
-    <Folder Include="Catalogos\Articulos\" />
-    <Folder Include="Catalogos\Departamentos\" />
-    <Folder Include="Catalogos\Empleados\" />
-    <Folder Include="Catalogos\Familias\" />
-    <Folder Include="Catalogos\Marcas\" />
-    <Folder Include="Catalogos\Proveedores\" />
-    <Folder Include="Catalogos\SubDirecciones\" />
-    <Folder Include="Catalogos\Vehiculos\" />
     <Folder Include="Informes\" />
     <Folder Include="Reportes\" />
   </ItemGroup>

@@ -100,7 +100,6 @@
             this.CBFamilia.Name = "CBFamilia";
             this.CBFamilia.Size = new System.Drawing.Size(282, 25);
             this.CBFamilia.TabIndex = 4;
-            this.CBFamilia.Text = "Seleccione un valor";
             // 
             // CHArticuloContrato
             // 
@@ -146,7 +145,6 @@
             this.CBMedida.Name = "CBMedida";
             this.CBMedida.Size = new System.Drawing.Size(282, 25);
             this.CBMedida.TabIndex = 6;
-            this.CBMedida.Text = "Seleccione un valor";
             // 
             // label4
             // 
@@ -168,7 +166,6 @@
             this.CBArticulo.Name = "CBArticulo";
             this.CBArticulo.Size = new System.Drawing.Size(282, 25);
             this.CBArticulo.TabIndex = 4;
-            this.CBArticulo.Text = "Seleccione un valor";
             // 
             // label3
             // 
@@ -221,7 +218,7 @@
             this.Controls.Add(this.Guardar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
