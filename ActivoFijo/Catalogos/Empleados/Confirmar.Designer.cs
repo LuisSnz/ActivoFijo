@@ -43,6 +43,7 @@
             this.Cancelar.TabIndex = 8;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Aceptar
             // 
@@ -54,6 +55,7 @@
             this.Aceptar.TabIndex = 7;
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = false;
+            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // label1
             // 

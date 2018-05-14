@@ -24,8 +24,6 @@ namespace ActivoFijo.Clases
                 {
                     CB.Items.Add(dr["Descripcion"].ToString());
                 }
-                //CB.SelectedIndex = 0;
-                //dr.Close();
                 cn.Close();
             }
             catch (Exception ex)

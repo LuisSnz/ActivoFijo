@@ -135,5 +135,11 @@ namespace ActivoFijo
             formularios(new Reportes.ValorBienes.ValorEnBienes());
             this.Text = "Sistema de activo Fijo - Valor en Bienes";
         }
+            
+        private void ConfigurarImpresora_Click(object sender, EventArgs e)
+        {
+            Auxiliares.ConfImpresora confImpresora = new Auxiliares.ConfImpresora();
+            confImpresora.ShowDialog();
+        }
     }
 }

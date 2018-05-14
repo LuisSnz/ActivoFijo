@@ -78,6 +78,7 @@
             this.Cancelar.TabIndex = 17;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Guardar
             // 
@@ -89,6 +90,7 @@
             this.Guardar.TabIndex = 16;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // Nuevo
             // 

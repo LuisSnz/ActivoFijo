@@ -62,6 +62,7 @@
             this.Nuevo.Size = new System.Drawing.Size(44, 42);
             this.Nuevo.Text = "toolStripButton1";
             this.Nuevo.ToolTipText = "Nuevo";
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // Modificar
             // 
@@ -72,6 +73,7 @@
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.Text = "toolStripButton2";
             this.Modificar.ToolTipText = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Eliminar
             // 
@@ -82,6 +84,7 @@
             this.Eliminar.Size = new System.Drawing.Size(44, 42);
             this.Eliminar.Text = "toolStripButton3";
             this.Eliminar.ToolTipText = "Eliminar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // GridMarcas
             // 
@@ -99,6 +102,8 @@
             this.GridMarcas.ReadOnly = true;
             this.GridMarcas.Size = new System.Drawing.Size(290, 600);
             this.GridMarcas.TabIndex = 8;
+            this.GridMarcas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridMarcas_CellDoubleClick);
+            this.GridMarcas.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridMarcas_CellEnter);
             // 
             // Marcas
             // 
@@ -110,6 +115,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Marcas";
             this.Text = "Marcas";
+            this.Load += new System.EventHandler(this.Marcas_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridMarcas)).EndInit();

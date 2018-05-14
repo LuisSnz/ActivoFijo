@@ -127,6 +127,7 @@
             this.Cancelar.TabIndex = 34;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Guardar
             // 
@@ -138,6 +139,7 @@
             this.Guardar.TabIndex = 33;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // Modificar
             // 
@@ -154,6 +156,7 @@
             this.Name = "Modificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar";
+            this.Load += new System.EventHandler(this.Modificar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

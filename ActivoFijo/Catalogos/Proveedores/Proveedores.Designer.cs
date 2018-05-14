@@ -70,6 +70,7 @@
             this.Nuevo.Size = new System.Drawing.Size(44, 42);
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.ToolTipText = "Nuevo";
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // Modificar
             // 
@@ -80,6 +81,7 @@
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.Text = "Modificar";
             this.Modificar.ToolTipText = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Eliminar
             // 
@@ -90,6 +92,7 @@
             this.Eliminar.Size = new System.Drawing.Size(44, 42);
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.ToolTipText = "Eliminar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -104,6 +107,7 @@
             this.Excel.Name = "Excel";
             this.Excel.Size = new System.Drawing.Size(44, 42);
             this.Excel.Text = "Exportar a Excel";
+            this.Excel.Click += new System.EventHandler(this.Excel_Click);
             // 
             // Buscar
             // 
@@ -113,6 +117,7 @@
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(44, 42);
             this.Buscar.Text = "Buscar";
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // Imprimir
             // 
@@ -122,6 +127,7 @@
             this.Imprimir.Name = "Imprimir";
             this.Imprimir.Size = new System.Drawing.Size(44, 42);
             this.Imprimir.Text = "Imprimir";
+            this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
             // 
             // GridProveedor
             // 
@@ -139,6 +145,8 @@
             this.GridProveedor.ReadOnly = true;
             this.GridProveedor.Size = new System.Drawing.Size(900, 600);
             this.GridProveedor.TabIndex = 6;
+            this.GridProveedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProveedor_CellDoubleClick);
+            this.GridProveedor.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProveedor_CellEnter);
             // 
             // Proveedores
             // 
@@ -150,6 +158,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Proveedores";
             this.Text = "Proveedores";
+            this.Load += new System.EventHandler(this.Proveedores_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProveedor)).EndInit();

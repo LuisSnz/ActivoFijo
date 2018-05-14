@@ -277,6 +277,7 @@
             this.ConfigurarImpresora.Name = "ConfigurarImpresora";
             this.ConfigurarImpresora.Size = new System.Drawing.Size(212, 22);
             this.ConfigurarImpresora.Text = "Impresora de Etiquetas";
+            this.ConfigurarImpresora.Click += new System.EventHandler(this.ConfigurarImpresora_Click);
             // 
             // Inicio
             // 
