@@ -55,5 +55,21 @@ namespace ActivoFijo.Activo.BienesBaja
             ReporteBienesDDBaja reporte = new ReporteBienesDDBaja();
             reporte.ShowDialog();
         }
+
+        private void GridBaja_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            Clases.Variables.IdBienesB = GridBaja.CurrentRow.Cells[0].Value.ToString();
+            Clases.Variables.BienesBMotivoBaja = GridBaja.CurrentRow.Cells[13].Value.ToString();
+            Clases.Variables.BienesBObservacion = GridBaja.CurrentRow.Cells[16].Value.ToString();
+            Clases.Variables.BienesBValor = GridBaja.CurrentRow.Cells[17].Value.ToString();
+        }
+
+        private void GridBaja_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ModificarBienesDDBaja modificar = new ModificarBienesDDBaja();
+            modificar.ShowDialog();
+            if (modificar.DialogResult == DialogResult.OK)
+                Clases.LLenadoGrids.llenarGrid(GridBaja, Clases.Variables.ConsultaBuscar, "BajaBienes");
+        }
     }
 }

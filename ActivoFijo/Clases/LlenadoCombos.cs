@@ -244,7 +244,7 @@ namespace ActivoFijo.Clases
             {
                 cn.Open();
                 cmd = new SqlCommand("SELECT bienes.Id,bienes.Modelo,bienes.Precio,bienes.Serie,marca.Descripcion as marca " +
-                    "from bienes inner join marca on bienes.IdMarca=marca.Id where bienes.Id=" + Clases.Variables.IdBienesSF, cn);
+                    "from bienes inner join marca on bienes.IdMarca=marca.Id where bienes.Id=" + Clases.Variables.IdBienes, cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {

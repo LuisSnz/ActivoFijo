@@ -110,6 +110,8 @@
             this.GridBaja.ReadOnly = true;
             this.GridBaja.Size = new System.Drawing.Size(875, 600);
             this.GridBaja.TabIndex = 2;
+            this.GridBaja.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBaja_CellDoubleClick);
+            this.GridBaja.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBaja_CellEnter);
             // 
             // BienesDadosDeBaja
             // 
