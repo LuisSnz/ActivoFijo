@@ -384,6 +384,11 @@
     <Compile Include="Clases\LlenadoCombos.cs" />
     <Compile Include="Clases\LlenadoGrids.cs" />
     <Compile Include="Clases\Variables.cs" />
+    <Compile Include="Datos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -573,6 +578,11 @@
     <EmbeddedResource Include="Catalogos\Vehiculos\Vehiculos.resx">
       <DependentUpon>Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\ReporteBaja.rdlc" />
+    <EmbeddedResource Include="Informes\ReporteBienes.rdlc" />
+    <EmbeddedResource Include="Informes\ReporteBienesSF.rdlc" />
+    <EmbeddedResource Include="Informes\ReporteProveedores.rdlc" />
+    <EmbeddedResource Include="Informes\ReporteVehiculos.rdlc" />
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -598,6 +608,17 @@
     <EmbeddedResource Include="Reportes\ValorBienes\ValorEnBienes.resx">
       <DependentUpon>ValorEnBienes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Datos.xsc">
+      <DependentUpon>Datos.xsd</DependentUpon>
+    </None>
+    <None Include="Datos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Datos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datos.xss">
+      <DependentUpon>Datos.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -612,9 +633,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Informes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\7da9c795-1ecb-4dd7-ba41-298ad0ca7a56.jpg" />
   </ItemGroup>

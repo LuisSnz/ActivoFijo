@@ -45,6 +45,7 @@
             this.ClientSize = new System.Drawing.Size(375, 54);
             this.Controls.Add(this.progressBar1);
             this.Name = "Cargando";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cargando...";
             this.ResumeLayout(false);
 
