@@ -125,7 +125,7 @@ namespace ActivoFijo.Activo.BienesSF
                     "" + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos where descripcion='"
                     + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "',(select NoEmp from empleados where nombre='"
                     + CBEmpleado.SelectedItem + "'),(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')" +
-                    ",(convert(datetime,'" + TimeFecha.Text + "')),0,(select id from marca where descripcion='" + CBMarca.SelectedItem + "')," +
+                    ",(convert(datetime,'" + TimeFecha.Text + "')),0,(select top 1 id from marca where descripcion='" + CBMarca.SelectedItem + "')," +
                     "'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text + "',0," + con + ",'" + CBConservacion.SelectedItem + "','"
                     + creador + "')";
                 try

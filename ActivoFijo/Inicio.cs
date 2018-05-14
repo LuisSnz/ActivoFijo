@@ -123,5 +123,17 @@ namespace ActivoFijo
             Activo.ImprimirEtiquetas imprimir = new Activo.ImprimirEtiquetas();
             imprimir.ShowDialog();
         }
+
+        private void Historico_Click(object sender, EventArgs e)
+        {
+            Reportes.HistoricoDeBienes historico = new Reportes.HistoricoDeBienes();
+            historico.ShowDialog();
+        }
+
+        private void ValorBienes_Click(object sender, EventArgs e)
+        {
+            formularios(new Reportes.ValorBienes.ValorEnBienes());
+            this.Text = "Sistema de activo Fijo - Valor en Bienes";
+        }
     }
 }

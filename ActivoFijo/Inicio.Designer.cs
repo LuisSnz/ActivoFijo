@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.PanelBase = new System.Windows.Forms.Panel();
+            this.LogoLocal = new System.Windows.Forms.PictureBox();
+            this.LogoEstatal = new System.Windows.Forms.PictureBox();
             this.Catalogos = new System.Windows.Forms.ToolStripMenuItem();
             this.Areas = new System.Windows.Forms.ToolStripMenuItem();
             this.SubDirecciones = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +52,6 @@
             this.ValorBienes = new System.Windows.Forms.ToolStripMenuItem();
             this.Configuracion = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigurarImpresora = new System.Windows.Forms.ToolStripMenuItem();
-            this.PanelBase = new System.Windows.Forms.Panel();
-            this.LogoLocal = new System.Windows.Forms.PictureBox();
-            this.LogoEstatal = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEstatal)).BeginInit();
@@ -71,6 +71,37 @@
             this.menuStrip1.Size = new System.Drawing.Size(1362, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // PanelBase
+            // 
+            this.PanelBase.BackColor = System.Drawing.Color.Transparent;
+            this.PanelBase.Location = new System.Drawing.Point(0, 25);
+            this.PanelBase.Name = "PanelBase";
+            this.PanelBase.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PanelBase.Size = new System.Drawing.Size(1377, 681);
+            this.PanelBase.TabIndex = 2;
+            // 
+            // LogoLocal
+            // 
+            this.LogoLocal.Image = global::ActivoFijo.Properties.Resources.logo_pirata;
+            this.LogoLocal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LogoLocal.Location = new System.Drawing.Point(1095, 84);
+            this.LogoLocal.Name = "LogoLocal";
+            this.LogoLocal.Size = new System.Drawing.Size(231, 273);
+            this.LogoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoLocal.TabIndex = 6;
+            this.LogoLocal.TabStop = false;
+            // 
+            // LogoEstatal
+            // 
+            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources._7da9c795_1ecb_4dd7_ba41_298ad0ca7a56;
+            this.LogoEstatal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LogoEstatal.Location = new System.Drawing.Point(1031, 381);
+            this.LogoEstatal.Name = "LogoEstatal";
+            this.LogoEstatal.Size = new System.Drawing.Size(346, 273);
+            this.LogoEstatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoEstatal.TabIndex = 5;
+            this.LogoEstatal.TabStop = false;
             // 
             // Catalogos
             // 
@@ -221,6 +252,7 @@
             this.Historico.Name = "Historico";
             this.Historico.Size = new System.Drawing.Size(181, 22);
             this.Historico.Text = "Historico del Bien";
+            this.Historico.Click += new System.EventHandler(this.Historico_Click);
             // 
             // ValorBienes
             // 
@@ -228,6 +260,7 @@
             this.ValorBienes.Name = "ValorBienes";
             this.ValorBienes.Size = new System.Drawing.Size(181, 22);
             this.ValorBienes.Text = "Valor en Bienes";
+            this.ValorBienes.Click += new System.EventHandler(this.ValorBienes_Click);
             // 
             // Configuracion
             // 
@@ -244,37 +277,6 @@
             this.ConfigurarImpresora.Name = "ConfigurarImpresora";
             this.ConfigurarImpresora.Size = new System.Drawing.Size(212, 22);
             this.ConfigurarImpresora.Text = "Impresora de Etiquetas";
-            // 
-            // PanelBase
-            // 
-            this.PanelBase.BackColor = System.Drawing.Color.Transparent;
-            this.PanelBase.Location = new System.Drawing.Point(0, 25);
-            this.PanelBase.Name = "PanelBase";
-            this.PanelBase.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PanelBase.Size = new System.Drawing.Size(1377, 681);
-            this.PanelBase.TabIndex = 2;
-            // 
-            // LogoLocal
-            // 
-            this.LogoLocal.Image = global::ActivoFijo.Properties.Resources.logo_pirata;
-            this.LogoLocal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogoLocal.Location = new System.Drawing.Point(1095, 84);
-            this.LogoLocal.Name = "LogoLocal";
-            this.LogoLocal.Size = new System.Drawing.Size(231, 273);
-            this.LogoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoLocal.TabIndex = 6;
-            this.LogoLocal.TabStop = false;
-            // 
-            // LogoEstatal
-            // 
-            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources._7da9c795_1ecb_4dd7_ba41_298ad0ca7a56;
-            this.LogoEstatal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogoEstatal.Location = new System.Drawing.Point(1031, 381);
-            this.LogoEstatal.Name = "LogoEstatal";
-            this.LogoEstatal.Size = new System.Drawing.Size(346, 273);
-            this.LogoEstatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoEstatal.TabIndex = 5;
-            this.LogoEstatal.TabStop = false;
             // 
             // Inicio
             // 
