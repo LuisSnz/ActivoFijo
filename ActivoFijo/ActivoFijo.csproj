@@ -392,6 +392,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\HistoricoDeBienes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\HistoricoDeBienes.Designer.cs">
+      <DependentUpon>HistoricoDeBienes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ValorBienes\BuscarValor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ValorBienes\BuscarValor.Designer.cs">
+      <DependentUpon>BuscarValor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ValorBienes\ReporteValor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ValorBienes\ReporteValor.Designer.cs">
+      <DependentUpon>ReporteValor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ValorBienes\ValorEnBienes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ValorBienes\ValorEnBienes.Designer.cs">
+      <DependentUpon>ValorEnBienes.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Activo\BienesBaja\BienesDadosDeBaja.resx">
       <DependentUpon>BienesDadosDeBaja.cs</DependentUpon>
@@ -562,6 +586,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\HistoricoDeBienes.resx">
+      <DependentUpon>HistoricoDeBienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ValorBienes\BuscarValor.resx">
+      <DependentUpon>BuscarValor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ValorBienes\ReporteValor.resx">
+      <DependentUpon>ReporteValor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ValorBienes\ValorEnBienes.resx">
+      <DependentUpon>ValorEnBienes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -578,7 +614,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Informes\" />
-    <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\7da9c795-1ecb-4dd7-ba41-298ad0ca7a56.jpg" />

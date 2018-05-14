@@ -125,7 +125,16 @@ namespace ActivoFijo.Activo.Bienes
                     con = 1;
                 var creador = "DANIEL";
                 string ConnString = Clases.Variables.scon;
-                string SqlString = "Insert Into bienes (Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva,IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado,Consumible,Estado,Creador) values (" + TBEtiqueta.Text + "," + TBNoOrden.Text + ",9,2013,'" + TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos where descripcion='" + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "',(select NoEmp from empleados where nombre='" + CBEmpleado.SelectedItem + "'),(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "'),(convert(datetime,'" + TimeFecha.Text + "')),0,(select id from marca where descripcion='" + CBMarca.SelectedItem + "'),'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text + "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + creador + "')";
+                string SqlString = "Insert Into bienes (Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
+                    "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
+                    "Consumible,Estado,Creador) values (" + TBEtiqueta.Text + "," + TBNoOrden.Text + ",9,2013,'" +
+                    TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos " +
+                    "where descripcion='" + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "'," +
+                    "(select NoEmp from empleados where nombre='" + CBEmpleado.SelectedItem + "')," +
+                    "(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')," +
+                    "(convert(datetime,'" + TimeFecha.Text + "')),0,(select top 1 id from marca where descripcion='" +
+                    CBMarca.SelectedItem + "'),'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
+                    "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + creador + "')";
                 try
                 {
                     SqlConnection conn = new SqlConnection(ConnString);
