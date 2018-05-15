@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modificar));
             this.Cancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Ciudad = new System.Windows.Forms.TextBox();
@@ -451,6 +452,7 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Modificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

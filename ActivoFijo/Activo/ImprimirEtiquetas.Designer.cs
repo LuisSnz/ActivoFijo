@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImprimirEtiquetas));
             this.Cancelar = new System.Windows.Forms.Button();
             this.Imprimir = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -232,6 +233,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ImprimirEtiquetas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

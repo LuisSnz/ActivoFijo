@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Catalogos = new System.Windows.Forms.ToolStripMenuItem();
             this.Areas = new System.Windows.Forms.ToolStripMenuItem();
@@ -284,13 +285,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 857);
+            this.ClientSize = new System.Drawing.Size(1362, 745);
             this.Controls.Add(this.LogoLocal);
             this.Controls.Add(this.LogoEstatal);
             this.Controls.Add(this.PanelBase);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MinimumSize = new System.Drawing.Size(1382, 900);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "Inicio";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

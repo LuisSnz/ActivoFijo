@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarValor));
             this.Todo = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
             this.Aceptar = new System.Windows.Forms.Button();
@@ -164,6 +165,7 @@
             this.Controls.Add(this.Aceptar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BuscarValor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
