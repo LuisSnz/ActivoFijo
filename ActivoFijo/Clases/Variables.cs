@@ -94,6 +94,7 @@ namespace ActivoFijo.Clases
         //Escala de grids
         public static int GridWidth;
         public static int GridHeight;
-
+        //Reportes
+        public static string Total;
     }
 }

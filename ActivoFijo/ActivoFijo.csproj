@@ -265,6 +265,12 @@
     <Compile Include="Catalogos\Empleados\Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Empleados\Confirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Empleados\Confirmar.Designer.cs">
+      <DependentUpon>Confirmar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Empleados\Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,6 +390,9 @@
     <Compile Include="Clases\LlenadoCombos.cs" />
     <Compile Include="Clases\LlenadoGrids.cs" />
     <Compile Include="Clases\Variables.cs" />
+    <Compile Include="Datos.cs">
+      <DependentUpon>Datos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -527,6 +536,9 @@
     <EmbeddedResource Include="Catalogos\Empleados\Buscar.resx">
       <DependentUpon>Buscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Empleados\Confirmar.resx">
+      <DependentUpon>Confirmar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Empleados\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -584,6 +596,7 @@
     <EmbeddedResource Include="Catalogos\Vehiculos\Vehiculos.resx">
       <DependentUpon>Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\ReporteValorBienes.rdlc" />
     <EmbeddedResource Include="Informes\ReporteBaja.rdlc" />
     <EmbeddedResource Include="Informes\ReporteBienes.rdlc" />
     <EmbeddedResource Include="Informes\ReporteBienesSF.rdlc" />
