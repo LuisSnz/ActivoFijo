@@ -786,4 +786,36 @@ namespace ActivoFijo.Clases
         }
     }
 
+    class Login
+    {
+        public static SqlCommand cmd;
+        public static SqlDataReader dr;
+        public static string conexion = Clases.Variables.scon;
+        public static SqlConnection cn = new SqlConnection(conexion);
+
+        public static int Validacion()
+        {
+            try
+            {
+                cn.Open();
+                cmd = new SqlCommand("select Usuario, Password from Usuarios where Usuario='"+Variables.Usuario+
+                    "' and Password='"+Variables.Contraseña+"'", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Variables.VUsuario = dr["Usuario"].ToString();
+                    Variables.VContraseña = dr["Password"].ToString();
+                }
+                cn.Close();
+                if (Variables.Usuario.ToUpper() == Variables.VUsuario && Variables.Contraseña == Variables.VContraseña)
+                    return 1;
+                else
+                    return 0;
+            }
+            catch (Exception)
+            {
+                return 2;
+            }
+        }
+    }
 }

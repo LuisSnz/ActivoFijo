@@ -85,7 +85,10 @@ namespace ActivoFijo.Clases
         public static string IEtiqueta;
         public static string IArticulo;
         //Login
-        public static string Usuario = "x";
+        public static string Usuario;
+        public static string Contraseña;
+        public static string VUsuario;
+        public static string VContraseña;
         //Configurar impresora
         public static string ConfImpresora;
         //Escala de grids

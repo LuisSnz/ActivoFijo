@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.PanelBase = new System.Windows.Forms.Panel();
-            this.LogoLocal = new System.Windows.Forms.PictureBox();
-            this.LogoEstatal = new System.Windows.Forms.PictureBox();
             this.Catalogos = new System.Windows.Forms.ToolStripMenuItem();
             this.Areas = new System.Windows.Forms.ToolStripMenuItem();
             this.SubDirecciones = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +49,9 @@
             this.ValorBienes = new System.Windows.Forms.ToolStripMenuItem();
             this.Configuracion = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigurarImpresora = new System.Windows.Forms.ToolStripMenuItem();
+            this.PanelBase = new System.Windows.Forms.Panel();
+            this.LogoLocal = new System.Windows.Forms.PictureBox();
+            this.LogoEstatal = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEstatal)).BeginInit();
@@ -71,37 +71,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1362, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // PanelBase
-            // 
-            this.PanelBase.BackColor = System.Drawing.Color.Transparent;
-            this.PanelBase.Location = new System.Drawing.Point(0, 25);
-            this.PanelBase.Name = "PanelBase";
-            this.PanelBase.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PanelBase.Size = new System.Drawing.Size(1377, 681);
-            this.PanelBase.TabIndex = 2;
-            // 
-            // LogoLocal
-            // 
-            this.LogoLocal.Image = global::ActivoFijo.Properties.Resources.logo_pirata;
-            this.LogoLocal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogoLocal.Location = new System.Drawing.Point(1095, 84);
-            this.LogoLocal.Name = "LogoLocal";
-            this.LogoLocal.Size = new System.Drawing.Size(231, 273);
-            this.LogoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoLocal.TabIndex = 6;
-            this.LogoLocal.TabStop = false;
-            // 
-            // LogoEstatal
-            // 
-            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources._7da9c795_1ecb_4dd7_ba41_298ad0ca7a56;
-            this.LogoEstatal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogoEstatal.Location = new System.Drawing.Point(1031, 381);
-            this.LogoEstatal.Name = "LogoEstatal";
-            this.LogoEstatal.Size = new System.Drawing.Size(346, 273);
-            this.LogoEstatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoEstatal.TabIndex = 5;
-            this.LogoEstatal.TabStop = false;
             // 
             // Catalogos
             // 
@@ -279,19 +248,49 @@
             this.ConfigurarImpresora.Text = "Impresora de Etiquetas";
             this.ConfigurarImpresora.Click += new System.EventHandler(this.ConfigurarImpresora_Click);
             // 
+            // PanelBase
+            // 
+            this.PanelBase.BackColor = System.Drawing.Color.Transparent;
+            this.PanelBase.Location = new System.Drawing.Point(0, 25);
+            this.PanelBase.Name = "PanelBase";
+            this.PanelBase.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PanelBase.Size = new System.Drawing.Size(1377, 681);
+            this.PanelBase.TabIndex = 2;
+            // 
+            // LogoLocal
+            // 
+            this.LogoLocal.Image = global::ActivoFijo.Properties.Resources.logo_pirata;
+            this.LogoLocal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LogoLocal.Location = new System.Drawing.Point(1095, 84);
+            this.LogoLocal.Name = "LogoLocal";
+            this.LogoLocal.Size = new System.Drawing.Size(231, 273);
+            this.LogoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoLocal.TabIndex = 6;
+            this.LogoLocal.TabStop = false;
+            // 
+            // LogoEstatal
+            // 
+            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources._7da9c795_1ecb_4dd7_ba41_298ad0ca7a56;
+            this.LogoEstatal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LogoEstatal.Location = new System.Drawing.Point(1031, 381);
+            this.LogoEstatal.Name = "LogoEstatal";
+            this.LogoEstatal.Size = new System.Drawing.Size(346, 273);
+            this.LogoEstatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoEstatal.TabIndex = 5;
+            this.LogoEstatal.TabStop = false;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 745);
+            this.ClientSize = new System.Drawing.Size(1362, 857);
             this.Controls.Add(this.LogoLocal);
             this.Controls.Add(this.LogoEstatal);
             this.Controls.Add(this.PanelBase);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximumSize = new System.Drawing.Size(1382, 900);
-            this.MinimumSize = new System.Drawing.Size(1364, 726);
+            this.MinimumSize = new System.Drawing.Size(1382, 900);
             this.Name = "Inicio";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
