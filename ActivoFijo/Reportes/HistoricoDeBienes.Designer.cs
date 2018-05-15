@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoricoDeBienes));
             this.Etiqueta = new System.Windows.Forms.ComboBox();
             this.GridHistorico = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -98,6 +99,7 @@
             this.ClientSize = new System.Drawing.Size(507, 350);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HistoricoDeBienes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

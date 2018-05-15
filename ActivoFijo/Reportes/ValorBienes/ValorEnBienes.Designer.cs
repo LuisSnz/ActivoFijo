@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ValorEnBienes));
             this.Total = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Buscar = new System.Windows.Forms.ToolStripButton();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GridCosto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ValorEnBienes";
             this.Text = "Valor En Bienes";
             this.Load += new System.EventHandler(this.ValorEnBienes_Load);

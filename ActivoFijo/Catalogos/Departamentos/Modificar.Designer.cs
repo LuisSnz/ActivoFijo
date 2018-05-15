@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modificar));
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboSubD = new System.Windows.Forms.ComboBox();
             this.comboArea = new System.Windows.Forms.ComboBox();
@@ -152,6 +153,7 @@
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Guardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Modificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

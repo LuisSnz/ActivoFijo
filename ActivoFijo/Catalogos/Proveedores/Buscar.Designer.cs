@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarProveedores));
             this.MostrarTodo = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
             this.Buscar = new System.Windows.Forms.Button();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.Buscar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BuscarProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
