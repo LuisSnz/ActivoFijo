@@ -23,7 +23,7 @@ namespace ActivoFijo.Reportes.ValorBienes
             label1.Location = new Point(20, Clases.Variables.GridHeight + 30);
             Total.Location = new Point(140, Clases.Variables.GridHeight + 30);
             Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, dbo.CatArticulos.Descripcion AS Articulo," +
-               "Familia.Descripcion as Familia, empleados.Nombre AS Empleado,bienes.Total " +
+               "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.Total " +
                "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                "CatArticulos.IdFamilia = Familia.Id";
@@ -49,6 +49,8 @@ namespace ActivoFijo.Reportes.ValorBienes
                     x = x + float.Parse(row.Cells[4].Value.ToString());
                 }
                 Total.Text = x.ToString("C");
+                Clases.Variables.Total = Total.Text;
+
             }
         }
 

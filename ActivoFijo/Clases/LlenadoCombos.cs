@@ -291,6 +291,7 @@ namespace ActivoFijo.Clases
                 {
                     float x = float.Parse(dr["Total"].ToString());
                     Total.Text = x.ToString("C");
+                    Clases.Variables.Total = Total.Text;
                 }
                 cn.Close();
             }

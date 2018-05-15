@@ -64,7 +64,7 @@ namespace ActivoFijo.Catalogos.Empleados
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
+            Confirmar confirmacion = new Confirmar();
             confirmacion.ShowDialog();
             if (confirmacion.DialogResult == DialogResult.OK)
             {
