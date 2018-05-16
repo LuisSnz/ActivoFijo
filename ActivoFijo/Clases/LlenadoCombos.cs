@@ -561,6 +561,26 @@ namespace ActivoFijo.Clases
                 MessageBox.Show("Error al llenar :" + ex.ToString());
             }
         }
+        public static void CBNombreSB(ComboBox CB)
+        {
+            try
+            {
+                cn.Open();
+                cmd = new SqlCommand("select Nombre from empleados where Baja=0 order by nombre", cn);
+                dr = cmd.ExecuteReader();
+                CB.Items.Clear();
+                CB.Text = "";
+                while (dr.Read())
+                {
+                    CB.Items.Add(dr["Nombre"].ToString());
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+        }
     }
 
     class Proveedores

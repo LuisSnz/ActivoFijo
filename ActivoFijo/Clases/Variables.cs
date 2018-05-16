@@ -96,5 +96,13 @@ namespace ActivoFijo.Clases
         public static int GridHeight;
         //Reportes
         public static string Total;
+        //Cambio Por Bien
+        public static string IdCambio;
+        public static string EtiquetaCambio;
+        public static string OrdenCambio;
+        public static string ArticuloCambio;
+        public static string ObservacionesCambio;
+        public static string ResguardoCambio;
+        public static string DeptoCambio;
     }
 }

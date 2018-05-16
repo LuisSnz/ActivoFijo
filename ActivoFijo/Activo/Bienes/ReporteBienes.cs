@@ -20,6 +20,7 @@ namespace ActivoFijo.Activo.Bienes
 
         private void ReporteBienes_Load(object sender, EventArgs e)
         {
+            this.reportViewer1.RefreshReport();
             ReportParameter[] reporte = new ReportParameter[10];
             reporte[0] = new ReportParameter("id", Clases.Variables.IdBienes);
             reporte[1] = new ReportParameter("Etiqueta", Clases.Variables.BienesEtiqueta);

@@ -15,7 +15,7 @@ namespace ActivoFijo.Activo.BienesSF
         private void NuevoBienesSF_Load(object sender, EventArgs e)
         {
             llenaretiqueta();
-            Clases.Empleados.CBNombre(CBEmpleado);
+            Clases.Empleados.CBNombreSB(CBEmpleado);
             Clases.Articulos.CBBuscarArticulo(CBArticulo);
             Clases.Bienes.CBMarca(CBMarca);
             Clases.Bienes.CBProveedor(CBProveedor);
