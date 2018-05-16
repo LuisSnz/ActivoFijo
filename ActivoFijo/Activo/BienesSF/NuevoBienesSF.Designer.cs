@@ -143,7 +143,7 @@
             // LBRFC
             // 
             this.LBRFC.AutoSize = true;
-            this.LBRFC.BackColor = System.Drawing.Color.White;
+            this.LBRFC.BackColor = System.Drawing.Color.WhiteSmoke;
             this.LBRFC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBRFC.ForeColor = System.Drawing.Color.MediumBlue;
             this.LBRFC.Location = new System.Drawing.Point(116, 77);
@@ -154,7 +154,7 @@
             // LBDomicilio
             // 
             this.LBDomicilio.AutoSize = true;
-            this.LBDomicilio.BackColor = System.Drawing.Color.White;
+            this.LBDomicilio.BackColor = System.Drawing.Color.WhiteSmoke;
             this.LBDomicilio.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBDomicilio.ForeColor = System.Drawing.Color.MediumBlue;
             this.LBDomicilio.Location = new System.Drawing.Point(115, 46);
@@ -165,6 +165,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(61, 77);
             this.label19.Name = "label19";
@@ -175,6 +176,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(30, 46);
             this.label18.Name = "label18";
@@ -299,7 +301,7 @@
             // LBFamilia
             // 
             this.LBFamilia.AutoSize = true;
-            this.LBFamilia.BackColor = System.Drawing.Color.White;
+            this.LBFamilia.BackColor = System.Drawing.Color.WhiteSmoke;
             this.LBFamilia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBFamilia.ForeColor = System.Drawing.Color.MediumBlue;
             this.LBFamilia.Location = new System.Drawing.Point(121, 39);
@@ -360,6 +362,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(52, 39);
             this.label13.Name = "label13";
@@ -393,7 +396,7 @@
             // LBDepartamento
             // 
             this.LBDepartamento.AutoSize = true;
-            this.LBDepartamento.BackColor = System.Drawing.Color.White;
+            this.LBDepartamento.BackColor = System.Drawing.Color.WhiteSmoke;
             this.LBDepartamento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBDepartamento.ForeColor = System.Drawing.Color.MediumBlue;
             this.LBDepartamento.Location = new System.Drawing.Point(116, 52);
@@ -416,6 +419,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(5, 52);
             this.label7.Name = "label7";
@@ -491,6 +495,7 @@
             this.TBNoOrden.Name = "TBNoOrden";
             this.TBNoOrden.Size = new System.Drawing.Size(127, 24);
             this.TBNoOrden.TabIndex = 9;
+            this.TBNoOrden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBNoOrden_KeyPress);
             // 
             // label5
             // 

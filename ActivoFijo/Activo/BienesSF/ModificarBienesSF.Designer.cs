@@ -113,6 +113,7 @@
             this.Articulo.Name = "Articulo";
             this.Articulo.Size = new System.Drawing.Size(488, 25);
             this.Articulo.TabIndex = 15;
+            this.Articulo.SelectedIndexChanged += new System.EventHandler(this.Articulo_SelectedIndexChanged);
             // 
             // Color
             // 
@@ -310,6 +311,7 @@
             this.Proveedor.Name = "Proveedor";
             this.Proveedor.Size = new System.Drawing.Size(471, 25);
             this.Proveedor.TabIndex = 17;
+            this.Proveedor.SelectedIndexChanged += new System.EventHandler(this.Proveedor_SelectedIndexChanged);
             // 
             // RFC
             // 
@@ -406,6 +408,7 @@
             this.Orden.Name = "Orden";
             this.Orden.Size = new System.Drawing.Size(263, 25);
             this.Orden.TabIndex = 5;
+            this.Orden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Orden_KeyPress);
             // 
             // label2
             // 
