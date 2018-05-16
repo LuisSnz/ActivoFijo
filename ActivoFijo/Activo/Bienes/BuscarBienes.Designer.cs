@@ -71,7 +71,6 @@
             // Buscar
             // 
             this.Buscar.BackColor = System.Drawing.Color.White;
-            this.Buscar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Buscar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Buscar.Location = new System.Drawing.Point(12, 214);
             this.Buscar.Name = "Buscar";
