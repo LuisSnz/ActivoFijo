@@ -21,7 +21,7 @@ namespace ActivoFijo.Activo.Bienes
         private void NuevoBienes_Load(object sender, EventArgs e)
         {
             llenaretiqueta();
-            Clases.Empleados.CBNombre(CBEmpleado);
+            Clases.Empleados.CBNombreSB(CBEmpleado);
             Clases.Articulos.CBBuscarArticulo(CBArticulo);
             Clases.Bienes.CBMarca(CBMarca);
             Clases.Bienes.CBProveedor(CBProveedor);

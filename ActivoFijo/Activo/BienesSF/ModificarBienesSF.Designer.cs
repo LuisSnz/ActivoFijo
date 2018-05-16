@@ -445,6 +445,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ModificarBienesSF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Bien Sin Factura";
             this.Load += new System.EventHandler(this.ModificarBienesSF_Load);
             this.panel2.ResumeLayout(false);

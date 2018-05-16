@@ -20,13 +20,13 @@ namespace ActivoFijo.Activo.CambioBienes
 
         private void CambioPorBien_Load(object sender, EventArgs e)
         {
-            LBId.Text = Clases.Variables.IdBienes;
-            LBEtiqueta.Text = Clases.Variables.BienesEtiqueta;
-            LBOrdenCompra.Text = Clases.Variables.BienesOrdenCompra;
-            TBArticulo.Text = Clases.Variables.BienesDescripcionArticulo;
-            TBObservaciones.Text = Clases.Variables.BienesObservacion;
-            TBResguardoA.Text = Clases.Variables.BienesEmpleado;
-            TBDepartamentoA.Text = Clases.Variables.BienesDepartamento;
+            LBId.Text = Clases.Variables.IdCambio;
+            LBEtiqueta.Text = Clases.Variables.EtiquetaCambio;
+            LBOrdenCompra.Text = Clases.Variables.OrdenCambio;
+            TBArticulo.Text = Clases.Variables.ArticuloCambio;
+            TBObservaciones.Text = Clases.Variables.ObservacionesCambio;
+            TBResguardoA.Text = Clases.Variables.ResguardoCambio;
+            TBDepartamentoA.Text = Clases.Variables.DeptoCambio;
             Clases.Bienes.CBCambio(CBNuevoResguardo);
         }
 

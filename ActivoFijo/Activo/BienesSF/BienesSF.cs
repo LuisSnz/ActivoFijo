@@ -83,10 +83,18 @@ namespace ActivoFijo.Activo.BienesSF
         {
             CambioBienes.CambioPorEmpleado cambio =new CambioBienes.CambioPorEmpleado();
             cambio.ShowDialog();
+            Clases.LLenadoGrids.llenarGrid(GridBienesSF, Clases.Variables.ConsultaBuscar, "bienes");
         }
 
         private void CambioDeBien_Click(object sender, EventArgs e)
         {
+            Clases.Variables.IdCambio = Clases.Variables.IdBienesSF;
+            Clases.Variables.EtiquetaCambio = Clases.Variables.BienesSFEtiqueta;
+            Clases.Variables.OrdenCambio = Clases.Variables.BienesSFOrdenCompra;
+            Clases.Variables.ArticuloCambio = Clases.Variables.BienesSFDescripcionArticulo;
+            Clases.Variables.ObservacionesCambio = Clases.Variables.BienesSFObservacion;
+            Clases.Variables.ResguardoCambio = Clases.Variables.BienesSFEmpleado;
+            Clases.Variables.DeptoCambio = Clases.Variables.BienesSFDepartamento;
             CambioBienes.CambioPorBien cambio =new CambioBienes.CambioPorBien();
             cambio.ShowDialog();
             Clases.LLenadoGrids.llenarGrid(GridBienesSF, Clases.Variables.ConsultaBuscar, "bienes");
