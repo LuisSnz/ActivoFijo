@@ -135,7 +135,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Aceptar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ConfImpresora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conf_Impresora";
