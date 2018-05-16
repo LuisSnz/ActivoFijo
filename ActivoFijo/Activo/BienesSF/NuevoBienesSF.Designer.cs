@@ -492,6 +492,7 @@
             this.TBNoOrden.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBNoOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBNoOrden.Location = new System.Drawing.Point(113, 36);
+            this.TBNoOrden.MaxLength = 30;
             this.TBNoOrden.Name = "TBNoOrden";
             this.TBNoOrden.Size = new System.Drawing.Size(127, 24);
             this.TBNoOrden.TabIndex = 9;
