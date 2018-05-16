@@ -117,7 +117,6 @@ namespace ActivoFijo.Activo.BienesSF
                 var con = 0;
                 if (CHConsumible.Checked == true)
                     con = 1;
-                var creador = "DANIEL";
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "Insert Into bienes (Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
                     "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
@@ -127,7 +126,7 @@ namespace ActivoFijo.Activo.BienesSF
                     + CBEmpleado.SelectedItem + "'),(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')" +
                     ",(convert(datetime,'" + TimeFecha.Text + "')),0,(select top 1 id from marca where descripcion='" + CBMarca.SelectedItem + "')," +
                     "'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text + "',0," + con + ",'" + CBConservacion.SelectedItem + "','"
-                    + creador + "')";
+                    + Clases.Variables.Usuario + "')";
                 try
                 {
                     SqlConnection conn = new SqlConnection(ConnString);
