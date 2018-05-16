@@ -115,7 +115,7 @@ namespace ActivoFijo.Activo.Bienes
             }
             else
             {
-                MessageBox.Show("Seleccione un valor a buscar");
+                MessageBox.Show("Seleccione un valor valido a buscar");
             }
         }
 
