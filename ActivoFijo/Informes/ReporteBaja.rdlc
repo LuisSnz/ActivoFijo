@@ -332,7 +332,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Empleado1">
+                    <Textbox Name="Empleado">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -349,7 +349,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Empleado1</rd:DefaultName>
+                      <rd:DefaultName>Empleado</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -919,7 +919,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Datos</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Eduardo\Documents\ActivoFijo\ActivoFijo\Datos.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Luis Saenz\Documents\ActivoFijo\ActivoFijo\ActivoFijo\Datos.xsd</rd:SchemaPath>
         <rd:TableName>BajaBienes</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -927,10 +927,6 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Code>System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-privateFonts.AddFontFile("C:\\code128.ttf");
-System.Drawing.Font font = new Font(privateFonts.Families[0], 12);
-TextBox2.Font = font;</Code>
   <EmbeddedImages>
     <EmbeddedImage Name="logopirata">
       <MIMEType>image/png</MIMEType>

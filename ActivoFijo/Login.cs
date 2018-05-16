@@ -70,7 +70,7 @@ namespace ActivoFijo
 
         private void Iniciar_Click(object sender, EventArgs e)
         {
-            Clases.Variables.Usuario = Usuario.Text;
+            Clases.Variables.Usuario = Usuario.Text.ToUpper();
             Clases.Variables.Contraseña = Contraseña.Text;
             int resultado = Clases.Login.Validacion();
             if (resultado == 1)
