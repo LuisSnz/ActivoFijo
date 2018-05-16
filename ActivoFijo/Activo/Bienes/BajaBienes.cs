@@ -83,6 +83,24 @@ namespace ActivoFijo.Activo.Bienes
                     MessageBox.Show("Error al dar de baja el bien: \n" + ex.ToString());
                 }
             }
+            SqlString = "Delete from bienes where Etiqueta=" + Etiqueta.Text;
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConnString);
+                SqlCommand cmd = new SqlCommand(SqlString, conn);
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("La baja se realizo de manera correcta.");
+                this.Close();
+                this.DialogResult = DialogResult.OK;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al dar de baja el bien: \n" + ex.ToString());
+            }
         }
 
         private void Cancelar_Click(object sender, EventArgs e)

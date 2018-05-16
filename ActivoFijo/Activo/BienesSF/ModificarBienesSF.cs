@@ -68,5 +68,70 @@ namespace ActivoFijo.Activo.BienesSF
         {
             this.Close();
         }
+
+        private void Orden_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Articulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand cmd;
+            SqlDataReader dr;
+            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new SqlCommand("select Familia.Descripcion as familia from CatArticulos,Familia where Familia.Id=CatArticulos.IdFamilia and CatArticulos.Descripcion='" + Articulo.SelectedItem + "'", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Familia.Text = dr["familia"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+        }
+
+        private void Proveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand cmd;
+            SqlDataReader dr;
+            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new SqlCommand("select direccion,rfc from proveedores where Nombre='" + Proveedor.SelectedItem + "'", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Domicilio.Text = dr["direccion"].ToString();
+                    RFC.Text = dr["rfc"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+        }
     }
 }
