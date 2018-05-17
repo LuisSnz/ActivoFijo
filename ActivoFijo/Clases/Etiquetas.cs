@@ -73,7 +73,6 @@ namespace ActivoFijo.Clases
                 while ((line = sr.ReadLine()) != null)
                 {
                     Clases.Variables.ConfImpresora = line;
-                    sr.ReadLine();
                 }
                 sr.Close();
             }

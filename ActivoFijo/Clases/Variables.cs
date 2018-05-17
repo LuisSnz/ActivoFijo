@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
+using System.Reflection;
 namespace ActivoFijo.Clases
 {
     class Variables
     {
+        
         //String de conexion a la base de datos
-        public static string scon = ("Data Source=.;Initial Catalog=ActivoJcas;User ID=JMAS;Password=qwerty");
+        //public static string scon = ("Data Source=.;Initial Catalog=ActivoJcas;User ID=JMAS;Password=qwerty");
+        public static string scon;
         //Variable de busqueda de grid
         public static string ConsultaBuscar;
         //familias

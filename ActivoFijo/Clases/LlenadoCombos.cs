@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Reflection;
 
 namespace ActivoFijo.Clases
 {
@@ -809,15 +811,30 @@ namespace ActivoFijo.Clases
 
     class Login
     {
-        public static SqlCommand cmd;
-        public static SqlDataReader dr;
-        public static string conexion = Clases.Variables.scon;
-        public static SqlConnection cn = new SqlConnection(conexion);
+        
 
+        public static void SconBD()
+        {
+            String line;
+            string ruta = Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName;
+            var recurso = "ConfigurarBD.txt";
+            string archivo = Path.Combine(ruta, recurso);
+            StreamReader sr = new StreamReader(archivo);
+            while ((line = sr.ReadLine()) != null)
+            {
+                Variables.scon = line;
+            }
+            sr.Close();
+        }
         public static int Validacion()
         {
             try
             {
+                SconBD();
+                SqlCommand cmd;
+                SqlDataReader dr;
+                string conexion = Clases.Variables.scon;
+                SqlConnection cn = new SqlConnection(conexion);
                 cn.Open();
                 cmd = new SqlCommand("select Usuario, Password from Usuarios where Usuario='"+Variables.Usuario+
                     "' and Password='"+Variables.Contraseña+"'", cn);
