@@ -56,6 +56,7 @@
             this.PanelBase = new System.Windows.Forms.Panel();
             this.LogoLocal = new System.Windows.Forms.PictureBox();
             this.LogoEstatal = new System.Windows.Forms.PictureBox();
+            this.conexionDeBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEstatal)).BeginInit();
@@ -239,7 +240,8 @@
             // 
             this.Configuracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ConfigurarImpresora,
-            this.suariosToolStripMenuItem});
+            this.suariosToolStripMenuItem,
+            this.conexionDeBDToolStripMenuItem});
             this.Configuracion.Image = global::ActivoFijo.Properties.Resources.configuracion;
             this.Configuracion.Name = "Configuracion";
             this.Configuracion.Size = new System.Drawing.Size(118, 21);
@@ -310,6 +312,14 @@
             this.LogoEstatal.TabIndex = 5;
             this.LogoEstatal.TabStop = false;
             // 
+            // conexionDeBDToolStripMenuItem
+            // 
+            this.conexionDeBDToolStripMenuItem.Image = global::ActivoFijo.Properties.Resources.bd;
+            this.conexionDeBDToolStripMenuItem.Name = "conexionDeBDToolStripMenuItem";
+            this.conexionDeBDToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.conexionDeBDToolStripMenuItem.Text = "Conexion de BD";
+            this.conexionDeBDToolStripMenuItem.Click += new System.EventHandler(this.conexionDeBDToolStripMenuItem_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +377,7 @@
         private System.Windows.Forms.ToolStripMenuItem suariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem conexionDeBDToolStripMenuItem;
     }
 }
 
