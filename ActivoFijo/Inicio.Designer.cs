@@ -270,7 +270,7 @@
             this.nuevoUsuarioToolStripMenuItem1.Image = global::ActivoFijo.Properties.Resources.usuario;
             this.nuevoUsuarioToolStripMenuItem1.Name = "nuevoUsuarioToolStripMenuItem1";
             this.nuevoUsuarioToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
-            this.nuevoUsuarioToolStripMenuItem1.Text = "Nuevo usuario";
+            this.nuevoUsuarioToolStripMenuItem1.Text = "Lista de Usuarios";
             this.nuevoUsuarioToolStripMenuItem1.Click += new System.EventHandler(this.nuevoUsuarioToolStripMenuItem1_Click);
             // 
             // cambiarContraseñaToolStripMenuItem1
