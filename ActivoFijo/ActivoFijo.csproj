@@ -205,6 +205,12 @@
     <Compile Include="Auxiliares\Confirmacion.Designer.cs">
       <DependentUpon>Confirmacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Auxiliares\ConfirmacionBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliares\ConfirmacionBD.Designer.cs">
+      <DependentUpon>ConfirmacionBD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Areas\Areas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -523,6 +529,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Auxiliares\Confirmacion.resx">
       <DependentUpon>Confirmacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auxiliares\ConfirmacionBD.resx">
+      <DependentUpon>ConfirmacionBD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Areas\Areas.resx">
       <DependentUpon>Areas.cs</DependentUpon>

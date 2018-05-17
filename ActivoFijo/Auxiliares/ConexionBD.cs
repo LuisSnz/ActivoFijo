@@ -60,15 +60,20 @@ namespace ActivoFijo.Auxiliares
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            string ruta = Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName;
-            var recurso = "ConfigurarBD.txt";
-            string archivo = Path.Combine(ruta, recurso);
-            string texto = ConBD.Text;
-            StreamWriter writer = new StreamWriter(archivo);
-            writer.Write(texto);
-            writer.Close();
-            MessageBox.Show("Cadena configurada correctamente");
-            this.Close();
+            Auxiliares.ConfirmacionBD confirmacionBD = new ConfirmacionBD();
+            confirmacionBD.ShowDialog();
+            if (confirmacionBD.DialogResult == DialogResult.OK)
+            {
+                string ruta = Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName;
+                var recurso = "ConfigurarBD.txt";
+                string archivo = Path.Combine(ruta, recurso);
+                string texto = ConBD.Text;
+                StreamWriter writer = new StreamWriter(archivo);
+                writer.Write(texto);
+                writer.Close();
+                MessageBox.Show("Cadena configurada correctamente");
+                Application.Restart();
+            }
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
