@@ -141,5 +141,17 @@ namespace ActivoFijo
             Auxiliares.ConfImpresora confImpresora = new Auxiliares.ConfImpresora();
             confImpresora.ShowDialog();
         }
+
+        private void nuevoUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Usuarios.NuevoUsuario Nuevo = new Usuarios.NuevoUsuario();
+            Nuevo.ShowDialog();
+        }
+
+        private void cambiarContraseñaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Usuarios.Contraseña cambio = new Usuarios.Contraseña();
+            cambio.ShowDialog();
+        }
     }
 }

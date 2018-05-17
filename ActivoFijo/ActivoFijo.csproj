@@ -437,6 +437,18 @@
       <DependentUpon>ValorEnBienes.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Usuarios\Contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Contraseña.Designer.cs">
+      <DependentUpon>Contraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\NuevoUsuario.Designer.cs">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Activo\BienesBaja\BienesDadosDeBaja.resx">
       <DependentUpon>BienesDadosDeBaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -629,6 +641,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ValorBienes\ValorEnBienes.resx">
       <DependentUpon>ValorEnBienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Contraseña.resx">
+      <DependentUpon>Contraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\NuevoUsuario.resx">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Datos.xsc">
       <DependentUpon>Datos.xsd</DependentUpon>

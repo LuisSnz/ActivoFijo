@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.PanelBase = new System.Windows.Forms.Panel();
+            this.LogoLocal = new System.Windows.Forms.PictureBox();
+            this.LogoEstatal = new System.Windows.Forms.PictureBox();
             this.Catalogos = new System.Windows.Forms.ToolStripMenuItem();
             this.Areas = new System.Windows.Forms.ToolStripMenuItem();
             this.SubDirecciones = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,9 +53,9 @@
             this.ValorBienes = new System.Windows.Forms.ToolStripMenuItem();
             this.Configuracion = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigurarImpresora = new System.Windows.Forms.ToolStripMenuItem();
-            this.PanelBase = new System.Windows.Forms.Panel();
-            this.LogoLocal = new System.Windows.Forms.PictureBox();
-            this.LogoEstatal = new System.Windows.Forms.PictureBox();
+            this.suariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoUsuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarContraseñaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEstatal)).BeginInit();
@@ -72,6 +75,37 @@
             this.menuStrip1.Size = new System.Drawing.Size(1362, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // PanelBase
+            // 
+            this.PanelBase.BackColor = System.Drawing.Color.Transparent;
+            this.PanelBase.Location = new System.Drawing.Point(0, 25);
+            this.PanelBase.Name = "PanelBase";
+            this.PanelBase.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PanelBase.Size = new System.Drawing.Size(1377, 681);
+            this.PanelBase.TabIndex = 2;
+            // 
+            // LogoLocal
+            // 
+            this.LogoLocal.Image = global::ActivoFijo.Properties.Resources.logo_pirata;
+            this.LogoLocal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LogoLocal.Location = new System.Drawing.Point(1095, 84);
+            this.LogoLocal.Name = "LogoLocal";
+            this.LogoLocal.Size = new System.Drawing.Size(231, 273);
+            this.LogoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoLocal.TabIndex = 6;
+            this.LogoLocal.TabStop = false;
+            // 
+            // LogoEstatal
+            // 
+            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources._7da9c795_1ecb_4dd7_ba41_298ad0ca7a56;
+            this.LogoEstatal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LogoEstatal.Location = new System.Drawing.Point(1031, 381);
+            this.LogoEstatal.Name = "LogoEstatal";
+            this.LogoEstatal.Size = new System.Drawing.Size(346, 273);
+            this.LogoEstatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoEstatal.TabIndex = 5;
+            this.LogoEstatal.TabStop = false;
             // 
             // Catalogos
             // 
@@ -235,7 +269,8 @@
             // Configuracion
             // 
             this.Configuracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ConfigurarImpresora});
+            this.ConfigurarImpresora,
+            this.suariosToolStripMenuItem});
             this.Configuracion.Image = global::ActivoFijo.Properties.Resources.configuracion;
             this.Configuracion.Name = "Configuracion";
             this.Configuracion.Size = new System.Drawing.Size(118, 21);
@@ -249,36 +284,31 @@
             this.ConfigurarImpresora.Text = "Impresora de Etiquetas";
             this.ConfigurarImpresora.Click += new System.EventHandler(this.ConfigurarImpresora_Click);
             // 
-            // PanelBase
+            // suariosToolStripMenuItem
             // 
-            this.PanelBase.BackColor = System.Drawing.Color.Transparent;
-            this.PanelBase.Location = new System.Drawing.Point(0, 25);
-            this.PanelBase.Name = "PanelBase";
-            this.PanelBase.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PanelBase.Size = new System.Drawing.Size(1377, 681);
-            this.PanelBase.TabIndex = 2;
+            this.suariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoUsuarioToolStripMenuItem1,
+            this.cambiarContraseñaToolStripMenuItem1});
+            this.suariosToolStripMenuItem.Image = global::ActivoFijo.Properties.Resources.subdirecciones;
+            this.suariosToolStripMenuItem.Name = "suariosToolStripMenuItem";
+            this.suariosToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.suariosToolStripMenuItem.Text = "Usuarios";
             // 
-            // LogoLocal
+            // nuevoUsuarioToolStripMenuItem1
             // 
-            this.LogoLocal.Image = global::ActivoFijo.Properties.Resources.logo_pirata;
-            this.LogoLocal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogoLocal.Location = new System.Drawing.Point(1095, 84);
-            this.LogoLocal.Name = "LogoLocal";
-            this.LogoLocal.Size = new System.Drawing.Size(231, 273);
-            this.LogoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoLocal.TabIndex = 6;
-            this.LogoLocal.TabStop = false;
+            this.nuevoUsuarioToolStripMenuItem1.Image = global::ActivoFijo.Properties.Resources.usuario;
+            this.nuevoUsuarioToolStripMenuItem1.Name = "nuevoUsuarioToolStripMenuItem1";
+            this.nuevoUsuarioToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
+            this.nuevoUsuarioToolStripMenuItem1.Text = "Nuevo usuario";
+            this.nuevoUsuarioToolStripMenuItem1.Click += new System.EventHandler(this.nuevoUsuarioToolStripMenuItem1_Click);
             // 
-            // LogoEstatal
+            // cambiarContraseñaToolStripMenuItem1
             // 
-            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources._7da9c795_1ecb_4dd7_ba41_298ad0ca7a56;
-            this.LogoEstatal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogoEstatal.Location = new System.Drawing.Point(1031, 381);
-            this.LogoEstatal.Name = "LogoEstatal";
-            this.LogoEstatal.Size = new System.Drawing.Size(346, 273);
-            this.LogoEstatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoEstatal.TabIndex = 5;
-            this.LogoEstatal.TabStop = false;
+            this.cambiarContraseñaToolStripMenuItem1.Image = global::ActivoFijo.Properties.Resources.password;
+            this.cambiarContraseñaToolStripMenuItem1.Name = "cambiarContraseñaToolStripMenuItem1";
+            this.cambiarContraseñaToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
+            this.cambiarContraseñaToolStripMenuItem1.Text = "Cambiar Contraseña";
+            this.cambiarContraseñaToolStripMenuItem1.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem1_Click);
             // 
             // Inicio
             // 
@@ -334,6 +364,9 @@
         private System.Windows.Forms.Panel PanelBase;
         private System.Windows.Forms.PictureBox LogoLocal;
         private System.Windows.Forms.PictureBox LogoEstatal;
+        private System.Windows.Forms.ToolStripMenuItem suariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem1;
     }
 }
 
