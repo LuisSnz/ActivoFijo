@@ -143,6 +143,16 @@ namespace ActivoFijo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bd {
+            get {
+                object obj = ResourceManager.GetObject("bd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bienes {
             get {
                 object obj = ResourceManager.GetObject("bienes", resourceCulture);

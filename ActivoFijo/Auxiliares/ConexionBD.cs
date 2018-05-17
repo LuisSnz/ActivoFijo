@@ -12,18 +12,19 @@ using System.Reflection;
 
 namespace ActivoFijo.Auxiliares
 {
-    public partial class ConfImpresora : Form
+    public partial class ConexionBD : Form
     {
-        public ConfImpresora()
+        public ConexionBD()
         {
             InitializeComponent();
         }
 
-        private void ConfImpresora_Load(object sender, EventArgs e)
+
+        private void ConexionBD_Load(object sender, EventArgs e)
         {
             String line;
             string ruta = Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName;
-            var recurso = "ConfigurarImpresora.txt";
+            var recurso = "ConfigurarBD.txt";
             string archivo = Path.Combine(ruta, recurso);
 
             if (File.Exists(archivo))
@@ -34,7 +35,7 @@ namespace ActivoFijo.Auxiliares
 
                     while ((line = sr.ReadLine()) != null)
                     {
-                        ConImpresora.Text = line;
+                        ConBD.Text = line;
                     }
                     sr.Close();
                 }
@@ -49,13 +50,6 @@ namespace ActivoFijo.Auxiliares
                 {
                     FileStream file = File.Create(archivo);
                     file.Close();
-                    StreamReader sr = new StreamReader(archivo);
-
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        ConImpresora.Text = line;
-                    }
-                    sr.Close();
                 }
                 catch (Exception ex)
                 {
@@ -67,15 +61,14 @@ namespace ActivoFijo.Auxiliares
         private void Aceptar_Click(object sender, EventArgs e)
         {
             string ruta = Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName;
-            var recurso = "ConfigurarImpresora.txt";
+            var recurso = "ConfigurarBD.txt";
             string archivo = Path.Combine(ruta, recurso);
-            string texto = ConImpresora.Text;
+            string texto = ConBD.Text;
             StreamWriter writer = new StreamWriter(archivo);
             writer.Write(texto);
             writer.Close();
-            MessageBox.Show("Impresora configurada correctamente");
+            MessageBox.Show("Cadena configurada correctamente");
             this.Close();
-
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
