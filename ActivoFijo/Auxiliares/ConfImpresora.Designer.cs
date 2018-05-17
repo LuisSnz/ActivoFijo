@@ -140,7 +140,7 @@
             this.MaximizeBox = false;
             this.Name = "ConfImpresora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Conf_Impresora";
+            this.Text = "Configurar Impresora";
             this.Load += new System.EventHandler(this.ConfImpresora_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

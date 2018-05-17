@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contraseña));
             this.panel1 = new System.Windows.Forms.Panel();
             this.XNueva = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -155,6 +156,7 @@
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Guardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Contraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

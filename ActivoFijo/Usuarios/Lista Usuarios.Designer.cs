@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lista_Usuarios));
             this.GridUsuarios = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Nuevo = new System.Windows.Forms.ToolStripButton();
@@ -83,6 +84,7 @@
             this.Controls.Add(this.GridUsuarios);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Lista_Usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
