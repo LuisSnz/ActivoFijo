@@ -420,7 +420,7 @@
             this.Orden.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Orden.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Orden.Location = new System.Drawing.Point(107, 6);
-            this.Orden.MaxLength = 250;
+            this.Orden.MaxLength = 30;
             this.Orden.Name = "Orden";
             this.Orden.Size = new System.Drawing.Size(300, 25);
             this.Orden.TabIndex = 5;

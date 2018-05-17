@@ -73,11 +73,12 @@ namespace ActivoFijo
         {
             if (Usuario.Text.Length > 0 && Contraseña.Text.Length > 0 && Usuario.Text!="Usuario" && Contraseña.Text!="Contraseña")
             {
-                Clases.Variables.Usuario = Usuario.Text;
-                Clases.Variables.Contraseña = Contraseña.Text;
-                int resultado = Clases.Login.Validacion();
-                if (resultado == 1)
-                {
+            Clases.Variables.Usuario = Usuario.Text.ToUpper();
+            Clases.Variables.Contraseña = Contraseña.Text;
+            int resultado = Clases.Login.Validacion();
+            if (resultado == 1)
+            {
+                
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -87,6 +88,7 @@ namespace ActivoFijo
                 }
                 else
                     MessageBox.Show("Error del servidor, porfavor veerifique su conexion al servidor.");
+            
             }
             else
             {
