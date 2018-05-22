@@ -48,8 +48,8 @@ namespace ActivoFijo.Catalogos.Empleados
             Clases.Variables.EmpleadosNumJefe = filaSeleccionada.Cells[6].Value.ToString();
             Clases.Variables.EmpleadosBaja = filaSeleccionada.Cells[7].Value.ToString();
             Clases.Variables.EmpleadosNombreP = filaSeleccionada.Cells[8].Value.ToString();
-            Clases.Variables.EmpleadosPliegos = filaSeleccionada.Cells[10].Value.ToString();
-            Clases.Variables.EmpleadosNoPliegos = filaSeleccionada.Cells[11].Value.ToString();
+            Clases.Variables.EmpleadosPliegos = filaSeleccionada.Cells[9].Value.ToString();
+            Clases.Variables.EmpleadosNoPliegos = filaSeleccionada.Cells[10].Value.ToString();
         }
 
         private void Empleados_Load(object sender, EventArgs e)
