@@ -106,12 +106,13 @@
             this.CHArticuloContrato.AutoSize = true;
             this.CHArticuloContrato.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CHArticuloContrato.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHArticuloContrato.Location = new System.Drawing.Point(27, 266);
+            this.CHArticuloContrato.Location = new System.Drawing.Point(27, 262);
             this.CHArticuloContrato.Name = "CHArticuloContrato";
             this.CHArticuloContrato.Size = new System.Drawing.Size(246, 21);
             this.CHArticuloContrato.TabIndex = 11;
             this.CHArticuloContrato.Text = "Articulo solo para uso de un Contrato";
             this.CHArticuloContrato.UseVisualStyleBackColor = true;
+            this.CHArticuloContrato.CheckedChanged += new System.EventHandler(this.CHArticuloContrato_CheckedChanged);
             // 
             // label8
             // 
@@ -134,6 +135,7 @@
             this.CHBInventariable.TabIndex = 10;
             this.CHBInventariable.Text = "Inventariable";
             this.CHBInventariable.UseVisualStyleBackColor = true;
+            this.CHBInventariable.CheckedChanged += new System.EventHandler(this.CHBInventariable_CheckedChanged);
             // 
             // CBMedida
             // 
