@@ -32,10 +32,10 @@
             this.Cancelar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CBFamilia = new System.Windows.Forms.ComboBox();
             this.CHArticuloContrato = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.CHBInventariable = new System.Windows.Forms.CheckBox();
+            this.CBFamilia = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.CBMedida = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.CBArticulo = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,7 @@
             // 
             this.Cancelar.BackColor = System.Drawing.Color.White;
             this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(291, 352);
+            this.Cancelar.Location = new System.Drawing.Point(302, 341);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(107, 30);
             this.Cancelar.TabIndex = 21;
@@ -62,7 +62,7 @@
             // 
             this.Guardar.BackColor = System.Drawing.Color.White;
             this.Guardar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Guardar.Location = new System.Drawing.Point(73, 352);
+            this.Guardar.Location = new System.Drawing.Point(80, 341);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(107, 30);
             this.Guardar.TabIndex = 20;
@@ -74,10 +74,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.CBFamilia);
             this.panel1.Controls.Add(this.CHArticuloContrato);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.CHBInventariable);
+            this.panel1.Controls.Add(this.CBFamilia);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.CBMedida);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.CBArticulo);
@@ -87,8 +87,36 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(15, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 311);
+            this.panel1.Size = new System.Drawing.Size(460, 304);
             this.panel1.TabIndex = 19;
+            // 
+            // CHArticuloContrato
+            // 
+            this.CHArticuloContrato.AutoSize = true;
+            this.CHArticuloContrato.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CHArticuloContrato.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CHArticuloContrato.Location = new System.Drawing.Point(27, 259);
+            this.CHArticuloContrato.Name = "CHArticuloContrato";
+            this.CHArticuloContrato.Size = new System.Drawing.Size(246, 21);
+            this.CHArticuloContrato.TabIndex = 13;
+            this.CHArticuloContrato.Text = "Articulo solo para uso de un Contrato";
+            this.CHArticuloContrato.UseVisualStyleBackColor = true;
+            this.CHArticuloContrato.CheckedChanged += new System.EventHandler(this.CHArticuloContrato_CheckedChanged);
+            // 
+            // CHBInventariable
+            // 
+            this.CHBInventariable.AutoSize = true;
+            this.CHBInventariable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CHBInventariable.Checked = true;
+            this.CHBInventariable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CHBInventariable.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CHBInventariable.Location = new System.Drawing.Point(27, 225);
+            this.CHBInventariable.Name = "CHBInventariable";
+            this.CHBInventariable.Size = new System.Drawing.Size(103, 21);
+            this.CHBInventariable.TabIndex = 12;
+            this.CHBInventariable.Text = "Inventariable";
+            this.CHBInventariable.UseVisualStyleBackColor = true;
+            this.CHBInventariable.CheckedChanged += new System.EventHandler(this.CHBInventariable_CheckedChanged);
             // 
             // CBFamilia
             // 
@@ -102,18 +130,6 @@
             this.CBFamilia.Size = new System.Drawing.Size(282, 25);
             this.CBFamilia.TabIndex = 4;
             // 
-            // CHArticuloContrato
-            // 
-            this.CHArticuloContrato.AutoSize = true;
-            this.CHArticuloContrato.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CHArticuloContrato.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHArticuloContrato.Location = new System.Drawing.Point(27, 266);
-            this.CHArticuloContrato.Name = "CHArticuloContrato";
-            this.CHArticuloContrato.Size = new System.Drawing.Size(246, 21);
-            this.CHArticuloContrato.TabIndex = 11;
-            this.CHArticuloContrato.Text = "Articulo solo para uso de un Contrato";
-            this.CHArticuloContrato.UseVisualStyleBackColor = true;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -123,18 +139,6 @@
             this.label8.Size = new System.Drawing.Size(117, 17);
             this.label8.TabIndex = 3;
             this.label8.Text = "Familia Activo Fijo";
-            // 
-            // CHBInventariable
-            // 
-            this.CHBInventariable.AutoSize = true;
-            this.CHBInventariable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CHBInventariable.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHBInventariable.Location = new System.Drawing.Point(27, 226);
-            this.CHBInventariable.Name = "CHBInventariable";
-            this.CHBInventariable.Size = new System.Drawing.Size(103, 21);
-            this.CHBInventariable.TabIndex = 10;
-            this.CHBInventariable.Text = "Inventariable";
-            this.CHBInventariable.UseVisualStyleBackColor = true;
             // 
             // CBMedida
             // 
@@ -214,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(490, 398);
+            this.ClientSize = new System.Drawing.Size(490, 391);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Guardar);
             this.Controls.Add(this.panel1);
@@ -237,9 +241,7 @@
         private System.Windows.Forms.Button Guardar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox CBFamilia;
-        private System.Windows.Forms.CheckBox CHArticuloContrato;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox CHBInventariable;
         private System.Windows.Forms.ComboBox CBMedida;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CBArticulo;
@@ -247,5 +249,7 @@
         private System.Windows.Forms.TextBox TBArticulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox CHArticuloContrato;
+        private System.Windows.Forms.CheckBox CHBInventariable;
     }
 }

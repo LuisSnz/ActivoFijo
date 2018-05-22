@@ -77,5 +77,17 @@ namespace ActivoFijo.Catalogos.Articulos
         {
             this.Close();
         }
+
+        private void CHBInventariable_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CHBInventariable.Checked == true)
+                CHArticuloContrato.Checked = false;
+        }
+
+        private void CHArticuloContrato_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CHArticuloContrato.Checked == true)
+                CHBInventariable.Checked = false;
+        }
     }
 }
