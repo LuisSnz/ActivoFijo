@@ -525,24 +525,7 @@ namespace ActivoFijo.Clases
                 MessageBox.Show("Error al llenar :" + ex.ToString());
             }
         }
-        public static void BuscarMotivo(TextBox TB, string n)
-        {
-            try
-            {
-                cn.Open();
-                cmd = new SqlCommand("select Textobloqueado from Empleados where NoEmp=" + n, cn);
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    TB.Text = dr["Textobloqueado"].ToString();
-                }
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al llenar :" + ex.ToString());
-            }
-        }
+        
         public static void CBNombre(ComboBox CB)
         {
             try

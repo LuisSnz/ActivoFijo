@@ -53,20 +53,15 @@
             this.checkBaja = new System.Windows.Forms.CheckBox();
             this.checkJefe = new System.Windows.Forms.CheckBox();
             this.checkPliegos = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Motivo = new System.Windows.Forms.TextBox();
-            this.checkBloqueado = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Cancelar
             // 
             this.Cancelar.BackColor = System.Drawing.Color.White;
             this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(601, 270);
+            this.Cancelar.Location = new System.Drawing.Point(328, 349);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(107, 39);
             this.Cancelar.TabIndex = 24;
@@ -78,7 +73,7 @@
             // 
             this.Guardar.BackColor = System.Drawing.Color.White;
             this.Guardar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Guardar.Location = new System.Drawing.Point(601, 203);
+            this.Guardar.Location = new System.Drawing.Point(122, 349);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(107, 39);
             this.Guardar.TabIndex = 23;
@@ -280,16 +275,16 @@
             this.panel1.Controls.Add(this.checkBaja);
             this.panel1.Controls.Add(this.checkJefe);
             this.panel1.Controls.Add(this.checkPliegos);
-            this.panel1.Location = new System.Drawing.Point(566, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 296);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(171, 137);
+            this.panel1.Size = new System.Drawing.Size(547, 47);
             this.panel1.TabIndex = 22;
             // 
             // checkSinPliegos
             // 
             this.checkSinPliegos.AutoSize = true;
             this.checkSinPliegos.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkSinPliegos.Location = new System.Drawing.Point(13, 99);
+            this.checkSinPliegos.Location = new System.Drawing.Point(403, 12);
             this.checkSinPliegos.Name = "checkSinPliegos";
             this.checkSinPliegos.Size = new System.Drawing.Size(130, 21);
             this.checkSinPliegos.TabIndex = 17;
@@ -300,7 +295,7 @@
             // 
             this.checkBaja.AutoSize = true;
             this.checkBaja.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBaja.Location = new System.Drawing.Point(13, 70);
+            this.checkBaja.Location = new System.Drawing.Point(314, 12);
             this.checkBaja.Name = "checkBaja";
             this.checkBaja.Size = new System.Drawing.Size(54, 21);
             this.checkBaja.TabIndex = 16;
@@ -311,7 +306,7 @@
             // 
             this.checkJefe.AutoSize = true;
             this.checkJefe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkJefe.Location = new System.Drawing.Point(13, 41);
+            this.checkJefe.Location = new System.Drawing.Point(197, 12);
             this.checkJefe.Name = "checkJefe";
             this.checkJefe.Size = new System.Drawing.Size(71, 21);
             this.checkJefe.TabIndex = 15;
@@ -329,64 +324,17 @@
             this.checkPliegos.Text = "Activo para pliegos";
             this.checkPliegos.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.Motivo);
-            this.groupBox1.Controls.Add(this.checkBloqueado);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox1.Location = new System.Drawing.Point(12, 296);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 92);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Bloqueo";
-            // 
-            // Motivo
-            // 
-            this.Motivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.Motivo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Motivo.Location = new System.Drawing.Point(60, 51);
-            this.Motivo.MaxLength = 100;
-            this.Motivo.Name = "Motivo";
-            this.Motivo.Size = new System.Drawing.Size(461, 25);
-            this.Motivo.TabIndex = 12;
-            // 
-            // checkBloqueado
-            // 
-            this.checkBloqueado.AutoSize = true;
-            this.checkBloqueado.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBloqueado.Location = new System.Drawing.Point(8, 24);
-            this.checkBloqueado.Name = "checkBloqueado";
-            this.checkBloqueado.Size = new System.Drawing.Size(151, 21);
-            this.checkBloqueado.TabIndex = 11;
-            this.checkBloqueado.Text = "Empleado Bloqueado";
-            this.checkBloqueado.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(5, 54);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 17);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Motivo";
-            // 
             // Nuevo
             // 
             this.AcceptButton = this.Guardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(750, 414);
+            this.ClientSize = new System.Drawing.Size(573, 399);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Guardar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -398,8 +346,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -430,9 +376,5 @@
         private System.Windows.Forms.CheckBox checkBaja;
         private System.Windows.Forms.CheckBox checkJefe;
         private System.Windows.Forms.CheckBox checkPliegos;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox Motivo;
-        private System.Windows.Forms.CheckBox checkBloqueado;
-        private System.Windows.Forms.Label label8;
     }
 }

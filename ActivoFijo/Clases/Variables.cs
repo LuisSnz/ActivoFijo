@@ -32,7 +32,6 @@ namespace ActivoFijo.Clases
         //Empleados
         public static string IdEmpleados;
         public static string EmpleadosBaja;
-        public static string EmpleadosBloqueado;
         public static string EmpleadosPliegos;
         public static string EmpleadosNoPliegos;
         public static string EmpleadosJefe;

@@ -22,8 +22,6 @@ namespace ActivoFijo.Catalogos.Empleados
         {
             if (Clases.Variables.EmpleadosBaja == "True")
                 checkBaja.Checked = true;
-            if (Clases.Variables.EmpleadosBloqueado == "True")
-                checkBloqueado.Checked = true;
             if (Clases.Variables.EmpleadosJefe == "True")
                 checkJefe.Checked = true;
             if (Clases.Variables.EmpleadosPliegos == "True")
@@ -36,7 +34,6 @@ namespace ActivoFijo.Catalogos.Empleados
             NombreM.Text = Clases.Variables.EmpleadosNombreP;
             Fecha.Value = Convert.ToDateTime(Clases.Variables.EmpleadosFecha);
             Clases.Empleados.BuscarJefe(comboJefe, Clases.Variables.EmpleadosNumJefe);
-            Clases.Empleados.BuscarMotivo(Motivo, Clases.Variables.IdEmpleados);
             int index = comboDepto.FindString(Clases.Variables.EmpleadosDepto);
             comboDepto.SelectedIndex = index;
             NumLicencia.Text = Clases.Variables.EmpleadosLicencia;
@@ -44,15 +41,13 @@ namespace ActivoFijo.Catalogos.Empleados
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            int pliegos = 0, Jefe = 0, Baja = 0, SinPliego = 0, Bloqueado = 0;
+            int pliegos = 0, Jefe = 0, Baja = 0, SinPliego = 0;
             if (checkPliegos.Checked == true)
                 pliegos = 1;
             if (checkJefe.Checked == true)
                 Jefe = 1;
             if (checkSinPliegos.Checked == true)
                 SinPliego = 1;
-            if (checkBloqueado.Checked == true)
-                Bloqueado = 1;
             if (checkBaja.Checked == true)
                 Baja = 1;
 
@@ -64,7 +59,7 @@ namespace ActivoFijo.Catalogos.Empleados
                     "',Departamento='" + comboDepto.SelectedItem.ToString() + "',NoLicencia='" + NumLicencia.Text +
                     "',FechaVencimiento=(convert(datetime,'" + Fecha.Text + "')),NoEmpleadoJefe=(select NoEmp from empleados" +
                     " where Nombre='" + comboJefe.SelectedItem.ToString() + "'),ActivoPliegos=" + pliegos + ",JefeDepto=" + Jefe
-                    + ",Baja=" + Baja + ",NoVerifica=" + SinPliego + ",Bloqueado=" + Bloqueado + ",Textobloqueado='" + Motivo.Text + "'" +
+                    + ",Baja=" + Baja + ",NoVerifica=" + SinPliego + ",Bloqueado=0,Textobloqueado=''" +
                     "where NoEmp=" + Clases.Variables.IdEmpleados + ";";
                 try
                 {

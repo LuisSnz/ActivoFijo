@@ -24,7 +24,7 @@ namespace ActivoFijo.Catalogos.Empleados
                 if (comboBuscar.SelectedIndex >= 0)
                 {
                     Clases.Variables.ConsultaBuscar = "select NoEmp, Nombre, Departamento, JefeDepto, NoLicencia, FechaVencimiento, " +
-                                "NoEmpleadoJefe,Baja,NombrePliegos,Bloqueado,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
+                                "NoEmpleadoJefe,Baja,NombrePliegos,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
                                 "from empleados where Nombre LIKE '%" + comboBuscar.Text + "%'";
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -35,7 +35,7 @@ namespace ActivoFijo.Catalogos.Empleados
             else if (radioDeptos.Checked == true)
             {
                 Clases.Variables.ConsultaBuscar = "select NoEmp, Nombre, Departamento, JefeDepto, NoLicencia, FechaVencimiento, " +
-                            "NoEmpleadoJefe,Baja,NombrePliegos,Bloqueado,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
+                            "NoEmpleadoJefe,Baja,NombrePliegos,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
                             "from empleados where Departamento='" + comboBuscar.Text + "'";
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -43,7 +43,7 @@ namespace ActivoFijo.Catalogos.Empleados
             else if (radioJefe.Checked == true)
             {
                 Clases.Variables.ConsultaBuscar = "select NoEmp, Nombre, Departamento, JefeDepto, NoLicencia, FechaVencimiento, " +
-                            "NoEmpleadoJefe,Baja,NombrePliegos,Bloqueado,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
+                            "NoEmpleadoJefe,Baja,NombrePliegos,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
                             "from empleados where NoEmpleadoJefe=(select NoEmp from empleados where Nombre='" + comboBuscar.Text + "')";
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -53,7 +53,7 @@ namespace ActivoFijo.Catalogos.Empleados
         private void MostrarTodo_Click(object sender, EventArgs e)
         {
             Clases.Variables.ConsultaBuscar = "select NoEmp, Nombre, Departamento, JefeDepto, NoLicencia, FechaVencimiento, " +
-                            "NoEmpleadoJefe,Baja,NombrePliegos,Bloqueado,ActivoPliegos,NoVerifica as 'NoValidoPliego' from empleados";
+                            "NoEmpleadoJefe,Baja,NombrePliegos,ActivoPliegos,NoVerifica as 'NoValidoPliego' from empleados";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

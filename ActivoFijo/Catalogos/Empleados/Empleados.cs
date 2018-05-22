@@ -48,7 +48,6 @@ namespace ActivoFijo.Catalogos.Empleados
             Clases.Variables.EmpleadosNumJefe = filaSeleccionada.Cells[6].Value.ToString();
             Clases.Variables.EmpleadosBaja = filaSeleccionada.Cells[7].Value.ToString();
             Clases.Variables.EmpleadosNombreP = filaSeleccionada.Cells[8].Value.ToString();
-            Clases.Variables.EmpleadosBloqueado = filaSeleccionada.Cells[9].Value.ToString();
             Clases.Variables.EmpleadosPliegos = filaSeleccionada.Cells[10].Value.ToString();
             Clases.Variables.EmpleadosNoPliegos = filaSeleccionada.Cells[11].Value.ToString();
         }
@@ -58,7 +57,7 @@ namespace ActivoFijo.Catalogos.Empleados
             GridEmp.Width = Clases.Variables.GridWidth;
             GridEmp.Height = Clases.Variables.GridHeight;
             Clases.Variables.ConsultaBuscar = "select NoEmp,Nombre,Departamento, JefeDepto, NoLicencia, FechaVencimiento, " +
-                            "NoEmpleadoJefe,Baja,NombrePliegos,Bloqueado,ActivoPliegos,NoVerifica as 'NoValidoPliego' from empleados";
+                            "NoEmpleadoJefe,Baja,NombrePliegos,ActivoPliegos,NoVerifica as 'NoValidoPliego' from empleados";
             Clases.LLenadoGrids.llenarGrid(GridEmp, Clases.Variables.ConsultaBuscar, "empleados");
         }
 

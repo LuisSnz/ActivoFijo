@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,26 +42,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.ConBD);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(511, 237);
+            this.panel1.Size = new System.Drawing.Size(511, 181);
             this.panel1.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(15, 189);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(424, 34);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Nota: Cuando ingrese el nombre de la cadena de conexion favor de no \r\ningresar es" +
-    "pacios al final";
             // 
             // label1
             // 
@@ -93,8 +79,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(387, 34);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Data Source=DirecciondelServidor ; Initial Catalog=NombreBD;\r\nUser ID=Dominio\\Usu" +
-    "ario; Password=Contraseña;";
+            this.label2.Text = "Data Source=DirecciondelServidor ; Initial Catalog=NombreBD;\r\nUser ID=Usuario; Pa" +
+    "ssword=Contraseña;";
             // 
             // ConBD
             // 
@@ -107,7 +93,8 @@
             // Cancelar
             // 
             this.Cancelar.BackColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(331, 272);
+            this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancelar.Location = new System.Drawing.Point(331, 203);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(95, 33);
             this.Cancelar.TabIndex = 13;
@@ -118,7 +105,8 @@
             // Aceptar
             // 
             this.Aceptar.BackColor = System.Drawing.Color.White;
-            this.Aceptar.Location = new System.Drawing.Point(115, 272);
+            this.Aceptar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Aceptar.Location = new System.Drawing.Point(115, 203);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(95, 33);
             this.Aceptar.TabIndex = 12;
@@ -132,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(535, 323);
+            this.ClientSize = new System.Drawing.Size(535, 246);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Aceptar);
@@ -140,7 +128,7 @@
             this.MaximizeBox = false;
             this.Name = "ConexionBD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Conexion BD";
+            this.Text = "Conexion a Base de Datos";
             this.Load += new System.EventHandler(this.ConexionBD_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -153,7 +141,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;

@@ -79,6 +79,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(18, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(336, 85);
@@ -107,6 +108,7 @@
             // Cancelar
             // 
             this.Cancelar.BackColor = System.Drawing.Color.White;
+            this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelar.Location = new System.Drawing.Point(248, 272);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(95, 33);
@@ -118,6 +120,7 @@
             // Aceptar
             // 
             this.Aceptar.BackColor = System.Drawing.Color.White;
+            this.Aceptar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Aceptar.Location = new System.Drawing.Point(65, 272);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(95, 33);

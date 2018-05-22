@@ -27,15 +27,13 @@ namespace ActivoFijo.Catalogos.Empleados
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            int pliegos = 0, Jefe = 0, Baja = 0, SinPliego = 0, Bloqueado = 0;
+            int pliegos = 0, Jefe = 0, Baja = 0, SinPliego = 0;
             if (checkPliegos.Checked == true)
                 pliegos = 1;
             if (checkJefe.Checked == true)
                 Jefe = 1;
             if (checkSinPliegos.Checked == true)
                 SinPliego = 1;
-            if (checkBloqueado.Checked == true)
-                Bloqueado = 1;
             if (checkBaja.Checked == true)
                 Baja = 1;
 
@@ -50,8 +48,8 @@ namespace ActivoFijo.Catalogos.Empleados
                 string SqlString = "Insert Into empleados (NoEmp,Nombre,Departamento,JefeDepto,NombrePliegos,NoLicencia," +
                     "FechaVencimiento,Bloqueado,Textobloqueado,Baja,NoEmpleadoJefe,ActivoPliegos,NoVerifica) values " +
                     "((select (Max(NoEmp))+1 from empleados),'" + NombreEmpleado + "','" + comboDepto.SelectedItem.ToString() + "'," +
-                    Jefe + ",'" + NombreM.Text + "','" + NumLicencia.Text + "',(convert(datetime,'" + FechaVencimiento.Text + "'))," +
-                    Bloqueado + ",'" + Motivo.Text + "'," + Baja + ",(select NoEmp from empleados where Nombre='" +
+                    Jefe + ",'" + NombreM.Text + "','" + NumLicencia.Text + "',(convert(datetime,'" + FechaVencimiento.Text + "')),1," +
+                    "''," + Baja + ",(select NoEmp from empleados where Nombre='" +
                     comboJefe.SelectedItem.ToString() + "')," + pliegos + "," + SinPliego + ");";
                 try
                 {
