@@ -20,12 +20,19 @@ namespace ActivoFijo.Clases
                 DataSet ds = Clases.LLenadoGrids.GenerarDataSet("select bienes.Etiqueta, CatArticulos.Descripcion" +
                         " from bienes inner join CatArticulos on bienes.IdArticulo = CatArticulos.Id where " +
                         "bienes.Etiqueta between " + min + " and " + max, "bienes");
-                for (int x = 0; x < ds.Tables[0].Rows.Count; x++)
+                if (ds.Tables[0].Rows.Count == 0)
                 {
-                    Clases.Variables.IEtiqueta = ds.Tables[0].Rows[x][0].ToString();
-                    Clases.Variables.IArticulo = ds.Tables[0].Rows[x][1].ToString();
-                    pd.PrintPage += new PrintPageEventHandler(documentoAimprimir);
-                    pd.Print();
+                    MessageBox.Show("No se logro obtener ninguna etiqueta, ingrese de nuevo");
+                }
+                else
+                {
+                    for (int x = 0; x < ds.Tables[0].Rows.Count; x++)
+                    {
+                        Clases.Variables.IEtiqueta = ds.Tables[0].Rows[x][0].ToString();
+                        Clases.Variables.IArticulo = ds.Tables[0].Rows[x][1].ToString();
+                        pd.PrintPage += new PrintPageEventHandler(documentoAimprimir);
+                        pd.Print();
+                    }
                 }
             }
             catch (Exception exp)
