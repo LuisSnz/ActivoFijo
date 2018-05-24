@@ -38,7 +38,7 @@ namespace ActivoFijo.Catalogos.Empleados
                 Baja = 1;
 
             if (Nombre.Text.Length > 0 && NombreM.Text.Length > 0 && comboDepto.SelectedIndex >= 0
-                && NumLicencia.Text.Length > 0 && comboJefe.SelectedIndex >= 0)
+                && NumLicencia.Text.Length > 0 && comboJefe.SelectedIndex >= 0 && Paterno.Text.Length>0 && Materno.Text.Length>0 )
             {
                 string ConnString = Clases.Variables.scon;
                 string nombres = Nombre.Text;
@@ -59,7 +59,7 @@ namespace ActivoFijo.Catalogos.Empleados
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show("Departamento agragado correctamente.");
+                    MessageBox.Show("Empleado agragado correctamente.");
                     this.Close();
                     this.DialogResult = DialogResult.OK;
                 }
