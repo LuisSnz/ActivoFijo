@@ -20,7 +20,7 @@ namespace ActivoFijo.Catalogos.Proveedores
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            if (Nombre.Text.Length > 0)
+            if (Nombre.Text.Length > 0 && Fax.Text.Length>0 && Ciudad.Text.Length>0)
             {
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "Insert Into Proveedores (Nombre,Direccion,Rfc, Fax, Ciudad,Contacto,Giro,PadronGobierno," +
@@ -47,7 +47,7 @@ namespace ActivoFijo.Catalogos.Proveedores
             }
             else
             {
-                MessageBox.Show("Al menos el campo Nombre debe contener un valor");
+                MessageBox.Show("Favor de llenar los campos que contengan un (*) con un valor valido");
             }
         }
 
