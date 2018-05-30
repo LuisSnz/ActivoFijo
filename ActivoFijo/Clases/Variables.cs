@@ -106,5 +106,7 @@ namespace ActivoFijo.Clases
         public static string ObservacionesCambio;
         public static string ResguardoCambio;
         public static string DeptoCambio;
+        //Metodos de insercion
+        public static string Error;
     }
 }

@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace ActivoFijo.Catalogos.Articulos
 {
@@ -52,22 +44,15 @@ namespace ActivoFijo.Catalogos.Articulos
                     inv = true;
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "Update CatArticulos set Descripcion='" + TBArticulo.Text + "',idfamilia=(select id from Familia where Familia.Descripcion ='" + CBFamilia.SelectedItem + "'),ActivoContratos='" + con + "',Medida='" + CBMedida.SelectedItem + "',IdTipoArticulo=(select id from TipoArticulo where descripcion='" + CBArticulo.SelectedItem + "'),inventariable='" + inv + "',IdFamiliaSolicitudes='1',Activo='True',COG='0' where Id=" + Clases.Variables.IdArticulo + "";
-                try
+                bool resultado = Clases.Inserciones.Ejecucion(SqlString);
+                if (resultado == true)
                 {
-                    SqlConnection conn = new SqlConnection(ConnString);
-                    SqlCommand cmd = new SqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Articulo modificado correctamente.");
+                    MessageBox.Show("Articulo modificado correctamente");
                     this.Close();
                     this.DialogResult = DialogResult.OK;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor insertado no es valido. \n" + ex.ToString());
-                }
+                else
+                    MessageBox.Show("Ha ocurrido un error inesperado \n" + Clases.Variables.Error);
             }
             else
                 MessageBox.Show("Los campos deben contener algun valor");

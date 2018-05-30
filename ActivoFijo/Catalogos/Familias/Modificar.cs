@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace ActivoFijo.Catalogos.Familias
 {
@@ -29,26 +21,15 @@ namespace ActivoFijo.Catalogos.Familias
             {
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "Update Familia set Descripcion='" + Descripcion.Text + "' where Id=" + Clases.Variables.IDFamilia + ";";
-                try
+                bool resultado = Clases.Inserciones.Ejecucion(SqlString);
+                if (resultado == true)
                 {
-                    using (SqlConnection conn = new SqlConnection(ConnString))
-                    {
-                        using (SqlCommand cmd = new SqlCommand(SqlString, conn))
-                        {
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                            MessageBox.Show("Familia modificada correctamente.");
-                            this.Close();
-                            this.DialogResult = DialogResult.OK;
-                        }
-                    }
+                    MessageBox.Show("Familia modificada correctamente");
+                    this.Close();
+                    this.DialogResult = DialogResult.OK;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor insertado no es valido. \n" + ex.ToString());
-                }
+                else
+                    MessageBox.Show("Ha ocurrido un error inesperado \n" + Clases.Variables.Error);
             }
             else
                 MessageBox.Show("El campo debe contener un valor");
