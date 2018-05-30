@@ -34,22 +34,15 @@ namespace ActivoFijo.Catalogos.Departamentos
                     string SqlString = "Insert Into DEPTOS (CLAVE, DESCRIPCION, DIRECCION, SUBDIRECCION) " +
                         "values ((select (COUNT(clave))+1 from DEPTOS),'" + Descripcion.Text + "', '" +
                         comboArea.SelectedItem.ToString() + "','" + comboSubd.SelectedItem.ToString() + "');";
-                    try
+                    bool resultado = Clases.Inserciones.Ejecucion(SqlString);
+                    if (resultado == true)
                     {
-                        SqlConnection conn = new SqlConnection(ConnString);
-                        SqlCommand cmd = new SqlCommand(SqlString, conn);
-                        cmd.CommandType = CommandType.Text;
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                        MessageBox.Show("Departamento agragado correctamente.");
+                        MessageBox.Show("Departamento agregado correctamente");
                         this.Close();
                         this.DialogResult = DialogResult.OK;
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("El valor insertado no es valido. \n" + ex.ToString());
-                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error inesperado \n" + Clases.Variables.Error);
                 }
                 else
                 {

@@ -57,11 +57,12 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icono1.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="BarcodeLib, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f09bda868cc39e7, processorArchitecture=MSIL">
       <HintPath>..\packages\BarcodeLib.1.3.0.0\lib\net20\BarcodeLib.dll</HintPath>
@@ -430,6 +431,7 @@
     </Compile>
     <Compile Include="Clases\Etiquetas.cs" />
     <Compile Include="Clases\Excel.cs" />
+    <Compile Include="Clases\Inserciones.cs" />
     <Compile Include="Clases\LlenadoCombos.cs" />
     <Compile Include="Clases\LlenadoGrids.cs" />
     <Compile Include="Clases\Variables.cs" />

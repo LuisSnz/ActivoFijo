@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace ActivoFijo.Catalogos.Empleados
 {
@@ -40,7 +32,6 @@ namespace ActivoFijo.Catalogos.Empleados
             if (Nombre.Text.Length > 0 && NombreM.Text.Length > 0 && comboDepto.SelectedIndex >= 0
                 && NumLicencia.Text.Length > 0 && comboJefe.SelectedIndex >= 0 && Paterno.Text.Length>0 && Materno.Text.Length>0 )
             {
-                string ConnString = Clases.Variables.scon;
                 string nombres = Nombre.Text;
                 string paterno = Paterno.Text;
                 string materno = Materno.Text;
@@ -51,22 +42,16 @@ namespace ActivoFijo.Catalogos.Empleados
                     Jefe + ",'" + NombreM.Text + "','" + NumLicencia.Text + "',(convert(datetime,'" + FechaVencimiento.Text + "')),1," +
                     "''," + Baja + ",(select NoEmp from empleados where Nombre='" +
                     comboJefe.SelectedItem.ToString() + "')," + pliegos + "," + SinPliego + ");";
-                try
+
+                bool resultado = Clases.Inserciones.Ejecucion(SqlString);
+                if (resultado == true)
                 {
-                    SqlConnection conn = new SqlConnection(ConnString);
-                    SqlCommand cmd = new SqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Empleado agragado correctamente.");
+                    MessageBox.Show("Empleado agregado correctamente");
                     this.Close();
                     this.DialogResult = DialogResult.OK;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor insertado no es valido. \n" + ex.ToString());
-                }
+                else
+                    MessageBox.Show("Ha ocurrido un error inesperado \n"+Clases.Variables.Error);
             }
             else
                 MessageBox.Show("Todos los campos deben contener un valor valido");

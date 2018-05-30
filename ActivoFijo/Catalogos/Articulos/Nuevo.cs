@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace ActivoFijo.Catalogos.Articulos
 {
@@ -38,22 +30,15 @@ namespace ActivoFijo.Catalogos.Articulos
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "Insert Into CatArticulos (Descripcion,idfamilia,ActivoContratos,Medida,IdTipoArticulo,inventariable,IdFamiliaSolicitudes,Activo,COG) " +
                     "values ('" + TBArticulo.Text + "',(select id from Familia where Familia.Descripcion ='" + CBFamilia.SelectedItem + "'),'" + con + "','" + CBMedida.SelectedItem + "',(select id from TipoArticulo where descripcion='" + CBArticulo.SelectedItem + "'),'" + inv + "','1','True','0')";
-                try
+                bool resultado = Clases.Inserciones.Ejecucion(SqlString);
+                if (resultado == true)
                 {
-                    SqlConnection conn = new SqlConnection(ConnString);
-                    SqlCommand cmd = new SqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Articulo agregado correctamente.");
-                    this.DialogResult = DialogResult.OK;
+                    MessageBox.Show("Articulo agregado correctamente");
                     this.Close();
+                    this.DialogResult = DialogResult.OK;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor insertado no es valido. \n" + ex.ToString());
-                }
+                else
+                    MessageBox.Show("Ha ocurrido un error inesperado \n" + Clases.Variables.Error);
             }
             else
             {
