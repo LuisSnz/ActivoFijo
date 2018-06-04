@@ -65,10 +65,10 @@ namespace ActivoFijo.Clases
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Printpage" + ex.Message);
+                MessageBox.Show("Ha ocurrido un error inesperado: " + ex.Message);
             }
         }
-        public static void llamarVariableEtiqueta()
+        public static void Impresora()
         {
             String line;
             try
