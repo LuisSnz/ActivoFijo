@@ -53,10 +53,10 @@
             this.suariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoUsuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseñaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.conexionDeBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelBase = new System.Windows.Forms.Panel();
             this.LogoLocal = new System.Windows.Forms.PictureBox();
             this.LogoEstatal = new System.Windows.Forms.PictureBox();
-            this.conexionDeBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEstatal)).BeginInit();
@@ -281,6 +281,14 @@
             this.cambiarContraseñaToolStripMenuItem1.Text = "Cambiar Contraseña";
             this.cambiarContraseñaToolStripMenuItem1.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem1_Click);
             // 
+            // conexionDeBDToolStripMenuItem
+            // 
+            this.conexionDeBDToolStripMenuItem.Image = global::ActivoFijo.Properties.Resources.bd;
+            this.conexionDeBDToolStripMenuItem.Name = "conexionDeBDToolStripMenuItem";
+            this.conexionDeBDToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.conexionDeBDToolStripMenuItem.Text = "Conexion de BD";
+            this.conexionDeBDToolStripMenuItem.Click += new System.EventHandler(this.conexionDeBDToolStripMenuItem_Click);
+            // 
             // PanelBase
             // 
             this.PanelBase.BackColor = System.Drawing.Color.Transparent;
@@ -303,7 +311,7 @@
             // 
             // LogoEstatal
             // 
-            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources._7da9c795_1ecb_4dd7_ba41_298ad0ca7a56;
+            this.LogoEstatal.Image = global::ActivoFijo.Properties.Resources.Unidos_Logo_con_valor__Vertical;
             this.LogoEstatal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LogoEstatal.Location = new System.Drawing.Point(1031, 381);
             this.LogoEstatal.Name = "LogoEstatal";
@@ -311,14 +319,6 @@
             this.LogoEstatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoEstatal.TabIndex = 5;
             this.LogoEstatal.TabStop = false;
-            // 
-            // conexionDeBDToolStripMenuItem
-            // 
-            this.conexionDeBDToolStripMenuItem.Image = global::ActivoFijo.Properties.Resources.bd;
-            this.conexionDeBDToolStripMenuItem.Name = "conexionDeBDToolStripMenuItem";
-            this.conexionDeBDToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.conexionDeBDToolStripMenuItem.Text = "Conexion de BD";
-            this.conexionDeBDToolStripMenuItem.Click += new System.EventHandler(this.conexionDeBDToolStripMenuItem_Click);
             // 
             // Inicio
             // 

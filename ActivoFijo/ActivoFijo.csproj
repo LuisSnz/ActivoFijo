@@ -890,6 +890,7 @@
     <None Include="Resources\icono.png" />
     <None Include="Resources\bd.png" />
     <Content Include="icono1.ico" />
+    <None Include="Resources\Unidos Logo con valor -Vertical.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

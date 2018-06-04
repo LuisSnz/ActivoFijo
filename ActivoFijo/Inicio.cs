@@ -92,12 +92,12 @@ namespace ActivoFijo
             PanelBase.Height = this.Height - 70;
             Clases.Variables.GridHeight = this.Height - 130;
             Clases.Variables.GridWidth = this.Width - (this.Width / 3);
-            LogoLocal.Location = new Point(this.Width - (this.Width / 5), 80);
-            LogoLocal.Height = this.Height / 3;
-            LogoLocal.Width = this.Width / 6;
+            LogoLocal.Location = new Point(this.Width - (this.Width / 4)+ (this.Width / 80), 80);
+            LogoLocal.Height = (this.Height / 3)+ (this.Height / 30);
+            LogoLocal.Width = (this.Width / 5)-(this.Width / 40);
             LogoEstatal.Location = new Point(this.Width - (this.Width / 4), this.Height - (this.Height / 2));
             LogoEstatal.Height = this.Height / 3;
-            LogoEstatal.Width = this.Width / 4;
+            LogoEstatal.Width = this.Width / 5;
         }
 
         private void Bienes_Click(object sender, EventArgs e)
