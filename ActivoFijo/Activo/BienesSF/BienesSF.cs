@@ -21,7 +21,7 @@ namespace ActivoFijo.Activo.BienesSF
         {
             GridBienesSF.Width = Clases.Variables.GridWidth;
             GridBienesSF.Height = Clases.Variables.GridHeight;
-            Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden, " +
+            Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
                 "bienes.Total, Familia.Descripcion, dbo.CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
                 "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
@@ -106,13 +106,14 @@ namespace ActivoFijo.Activo.BienesSF
             Clases.Variables.IdBienesSF = filaSeleccionada.Cells[0].Value.ToString();
             Clases.Variables.BienesSFEtiqueta = filaSeleccionada.Cells[1].Value.ToString();
             Clases.Variables.BienesSFOrdenCompra = filaSeleccionada.Cells[2].Value.ToString();
-            Clases.Variables.BienesSFTotal = filaSeleccionada.Cells[3].Value.ToString();
-            Clases.Variables.BienesSFFamilia = filaSeleccionada.Cells[4].Value.ToString();
-            Clases.Variables.BienesSFDescripcionArticulo = filaSeleccionada.Cells[5].Value.ToString();
-            Clases.Variables.BienesSFEmpleado = filaSeleccionada.Cells[6].Value.ToString();
-            Clases.Variables.BienesSFDepartamento = filaSeleccionada.Cells[7].Value.ToString();
-            Clases.Variables.BienesSFConsumible = filaSeleccionada.Cells[8].Value.ToString();
-            Clases.Variables.BienesSFObservacion = filaSeleccionada.Cells[10].Value.ToString();
+            Clases.Variables.BienesSFSerie = filaSeleccionada.Cells[3].Value.ToString();
+            Clases.Variables.BienesSFTotal = filaSeleccionada.Cells[4].Value.ToString();
+            Clases.Variables.BienesSFFamilia = filaSeleccionada.Cells[5].Value.ToString();
+            Clases.Variables.BienesSFDescripcionArticulo = filaSeleccionada.Cells[6].Value.ToString();
+            Clases.Variables.BienesSFEmpleado = filaSeleccionada.Cells[7].Value.ToString();
+            Clases.Variables.BienesSFDepartamento = filaSeleccionada.Cells[8].Value.ToString();
+            Clases.Variables.BienesSFConsumible = filaSeleccionada.Cells[9].Value.ToString();
+            Clases.Variables.BienesSFObservacion = filaSeleccionada.Cells[11].Value.ToString();
         }
 
         private void GridBienesSF_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
