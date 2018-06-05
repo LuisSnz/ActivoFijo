@@ -24,20 +24,13 @@ namespace ActivoFijo.Catalogos.Articulos
 
         private void Buscar_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex >= 0)
-            {
-                if (RBArticulo.Checked == true)
-                    Clases.Variables.ConsultaBuscar = "select ID,Descripcion,Familia,Inventariable,Medida,TipoArticulo as 'Tipo Articulo',ActivoContratos as 'Activos por Contrato' from vArticulosCompras where Descripcion LIKE '%" + comboBox1.Text + "%' order by id";
-                else if (RBFamilia.Checked == true)
-                    Clases.Variables.ConsultaBuscar = "select ID,Descripcion,Familia,Inventariable,Medida,TipoArticulo as 'Tipo Articulo',ActivoContratos as 'Activos por Contrato' from vArticulosCompras where Familia LIKE '%" + comboBox1.Text + "%' order by id";
+            if (RBArticulo.Checked == true)
+                Clases.Variables.ConsultaBuscar = "select ID,Descripcion,Familia,Inventariable,Medida,TipoArticulo as 'Tipo Articulo',ActivoContratos as 'Activos por Contrato' from vArticulosCompras where Descripcion LIKE '%" + comboBox1.Text + "%' order by id";
+            else if (RBFamilia.Checked == true)
+                Clases.Variables.ConsultaBuscar = "select ID,Descripcion,Familia,Inventariable,Medida,TipoArticulo as 'Tipo Articulo',ActivoContratos as 'Activos por Contrato' from vArticulosCompras where Familia LIKE '%" + comboBox1.Text + "%' order by id";
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un valor valido a buscar");
-            }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void RBArticulo_CheckedChanged(object sender, EventArgs e)

@@ -21,22 +21,17 @@ namespace ActivoFijo.Catalogos.Empleados
         {
             if (radioNombre.Checked == true)
             {
-                if (comboBuscar.SelectedIndex >= 0)
-                {
                     Clases.Variables.ConsultaBuscar = "select NoEmp, Nombre, Departamento, JefeDepto, NoLicencia, FechaVencimiento, " +
                                 "NoEmpleadoJefe,Baja,NombrePliegos,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
                                 "from empleados where Nombre LIKE '%" + comboBuscar.Text + "%'";
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-                }
-                else
-                    MessageBox.Show("Seleccione un valor a buscar");
             }
             else if (radioDeptos.Checked == true)
             {
                 Clases.Variables.ConsultaBuscar = "select NoEmp, Nombre, Departamento, JefeDepto, NoLicencia, FechaVencimiento, " +
                             "NoEmpleadoJefe,Baja,NombrePliegos,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
-                            "from empleados where Departamento='" + comboBuscar.Text + "'";
+                            "from empleados where Departamento LIKE '%" + comboBuscar.Text + "%'";
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -44,7 +39,7 @@ namespace ActivoFijo.Catalogos.Empleados
             {
                 Clases.Variables.ConsultaBuscar = "select NoEmp, Nombre, Departamento, JefeDepto, NoLicencia, FechaVencimiento, " +
                             "NoEmpleadoJefe,Baja,NombrePliegos,ActivoPliegos,NoVerifica as 'NoValidoPliego' " +
-                            "from empleados where NoEmpleadoJefe=(select NoEmp from empleados where Nombre='" + comboBuscar.Text + "')";
+                            "from empleados where NoEmpleadoJefe=(select NoEmp from empleados where Nombre LIKE '%" + comboBuscar.Text + "%')";
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
