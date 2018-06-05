@@ -63,6 +63,7 @@ namespace ActivoFijo.Clases
         //Bienes
         public static string IdBienes;
         public static string BienesEtiqueta;
+        public static string BienesSerie;
         public static string BienesOrdenCompra;
         public static string BienesFactura;
         public static string BienesTotal;
@@ -75,6 +76,7 @@ namespace ActivoFijo.Clases
         //BienesSF
         public static string IdBienesSF;
         public static string BienesSFEtiqueta;
+        public static string BienesSFSerie;
         public static string BienesSFOrdenCompra;
         public static string BienesSFTotal;
         public static string BienesSFFamilia;
