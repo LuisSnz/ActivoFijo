@@ -110,5 +110,6 @@ namespace ActivoFijo.Clases
         public static string DeptoCambio;
         //Metodos de insercion
         public static string Error;
+        public static bool ErrorB;
     }
 }

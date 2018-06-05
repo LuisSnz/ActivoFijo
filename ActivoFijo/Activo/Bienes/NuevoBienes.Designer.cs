@@ -72,11 +72,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Cantidad = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Cantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // Cancelar
@@ -194,7 +197,7 @@
             this.CBProveedor.FormattingEnabled = true;
             this.CBProveedor.Location = new System.Drawing.Point(113, 7);
             this.CBProveedor.Name = "CBProveedor";
-            this.CBProveedor.Size = new System.Drawing.Size(379, 27);
+            this.CBProveedor.Size = new System.Drawing.Size(446, 27);
             this.CBProveedor.TabIndex = 8;
             this.CBProveedor.SelectedIndexChanged += new System.EventHandler(this.CBProveedor_SelectedIndexChanged);
             // 
@@ -296,7 +299,7 @@
             this.CBArticulo.FormattingEnabled = true;
             this.CBArticulo.Location = new System.Drawing.Point(120, 9);
             this.CBArticulo.Name = "CBArticulo";
-            this.CBArticulo.Size = new System.Drawing.Size(379, 27);
+            this.CBArticulo.Size = new System.Drawing.Size(439, 27);
             this.CBArticulo.TabIndex = 14;
             this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
             // 
@@ -414,7 +417,7 @@
             this.CBEmpleado.FormattingEnabled = true;
             this.CBEmpleado.Location = new System.Drawing.Point(119, 11);
             this.CBEmpleado.Name = "CBEmpleado";
-            this.CBEmpleado.Size = new System.Drawing.Size(373, 27);
+            this.CBEmpleado.Size = new System.Drawing.Size(440, 27);
             this.CBEmpleado.TabIndex = 4;
             this.CBEmpleado.SelectedIndexChanged += new System.EventHandler(this.CBEmpleado_SelectedIndexChanged);
             // 
@@ -443,6 +446,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.Cantidad);
             this.panel1.Controls.Add(this.CHConsumible);
             this.panel1.Controls.Add(this.TBPrecio);
             this.panel1.Controls.Add(this.TBFactura);
@@ -464,7 +469,7 @@
             this.CHConsumible.AutoSize = true;
             this.CHConsumible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CHConsumible.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHConsumible.Location = new System.Drawing.Point(273, 7);
+            this.CHConsumible.Location = new System.Drawing.Point(290, 67);
             this.CHConsumible.Name = "CHConsumible";
             this.CHConsumible.Size = new System.Drawing.Size(106, 23);
             this.CHConsumible.TabIndex = 14;
@@ -474,7 +479,7 @@
             // TBPrecio
             // 
             this.TBPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPrecio.Location = new System.Drawing.Point(365, 71);
+            this.TBPrecio.Location = new System.Drawing.Point(353, 36);
             this.TBPrecio.MaxLength = 21;
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.Size = new System.Drawing.Size(127, 24);
@@ -486,10 +491,10 @@
             // 
             this.TBFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBFactura.Location = new System.Drawing.Point(365, 38);
+            this.TBFactura.Location = new System.Drawing.Point(353, 6);
             this.TBFactura.MaxLength = 30;
             this.TBFactura.Name = "TBFactura";
-            this.TBFactura.Size = new System.Drawing.Size(127, 24);
+            this.TBFactura.Size = new System.Drawing.Size(194, 24);
             this.TBFactura.TabIndex = 12;
             // 
             // TimeFecha
@@ -516,7 +521,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(297, 74);
+            this.label5.Location = new System.Drawing.Point(287, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 19);
             this.label5.TabIndex = 8;
@@ -536,7 +541,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(260, 38);
+            this.label4.Location = new System.Drawing.Point(250, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 19);
             this.label4.TabIndex = 3;
@@ -572,6 +577,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "No. Etiqueta : ";
             // 
+            // Cantidad
+            // 
+            this.Cantidad.Location = new System.Drawing.Point(501, 69);
+            this.Cantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Size = new System.Drawing.Size(42, 20);
+            this.Cantidad.TabIndex = 15;
+            this.Cantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(414, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 19);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Cantidad: ";
+            // 
             // NuevoBienes
             // 
             this.AcceptButton = this.Guardar;
@@ -604,6 +636,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Cantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -653,5 +686,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown Cantidad;
     }
 }

@@ -70,11 +70,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Cantidad = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Cantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // Cancelar
@@ -441,6 +444,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.Cantidad);
             this.panel1.Controls.Add(this.CHConsumible);
             this.panel1.Controls.Add(this.TBPrecio);
             this.panel1.Controls.Add(this.TimeFecha);
@@ -460,7 +465,7 @@
             this.CHConsumible.AutoSize = true;
             this.CHConsumible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CHConsumible.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHConsumible.Location = new System.Drawing.Point(272, 11);
+            this.CHConsumible.Location = new System.Drawing.Point(286, 39);
             this.CHConsumible.Name = "CHConsumible";
             this.CHConsumible.Size = new System.Drawing.Size(106, 23);
             this.CHConsumible.TabIndex = 14;
@@ -470,7 +475,7 @@
             // TBPrecio
             // 
             this.TBPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPrecio.Location = new System.Drawing.Point(365, 56);
+            this.TBPrecio.Location = new System.Drawing.Point(357, 8);
             this.TBPrecio.MaxLength = 21;
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.Size = new System.Drawing.Size(127, 24);
@@ -502,7 +507,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(297, 59);
+            this.label5.Location = new System.Drawing.Point(289, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 19);
             this.label5.TabIndex = 8;
@@ -548,6 +553,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "No. Etiqueta : ";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(289, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 19);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Cantidad: ";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.Location = new System.Drawing.Point(376, 69);
+            this.Cantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Size = new System.Drawing.Size(42, 20);
+            this.Cantidad.TabIndex = 17;
+            this.Cantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // NuevoBienesSF
             // 
             this.AcceptButton = this.Guardar;
@@ -580,6 +612,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Cantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,5 +660,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown Cantidad;
     }
 }
