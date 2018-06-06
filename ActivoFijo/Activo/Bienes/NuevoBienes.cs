@@ -217,5 +217,21 @@ namespace ActivoFijo.Activo.Bienes
                 e.Handled = true;
             }
         }
+
+        private void NArt_Click_1(object sender, EventArgs e)
+        {
+            Catalogos.Articulos.Nuevo nuevo = new Catalogos.Articulos.Nuevo();
+            nuevo.ShowDialog();
+            if (nuevo.DialogResult == DialogResult.OK)
+                Clases.Articulos.CBBuscarArticulo(CBArticulo);
+        }
+
+        private void NPro_Click(object sender, EventArgs e)
+        {
+            Catalogos.Proveedores.Nuevo nuevo = new Catalogos.Proveedores.Nuevo();
+            nuevo.ShowDialog();
+            if (nuevo.DialogResult == DialogResult.OK)
+                Clases.Bienes.CBProveedor(CBProveedor);
+        }
     }
 }

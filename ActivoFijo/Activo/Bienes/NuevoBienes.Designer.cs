@@ -34,6 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBObservaciones = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.NPor = new System.Windows.Forms.Button();
             this.LBRFC = new System.Windows.Forms.Label();
             this.LBDomicilio = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.CBProveedor = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.NArt = new System.Windows.Forms.Button();
             this.TBColor = new System.Windows.Forms.TextBox();
             this.TBModelo = new System.Windows.Forms.TextBox();
             this.CBConservacion = new System.Windows.Forms.ComboBox();
@@ -61,6 +63,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Cantidad = new System.Windows.Forms.NumericUpDown();
             this.CHConsumible = new System.Windows.Forms.CheckBox();
             this.TBPrecio = new System.Windows.Forms.TextBox();
             this.TBFactura = new System.Windows.Forms.TextBox();
@@ -72,8 +76,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Cantidad = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
+            this.NPro = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -134,6 +137,8 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.NPro);
+            this.panel4.Controls.Add(this.NPor);
             this.panel4.Controls.Add(this.LBRFC);
             this.panel4.Controls.Add(this.LBDomicilio);
             this.panel4.Controls.Add(this.label19);
@@ -144,6 +149,13 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(580, 103);
             this.panel4.TabIndex = 24;
+            // 
+            // NPor
+            // 
+            this.NPor.Location = new System.Drawing.Point(0, 0);
+            this.NPor.Name = "NPor";
+            this.NPor.Size = new System.Drawing.Size(75, 23);
+            this.NPor.TabIndex = 0;
             // 
             // LBRFC
             // 
@@ -197,7 +209,7 @@
             this.CBProveedor.FormattingEnabled = true;
             this.CBProveedor.Location = new System.Drawing.Point(113, 7);
             this.CBProveedor.Name = "CBProveedor";
-            this.CBProveedor.Size = new System.Drawing.Size(446, 27);
+            this.CBProveedor.Size = new System.Drawing.Size(420, 27);
             this.CBProveedor.TabIndex = 8;
             this.CBProveedor.SelectedIndexChanged += new System.EventHandler(this.CBProveedor_SelectedIndexChanged);
             // 
@@ -215,6 +227,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.NArt);
             this.panel3.Controls.Add(this.TBColor);
             this.panel3.Controls.Add(this.TBModelo);
             this.panel3.Controls.Add(this.CBConservacion);
@@ -233,6 +246,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(580, 172);
             this.panel3.TabIndex = 23;
+            // 
+            // NArt
+            // 
+            this.NArt.Location = new System.Drawing.Point(540, 9);
+            this.NArt.Name = "NArt";
+            this.NArt.Size = new System.Drawing.Size(31, 27);
+            this.NArt.TabIndex = 21;
+            this.NArt.TabStop = false;
+            this.NArt.Text = "...";
+            this.NArt.UseVisualStyleBackColor = true;
+            this.NArt.Click += new System.EventHandler(this.NArt_Click_1);
             // 
             // TBColor
             // 
@@ -299,7 +323,7 @@
             this.CBArticulo.FormattingEnabled = true;
             this.CBArticulo.Location = new System.Drawing.Point(120, 9);
             this.CBArticulo.Name = "CBArticulo";
-            this.CBArticulo.Size = new System.Drawing.Size(439, 27);
+            this.CBArticulo.Size = new System.Drawing.Size(414, 27);
             this.CBArticulo.TabIndex = 14;
             this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
             // 
@@ -464,6 +488,33 @@
             this.panel1.Size = new System.Drawing.Size(580, 106);
             this.panel1.TabIndex = 21;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(414, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 19);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Cantidad: ";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.Location = new System.Drawing.Point(501, 69);
+            this.Cantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Size = new System.Drawing.Size(42, 20);
+            this.Cantidad.TabIndex = 15;
+            this.Cantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // CHConsumible
             // 
             this.CHConsumible.AutoSize = true;
@@ -577,32 +628,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "No. Etiqueta : ";
             // 
-            // Cantidad
+            // NPro
             // 
-            this.Cantidad.Location = new System.Drawing.Point(501, 69);
-            this.Cantidad.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Size = new System.Drawing.Size(42, 20);
-            this.Cantidad.TabIndex = 15;
-            this.Cantidad.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(414, 69);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 19);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Cantidad: ";
+            this.NPro.Location = new System.Drawing.Point(539, 7);
+            this.NPro.Name = "NPro";
+            this.NPro.Size = new System.Drawing.Size(31, 27);
+            this.NPro.TabIndex = 22;
+            this.NPro.TabStop = false;
+            this.NPro.Text = "...";
+            this.NPro.UseVisualStyleBackColor = true;
+            this.NPro.Click += new System.EventHandler(this.NPro_Click);
             // 
             // NuevoBienes
             // 
@@ -688,5 +723,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown Cantidad;
+        private System.Windows.Forms.Button NPor;
+        private System.Windows.Forms.Button NArt;
+        private System.Windows.Forms.Button NPro;
     }
 }

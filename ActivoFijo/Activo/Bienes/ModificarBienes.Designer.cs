@@ -63,6 +63,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.NArt = new System.Windows.Forms.Button();
+            this.NPor = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -86,6 +88,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.NArt);
             this.panel2.Controls.Add(this.Articulo);
             this.panel2.Controls.Add(this.Color);
             this.panel2.Controls.Add(this.label5);
@@ -113,7 +116,7 @@
             this.Articulo.FormattingEnabled = true;
             this.Articulo.Location = new System.Drawing.Point(84, 13);
             this.Articulo.Name = "Articulo";
-            this.Articulo.Size = new System.Drawing.Size(488, 25);
+            this.Articulo.Size = new System.Drawing.Size(452, 25);
             this.Articulo.TabIndex = 15;
             this.Articulo.SelectedIndexChanged += new System.EventHandler(this.Articulo_SelectedIndexChanged);
             // 
@@ -293,6 +296,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.NPor);
             this.panel3.Controls.Add(this.Proveedor);
             this.panel3.Controls.Add(this.RFC);
             this.panel3.Controls.Add(this.label12);
@@ -312,7 +316,7 @@
             this.Proveedor.FormattingEnabled = true;
             this.Proveedor.Location = new System.Drawing.Point(100, 12);
             this.Proveedor.Name = "Proveedor";
-            this.Proveedor.Size = new System.Drawing.Size(471, 25);
+            this.Proveedor.Size = new System.Drawing.Size(436, 25);
             this.Proveedor.TabIndex = 17;
             this.Proveedor.SelectedIndexChanged += new System.EventHandler(this.Proveedor_SelectedIndexChanged);
             // 
@@ -456,6 +460,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "No. Orden* :";
             // 
+            // NArt
+            // 
+            this.NArt.Location = new System.Drawing.Point(542, 13);
+            this.NArt.Name = "NArt";
+            this.NArt.Size = new System.Drawing.Size(31, 27);
+            this.NArt.TabIndex = 22;
+            this.NArt.TabStop = false;
+            this.NArt.Text = "...";
+            this.NArt.UseVisualStyleBackColor = true;
+            this.NArt.Click += new System.EventHandler(this.NArt_Click);
+            // 
+            // NPor
+            // 
+            this.NPor.Location = new System.Drawing.Point(540, 10);
+            this.NPor.Name = "NPor";
+            this.NPor.Size = new System.Drawing.Size(31, 27);
+            this.NPor.TabIndex = 23;
+            this.NPor.TabStop = false;
+            this.NPor.Text = "...";
+            this.NPor.UseVisualStyleBackColor = true;
+            this.NPor.Click += new System.EventHandler(this.NPor_Click);
+            // 
             // ModificarBienes
             // 
             this.AcceptButton = this.Guardar;
@@ -525,5 +551,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button NArt;
+        private System.Windows.Forms.Button NPor;
     }
 }

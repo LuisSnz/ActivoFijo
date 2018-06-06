@@ -35,55 +35,55 @@ namespace ActivoFijo
         private void Areas_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.Areas.Areas());
-            this.Text = "Sistema de activo Fijo - Areas";
+            this.Text = "Activo Fijo - Areas";
         }
 
         private void SubDirecciones_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.SubDirecciones.SubDirecciones());
-            this.Text = "Sistema de activo Fijo - SubDireccion";
+            this.Text = "Activo Fijo - SubDireccion";
         }
 
         private void Departamentos_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.Departamentos.Departamentos());
-            this.Text = "Sistema de activo Fijo - Departamentos";
+            this.Text = "Activo Fijo - Departamentos";
         }
 
         private void Empleados_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.Empleados.Empleados());
-            this.Text = "Sistema de activo Fijo - Empleados";
+            this.Text = "Activo Fijo - Empleados";
         }
 
         private void Vehiculos_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.Vehiculos.Vehiculos());
-            this.Text = "Sistema de activo Fijo - Vehiculos";
+            this.Text = "Activo Fijo - Vehiculos";
         }
 
         private void Proveedores_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.Proveedores.Proveedores());
-            this.Text = "Sistema de activo Fijo - Proveedores";
+            this.Text = "Activo Fijo - Proveedores";
         }
 
         private void Articulos_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.Articulos.Articulos());
-            this.Text = "Sistema de activo Fijo - Articulos";
+            this.Text = "Activo Fijo - Articulos";
         }
 
         private void Marcas_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.Marcas.Marcas());
-            this.Text = "Sistema de activo Fijo - Marcas";
+            this.Text = "Activo Fijo - Marcas";
         }
 
         private void Familias_Click(object sender, EventArgs e)
         {
             formularios(new Catalogos.Familias.Familias());
-            this.Text = "Sistema de activo Fijo - Familias";
+            this.Text = "Activo Fijo - Familias";
         }
 
         private void Inicio_Load(object sender, EventArgs e)
@@ -103,18 +103,18 @@ namespace ActivoFijo
         private void Bienes_Click(object sender, EventArgs e)
         {
             formularios(new Activo.Bienes.Bienes());
-            this.Text = "Sistema de activo Fijo - Bienes";
+            this.Text = "Activo Fijo - Bienes";
         }
 
         private void BienesSF_Click(object sender, EventArgs e)
         {
             formularios(new Activo.BienesSF.BienesSF());
-            this.Text = "Sistema de activo Fijo - Bienes sin Factura";
+            this.Text = "Activo Fijo - Bienes sin Factura";
         }
 
         private void BienesBaja_Click(object sender, EventArgs e)
         {
-            this.Text = "Sistema de activo Fijo - Bienes dados de Baja";
+            this.Text = "Activo Fijo - Bienes dados de Baja";
             formularios(new Activo.BienesBaja.BienesDadosDeBaja());
         }
 
@@ -133,7 +133,7 @@ namespace ActivoFijo
         private void ValorBienes_Click(object sender, EventArgs e)
         {
             formularios(new Reportes.ValorBienes.ValorEnBienes());
-            this.Text = "Sistema de activo Fijo - Valor en Bienes";
+            this.Text = "Activo Fijo - Valor en Bienes";
         }
             
         private void ConfigurarImpresora_Click(object sender, EventArgs e)

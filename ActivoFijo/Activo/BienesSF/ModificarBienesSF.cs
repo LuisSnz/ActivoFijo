@@ -133,5 +133,21 @@ namespace ActivoFijo.Activo.BienesSF
                 MessageBox.Show("Error al llenar :" + ex.ToString());
             }
         }
+
+        private void NArt_Click(object sender, EventArgs e)
+        {
+            Catalogos.Articulos.Nuevo nuevo = new Catalogos.Articulos.Nuevo();
+            nuevo.ShowDialog();
+            if (nuevo.DialogResult == DialogResult.OK)
+                Clases.Articulos.CBBuscarArticulo(Articulo);
+        }
+
+        private void NPor_Click(object sender, EventArgs e)
+        {
+            Catalogos.Proveedores.Nuevo nuevo = new Catalogos.Proveedores.Nuevo();
+            nuevo.ShowDialog();
+            if (nuevo.DialogResult == DialogResult.OK)
+                Clases.Bienes.CBProveedor(Proveedor);
+        }
     }
 }
