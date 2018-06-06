@@ -79,6 +79,7 @@ namespace ActivoFijo.Activo.Bienes
 
         private void Imprimir_Click(object sender, EventArgs e)
         {
+            Clases.Variables.BienesCantidad = "1";
             ReporteBienes reporteBienes = new ReporteBienes();
             reporteBienes.ShowDialog();
         }

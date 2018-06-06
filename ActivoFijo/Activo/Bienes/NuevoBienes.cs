@@ -156,6 +156,7 @@ namespace ActivoFijo.Activo.Bienes
             {
                 MessageBox.Show("Favor de llenar todos los espacios que contengan un (*)");
             }
+            
         }
 
         private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -232,6 +233,65 @@ namespace ActivoFijo.Activo.Bienes
             nuevo.ShowDialog();
             if (nuevo.DialogResult == DialogResult.OK)
                 Clases.Bienes.CBProveedor(CBProveedor);
+        }
+
+        private void guardareimprimir_Click(object sender, EventArgs e)
+        {
+            if (CBArticulo.SelectedIndex >= 0 && CBConservacion.SelectedIndex >= 0 && CBEmpleado.SelectedIndex >= 0 && CBProveedor.SelectedIndex >= 0 && CBMarca.SelectedIndex >= 0 && TBFactura.Text.Length > 0 && TBNoOrden.Text.Length > 0 && TBPrecio.Text.Length > 0)
+            {
+                int etiqueta = int.Parse(TBEtiqueta.Text);
+                var con = 0;
+                if (CHConsumible.Checked == true)
+                    con = 1;
+                string ConnString = Clases.Variables.scon;
+                for (int x = 0; x < Cantidad.Value; x++)
+                {
+                    string SqlString = "Insert Into bienes (Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
+                        "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
+                        "Consumible,Estado,Creador) values (" + etiqueta + "," + TBNoOrden.Text + ",9,2013,'" +
+                        TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos " +
+                        "where descripcion='" + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "'," +
+                        "(select NoEmp from empleados where nombre='" + CBEmpleado.SelectedItem + "')," +
+                        "(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')," +
+                        "(convert(datetime,'" + TimeFecha.Text + "')),0,(select top 1 id from marca where descripcion='" +
+                        CBMarca.SelectedItem + "'),'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
+                        "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + Clases.Variables.Usuario + "')";
+                    Clases.Inserciones.BEjecucion(SqlString);
+                    etiqueta = etiqueta + 1;
+                }
+                if (Clases.Variables.ErrorB == false)
+                {
+                    if (Cantidad.Value == 1)
+                        MessageBox.Show("Bien agregado correctamente.");
+                    else
+                        MessageBox.Show("Bienes agregados correctamente.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("No fue posible agregar los bienes.");
+            }
+            else
+            {
+                MessageBox.Show("Favor de llenar todos los espacios que contengan un (*)");
+            }
+
+            Clases.Variables.ImprimirBienesEtiqueta=TBEtiqueta.Text;
+            Clases.Variables.ImprimirBienesOrdenCompra=TBNoOrden.Text;
+            Clases.Variables.ImprimirBienesFactura= TBFactura.Text;
+            Clases.Variables.ImprimirBienesTotal= TBPrecio.Text;
+            Clases.Variables.ImprimirBienesDepartamento= LBDepartamento.Text;
+            Clases.Variables.ImprimirBienesDescripcionArticulo = CBArticulo.Text;
+            Clases.Variables.ImprimirBienesEmpleado = CBEmpleado.Text;
+            Clases.Variables.ImprimirBienesFamilia = LBFamilia.Text;
+            Clases.Variables.ImprimirBienesSerie = TBSerie.Text;
+            Clases.Variables.ImprimirBienesObservacion = TBObservaciones.Text;
+            Clases.Variables.ImprimirBienesCantidad = Cantidad.Value.ToString();
+            int EtiquetaInicial = int.Parse(TBEtiqueta.Text);
+            decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value;
+            Clases.Variables.ImprimirBienesEtiquetaFinal = double.Parse(EtiquetaFinal.ToString());
+            Activo.Bienes.ReporteImprimirBienes reporteBienes = new  ReporteImprimirBienes();
+            reporteBienes.ShowDialog();
         }
     }
 }

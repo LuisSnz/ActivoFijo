@@ -34,7 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBObservaciones = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.NPor = new System.Windows.Forms.Button();
+            this.NPro = new System.Windows.Forms.Button();
             this.LBRFC = new System.Windows.Forms.Label();
             this.LBDomicilio = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.NPro = new System.Windows.Forms.Button();
+            this.guardareimprimir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,7 +90,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.White;
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(354, 610);
+            this.Cancelar.Location = new System.Drawing.Point(432, 610);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(107, 39);
             this.Cancelar.TabIndex = 27;
@@ -102,7 +102,7 @@
             // 
             this.Guardar.BackColor = System.Drawing.Color.White;
             this.Guardar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Guardar.Location = new System.Drawing.Point(127, 610);
+            this.Guardar.Location = new System.Drawing.Point(60, 610);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(107, 39);
             this.Guardar.TabIndex = 26;
@@ -138,7 +138,6 @@
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.NPro);
-            this.panel4.Controls.Add(this.NPor);
             this.panel4.Controls.Add(this.LBRFC);
             this.panel4.Controls.Add(this.LBDomicilio);
             this.panel4.Controls.Add(this.label19);
@@ -150,12 +149,16 @@
             this.panel4.Size = new System.Drawing.Size(580, 103);
             this.panel4.TabIndex = 24;
             // 
-            // NPor
+            // NPro
             // 
-            this.NPor.Location = new System.Drawing.Point(0, 0);
-            this.NPor.Name = "NPor";
-            this.NPor.Size = new System.Drawing.Size(75, 23);
-            this.NPor.TabIndex = 0;
+            this.NPro.Location = new System.Drawing.Point(539, 7);
+            this.NPro.Name = "NPro";
+            this.NPro.Size = new System.Drawing.Size(31, 27);
+            this.NPro.TabIndex = 22;
+            this.NPro.TabStop = false;
+            this.NPro.Text = "...";
+            this.NPro.UseVisualStyleBackColor = true;
+            this.NPro.Click += new System.EventHandler(this.NPro_Click);
             // 
             // LBRFC
             // 
@@ -520,7 +523,7 @@
             this.CHConsumible.AutoSize = true;
             this.CHConsumible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CHConsumible.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHConsumible.Location = new System.Drawing.Point(290, 67);
+            this.CHConsumible.Location = new System.Drawing.Point(291, 69);
             this.CHConsumible.Name = "CHConsumible";
             this.CHConsumible.Size = new System.Drawing.Size(106, 23);
             this.CHConsumible.TabIndex = 14;
@@ -628,16 +631,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "No. Etiqueta : ";
             // 
-            // NPro
+            // guardareimprimir
             // 
-            this.NPro.Location = new System.Drawing.Point(539, 7);
-            this.NPro.Name = "NPro";
-            this.NPro.Size = new System.Drawing.Size(31, 27);
-            this.NPro.TabIndex = 22;
-            this.NPro.TabStop = false;
-            this.NPro.Text = "...";
-            this.NPro.UseVisualStyleBackColor = true;
-            this.NPro.Click += new System.EventHandler(this.NPro_Click);
+            this.guardareimprimir.BackColor = System.Drawing.Color.White;
+            this.guardareimprimir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guardareimprimir.Location = new System.Drawing.Point(225, 610);
+            this.guardareimprimir.Name = "guardareimprimir";
+            this.guardareimprimir.Size = new System.Drawing.Size(158, 39);
+            this.guardareimprimir.TabIndex = 28;
+            this.guardareimprimir.Text = "Guardar e Imprimir";
+            this.guardareimprimir.UseVisualStyleBackColor = false;
+            this.guardareimprimir.Click += new System.EventHandler(this.guardareimprimir_Click);
             // 
             // NuevoBienes
             // 
@@ -647,6 +651,7 @@
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.CancelButton = this.Cancelar;
             this.ClientSize = new System.Drawing.Size(607, 665);
+            this.Controls.Add(this.guardareimprimir);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Guardar);
             this.Controls.Add(this.groupBox1);
@@ -723,8 +728,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown Cantidad;
-        private System.Windows.Forms.Button NPor;
         private System.Windows.Forms.Button NArt;
         private System.Windows.Forms.Button NPro;
+        private System.Windows.Forms.Button guardareimprimir;
     }
 }
