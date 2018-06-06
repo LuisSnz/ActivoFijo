@@ -57,6 +57,7 @@
             this.PanelBase = new System.Windows.Forms.Panel();
             this.LogoLocal = new System.Windows.Forms.PictureBox();
             this.LogoEstatal = new System.Windows.Forms.PictureBox();
+            this.resguardoDeUnEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEstatal)).BeginInit();
@@ -214,7 +215,8 @@
             // 
             this.Reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Historico,
-            this.ValorBienes});
+            this.ValorBienes,
+            this.resguardoDeUnEmpleadoToolStripMenuItem});
             this.Reportes.Image = global::ActivoFijo.Properties.Resources.catalogo;
             this.Reportes.Name = "Reportes";
             this.Reportes.Size = new System.Drawing.Size(89, 21);
@@ -224,7 +226,7 @@
             // 
             this.Historico.Image = global::ActivoFijo.Properties.Resources.h;
             this.Historico.Name = "Historico";
-            this.Historico.Size = new System.Drawing.Size(181, 22);
+            this.Historico.Size = new System.Drawing.Size(222, 22);
             this.Historico.Text = "Historico del Bien";
             this.Historico.Click += new System.EventHandler(this.Historico_Click);
             // 
@@ -232,7 +234,7 @@
             // 
             this.ValorBienes.Image = global::ActivoFijo.Properties.Resources.Dinero;
             this.ValorBienes.Name = "ValorBienes";
-            this.ValorBienes.Size = new System.Drawing.Size(181, 22);
+            this.ValorBienes.Size = new System.Drawing.Size(222, 22);
             this.ValorBienes.Text = "Valor en Bienes";
             this.ValorBienes.Click += new System.EventHandler(this.ValorBienes_Click);
             // 
@@ -320,6 +322,14 @@
             this.LogoEstatal.TabIndex = 5;
             this.LogoEstatal.TabStop = false;
             // 
+            // resguardoDeUnEmpleadoToolStripMenuItem
+            // 
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Image = global::ActivoFijo.Properties.Resources.articulos;
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Name = "resguardoDeUnEmpleadoToolStripMenuItem";
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Text = "Resguardo por empleado";
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.resguardoDeUnEmpleadoToolStripMenuItem_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +388,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem conexionDeBDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resguardoDeUnEmpleadoToolStripMenuItem;
     }
 }
 

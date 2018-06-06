@@ -159,5 +159,11 @@ namespace ActivoFijo
             Auxiliares.ConexionBD conexionBD = new Auxiliares.ConexionBD();
             conexionBD.ShowDialog();
         }
+
+        private void resguardoDeUnEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auxiliares.ReporteResguardoPE resguardo = new Auxiliares.ReporteResguardoPE();
+            resguardo.ShowDialog();
+        }
     }
 }
