@@ -75,6 +75,7 @@ namespace ActivoFijo.Activo.BienesSF
 
         private void Imprimir_Click(object sender, EventArgs e)
         {
+            Clases.Variables.BienesSFCantidad = "1";
             ReporteBienesSF reporte = new ReporteBienesSF();
             reporte.ShowDialog();
         }

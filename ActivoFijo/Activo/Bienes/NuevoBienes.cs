@@ -269,29 +269,38 @@ namespace ActivoFijo.Activo.Bienes
                     this.Close();
                 }
                 else
+                {
                     MessageBox.Show("No fue posible agregar los bienes.");
+                }
+                Clases.Variables.ImprimirBienesOrdenCompra = TBNoOrden.Text;
+                Clases.Variables.ImprimirBienesFactura = TBFactura.Text;
+                Clases.Variables.ImprimirBienesTotal = TBPrecio.Text;
+                Clases.Variables.ImprimirBienesDepartamento = LBDepartamento.Text;
+                Clases.Variables.ImprimirBienesDescripcionArticulo = CBArticulo.Text;
+                Clases.Variables.ImprimirBienesEmpleado = CBEmpleado.Text;
+                Clases.Variables.ImprimirBienesFamilia = LBFamilia.Text;
+                Clases.Variables.ImprimirBienesSerie = TBSerie.Text;
+                Clases.Variables.ImprimirBienesObservacion = TBObservaciones.Text;
+                Clases.Variables.ImprimirBienesCantidad = Cantidad.Value.ToString();
+                int EtiquetaInicial = int.Parse(TBEtiqueta.Text);
+                decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value;
+                if (Cantidad.Value == 1)
+                {
+                    Clases.Variables.ImprimirBienesEtiqueta = EtiquetaInicial.ToString();
+                }
+                else
+                {
+                    Clases.Variables.ImprimirBienesEtiqueta = EtiquetaInicial.ToString() + " a " + EtiquetaFinal.ToString();
+                }
+                Activo.Bienes.ImprimirBienes reporteBienes = new ImprimirBienes();
+                reporteBienes.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Favor de llenar todos los espacios que contengan un (*)");
+                MessageBox.Show("Favor de llenar los campos obligatorios (*)");
             }
 
-            Clases.Variables.ImprimirBienesEtiqueta=TBEtiqueta.Text;
-            Clases.Variables.ImprimirBienesOrdenCompra=TBNoOrden.Text;
-            Clases.Variables.ImprimirBienesFactura= TBFactura.Text;
-            Clases.Variables.ImprimirBienesTotal= TBPrecio.Text;
-            Clases.Variables.ImprimirBienesDepartamento= LBDepartamento.Text;
-            Clases.Variables.ImprimirBienesDescripcionArticulo = CBArticulo.Text;
-            Clases.Variables.ImprimirBienesEmpleado = CBEmpleado.Text;
-            Clases.Variables.ImprimirBienesFamilia = LBFamilia.Text;
-            Clases.Variables.ImprimirBienesSerie = TBSerie.Text;
-            Clases.Variables.ImprimirBienesObservacion = TBObservaciones.Text;
-            Clases.Variables.ImprimirBienesCantidad = Cantidad.Value.ToString();
-            int EtiquetaInicial = int.Parse(TBEtiqueta.Text);
-            decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value;
-            Clases.Variables.ImprimirBienesEtiquetaFinal = double.Parse(EtiquetaFinal.ToString());
-            Activo.Bienes.ReporteImprimirBienes reporteBienes = new  ReporteImprimirBienes();
-            reporteBienes.ShowDialog();
+            
         }
     }
 }

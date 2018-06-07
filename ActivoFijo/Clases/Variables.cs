@@ -86,6 +86,7 @@ namespace ActivoFijo.Clases
         public static string BienesSFDepartamento;
         public static string BienesSFConsumible;
         public static string BienesSFObservacion;
+        public static string BienesSFCantidad;
         //Imrimir Etiquetas
         public static string IEtiqueta;
         public static string IArticulo;
@@ -112,7 +113,7 @@ namespace ActivoFijo.Clases
         //Metodos de insercion
         public static string Error;
         public static bool ErrorB;
-        //ImprimirAlGuardar
+        //ImprimirAlGuardarBienes
         public static string ImprimirBienesEtiqueta;
         public static string ImprimirBienesSerie;
         public static string ImprimirBienesOrdenCompra;
@@ -124,6 +125,18 @@ namespace ActivoFijo.Clases
         public static string ImprimirBienesDepartamento;
         public static string ImprimirBienesObservacion;
         public static string ImprimirBienesCantidad;
-        public static double ImprimirBienesEtiquetaFinal;
+        //ImprimirAlGuardarBienesSF
+        public static string ImprimirBienesEtiquetaSF;
+        public static string ImprimirBienesSerieSF;
+        public static string ImprimirBienesOrdenCompraSF;
+        public static string ImprimirBienesTotalSF;
+        public static string ImprimirBienesFamiliaSF;
+        public static string ImprimirBienesDescripcionArticuloSF;
+        public static string ImprimirBienesEmpleadoSF;
+        public static string ImprimirBienesDepartamentoSF;
+        public static string ImprimirBienesObservacionSF;
+        public static string ImprimirBienesCantidadSF;
+
+
     }
 }

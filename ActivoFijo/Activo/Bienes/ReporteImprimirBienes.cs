@@ -11,16 +11,16 @@ using Microsoft.Reporting.WinForms;
 
 namespace ActivoFijo.Activo.Bienes
 {
-    public partial class ReporteImprimirBienes : Form
+    public partial class ImprimirBienes : Form
     {
-        public ReporteImprimirBienes()
+        public ImprimirBienes()
         {
             InitializeComponent();
         }
 
         private void ReporteImprimirBienes_Load(object sender, EventArgs e)
         {
-            ReportParameter[] reporte = new ReportParameter[12];
+            ReportParameter[] reporte = new ReportParameter[11];
             reporte[0] = new ReportParameter("Etiqueta", Clases.Variables.ImprimirBienesEtiqueta);
             reporte[1] = new ReportParameter("NoOrden", Clases.Variables.ImprimirBienesOrdenCompra);
             reporte[2] = new ReportParameter("factura", Clases.Variables.ImprimirBienesFactura);
@@ -32,7 +32,6 @@ namespace ActivoFijo.Activo.Bienes
             reporte[8] = new ReportParameter("total", "$" + Clases.Variables.ImprimirBienesTotal);
             reporte[9] = new ReportParameter("Familia", Clases.Variables.ImprimirBienesFamilia);
             reporte[10] = new ReportParameter("cantidad", Clases.Variables.ImprimirBienesCantidad);
-            reporte[11] = new ReportParameter("etiquetafinal","a "+ Clases.Variables.ImprimirBienesEtiquetaFinal);
             reportViewer1.LocalReport.SetParameters(reporte);
             reportViewer1.RefreshReport();
         }

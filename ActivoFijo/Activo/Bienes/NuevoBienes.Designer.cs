@@ -151,12 +151,13 @@
             // 
             // NPro
             // 
+            this.NPro.BackgroundImage = global::ActivoFijo.Properties.Resources.nuevo;
+            this.NPro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.NPro.Location = new System.Drawing.Point(539, 7);
             this.NPro.Name = "NPro";
             this.NPro.Size = new System.Drawing.Size(31, 27);
             this.NPro.TabIndex = 22;
             this.NPro.TabStop = false;
-            this.NPro.Text = "...";
             this.NPro.UseVisualStyleBackColor = true;
             this.NPro.Click += new System.EventHandler(this.NPro_Click);
             // 
@@ -252,12 +253,13 @@
             // 
             // NArt
             // 
+            this.NArt.BackgroundImage = global::ActivoFijo.Properties.Resources.nuevo;
+            this.NArt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.NArt.Location = new System.Drawing.Point(540, 9);
             this.NArt.Name = "NArt";
             this.NArt.Size = new System.Drawing.Size(31, 27);
             this.NArt.TabIndex = 21;
             this.NArt.TabStop = false;
-            this.NArt.Text = "...";
             this.NArt.UseVisualStyleBackColor = true;
             this.NArt.Click += new System.EventHandler(this.NArt_Click_1);
             // 
