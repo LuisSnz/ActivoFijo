@@ -159,6 +159,12 @@
     <Compile Include="Activo\BienesSF\ReporteBienesSF.Designer.cs">
       <DependentUpon>ReporteBienesSF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Activo\BienesSF\ReporteImprimirBienesSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesSF\ReporteImprimirBienesSF.Designer.cs">
+      <DependentUpon>ReporteImprimirBienesSF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Activo\Bienes\BajaBienes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,6 +553,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activo\BienesSF\ReporteBienesSF.resx">
       <DependentUpon>ReporteBienesSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesSF\ReporteImprimirBienesSF.resx">
+      <DependentUpon>ReporteImprimirBienesSF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activo\Bienes\BajaBienes.resx">
       <DependentUpon>BajaBienes.cs</DependentUpon>

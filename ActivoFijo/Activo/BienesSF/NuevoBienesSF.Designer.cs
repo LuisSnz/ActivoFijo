@@ -34,6 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBObservaciones = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.NPor = new System.Windows.Forms.Button();
             this.LBRFC = new System.Windows.Forms.Label();
             this.LBDomicilio = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.CBProveedor = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.NArt = new System.Windows.Forms.Button();
             this.TBColor = new System.Windows.Forms.TextBox();
             this.TBModelo = new System.Windows.Forms.TextBox();
             this.CBConservacion = new System.Windows.Forms.ComboBox();
@@ -72,8 +74,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.NArt = new System.Windows.Forms.Button();
-            this.NPor = new System.Windows.Forms.Button();
+            this.GuardareImprmir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -87,7 +88,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.White;
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(354, 600);
+            this.Cancelar.Location = new System.Drawing.Point(441, 600);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(107, 39);
             this.Cancelar.TabIndex = 34;
@@ -99,7 +100,7 @@
             // 
             this.Guardar.BackColor = System.Drawing.Color.White;
             this.Guardar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Guardar.Location = new System.Drawing.Point(147, 600);
+            this.Guardar.Location = new System.Drawing.Point(60, 600);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(107, 39);
             this.Guardar.TabIndex = 33;
@@ -145,6 +146,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(580, 103);
             this.panel4.TabIndex = 31;
+            // 
+            // NPor
+            // 
+            this.NPor.BackgroundImage = global::ActivoFijo.Properties.Resources.nuevo;
+            this.NPor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NPor.Location = new System.Drawing.Point(539, 7);
+            this.NPor.Name = "NPor";
+            this.NPor.Size = new System.Drawing.Size(31, 27);
+            this.NPor.TabIndex = 23;
+            this.NPor.TabStop = false;
+            this.NPor.UseVisualStyleBackColor = true;
+            this.NPor.Click += new System.EventHandler(this.NPor_Click);
             // 
             // LBRFC
             // 
@@ -235,6 +248,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(580, 172);
             this.panel3.TabIndex = 30;
+            // 
+            // NArt
+            // 
+            this.NArt.BackgroundImage = global::ActivoFijo.Properties.Resources.nuevo;
+            this.NArt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NArt.Location = new System.Drawing.Point(539, 9);
+            this.NArt.Name = "NArt";
+            this.NArt.Size = new System.Drawing.Size(31, 27);
+            this.NArt.TabIndex = 22;
+            this.NArt.TabStop = false;
+            this.NArt.UseVisualStyleBackColor = true;
+            this.NArt.Click += new System.EventHandler(this.NArt_Click);
             // 
             // TBColor
             // 
@@ -584,27 +609,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "No. Etiqueta : ";
             // 
-            // NArt
+            // GuardareImprmir
             // 
-            this.NArt.Location = new System.Drawing.Point(539, 9);
-            this.NArt.Name = "NArt";
-            this.NArt.Size = new System.Drawing.Size(31, 27);
-            this.NArt.TabIndex = 22;
-            this.NArt.TabStop = false;
-            this.NArt.Text = "...";
-            this.NArt.UseVisualStyleBackColor = true;
-            this.NArt.Click += new System.EventHandler(this.NArt_Click);
-            // 
-            // NPor
-            // 
-            this.NPor.Location = new System.Drawing.Point(539, 7);
-            this.NPor.Name = "NPor";
-            this.NPor.Size = new System.Drawing.Size(31, 27);
-            this.NPor.TabIndex = 23;
-            this.NPor.TabStop = false;
-            this.NPor.Text = "...";
-            this.NPor.UseVisualStyleBackColor = true;
-            this.NPor.Click += new System.EventHandler(this.NPor_Click);
+            this.GuardareImprmir.BackColor = System.Drawing.Color.White;
+            this.GuardareImprmir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardareImprmir.Location = new System.Drawing.Point(237, 600);
+            this.GuardareImprmir.Name = "GuardareImprmir";
+            this.GuardareImprmir.Size = new System.Drawing.Size(144, 39);
+            this.GuardareImprmir.TabIndex = 35;
+            this.GuardareImprmir.Text = "Guardar e Imprimir";
+            this.GuardareImprmir.UseVisualStyleBackColor = false;
+            this.GuardareImprmir.Click += new System.EventHandler(this.GuardareImprmir_Click_1);
             // 
             // NuevoBienesSF
             // 
@@ -614,6 +629,7 @@
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.CancelButton = this.Cancelar;
             this.ClientSize = new System.Drawing.Size(605, 649);
+            this.Controls.Add(this.GuardareImprmir);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Guardar);
             this.Controls.Add(this.groupBox1);
@@ -690,5 +706,6 @@
         private System.Windows.Forms.NumericUpDown Cantidad;
         private System.Windows.Forms.Button NArt;
         private System.Windows.Forms.Button NPor;
+        private System.Windows.Forms.Button GuardareImprmir;
     }
 }

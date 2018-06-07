@@ -226,5 +226,70 @@ namespace ActivoFijo.Activo.BienesSF
             if (nuevo.DialogResult == DialogResult.OK)
                 Clases.Bienes.CBProveedor(CBProveedor);
         }
+
+        private void GuardareImprmir_Click_1(object sender, EventArgs e)
+        {
+            if (CBArticulo.SelectedIndex >= 0 && CBConservacion.SelectedIndex >= 0 && CBEmpleado.SelectedIndex >= 0 && CBProveedor.SelectedIndex >= 0 && CBMarca.SelectedIndex >= 0 && TBNoOrden.Text.Length > 0 && TBPrecio.Text.Length > 0)
+            {
+                int etiqueta = int.Parse(TBEtiqueta.Text);
+                var con = 0;
+                if (CHConsumible.Checked == true)
+                    con = 1;
+                string ConnString = Clases.Variables.scon;
+                for (int x = 0; x < Cantidad.Value; x++)
+                {
+                    string SqlString = "Insert Into bienes (Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
+                    "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
+                    "Consumible,Estado,Creador) values (" + etiqueta + "," + TBNoOrden.Text + ",9,2013,''," +
+                    "" + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos where descripcion='"
+                    + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "',(select NoEmp from empleados where nombre='"
+                    + CBEmpleado.SelectedItem + "'),(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')" +
+                    ",(convert(datetime,'" + TimeFecha.Text + "')),0,(select top 1 id from marca where descripcion='" + CBMarca.SelectedItem + "')," +
+                    "'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text + "',0," + con + ",'" + CBConservacion.SelectedItem + "','"
+                    + Clases.Variables.Usuario + "')";
+                    Clases.Inserciones.BEjecucion(SqlString);
+                    etiqueta = etiqueta + 1;
+                }
+                if (Clases.Variables.ErrorB == false)
+                {
+                    if (Cantidad.Value == 1)
+                        MessageBox.Show("Bien agregado correctamente.");
+                    else
+                        MessageBox.Show("Bienes agregados correctamente.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No fue posible agregar los bienes.");
+                }
+                Clases.Variables.ImprimirBienesOrdenCompraSF = TBNoOrden.Text;
+                Clases.Variables.ImprimirBienesTotalSF = TBPrecio.Text;
+                Clases.Variables.ImprimirBienesDepartamentoSF = LBDepartamento.Text;
+                Clases.Variables.ImprimirBienesDescripcionArticuloSF = CBArticulo.Text;
+                Clases.Variables.ImprimirBienesEmpleadoSF = CBEmpleado.Text;
+                Clases.Variables.ImprimirBienesFamiliaSF = LBFamilia.Text;
+                Clases.Variables.ImprimirBienesSerieSF = TBSerie.Text;
+                Clases.Variables.ImprimirBienesObservacionSF = TBObservaciones.Text;
+                Clases.Variables.ImprimirBienesCantidadSF = Cantidad.Value.ToString();
+                int EtiquetaInicial = int.Parse(TBEtiqueta.Text);
+                decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value;
+                if (Cantidad.Value == 1)
+                {
+                    Clases.Variables.ImprimirBienesEtiquetaSF = EtiquetaInicial.ToString();
+                }
+                else
+                {
+                    Clases.Variables.ImprimirBienesEtiquetaSF = EtiquetaInicial.ToString() + " a " + EtiquetaFinal.ToString();
+                }
+                Activo.BienesSF.ImprimirBienesSF reporteImprimirBienesSF = new ImprimirBienesSF();
+                reporteImprimirBienesSF.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Favor de llenar los campos obligatorios (*)");
+            }
+            
+        }
     }
 }
