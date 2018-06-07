@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarBienesSF));
             this.Cancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.NArt = new System.Windows.Forms.Button();
             this.Articulo = new System.Windows.Forms.ComboBox();
             this.Color = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Observaciones = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.NPor = new System.Windows.Forms.Button();
             this.Proveedor = new System.Windows.Forms.ComboBox();
             this.RFC = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.Orden = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.NArt = new System.Windows.Forms.Button();
-            this.NPor = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,6 +105,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(580, 164);
             this.panel2.TabIndex = 25;
+            // 
+            // NArt
+            // 
+            this.NArt.BackgroundImage = global::ActivoFijo.Properties.Resources.nuevo;
+            this.NArt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NArt.Location = new System.Drawing.Point(540, 11);
+            this.NArt.Name = "NArt";
+            this.NArt.Size = new System.Drawing.Size(31, 27);
+            this.NArt.TabIndex = 22;
+            this.NArt.TabStop = false;
+            this.NArt.UseVisualStyleBackColor = true;
+            this.NArt.Click += new System.EventHandler(this.NArt_Click);
             // 
             // Articulo
             // 
@@ -305,6 +317,18 @@
             this.panel3.Size = new System.Drawing.Size(580, 129);
             this.panel3.TabIndex = 26;
             // 
+            // NPor
+            // 
+            this.NPor.BackgroundImage = global::ActivoFijo.Properties.Resources.nuevo;
+            this.NPor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NPor.Location = new System.Drawing.Point(540, 12);
+            this.NPor.Name = "NPor";
+            this.NPor.Size = new System.Drawing.Size(31, 27);
+            this.NPor.TabIndex = 23;
+            this.NPor.TabStop = false;
+            this.NPor.UseVisualStyleBackColor = true;
+            this.NPor.Click += new System.EventHandler(this.NPor_Click);
+            // 
             // Proveedor
             // 
             this.Proveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -434,28 +458,6 @@
             this.label1.Size = new System.Drawing.Size(94, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "No. Orden* :";
-            // 
-            // NArt
-            // 
-            this.NArt.Location = new System.Drawing.Point(540, 11);
-            this.NArt.Name = "NArt";
-            this.NArt.Size = new System.Drawing.Size(31, 27);
-            this.NArt.TabIndex = 22;
-            this.NArt.TabStop = false;
-            this.NArt.Text = "...";
-            this.NArt.UseVisualStyleBackColor = true;
-            this.NArt.Click += new System.EventHandler(this.NArt_Click);
-            // 
-            // NPor
-            // 
-            this.NPor.Location = new System.Drawing.Point(540, 12);
-            this.NPor.Name = "NPor";
-            this.NPor.Size = new System.Drawing.Size(31, 27);
-            this.NPor.TabIndex = 23;
-            this.NPor.TabStop = false;
-            this.NPor.Text = "...";
-            this.NPor.UseVisualStyleBackColor = true;
-            this.NPor.Click += new System.EventHandler(this.NPor_Click);
             // 
             // ModificarBienesSF
             // 
