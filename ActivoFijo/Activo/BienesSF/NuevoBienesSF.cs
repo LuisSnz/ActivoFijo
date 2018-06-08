@@ -273,7 +273,7 @@ namespace ActivoFijo.Activo.BienesSF
                 Clases.Variables.ImprimirBienesObservacionSF = TBObservaciones.Text;
                 Clases.Variables.ImprimirBienesCantidadSF = Cantidad.Value.ToString();
                 int EtiquetaInicial = int.Parse(TBEtiqueta.Text);
-                decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value;
+                decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value-1;
                 if (Cantidad.Value == 1)
                 {
                     Clases.Variables.ImprimirBienesEtiquetaSF = EtiquetaInicial.ToString();
