@@ -92,8 +92,13 @@ namespace ActivoFijo
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Auxiliares.ConexionBD conexionBD = new Auxiliares.ConexionBD();
-            conexionBD.ShowDialog();
+            Auxiliares.ContraseñaBD contraseñaBD = new Auxiliares.ContraseñaBD();
+            contraseñaBD.ShowDialog();
+            if (contraseñaBD.DialogResult == DialogResult.OK)
+            {
+                Auxiliares.ConexionBD conexionBD = new Auxiliares.ConexionBD();
+                conexionBD.ShowDialog();
+            }
         }
     }
 }
