@@ -25,7 +25,7 @@ namespace ActivoFijo.Activo.BienesBaja
                 "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
                 " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
                 "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-                " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM dbo.BajaBienes";
+                " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes";
             Clases.LLenadoGrids.llenarGrid(GridBaja, Clases.Variables.ConsultaBuscar, "BajaBienes");
         }
 

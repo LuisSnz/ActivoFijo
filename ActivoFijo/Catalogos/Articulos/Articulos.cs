@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace ActivoFijo.Catalogos.Articulos
@@ -17,7 +17,7 @@ namespace ActivoFijo.Catalogos.Articulos
             Catalogos.Articulos.Nuevo nuevo = new Catalogos.Articulos.Nuevo();
             nuevo.ShowDialog();
             if (nuevo.DialogResult == DialogResult.OK)
-                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "vArticulosCompras");
+                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "cararticulos");
         }
 
         private void Modificar_Click(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace ActivoFijo.Catalogos.Articulos
             Catalogos.Articulos.Modificar modificar = new Catalogos.Articulos.Modificar();
             modificar.ShowDialog();
             if (modificar.DialogResult == DialogResult.OK)
-                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "vArticulosCompras");
+                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "CatArticulos");
         }
 
         private void Buscar_Click(object sender, EventArgs e)
@@ -33,14 +33,16 @@ namespace ActivoFijo.Catalogos.Articulos
             Catalogos.Articulos.BuscarArticulo buscar = new Catalogos.Articulos.BuscarArticulo();
             buscar.ShowDialog();
             if (buscar.DialogResult == DialogResult.OK)
-                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "vArticulosCompras");
+                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "CatArticulos");
         }
 
         private void Articulos_Load(object sender, EventArgs e)
         {
             GVCatArticulos.Height = Clases.Variables.GridHeight;
-            Clases.Variables.ConsultaBuscar = "select ID,Descripcion,Familia,Inventariable,Medida,TipoArticulo as 'Tipo Articulo',ActivoContratos as 'Activos por Contrato' from vArticulosCompras order by id";
-            Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "vArticulosCompras");
+            Clases.Variables.ConsultaBuscar = "select CatArticulos.Id, CatArticulos.Descripcion as Articulo, Familia.Descripcion as Familia, " +
+                "CatArticulos.inventariable as Inventariable, CatArticulos.Medida,TipoArticulo.Descripcion as Tipo, CatArticulos.ActivoContratos as Contrato " +
+                "from CatArticulos inner join Familia on Familia.Id=CatArticulos.IdFamilia left outer join TipoArticulo on TipoArticulo.id=CatArticulos.IdTipoArticulo";
+            Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "CatArticulos");
         }
 
         private void GVCatArticulos_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -59,7 +61,7 @@ namespace ActivoFijo.Catalogos.Articulos
             Catalogos.Articulos.Modificar modificar = new Modificar();
             modificar.ShowDialog();
             if (modificar.DialogResult == DialogResult.OK)
-                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "vArticulosCompras");
+                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "CatArticulos");
         }
 
         private void Borrar_Click(object sender, EventArgs e)
@@ -72,14 +74,14 @@ namespace ActivoFijo.Catalogos.Articulos
                 string SqlString = "Delete from CatArticulos where Descripcion='" + Clases.Variables.ArticuloDescripcion + "'";
                 try
                 {
-                    SqlConnection conn = new SqlConnection(ConnString);
-                    SqlCommand cmd = new SqlCommand(SqlString, conn);
+                    MySqlConnection conn = new MySqlConnection(ConnString);
+                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
                     cmd.CommandType = CommandType.Text;
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Articulo eliminado correctamente.");
-                    Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "vArticulosCompras");
+                    Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "CatArticulos");
                 }
                 catch (Exception ex)
                 {

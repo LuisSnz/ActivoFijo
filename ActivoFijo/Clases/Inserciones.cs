@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace ActivoFijo.Clases
@@ -16,8 +16,8 @@ namespace ActivoFijo.Clases
             try
             {
                 string ConnString = Clases.Variables.scon;
-                SqlConnection conn = new SqlConnection(ConnString);
-                SqlCommand cmd = new SqlCommand(comando, conn);
+                MySqlConnection conn = new MySqlConnection(ConnString);
+                MySqlCommand cmd = new MySqlCommand(comando, conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -35,8 +35,8 @@ namespace ActivoFijo.Clases
             try
             {
                 string ConnString = Clases.Variables.scon;
-                SqlConnection conn = new SqlConnection(ConnString);
-                SqlCommand cmd = new SqlCommand(comando, conn);
+                MySqlConnection conn = new MySqlConnection(ConnString);
+                MySqlCommand cmd = new MySqlCommand(comando, conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
                 cmd.ExecuteNonQuery();

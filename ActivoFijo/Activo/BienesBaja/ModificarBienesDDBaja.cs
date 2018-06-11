@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Activo.BienesBaja
 {
@@ -33,9 +33,9 @@ namespace ActivoFijo.Activo.BienesBaja
                 Observaciones.Text + "',ValorActual=" + Valor.Text + " where id=" + Clases.Variables.IdBienesB + ";";
             try
             {
-                using (SqlConnection conn = new SqlConnection(ConnString))
+                using (MySqlConnection conn = new MySqlConnection(ConnString))
                 {
-                    using (SqlCommand cmd = new SqlCommand(SqlString, conn))
+                    using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         conn.Open();

@@ -59,31 +59,31 @@ namespace ActivoFijo.Activo.BienesBaja
             "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
             " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
             "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM dbo.BajaBienes where Etiqueta=" + CBBuscar.Text;
+            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where Etiqueta=" + CBBuscar.Text;
             else if (Empleado.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
             "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
             " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
             "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM dbo.BajaBienes where Empleado LIKE '%" + CBBuscar.Text + "%'";
+            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where Empleado LIKE '%" + CBBuscar.Text + "%'";
             else if (Motivo.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
             "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
             " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
             "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM dbo.BajaBienes where MotivoBaja LIKE '%" + CBBuscar.Text + "%'";
+            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where MotivoBaja LIKE '%" + CBBuscar.Text + "%'";
             else if (Articulo.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
             "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
             " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
             "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM dbo.BajaBienes where Articulo LIKE '%" + CBBuscar.Text + "%'";
+            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where Articulo LIKE '%" + CBBuscar.Text + "%'";
             else if (Factura.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
             "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
             " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
             "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM dbo.BajaBienes where NoFactura='" + CBBuscar.Text + "'";
+            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where NoFactura='" + CBBuscar.Text + "'";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -94,7 +94,7 @@ namespace ActivoFijo.Activo.BienesBaja
                 "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
                 " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
                 "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-                " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM dbo.BajaBienes";
+                " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

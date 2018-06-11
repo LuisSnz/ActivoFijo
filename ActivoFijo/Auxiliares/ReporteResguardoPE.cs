@@ -26,7 +26,7 @@ namespace ActivoFijo.Auxiliares
         {
             if (CBNombre.SelectedIndex >= 0)
             {
-                Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, dbo.CatArticulos.Descripcion AS Articulo, Familia.Descripcion as Familia, " +
+                Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo, Familia.Descripcion as Familia, " +
                     "empleados.Nombre AS Resguardo,bienes.Total, marca.Descripcion as Marca,bienes.Modelo,bienes.Serie,bienes.Color,bienes.NoOrden as Orden, " +
                     "bienes.NoFactura as Factura, bienes.Observacion as Observaciones FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp  " +
                     "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON CatArticulos.IdFamilia = Familia.Id " +

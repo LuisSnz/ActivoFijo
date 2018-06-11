@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Activo.Bienes
 {
@@ -41,9 +41,9 @@ namespace ActivoFijo.Activo.Bienes
                     ",Estado='" + Conservacion.SelectedItem.ToString() + "' where Id=" + Clases.Variables.IdBienes + ";";
                 try
                 {
-                    using (SqlConnection conn = new SqlConnection(ConnString))
+                    using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
-                        using (SqlCommand cmd = new SqlCommand(SqlString, conn))
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                         {
                             cmd.CommandType = CommandType.Text;
                             conn.Open();
@@ -91,13 +91,13 @@ namespace ActivoFijo.Activo.Bienes
 
         private void Articulo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd;
-            SqlDataReader dr;
-            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Familia.Descripcion as familia from CatArticulos,Familia where Familia.Id=CatArticulos.IdFamilia and CatArticulos.Descripcion='" + Articulo.SelectedItem + "'", cn);
+                cmd = new MySqlCommand("select Familia.Descripcion as familia from CatArticulos,Familia where Familia.Id=CatArticulos.IdFamilia and CatArticulos.Descripcion='" + Articulo.SelectedItem + "'", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -113,13 +113,13 @@ namespace ActivoFijo.Activo.Bienes
 
         private void Proveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd;
-            SqlDataReader dr;
-            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select direccion,rfc from proveedores where Nombre='" + Proveedor.SelectedItem + "'", cn);
+                cmd = new MySqlCommand("select direccion,rfc from proveedores where Nombre='" + Proveedor.SelectedItem + "'", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {

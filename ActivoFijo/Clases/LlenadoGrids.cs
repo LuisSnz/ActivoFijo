@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Clases
 {
@@ -13,8 +13,8 @@ namespace ActivoFijo.Clases
             {
 
                 string conexion1 = Clases.Variables.scon;
-                SqlConnection cnn = new SqlConnection(conexion1);
-                SqlDataAdapter da = new SqlDataAdapter(consulta, cnn);
+                MySqlConnection cnn = new MySqlConnection(conexion1);
+                MySqlDataAdapter da = new MySqlDataAdapter(consulta, cnn);
                 DataSet ds = new DataSet();
                 da.Fill(ds, tabla);
                 Grid.DataSource = ds.Tables[tabla];
@@ -28,8 +28,8 @@ namespace ActivoFijo.Clases
         public static DataSet GenerarDataSet(string consulta, string tabla)
         {
             string conexion1 = Clases.Variables.scon;
-            SqlConnection cnn = new SqlConnection(conexion1);
-            SqlDataAdapter da = new SqlDataAdapter(consulta, cnn);
+            MySqlConnection cnn = new MySqlConnection(conexion1);
+            MySqlDataAdapter da = new MySqlDataAdapter(consulta, cnn);
             DataSet ds = new DataSet();
             da.Fill(ds, tabla);
             return ds;

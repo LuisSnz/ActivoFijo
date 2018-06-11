@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Catalogos.Marcas
 {
@@ -45,8 +45,8 @@ namespace ActivoFijo.Catalogos.Marcas
                 string SqlString = "Delete from marca where Id=" + Clases.Variables.IDMarcas;
                 try
                 {
-                    SqlConnection conn = new SqlConnection(ConnString);
-                    SqlCommand cmd = new SqlCommand(SqlString, conn);
+                    MySqlConnection conn = new MySqlConnection(ConnString);
+                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
                     cmd.CommandType = CommandType.Text;
                     conn.Open();
                     cmd.ExecuteNonQuery();

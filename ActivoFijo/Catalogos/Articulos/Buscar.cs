@@ -25,10 +25,15 @@ namespace ActivoFijo.Catalogos.Articulos
         private void Buscar_Click(object sender, EventArgs e)
         {
             if (RBArticulo.Checked == true)
-                Clases.Variables.ConsultaBuscar = "select ID,Descripcion,Familia,Inventariable,Medida,TipoArticulo as 'Tipo Articulo',ActivoContratos as 'Activos por Contrato' from vArticulosCompras where Descripcion LIKE '%" + comboBox1.Text + "%' order by id";
+                Clases.Variables.ConsultaBuscar = "select CatArticulos.Id, CatArticulos.Descripcion as Articulo, Familia.Descripcion as Familia, " +
+                "CatArticulos.inventariable as Inventariable, CatArticulos.Medida,TipoArticulo.Descripcion as Tipo, CatArticulos.ActivoContratos as Contrato " +
+                "from CatArticulos inner join Familia on Familia.Id=CatArticulos.IdFamilia left outer join TipoArticulo on TipoArticulo.id=CatArticulos.IdTipoArticulo " +
+                "where CatArticulos.Descripcion LIKE '%" + comboBox1.Text + "%' order by id";
             else if (RBFamilia.Checked == true)
-                Clases.Variables.ConsultaBuscar = "select ID,Descripcion,Familia,Inventariable,Medida,TipoArticulo as 'Tipo Articulo',ActivoContratos as 'Activos por Contrato' from vArticulosCompras where Familia LIKE '%" + comboBox1.Text + "%' order by id";
-
+                Clases.Variables.ConsultaBuscar = "select CatArticulos.Id, CatArticulos.Descripcion as Articulo, Familia.Descripcion as Familia, " +
+                "CatArticulos.inventariable as Inventariable, CatArticulos.Medida,TipoArticulo.Descripcion as Tipo, CatArticulos.ActivoContratos as Contrato " +
+                "from CatArticulos inner join Familia on Familia.Id=CatArticulos.IdFamilia left outer join TipoArticulo on TipoArticulo.id=CatArticulos.IdTipoArticulo " +
+                "where Familia LIKE '%" + comboBox1.Text + "%' order by id";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -47,7 +52,9 @@ namespace ActivoFijo.Catalogos.Articulos
 
         private void MostrarTodo_Click(object sender, EventArgs e)
         {
-            Clases.Variables.ConsultaBuscar = "select ID,Descripcion,Familia,Inventariable,Medida,TipoArticulo as 'Tipo Articulo',ActivoContratos as 'Activos por Contrato' from vArticulosCompras order by id";
+            Clases.Variables.ConsultaBuscar = "select CatArticulos.Id, CatArticulos.Descripcion as Articulo, Familia.Descripcion as Familia, " +
+                "CatArticulos.inventariable as Inventariable, CatArticulos.Medida,TipoArticulo.Descripcion as Tipo, CatArticulos.ActivoContratos as Contrato " +
+                "from CatArticulos inner join Familia on Familia.Id=CatArticulos.IdFamilia left outer join TipoArticulo on TipoArticulo.id=CatArticulos.IdTipoArticulo";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

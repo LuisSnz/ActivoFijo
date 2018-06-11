@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Activo.BienesSF
 {
@@ -73,9 +73,9 @@ namespace ActivoFijo.Activo.BienesSF
                     "(Select Consumible from bienes where Etiqueta=" + Etiqueta.Text + "),'" + Clases.Variables.Usuario + "');";
                 try
                 {
-                    using (SqlConnection conn = new SqlConnection(ConnString))
+                    using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
-                        using (SqlCommand cmd = new SqlCommand(SqlString, conn))
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                         {
                             cmd.CommandType = CommandType.Text;
                             conn.Open();
@@ -92,8 +92,8 @@ namespace ActivoFijo.Activo.BienesSF
             SqlString = "Delete from bienes where Etiqueta=" + Etiqueta.Text;
             try
             {
-                SqlConnection conn = new SqlConnection(ConnString);
-                SqlCommand cmd = new SqlCommand(SqlString, conn);
+                MySqlConnection conn = new MySqlConnection(ConnString);
+                MySqlCommand cmd = new MySqlCommand(SqlString, conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
                 cmd.ExecuteNonQuery();

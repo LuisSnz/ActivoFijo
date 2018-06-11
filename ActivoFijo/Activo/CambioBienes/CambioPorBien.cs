@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Activo.CambioBienes
 {
@@ -40,16 +40,16 @@ namespace ActivoFijo.Activo.CambioBienes
                 string SqlString1 = "insert into HistoricoBienes (Etiqueta,NoEmpleado,FechaCambio) values (" + LBEtiqueta.Text + ",(select NoEmp from empleados where nombre='" + CBNuevoResguardo.SelectedItem + "'),(convert(datetime,'" + hoy.ToShortDateString() + "')))";
                 try
                 {
-                    using (SqlConnection conn = new SqlConnection(ConnString))
+                    using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
-                        using (SqlCommand cmd = new SqlCommand(SqlString, conn))
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                         {
                             cmd.CommandType = CommandType.Text;
                             conn.Open();
                             cmd.ExecuteNonQuery();
                             conn.Close();
                         }
-                        using (SqlCommand cmd = new SqlCommand(SqlString1, conn))
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString1, conn))
                         {
                             cmd.CommandType = CommandType.Text;
                             conn.Open();
@@ -71,13 +71,13 @@ namespace ActivoFijo.Activo.CambioBienes
 
         private void CBNuevoResguardo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd;
-            SqlDataReader dr;
-            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select departamento from empleados where Nombre='" + CBNuevoResguardo.SelectedItem + "'", cn);
+                cmd = new MySqlCommand("select departamento from empleados where Nombre='" + CBNuevoResguardo.SelectedItem + "'", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {

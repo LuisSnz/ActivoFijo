@@ -22,7 +22,7 @@ namespace ActivoFijo.Reportes.ValorBienes
             GridCosto.Height = Clases.Variables.GridHeight - 40;
             label1.Location = new Point(20, Clases.Variables.GridHeight + 30);
             Total.Location = new Point(140, Clases.Variables.GridHeight + 30);
-            Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, dbo.CatArticulos.Descripcion AS Articulo," +
+            Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
                "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.Total " +
                "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +

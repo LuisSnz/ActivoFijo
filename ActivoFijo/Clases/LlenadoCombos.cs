@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.IO;
 using System.Reflection;
 
@@ -8,17 +8,17 @@ namespace ActivoFijo.Clases
 {
     class Articulos
     {
-        public static SqlCommand cmd;
-        public static SqlDataReader dr;
+        public static MySqlCommand cmd;
+        public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static SqlConnection cn = new SqlConnection(conexion);
+        public static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBArticulosFamilia(ComboBox CB)
         {
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Descripcion from familia", cn);
+                cmd = new MySqlCommand("select Descripcion from familia", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
                 CB.Text = "";
@@ -38,7 +38,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Descripcion from tipoarticulo", cn);
+                cmd = new MySqlCommand("select Descripcion from tipoarticulo", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -58,7 +58,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Descripcion from Medida", cn);
+                cmd = new MySqlCommand("select Descripcion from Medida", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -76,7 +76,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Descripcion from CatArticulos order by descripcion", cn);
+                cmd = new MySqlCommand("select Descripcion from CatArticulos order by descripcion", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
                 CB.Text = "";
@@ -95,17 +95,17 @@ namespace ActivoFijo.Clases
 
     class Bienes
     {
-        public static SqlCommand cmd;
-        public static SqlDataReader dr;
+        public static MySqlCommand cmd;
+        public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static SqlConnection cn = new SqlConnection(conexion);
+        public static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBCambio(ComboBox CB)
         {
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select nombre from empleados where Baja=0 order by Nombre", cn);
+                cmd = new MySqlCommand("select nombre from empleados where Baja=0 order by Nombre", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -123,7 +123,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Descripcion from marca order by Descripcion", cn);
+                cmd = new MySqlCommand("select Descripcion from marca order by Descripcion", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -141,7 +141,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Etiqueta from bienes", cn);
+                cmd = new MySqlCommand("select Etiqueta from bienes", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -161,7 +161,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select NoFactura from bienes order by NoFactura", cn);
+                cmd = new MySqlCommand("select NoFactura from bienes order by NoFactura", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -181,7 +181,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select RTRIM(Nombre) as Nombre from Proveedores order by Nombre", cn);
+                cmd = new MySqlCommand("select RTRIM(Nombre) as Nombre from Proveedores order by Nombre", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -204,8 +204,8 @@ namespace ActivoFijo.Clases
             {
                 int index;
                 cn.Open();
-                cmd = new SqlCommand("SELECT bienes.Id, bienes.NoOrden,bienes.FechaCompra, bienes.NoFactura," +
-                    "bienes.Modelo,Bienes.Color,Familia.Descripcion as Familia, dbo.CatArticulos.Descripcion AS Articulo," +
+                cmd = new MySqlCommand("SELECT bienes.Id, bienes.NoOrden,bienes.FechaCompra, bienes.NoFactura," +
+                    "bienes.Modelo,Bienes.Color,Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo," +
                     "RTRIM(Proveedores.Nombre) AS Proveedor,bienes.Estado,RTRIM(Proveedores.Direccion) AS Direccion," +
                     "RTRIM(Proveedores.Rfc) AS RFC,bienes.Observacion,marca.Descripcion as marca,bienes.Serie " +
                     "FROM bienes INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia " +
@@ -245,7 +245,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("SELECT bienes.Id,bienes.Modelo,bienes.Precio,bienes.Serie,marca.Descripcion as marca " +
+                cmd = new MySqlCommand("SELECT bienes.Id,bienes.Modelo,bienes.Precio,bienes.Serie,marca.Descripcion as marca " +
                     "from bienes inner join marca on bienes.IdMarca=marca.Id where bienes.Id=" + Clases.Variables.IdBienes, cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -267,13 +267,13 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Distinct Departamento from empleados", cn);
+                cmd = new MySqlCommand("select DESCRIPCION from DEPTOS", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
                 CB.Text = "";
                 while (dr.Read())
                 {
-                    CB.Items.Add(dr["Departamento"].ToString());
+                    CB.Items.Add(dr["DESCRIPCION"].ToString());
                 }
                 cn.Close();
             }
@@ -287,7 +287,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select SUM(total) as Total from bienes", cn);
+                cmd = new MySqlCommand("select SUM(total) as Total from bienes", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -306,17 +306,17 @@ namespace ActivoFijo.Clases
 
     class BienesBaja
     {
-        public static SqlCommand cmd;
-        public static SqlDataReader dr;
+        public static MySqlCommand cmd;
+        public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static SqlConnection cn = new SqlConnection(conexion);
+        public static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBEtiqueta(ComboBox CB)
         {
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Etiqueta from BajaBienes order by Etiqueta", cn);
+                cmd = new MySqlCommand("select Etiqueta from BajaBienes order by Etiqueta", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -336,7 +336,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Distinct RTRIM(Articulo) AS Articulo from BajaBienes order by Articulo", cn);
+                cmd = new MySqlCommand("select Distinct RTRIM(Articulo) AS Articulo from BajaBienes order by Articulo", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -356,7 +356,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Distinct RTRIM(Empleado) AS Empleado from BajaBienes order by Empleado", cn);
+                cmd = new MySqlCommand("select Distinct RTRIM(Empleado) AS Empleado from BajaBienes order by Empleado", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -376,7 +376,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Distinct RTRIM(NoFactura) AS Factura from BajaBienes", cn);
+                cmd = new MySqlCommand("select Distinct RTRIM(NoFactura) AS Factura from BajaBienes", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -396,7 +396,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Distinct RTRIM(MotivoBaja) AS Motivo from BajaBienes", cn);
+                cmd = new MySqlCommand("select Distinct RTRIM(MotivoBaja) AS Motivo from BajaBienes", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -415,17 +415,17 @@ namespace ActivoFijo.Clases
 
     class Departamentos
     {
-        public static SqlCommand cmd;
-        public static SqlDataReader dr;
+        public static MySqlCommand cmd;
+        public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static SqlConnection cn = new SqlConnection(conexion);
+        public static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBAreas(ComboBox CB)
         {
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Descripcion from areas", cn);
+                cmd = new MySqlCommand("select Descripcion from areas", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -443,7 +443,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Descripcion from subdireccion", cn);
+                cmd = new MySqlCommand("select Descripcion from subdireccion", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -460,17 +460,17 @@ namespace ActivoFijo.Clases
 
     class Empleados
     {
-        public static SqlCommand cmd;
-        public static SqlDataReader dr;
+        public static MySqlCommand cmd;
+        public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static SqlConnection cn = new SqlConnection(conexion);
+        public static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBJefe(ComboBox CB)
         {
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Distinct Nombre from empleados where JefeDepto=1", cn);
+                cmd = new MySqlCommand("select Distinct Nombre from empleados where JefeDepto=1", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
                 CB.Text = "";
@@ -491,7 +491,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select DESCRIPCION from DEPTOS", cn);
+                cmd = new MySqlCommand("select DESCRIPCION from DEPTOS", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
                 CB.Text = "";
@@ -511,7 +511,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Nombre from Empleados where NoEmp=" + n, cn);
+                cmd = new MySqlCommand("select Nombre from Empleados where NoEmp=" + n, cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -531,7 +531,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Nombre from empleados order by nombre", cn);
+                cmd = new MySqlCommand("select Nombre from empleados order by nombre", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
                 CB.Text = "";
@@ -551,7 +551,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Nombre from empleados where Baja=0 order by nombre", cn);
+                cmd = new MySqlCommand("select Nombre from empleados where Baja=0 order by nombre", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
                 CB.Text = "";
@@ -570,10 +570,10 @@ namespace ActivoFijo.Clases
 
     class Proveedores
     {
-        public static SqlCommand cmd;
-        public static SqlDataReader dr;
+        public static MySqlCommand cmd;
+        public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static SqlConnection cn = new SqlConnection(conexion);
+        public static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void Modificar(TextBox Nombre, TextBox Direccion, TextBox Fax, TextBox Ciudad, TextBox Contacto,
             TextBox RFC, TextBox CURP, TextBox Email, TextBox Telefono, TextBox Giro, TextBox Padron, TextBox Certificacion,
@@ -582,7 +582,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select RTRIM(Nombre) as 'Nombre',RTRIM(Direccion) as 'Direccion',RTRIM(Fax) as 'Fax'," +
+                cmd = new MySqlCommand("select RTRIM(Nombre) as 'Nombre',RTRIM(Direccion) as 'Direccion',RTRIM(Fax) as 'Fax'," +
                     "RTRIM(Ciudad) as 'Ciudad',RTRIM(Contacto) as 'Contacto',RTRIM(Rfc) as 'RFC',RTRIM(Curp) as 'CURP'," +
                     "RTRIM(Email) as 'Email',RTRIM(Telefono) as 'Telefono',RTRIM(Giro) as 'Giro',RTRIM(PadronGobierno) as 'Padron'," +
                     "RTRIM(Certificaciones) as 'Certificaciones',RTRIM(Accionistas) as 'Accionistas'," +
@@ -618,7 +618,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand(Consulta, cn);
+                cmd = new MySqlCommand(Consulta, cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
                 CB.Text = "";
@@ -637,17 +637,17 @@ namespace ActivoFijo.Clases
 
     class BienesSinFactura
     {
-        public static SqlCommand cmd;
-        public static SqlDataReader dr;
+        public static MySqlCommand cmd;
+        public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static SqlConnection cn = new SqlConnection(conexion);
+        public static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBEtiqueta(ComboBox CB)
         {
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Etiqueta from bienes where noFactura=''", cn);
+                cmd = new MySqlCommand("select Etiqueta from bienes where noFactura=''", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
                 CB.Items.Clear();
@@ -667,7 +667,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select RTRIM(Proveedores.Nombre) as Nombre from Proveedores inner join bienes on " +
+                cmd = new MySqlCommand("select RTRIM(Proveedores.Nombre) as Nombre from Proveedores inner join bienes on " +
                     "bienes.IdProveedor=Proveedores.Id where bienes.noFactura='' order by Nombre", cn);
                 dr = cmd.ExecuteReader();
                 CB.Text = "";
@@ -691,8 +691,8 @@ namespace ActivoFijo.Clases
             {
                 int index;
                 cn.Open();
-                cmd = new SqlCommand("SELECT bienes.Id, bienes.NoOrden,bienes.FechaCompra," +
-                    "bienes.Modelo,Bienes.Color,Familia.Descripcion as Familia, dbo.CatArticulos.Descripcion AS Articulo," +
+                cmd = new MySqlCommand("SELECT bienes.Id, bienes.NoOrden,bienes.FechaCompra," +
+                    "bienes.Modelo,Bienes.Color,Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo," +
                     "RTRIM(Proveedores.Nombre) AS Proveedor,bienes.Estado,RTRIM(Proveedores.Direccion) AS Direccion," +
                     "RTRIM(Proveedores.Rfc) AS RFC,bienes.Observacion,marca.Descripcion as marca,bienes.Serie " +
                     "FROM bienes INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia " +
@@ -731,7 +731,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("SELECT bienes.Id,bienes.Modelo,bienes.Precio,bienes.Serie,marca.Descripcion as marca " +
+                cmd = new MySqlCommand("SELECT bienes.Id,bienes.Modelo,bienes.Precio,bienes.Serie,marca.Descripcion as marca " +
                     "from bienes inner join marca on bienes.IdMarca=marca.Id where bienes.Id=" + Clases.Variables.IdBienesSF, cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -753,7 +753,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Descripcion from CatArticulos inner join bienes on" +
+                cmd = new MySqlCommand("select Descripcion from CatArticulos inner join bienes on" +
                     " CatArticulos.Id=bienes.IdArticulo where bienes.noFactura='' order by descripcion", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
@@ -774,7 +774,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Nombre from empleados inner join bienes on empleados.NoEmp=bienes.NoEmpleado" +
+                cmd = new MySqlCommand("select Nombre from empleados inner join bienes on empleados.NoEmp=bienes.NoEmpleado" +
                     " where bienes.NoFactura='' order by nombre", cn);
                 dr = cmd.ExecuteReader();
                 CB.Items.Clear();
@@ -814,12 +814,12 @@ namespace ActivoFijo.Clases
             try
             {
                 SconBD();
-                SqlCommand cmd;
-                SqlDataReader dr;
+                MySqlCommand cmd;
+                MySqlDataReader dr;
                 string conexion = Clases.Variables.scon;
-                SqlConnection cn = new SqlConnection(conexion);
+                MySqlConnection cn = new MySqlConnection(conexion);
                 cn.Open();
-                cmd = new SqlCommand("select Usuario, Password from Usuarios where Usuario='"+Variables.Usuario+
+                cmd = new MySqlCommand("select Usuario, Password from Usuarios where Usuario='"+Variables.Usuario+
                     "' and Password='"+Variables.Contraseña+"'", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -833,8 +833,9 @@ namespace ActivoFijo.Clases
                 else
                     return 0;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 return 2;
             }
         }

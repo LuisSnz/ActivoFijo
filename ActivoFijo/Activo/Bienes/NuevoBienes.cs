@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Activo.Bienes
 {
@@ -29,13 +29,13 @@ namespace ActivoFijo.Activo.Bienes
 
         private void llenaretiqueta()
         {
-            SqlCommand cmd;
-            SqlDataReader dr;
-            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("SELECT MAX(ETIQUETA)+1 as etiqueta FROM BIENES", cn);
+                cmd = new MySqlCommand("SELECT MAX(ETIQUETA)+1 as etiqueta FROM BIENES", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -51,13 +51,13 @@ namespace ActivoFijo.Activo.Bienes
 
         private void CBArticulo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd;
-            SqlDataReader dr;
-            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select Familia.Descripcion as familia from CatArticulos,Familia where Familia.Id=CatArticulos.IdFamilia and CatArticulos.Descripcion='" + CBArticulo.SelectedItem + "'", cn);
+                cmd = new MySqlCommand("select Familia.Descripcion as familia from CatArticulos,Familia where Familia.Id=CatArticulos.IdFamilia and CatArticulos.Descripcion='" + CBArticulo.SelectedItem + "'", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -73,13 +73,13 @@ namespace ActivoFijo.Activo.Bienes
 
         private void CBProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd;
-            SqlDataReader dr;
-            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select direccion,rfc from proveedores where Nombre='" + CBProveedor.SelectedItem + "'", cn);
+                cmd = new MySqlCommand("select direccion,rfc from proveedores where Nombre='" + CBProveedor.SelectedItem + "'", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -96,13 +96,13 @@ namespace ActivoFijo.Activo.Bienes
 
         private void CBEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd;
-            SqlDataReader dr;
-            SqlConnection cn = new SqlConnection(Clases.Variables.scon);
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("select departamento from empleados where Nombre='" + CBEmpleado.SelectedItem + "'", cn);
+                cmd = new MySqlCommand("select departamento from empleados where Nombre='" + CBEmpleado.SelectedItem + "'", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {

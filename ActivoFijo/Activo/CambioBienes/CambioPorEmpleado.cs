@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Activo.CambioBienes
 {
@@ -122,16 +122,16 @@ namespace ActivoFijo.Activo.CambioBienes
                 "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')));";
             try
             {
-                using (SqlConnection conn = new SqlConnection(ConnString))
+                using (MySqlConnection conn = new MySqlConnection(ConnString))
                 {
-                    using (SqlCommand cmd = new SqlCommand(SqlString, conn))
+                    using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         conn.Close();
                     }
-                    using (SqlCommand cmd = new SqlCommand(SqlString2, conn))
+                    using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         conn.Open();
@@ -166,16 +166,16 @@ namespace ActivoFijo.Activo.CambioBienes
                 "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')));";
             try
             {
-                using (SqlConnection conn = new SqlConnection(ConnString))
+                using (MySqlConnection conn = new MySqlConnection(ConnString))
                 {
-                    using (SqlCommand cmd = new SqlCommand(SqlString, conn))
+                    using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         conn.Close();
                     }
-                    using (SqlCommand cmd = new SqlCommand(SqlString2, conn))
+                    using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         conn.Open();
@@ -212,16 +212,16 @@ namespace ActivoFijo.Activo.CambioBienes
 
                     string SqlString2 = "insert into HistoricoBienes values (" + GridIzquierdo.Rows[i].Cells[0].Value.ToString() + ",(" +
                         "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')));";
-                    using (SqlConnection conn = new SqlConnection(ConnString))
+                    using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
-                        using (SqlCommand cmd = new SqlCommand(SqlString, conn))
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                         {
                             cmd.CommandType = CommandType.Text;
                             conn.Open();
                             cmd.ExecuteNonQuery();
                             conn.Close();
                         }
-                        using (SqlCommand cmd = new SqlCommand(SqlString2, conn))
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
                         {
                             cmd.CommandType = CommandType.Text;
                             conn.Open();
@@ -259,16 +259,16 @@ namespace ActivoFijo.Activo.CambioBienes
 
                     string SqlString2 = "insert into HistoricoBienes values (" + GridDerecho.Rows[i].Cells[0].Value.ToString() + ",(" +
                         "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')));";
-                    using (SqlConnection conn = new SqlConnection(ConnString))
+                    using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
-                        using (SqlCommand cmd = new SqlCommand(SqlString, conn))
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                         {
                             cmd.CommandType = CommandType.Text;
                             conn.Open();
                             cmd.ExecuteNonQuery();
                             conn.Close();
                         }
-                        using (SqlCommand cmd = new SqlCommand(SqlString2, conn))
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
                         {
                             cmd.CommandType = CommandType.Text;
                             conn.Open();

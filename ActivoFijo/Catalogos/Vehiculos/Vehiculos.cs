@@ -21,8 +21,8 @@ namespace ActivoFijo.Catalogos.Vehiculos
         {
             GVVehiculos.Width = Clases.Variables.GridWidth;
             GVVehiculos.Height = Clases.Variables.GridHeight;
-            Clases.Variables.ConsultaBuscar = "select Numero,Placas,Modelo,Tipo,Subtipo,Marca,NoSerie,Familia,Resguardo," +
-                "Departamento,Observacion from vVehiculos order by id";
+            Clases.Variables.ConsultaBuscar = "select Numero,Placas,Modelo,Tipo,Subtipo,Marca,NoSerie,FamiliaVehiculos.Descripcion as Familia,empleados.Nombre as Resguardo,Observacion " +
+                "from vehiculo inner join familiavehiculos on FamiliaVehiculos.Id=VEHICULO.Familia left outer join empleados on empleados.NoEmp=Vehiculo.NoEmp";
             Clases.LLenadoGrids.llenarGrid(GVVehiculos, Clases.Variables.ConsultaBuscar, "vVehiculos");
         }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Catalogos.Empleados
 {
@@ -73,8 +73,8 @@ namespace ActivoFijo.Catalogos.Empleados
                     string SqlString = "Update empleados set Baja=1 where NoEmp=" + Clases.Variables.IdEmpleados;
                     try
                     {
-                        SqlConnection conn = new SqlConnection(ConnString);
-                        SqlCommand cmd = new SqlCommand(SqlString, conn);
+                        MySqlConnection conn = new MySqlConnection(ConnString);
+                        MySqlCommand cmd = new MySqlCommand(SqlString, conn);
                         cmd.CommandType = CommandType.Text;
                         conn.Open();
                         cmd.ExecuteNonQuery();
