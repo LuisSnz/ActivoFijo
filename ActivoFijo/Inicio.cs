@@ -156,8 +156,13 @@ namespace ActivoFijo
 
         private void conexionDeBDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Auxiliares.ConexionBD conexionBD = new Auxiliares.ConexionBD();
-            conexionBD.ShowDialog();
+            Auxiliares.ContraseñaBD contraseñaBD = new Auxiliares.ContraseñaBD();
+            contraseñaBD.ShowDialog();
+            if (contraseñaBD.DialogResult==DialogResult.OK)
+            {
+                Auxiliares.ConexionBD conexionBD = new Auxiliares.ConexionBD();
+                conexionBD.ShowDialog();
+            }
         }
 
         private void resguardoDeUnEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
