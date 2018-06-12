@@ -54,47 +54,48 @@ namespace ActivoFijo.Activo.BienesBaja
 
         private void Buscar_Click(object sender, EventArgs e)
         {
-            if (Etiqueta.Checked == true)
-                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
-            "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
-            " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
-            "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where Etiqueta=" + CBBuscar.Text;
+            if (Factura.Checked == true)
+                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden,NoFactura, Total, " +
+            "Articulo, Observacion, Departamento,Empleado," +
+            " FechaCompra, Marca, Serie, Modelo, MotivoBaja, EstatusBaja," +
+            "convert( FechaBaja,DATE)  as FechaBaja,ObservacionBaja," +
+            "ValorActual, Consumible, Borro FROM BajaBienes where NoFactura LIKE '%" + CBBuscar.Text + "%'";
+            else if (Etiqueta.Checked == true)
+                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden,NoFactura, Total, " +
+            "Articulo,Observacion, Departamento,Empleado," +
+            " FechaCompra, Marca, Serie, Modelo,MotivoBaja, EstatusBaja," +
+            "convert(FechaBaja,DATE)  as FechaBaja,ObservacionBaja," +
+            "ValorActual, Consumible, Borro FROM BajaBienes where Etiqueta LIKE '%" + CBBuscar.Text + "%'";
             else if (Empleado.Checked == true)
-                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
-            "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
-            " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
-            "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where Empleado LIKE '%" + CBBuscar.Text + "%'";
+                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden,NoFactura, Total, " +
+            "Articulo,Observacion, Departamento,Empleado," +
+            " FechaCompra, Marca, Serie, Modelo, MotivoBaja, EstatusBaja," +
+            "convert(FechaBaja,DATE) as FechaBaja,ObservacionBaja," +
+            "ValorActual, Consumible, Borro FROM BajaBienes where Empleado LIKE '%" + CBBuscar.Text + "%'";
             else if (Motivo.Checked == true)
-                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
-            "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
-            " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
-            "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where MotivoBaja LIKE '%" + CBBuscar.Text + "%'";
+                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden,NoFactura, Total, " +
+            "Articulo,Observacion, Departamento,Empleado," +
+            " FechaCompra, Marca, Serie, Modelo,MotivoBaja, EstatusBaja," +
+            "convert(FechaBaja,DATE)  as FechaBaja,ObservacionBaja," +
+            "ValorActual, Consumible, Borro FROM BajaBienes where MotivoBaja LIKE '%" + CBBuscar.Text + "%'";
             else if (Articulo.Checked == true)
-                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
-            "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
-            " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
-            "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where Articulo LIKE '%" + CBBuscar.Text + "%'";
-            else if (Factura.Checked == true)
-                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
-            "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
-            " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
-            "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-            " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes where NoFactura='" + CBBuscar.Text + "'";
+                Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden,NoFactura, Total, " +
+            "Articulo,Observacion, Departamento,Empleado," +
+            " FechaCompra, Marca, Serie, Modelo,MotivoBaja, EstatusBaja," +
+            "convert(FechaBaja,DATE)  as FechaBaja,ObservacionBaja," +
+            " ValorActual, Consumible, Borro FROM BajaBienes where Articulo LIKE '%" + CBBuscar.Text + "%'";
+           
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void Todo_Click(object sender, EventArgs e)
         {
-            Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
-                "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
-                " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
-                "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-                " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes";
+            Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden,NoFactura, Total, " +
+                "Articulo,  Observacion, Departamento, Empleado," +
+                " FechaCompra, Marca, Serie, Modelo,MotivoBaja, EstatusBaja," +
+                "convert(FechaBaja,DATE)  as FechaBaja,ObservacionBaja," +
+                " ValorActual, Consumible, Borro FROM BajaBienes";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

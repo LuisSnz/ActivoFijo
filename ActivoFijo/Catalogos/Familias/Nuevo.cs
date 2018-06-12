@@ -15,7 +15,7 @@ namespace ActivoFijo.Catalogos.Familias
             if (Desccripcion.Text.Length > 0)
             {
                 string ConnString = Clases.Variables.scon;
-                string SqlString = "Insert Into Familia (Descripcion) values ('" + Desccripcion.Text + "');";
+                string SqlString = "INSERT INTO familia (id,Descripcion) SELECT 1 + COALESCE((SELECT MAX(id) FROM familia), 0),'" + Desccripcion.Text + "';";
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)
                 {

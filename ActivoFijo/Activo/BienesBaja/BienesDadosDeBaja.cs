@@ -21,11 +21,10 @@ namespace ActivoFijo.Activo.BienesBaja
         {
             GridBaja.Width = Clases.Variables.GridWidth;
             GridBaja.Height = Clases.Variables.GridHeight;
-            Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden, RTRIM(NoFactura) AS NoFactura, Total, " +
-                "RTRIM(Articulo) as Articulo, RTRIM(Observacion) as Observacion, Departamento, RTRIM(Empleado) as Empleado," +
-                " FechaCompra, Marca, Serie, Modelo, RTRIM(MotivoBaja) as MotivoBaja, EstatusBaja," +
-                "(convert(varchar, FechaBaja,101))  as FechaBaja,RTRIM( ObservacionBaja) as ObservacionBaja," +
-                " RTRIM(ValorActual) as ValorActual, Consumible, Borro FROM BajaBienes";
+            Clases.Variables.ConsultaBuscar = "SELECT id, Etiqueta, NoOrden,NoFactura, Total, " +
+                "Articulo,Observacion, Departamento,Empleado," +
+                " FechaCompra, Marca, Serie, Modelo,MotivoBaja, EstatusBaja,convert(FechaBaja,DATE) as FechaBaja," +
+                "ObservacionBaja,ValorActual, Consumible, Borro FROM BajaBienes";
             Clases.LLenadoGrids.llenarGrid(GridBaja, Clases.Variables.ConsultaBuscar, "BajaBienes");
         }
 

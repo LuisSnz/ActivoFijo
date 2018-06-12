@@ -15,7 +15,7 @@ namespace ActivoFijo.Catalogos.Areas
             if (Descripcion.Text.Length > 0)
             {
                 string ConnString = Clases.Variables.scon;
-                string SqlString = "Insert Into areas (Descripcion) values ('" + Descripcion.Text + "');";
+                string SqlString = "INSERT INTO areas (Clave,Descripcion) SELECT 1 + COALESCE((SELECT MAX(Clave) FROM areas), 0),('" + Descripcion.Text + "');";
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)
                 {

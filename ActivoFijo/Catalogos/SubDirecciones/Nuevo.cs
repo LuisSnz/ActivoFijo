@@ -15,7 +15,7 @@ namespace ActivoFijo.Catalogos.SubDirecciones
             if (nombre.Text.Length > 0)
             {
                 string ConnString = Clases.Variables.scon;
-                string SqlString = "Insert Into subdireccion (Descripcion) values ('" + nombre.Text + "');";
+                string SqlString = "INSERT INTO subdireccion (ID,Descripcion) SELECT 1 + COALESCE((SELECT MAX(ID) FROM subdireccion), 0),('" + nombre.Text + "');";
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)
                 {
