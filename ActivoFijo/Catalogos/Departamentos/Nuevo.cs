@@ -32,8 +32,8 @@ namespace ActivoFijo.Catalogos.Departamentos
                 {
                     string ConnString = Clases.Variables.scon;
                     string SqlString = "Insert Into DEPTOS (CLAVE, DESCRIPCION, DIRECCION, SUBDIRECCION) " +
-                        "values ((select (COUNT(clave))+1 from DEPTOS),'" + Descripcion.Text + "', '" +
-                        comboArea.SelectedItem.ToString() + "','" + comboSubd.SelectedItem.ToString() + "');";
+                        "select (COUNT(clave))+1,'" + Descripcion.Text + "', '" +
+                        comboArea.SelectedItem.ToString() + "','" + comboSubd.SelectedItem.ToString() + "'from DEPTOS;";
                     bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                     if (resultado == true)
                     {

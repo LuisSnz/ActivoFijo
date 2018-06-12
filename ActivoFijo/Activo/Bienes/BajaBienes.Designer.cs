@@ -117,9 +117,8 @@
             this.Precio.ForeColor = System.Drawing.Color.MediumBlue;
             this.Precio.Location = new System.Drawing.Point(352, 119);
             this.Precio.Name = "Precio";
-            this.Precio.Size = new System.Drawing.Size(47, 17);
+            this.Precio.Size = new System.Drawing.Size(0, 17);
             this.Precio.TabIndex = 16;
-            this.Precio.Text = "label8";
             // 
             // Modelo
             // 
@@ -128,9 +127,8 @@
             this.Modelo.ForeColor = System.Drawing.Color.MediumBlue;
             this.Modelo.Location = new System.Drawing.Point(352, 90);
             this.Modelo.Name = "Modelo";
-            this.Modelo.Size = new System.Drawing.Size(47, 17);
+            this.Modelo.Size = new System.Drawing.Size(0, 17);
             this.Modelo.TabIndex = 15;
-            this.Modelo.Text = "label8";
             // 
             // Marca
             // 
@@ -139,9 +137,8 @@
             this.Marca.ForeColor = System.Drawing.Color.MediumBlue;
             this.Marca.Location = new System.Drawing.Point(81, 119);
             this.Marca.Name = "Marca";
-            this.Marca.Size = new System.Drawing.Size(47, 17);
+            this.Marca.Size = new System.Drawing.Size(0, 17);
             this.Marca.TabIndex = 14;
-            this.Marca.Text = "label8";
             // 
             // Serie
             // 
@@ -150,9 +147,8 @@
             this.Serie.ForeColor = System.Drawing.Color.MediumBlue;
             this.Serie.Location = new System.Drawing.Point(81, 94);
             this.Serie.Name = "Serie";
-            this.Serie.Size = new System.Drawing.Size(47, 17);
+            this.Serie.Size = new System.Drawing.Size(0, 17);
             this.Serie.TabIndex = 13;
-            this.Serie.Text = "label8";
             // 
             // Articulo
             // 
@@ -161,9 +157,8 @@
             this.Articulo.ForeColor = System.Drawing.Color.MediumBlue;
             this.Articulo.Location = new System.Drawing.Point(81, 68);
             this.Articulo.Name = "Articulo";
-            this.Articulo.Size = new System.Drawing.Size(47, 17);
+            this.Articulo.Size = new System.Drawing.Size(0, 17);
             this.Articulo.TabIndex = 12;
-            this.Articulo.Text = "label8";
             // 
             // Empleado
             // 
@@ -172,9 +167,8 @@
             this.Empleado.ForeColor = System.Drawing.Color.MediumBlue;
             this.Empleado.Location = new System.Drawing.Point(81, 40);
             this.Empleado.Name = "Empleado";
-            this.Empleado.Size = new System.Drawing.Size(47, 17);
+            this.Empleado.Size = new System.Drawing.Size(0, 17);
             this.Empleado.TabIndex = 11;
-            this.Empleado.Text = "label8";
             // 
             // Etiqueta
             // 
@@ -183,9 +177,8 @@
             this.Etiqueta.ForeColor = System.Drawing.Color.MediumBlue;
             this.Etiqueta.Location = new System.Drawing.Point(81, 12);
             this.Etiqueta.Name = "Etiqueta";
-            this.Etiqueta.Size = new System.Drawing.Size(47, 17);
+            this.Etiqueta.Size = new System.Drawing.Size(0, 17);
             this.Etiqueta.TabIndex = 10;
-            this.Etiqueta.Text = "label8";
             // 
             // label1
             // 

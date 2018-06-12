@@ -90,6 +90,8 @@ namespace ActivoFijo.Reportes.ValorBienes
                "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                "CatArticulos.IdFamilia = Familia.Id";
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void Cancelar_Click(object sender, EventArgs e)

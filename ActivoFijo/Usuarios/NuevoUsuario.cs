@@ -17,13 +17,37 @@ namespace ActivoFijo.Usuarios
             Clases.Empleados.CBNombreSB(Empleado);
         }
 
+        public string Id()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM Usuarios", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["Id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
         private void Guardar_Click(object sender, EventArgs e)
         {
             if (Empleado.SelectedIndex > 0 && Usuario.Text.Length > 0 && Contraseña.Text.Length > 0 && XContraseña.Text.Length > 0)
                 if (Contraseña.Text == XContraseña.Text)
                 {
                     string ConnString = Clases.Variables.scon;
-                    string SqlString = "Insert Into Usuarios values ((Select NoEmp from empleados where Nombre='"+
+                    string SqlString = "Insert Into Usuarios values ("+Id()+",(Select NoEmp from empleados where Nombre='"+
                         Empleado.SelectedItem.ToString()+"'),'"+Usuario.Text.ToUpper()+"','"+Contraseña.Text+"'," +
                         " 0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0," +
                         "NULL,NULL,NULL);";

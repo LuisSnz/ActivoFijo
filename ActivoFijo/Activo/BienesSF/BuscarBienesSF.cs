@@ -63,7 +63,7 @@ namespace ActivoFijo.Activo.BienesSF
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                 "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id " +
-                "where CatArticulos.Descripcion LIKE '%" + CBBuscar.Text + "%'" + "' and NoFactura=''";
+                "where CatArticulos.Descripcion LIKE '%" + CBBuscar.Text + "%'" + " and NoFactura=''";
             else if (Empleado.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
                 "bienes.Total, Familia.Descripcion, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
@@ -71,7 +71,7 @@ namespace ActivoFijo.Activo.BienesSF
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                 "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id " +
-                "where empleados.Nombre LIKE '%" + CBBuscar.Text + "%'" + "' and NoFactura=''";
+                "where empleados.Nombre LIKE '%" + CBBuscar.Text + "%'" + " and NoFactura=''";
             else if (Proveedor.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
                 "bienes.Total, Familia.Descripcion, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
@@ -79,7 +79,7 @@ namespace ActivoFijo.Activo.BienesSF
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                 "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id " +
-                "where RTRIM(Proveedores.Nombre) LIKE '%" + CBBuscar.Text + "%'" + "' and NoFactura=''";
+                "where RTRIM(Proveedores.Nombre) LIKE '%" + CBBuscar.Text + "%'" + " and NoFactura=''";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

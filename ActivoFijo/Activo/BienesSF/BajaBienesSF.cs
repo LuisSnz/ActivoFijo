@@ -58,19 +58,66 @@ namespace ActivoFijo.Activo.BienesSF
                 Clases.Variables.MotivoBaja = "ERROR";
         }
 
+        public void Fecha(DateTimePicker fecha)
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("Select FechaCompra AS Fecha from bienes where Etiqueta=" + Etiqueta.Text, cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    fecha.Value = Convert.ToDateTime(dr["Fecha"].ToString());
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+        }
+
+        public string Id()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM bajabienes", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["Id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
         private void Aceptar_Click(object sender, EventArgs e)
         {
+            DateTimePicker fechac = new DateTimePicker();
+            Fecha(fechac);
             string ConnString = Clases.Variables.scon;
             string SqlString;
             if (Clases.Variables.MotivoBaja != "ERROR")
             {
-                SqlString = "Insert Into BajaBienes values (" + Etiqueta.Text + ",(Select NoOrden from bienes where Etiqueta=" +
-                    Etiqueta.Text + "),(Select NoFactura from bienes where Etiqueta=" + Etiqueta.Text + ")," + Precio.Text + ",0," +
-                    Precio.Text + ",'" + Articulo.Text + "',(Select Observacion from bienes where Etiqueta=" + Etiqueta.Text
-                    + "),NULL,'" + Empleado.Text + "',(Select FechaCompra from bienes where Etiqueta=" + Etiqueta.Text + ")," +
+                SqlString = "Insert Into BajaBienes values (" + Id() + "," + Etiqueta.Text + "," + Clases.Variables.BienesSFOrdenCompra + ",''," + Precio.Text + ",0," +
+                    Precio.Text + ",'" + Articulo.Text + "','" + Clases.Variables.BienesSFObservacion + "',NULL,'" + Empleado.Text + "'," +
+                    "convert('" + fechac.Value.Year + "-" + fechac.Value.Month + "-" + fechac.Value.Day + " 00:00:00',DATETIME)," +
                     "'" + Marca.Text + "','" + Serie.Text + "','" + Modelo.Text + "','" + Clases.Variables.MotivoBaja + "',NULL," +
-                    "(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')),'" + Observaciones.Text + "',NULL,0," +
-                    "(Select Consumible from bienes where Etiqueta=" + Etiqueta.Text + "),'" + Clases.Variables.Usuario + "');";
+                    "(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)),'" + Observaciones.Text + "',NULL,0," +
+                    Clases.Variables.BienesSFConsumible + ",'" + Clases.Variables.Usuario + "');";
                 try
                 {
                     using (MySqlConnection conn = new MySqlConnection(ConnString))

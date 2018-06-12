@@ -103,6 +103,30 @@ namespace ActivoFijo.Activo.CambioBienes
             ComprobarIzquierda();
         }
 
+        public string Id()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM historicobienes", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["Id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
         private void CBDerecho_SelectedIndexChanged(object sender, EventArgs e)
         {
             Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
@@ -118,8 +142,8 @@ namespace ActivoFijo.Activo.CambioBienes
                 CBDerecho.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
                 CBIzquierdo.SelectedItem.ToString() + "') and Etiqueta=" + GridIzquierdo.CurrentRow.Cells[0].Value.ToString() + ";";
 
-            string SqlString2 = "insert into HistoricoBienes values (" + GridIzquierdo.CurrentRow.Cells[0].Value.ToString() + ",(" +
-                "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')));";
+            string SqlString2 = "insert into HistoricoBienes values ("+Id()+"," + GridIzquierdo.CurrentRow.Cells[0].Value.ToString() + ",(" +
+                "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConnString))
@@ -162,8 +186,8 @@ namespace ActivoFijo.Activo.CambioBienes
                 CBIzquierdo.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
                 CBDerecho.SelectedItem.ToString() + "') and Etiqueta=" + GridDerecho.CurrentRow.Cells[0].Value.ToString() + ";";
 
-            string SqlString2 = "insert into HistoricoBienes values (" + GridDerecho.CurrentRow.Cells[0].Value.ToString() + ",(" +
-                "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')));";
+            string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridDerecho.CurrentRow.Cells[0].Value.ToString() + ",(" +
+                "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-"+DateTime.Today.Month+"-"+DateTime.Today.Day+" 00:00:00',DATETIME)));";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConnString))
@@ -210,8 +234,8 @@ namespace ActivoFijo.Activo.CambioBienes
                  CBDerecho.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
                  CBIzquierdo.SelectedItem.ToString() + "') and Etiqueta=" + GridIzquierdo.Rows[i].Cells[0].Value.ToString() + ";";
 
-                    string SqlString2 = "insert into HistoricoBienes values (" + GridIzquierdo.Rows[i].Cells[0].Value.ToString() + ",(" +
-                        "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')));";
+                    string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridIzquierdo.Rows[i].Cells[0].Value.ToString() + ",(" +
+                        "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
                     using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
                         using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
@@ -257,8 +281,8 @@ namespace ActivoFijo.Activo.CambioBienes
                  CBIzquierdo.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
                  CBDerecho.SelectedItem.ToString() + "') and Etiqueta=" + GridDerecho.Rows[i].Cells[0].Value.ToString() + ";";
 
-                    string SqlString2 = "insert into HistoricoBienes values (" + GridDerecho.Rows[i].Cells[0].Value.ToString() + ",(" +
-                        "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert(datetime,'" + DateTime.Today.ToShortDateString() + "')));";
+                    string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridDerecho.Rows[i].Cells[0].Value.ToString() + ",(" +
+                        "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
                     using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
                         using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))

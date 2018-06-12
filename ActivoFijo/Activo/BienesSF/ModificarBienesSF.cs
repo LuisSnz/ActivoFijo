@@ -14,13 +14,84 @@ namespace ActivoFijo.Activo.BienesSF
 
         private void ModificarBienesSF_Load(object sender, EventArgs e)
         {
-            if (Clases.Variables.BienesSFConsumible == "True")
+            if (Clases.Variables.BienesSFConsumible == "1")
                 Consumible.Checked = true;
             Clases.Articulos.CBBuscarArticulo(Articulo);
             Clases.Bienes.CBProveedor(Proveedor);
             Clases.Bienes.CBMarca(Marca);
             Clases.BienesSinFactura.Modificar(Orden, Fecha, Articulo, Familia, Marca, Serie, Conservacion,
                 Modelo, Color, Proveedor, Domicilio, RFC, Observaciones);
+        }
+
+        public string XArticulo()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from CatArticulos where descripcion='" + Articulo.SelectedItem + "'", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
+        public string XMarca()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from marca where descripcion='" + Marca.SelectedItem + "' LIMIT 1", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+        public string XProveedor()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from proveedores where nombre='" + Proveedor.SelectedItem + "'", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
         }
 
         private void Guardar_Click(object sender, EventArgs e)
@@ -33,11 +104,9 @@ namespace ActivoFijo.Activo.BienesSF
             {
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "Update bienes set NoOrden=" + Orden.Text + "," +
-                    "IdArticulo=(Select Id from CatArticulos where Descripcion='" + Articulo.SelectedItem.ToString() +
-                    "'),Observacion='" + Observaciones.Text + "',IdProveedor=(Select Id from Proveedores where Nombre='" +
-                    Proveedor.SelectedItem.ToString() + "'),FechaCompra=(convert(datetime,'" + Fecha.Text + "'))," +
-                    "IdMarca=(Select TOP 1 Id from marca where Descripcion='" + Marca.SelectedItem.ToString() + "')," +
-                    "Serie='" + Serie.Text + "',Modelo='" + Modelo.Text + "',Color='" + Modelo.Text + "',Consumible=" + TFConsumible +
+                    "IdArticulo=" + XArticulo() + ",Observacion='" + Observaciones.Text + "',IdProveedor=" + XProveedor() + ",FechaCompra=(" +
+                    "convert('" + Fecha.Value.Year.ToString() + "-" + Fecha.Value.Month.ToString() + "-" + Fecha.Value.Day.ToString() + " 00:00:00',DATETIME))," +
+                    "IdMarca=" + XMarca() + "," + "Serie='" + Serie.Text + "',Modelo='" + Modelo.Text + "',Color='" + Modelo.Text + "',Consumible=" + TFConsumible +
                     ",Estado='" + Conservacion.SelectedItem.ToString() + "' where Id=" + Clases.Variables.IdBienesSF + ";";
                 try
                 {

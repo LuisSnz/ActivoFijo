@@ -16,7 +16,7 @@ namespace ActivoFijo.Catalogos.Proveedores
         {
             GridProveedor.Width = Clases.Variables.GridWidth;
             GridProveedor.Height = Clases.Variables.GridHeight;
-            Clases.Variables.ConsultaBuscar = "SELECT Id, RTRIM(Nombre) AS 'Nombre', RTRIM(Direccion) AS 'Direccion'," +
+            Clases.Variables.ConsultaBuscar = "SELECT Id, RTRIM(Nombre) AS Nombre, RTRIM(Direccion) AS 'Direccion'," +
                 " Fax, RTRIM(Ciudad) AS 'Ciudad', Contacto, Giro, PadronGobierno, Certificaciones, Email, Observaciones," +
                 " Telefono, Accionistas, Curp FROM Proveedores";
             Clases.LLenadoGrids.llenarGrid(GridProveedor, Clases.Variables.ConsultaBuscar, "Proveedores");
@@ -46,7 +46,7 @@ namespace ActivoFijo.Catalogos.Proveedores
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show("Departamento eliminado correctamente.");
+                    MessageBox.Show("Proveedor eliminado correctamente.");
                     Clases.LLenadoGrids.llenarGrid(GridProveedor, Clases.Variables.ConsultaBuscar, "Proveedores");
                 }
                 catch (Exception ex)
