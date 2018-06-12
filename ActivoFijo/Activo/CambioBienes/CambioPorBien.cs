@@ -61,7 +61,7 @@ namespace ActivoFijo.Activo.CambioBienes
                 DateTime hoy = DateTime.Today;
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "update bienes set NoEmpleado=(select NoEmp from empleados where nombre='" + CBNuevoResguardo.SelectedItem + "') where NoEmpleado=(select NoEmp from empleados where nombre='" + TBResguardoA.Text + "')  and id=" + LBId.Text + "";
-                string SqlString1 = "insert into HistoricoBienes (Etiqueta,NoEmpleado,FechaCambio) values (" + Id() + "," + LBEtiqueta.Text + ",(select NoEmp from empleados where nombre='" + CBNuevoResguardo.SelectedItem + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)))";
+                string SqlString1 = "insert into HistoricoBienes (Id,Etiqueta,NoEmpleado,FechaCambio) values (" + Id() + "," + LBEtiqueta.Text + ",(select NoEmp from empleados where nombre='" + CBNuevoResguardo.SelectedItem + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)))";
                 try
                 {
                     using (MySqlConnection conn = new MySqlConnection(ConnString))
