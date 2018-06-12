@@ -49,7 +49,7 @@ namespace ActivoFijo.Catalogos.Empleados
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "Update empleados set Nombre='" + Nombre.Text + "',NombrePliegos='" + NombreM.Text +
                     "',Departamento='" + comboDepto.SelectedItem.ToString() + "',NoLicencia='" + NumLicencia.Text +
-                    "',FechaVencimiento=(convert(datetime,'" + Fecha.Text + "')),NoEmpleadoJefe=(select NoEmp from empleados" +
+                    "',FechaVencimiento=(convert('" + Fecha.Text + "',DATE)),NoEmpleadoJefe=(select NoEmp from empleados" +
                     " where Nombre='" + comboJefe.SelectedItem.ToString() + "'),ActivoPliegos=" + pliegos + ",JefeDepto=" + Jefe
                     + ",Baja=" + Baja + ",NoVerifica=" + SinPliego + ",Bloqueado=0,Textobloqueado=''" +
                     "where NoEmp=" + Clases.Variables.IdEmpleados + ";";

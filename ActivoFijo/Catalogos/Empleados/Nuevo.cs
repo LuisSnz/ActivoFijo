@@ -39,7 +39,7 @@ namespace ActivoFijo.Catalogos.Empleados
                 string SqlString = "Insert Into empleados (NoEmp,Nombre,Departamento,JefeDepto,NombrePliegos,NoLicencia," +
                     "FechaVencimiento,Bloqueado,Textobloqueado,Baja,NoEmpleadoJefe,ActivoPliegos,NoVerifica) values " +
                     "((select (Max(NoEmp))+1 from empleados),'" + NombreEmpleado + "','" + comboDepto.SelectedItem.ToString() + "'," +
-                    Jefe + ",'" + NombreM.Text + "','" + NumLicencia.Text + "',(convert(datetime,'" + FechaVencimiento.Text + "')),1," +
+                    Jefe + ",'" + NombreM.Text + "','" + NumLicencia.Text + "',(convert('" + FechaVencimiento.Text + "',DATE)),1," +
                     "''," + Baja + ",(select NoEmp from empleados where Nombre='" +
                     comboJefe.SelectedItem.ToString() + "')," + pliegos + "," + SinPliego + ");";
 

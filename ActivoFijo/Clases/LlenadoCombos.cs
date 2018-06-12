@@ -257,9 +257,8 @@ namespace ActivoFijo.Clases
                 }
                 cn.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error al llenar :" + ex.ToString());
             }
         }
         public static void CBDeptos(ComboBox CB)

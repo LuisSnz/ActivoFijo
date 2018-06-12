@@ -110,6 +110,125 @@ namespace ActivoFijo.Activo.BienesSF
             }
         }
 
+        public string Empleado()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT NoEmp FROM empleados where Nombre='" + CBEmpleado.SelectedItem.ToString() + "'", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["NoEmp"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
+        public string Id()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM BIENES", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["Id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
+        public string Articulo()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from CatArticulos where descripcion='" + CBArticulo.SelectedItem + "'", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
+        public string Marca()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from marca where descripcion='" + CBMarca.SelectedItem + "' LIMIT 1", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+        public string Proveedor()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from proveedores where nombre='" + CBProveedor.SelectedItem + "'", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
         private void Guardar_Click(object sender, EventArgs e)
         {
             if (CBArticulo.SelectedIndex >= 0 && CBConservacion.SelectedIndex >= 0 && CBEmpleado.SelectedIndex >= 0 && CBProveedor.SelectedIndex >= 0 && CBMarca.SelectedIndex >= 0 && TBNoOrden.Text.Length > 0 && TBPrecio.Text.Length > 0)
@@ -121,15 +240,12 @@ namespace ActivoFijo.Activo.BienesSF
                 string ConnString = Clases.Variables.scon;
                 for (int x = 0; x < Cantidad.Value; x++)
                 {
-                    string SqlString = "Insert Into bienes (Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
-                    "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
-                    "Consumible,Estado,Creador) values (" + etiqueta + "," + TBNoOrden.Text + ",9,2013,''," +
-                    "" + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos where descripcion='"
-                    + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "',(select NoEmp from empleados where nombre='"
-                    + CBEmpleado.SelectedItem + "'),(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')" +
-                    ",(convert(datetime,'" + TimeFecha.Text + "')),0,(select top 1 id from marca where descripcion='" + CBMarca.SelectedItem + "')," +
-                    "'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text + "',0," + con + ",'" + CBConservacion.SelectedItem + "','"
-                    + Clases.Variables.Usuario + "')";
+                    string SqlString = "Insert Into bienes (Id,Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
+                         "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
+                         "Consumible,Estado,Creador) values (" + Id() + "," + etiqueta + "," + TBNoOrden.Text + ",9,2013,''," +
+                         TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2," + Articulo() + ",'" + TBObservaciones.Text + "'," + Empleado() + "," + Proveedor() +
+                         ",convert('" + TimeFecha.Value.Year.ToString() + "-" + TimeFecha.Value.Month.ToString() + "-" + TimeFecha.Value.Day.ToString() + " 00:00:00',DATETIME),0," + Marca() + ",'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
+                         "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + Clases.Variables.Usuario + "')";
                     Clases.Inserciones.BEjecucion(SqlString);
                     etiqueta = etiqueta + 1;
                 }
@@ -244,7 +360,7 @@ namespace ActivoFijo.Activo.BienesSF
                     "" + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos where descripcion='"
                     + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "',(select NoEmp from empleados where nombre='"
                     + CBEmpleado.SelectedItem + "'),(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')" +
-                    ",(convert(datetime,'" + TimeFecha.Text + "')),0,(select top 1 id from marca where descripcion='" + CBMarca.SelectedItem + "')," +
+                    ",(convert('" + TimeFecha.Text + "',,DATE)),0,(select top 1 id from marca where descripcion='" + CBMarca.SelectedItem + "')," +
                     "'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text + "',0," + con + ",'" + CBConservacion.SelectedItem + "','"
                     + Clases.Variables.Usuario + "')";
                     Clases.Inserciones.BEjecucion(SqlString);

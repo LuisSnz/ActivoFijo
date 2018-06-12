@@ -30,6 +30,30 @@ namespace ActivoFijo.Activo.CambioBienes
             Clases.Bienes.CBCambio(CBNuevoResguardo);
         }
 
+        public string Id()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM historicobienes", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["Id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
         private void Cambiar_Click(object sender, EventArgs e)
         {
             if (CBNuevoResguardo.SelectedIndex >= 0)
@@ -37,7 +61,7 @@ namespace ActivoFijo.Activo.CambioBienes
                 DateTime hoy = DateTime.Today;
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "update bienes set NoEmpleado=(select NoEmp from empleados where nombre='" + CBNuevoResguardo.SelectedItem + "') where NoEmpleado=(select NoEmp from empleados where nombre='" + TBResguardoA.Text + "')  and id=" + LBId.Text + "";
-                string SqlString1 = "insert into HistoricoBienes (Etiqueta,NoEmpleado,FechaCambio) values (" + LBEtiqueta.Text + ",(select NoEmp from empleados where nombre='" + CBNuevoResguardo.SelectedItem + "'),(convert(datetime,'" + hoy.ToShortDateString() + "')))";
+                string SqlString1 = "insert into HistoricoBienes (Etiqueta,NoEmpleado,FechaCambio) values (" + Id() + "," + LBEtiqueta.Text + ",(select NoEmp from empleados where nombre='" + CBNuevoResguardo.SelectedItem + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)))";
                 try
                 {
                     using (MySqlConnection conn = new MySqlConnection(ConnString))
