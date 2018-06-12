@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Catalogos.Articulos
 {
@@ -22,28 +23,78 @@ namespace ActivoFijo.Catalogos.Articulos
             index = CBMedida.FindString(Clases.Variables.ArticuloMedida);
             CBMedida.SelectedIndex = index;
             TBArticulo.Text = Clases.Variables.ArticuloDescripcion;
-            if (Clases.Variables.ArticuloContrato == "True")
+            if (Clases.Variables.ArticuloContrato == "1")
                 CHArticuloContrato.Checked = true;
             else
                 CHArticuloContrato.Checked = false;
-            if (Clases.Variables.ArticuloInventariable == "True")
+            if (Clases.Variables.ArticuloInventariable == "1")
                 CHBInventariable.Checked = true;
             else
                 CHBInventariable.Checked = false;
+        }
+
+        public string Tipo()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from TipoArticulo where descripcion='" + CBArticulo.SelectedItem + "';", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
+        public string Familia()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from Familia where Familia.Descripcion ='" + CBFamilia.SelectedItem + "';", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
         }
 
         private void Guardar_Click(object sender, EventArgs e)
         {
             if (TBArticulo.Text.Length > 0 && CBArticulo.SelectedIndex >= 0 && CBFamilia.SelectedIndex >= 0 && CBMedida.SelectedIndex >= 0)
             {
-                bool con = false;
-                bool inv = false;
+                int con = 0;
+                int inv = 0;
                 if (CHArticuloContrato.Checked == true)
-                    con = true;
+                    con = 1;
                 if (CHBInventariable.Checked == true)
-                    inv = true;
+                    inv = 1;
                 string ConnString = Clases.Variables.scon;
-                string SqlString = "Update CatArticulos set Descripcion='" + TBArticulo.Text + "',idfamilia=(select id from Familia where Familia.Descripcion ='" + CBFamilia.SelectedItem + "'),ActivoContratos='" + con + "',Medida='" + CBMedida.SelectedItem + "',IdTipoArticulo=(select id from TipoArticulo where descripcion='" + CBArticulo.SelectedItem + "'),inventariable='" + inv + "',IdFamiliaSolicitudes='1',Activo='True',COG='0' where Id=" + Clases.Variables.IdArticulo + "";
+                string SqlString = "Update CatArticulos set Descripcion='" + TBArticulo.Text + "',idfamilia="+Familia()+",ActivoContratos='" + con + "',Medida='" +
+                    CBMedida.SelectedItem + "',IdTipoArticulo="+Tipo()+",inventariable='" +
+                    inv + "',IdFamiliaSolicitudes='1',Activo=1,COG='0' where Id=" + Clases.Variables.IdArticulo + "";
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)
                 {

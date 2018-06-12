@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Catalogos.Articulos
 {
@@ -17,19 +18,91 @@ namespace ActivoFijo.Catalogos.Articulos
             Clases.Articulos.CBArticulosMedida(CBMedida);
         }
 
+        public string Id()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM catarticulos", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["Id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
+        public string Tipo()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from TipoArticulo where descripcion='" + CBArticulo.SelectedItem + "';", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
+        public string Familia()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select id from Familia where Familia.Descripcion ='" + CBFamilia.SelectedItem + "';", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
         private void Guardar_Click(object sender, EventArgs e)
         {
             if (TBArticulo.Text.Length > 0 && CBArticulo.SelectedIndex >= 0 && CBFamilia.SelectedIndex >= 0 && CBMedida.SelectedIndex >= 0)
             {
-                bool con = false;
-                bool inv = false;
+                int con = 0;
+                int inv = 0;
                 if (CHArticuloContrato.Checked == true)
-                    con = true;
+                    con = 1;
                 if (CHBInventariable.Checked == true)
-                    inv = true;
+                    inv = 1;
                 string ConnString = Clases.Variables.scon;
-                string SqlString = "Insert Into CatArticulos (Descripcion,idfamilia,ActivoContratos,Medida,IdTipoArticulo,inventariable,IdFamiliaSolicitudes,Activo,COG) " +
-                    "values ('" + TBArticulo.Text + "',(select id from Familia where Familia.Descripcion ='" + CBFamilia.SelectedItem + "'),'" + con + "','" + CBMedida.SelectedItem + "',(select id from TipoArticulo where descripcion='" + CBArticulo.SelectedItem + "'),'" + inv + "','1','True','0')";
+                string SqlString = "Insert Into CatArticulos (Id,Descripcion,idfamilia,ActivoContratos,Medida,IdTipoArticulo,inventariable,IdFamiliaSolicitudes,Activo,COG) " +
+                    "values ("+Id()+",'" + TBArticulo.Text + "',"+Familia()+",'" + con + "','" + CBMedida.SelectedItem + "',"+Tipo()+",'" + inv + "','1','1','0')";
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)
                 {
