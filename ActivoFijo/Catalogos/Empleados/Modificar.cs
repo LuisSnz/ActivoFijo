@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Catalogos.Empleados
 {
@@ -31,6 +32,30 @@ namespace ActivoFijo.Catalogos.Empleados
             NumLicencia.Text = Clases.Variables.EmpleadosLicencia;
         }
 
+        public string NoJefe()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select NoEmp from empleados where empleados.Nombre ='" + comboJefe.SelectedItem + "';", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["NoEmp"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
         private void Guardar_Click(object sender, EventArgs e)
         {
             int pliegos = 0, Jefe = 0, Baja = 0, SinPliego = 0;
@@ -49,8 +74,7 @@ namespace ActivoFijo.Catalogos.Empleados
                 string ConnString = Clases.Variables.scon;
                 string SqlString = "Update empleados set Nombre='" + Nombre.Text + "',NombrePliegos='" + NombreM.Text +
                     "',Departamento='" + comboDepto.SelectedItem.ToString() + "',NoLicencia='" + NumLicencia.Text +
-                    "',FechaVencimiento=(convert('" + Fecha.Text + "',DATE)),NoEmpleadoJefe=(select NoEmp from empleados" +
-                    " where Nombre='" + comboJefe.SelectedItem.ToString() + "'),ActivoPliegos=" + pliegos + ",JefeDepto=" + Jefe
+                    "',FechaVencimiento=(convert('" + Fecha.Value.Year + "-" + Fecha.Value.Month + "-" + Fecha.Value.Day + " 00:00:00',datetime)),NoEmpleadoJefe=" + NoJefe()+",ActivoPliegos=" + pliegos + ",JefeDepto=" + Jefe
                     + ",Baja=" + Baja + ",NoVerifica=" + SinPliego + ",Bloqueado=0,Textobloqueado=''" +
                     "where NoEmp=" + Clases.Variables.IdEmpleados + ";";
 

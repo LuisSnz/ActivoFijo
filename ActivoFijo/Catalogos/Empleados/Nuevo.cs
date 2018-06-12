@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ActivoFijo.Catalogos.Empleados
 {
@@ -15,6 +16,30 @@ namespace ActivoFijo.Catalogos.Empleados
             FechaVencimiento.Value = DateTime.Now;
             Clases.Empleados.CBJefe(comboJefe);
             Clases.Empleados.CBDeptos(comboDepto);
+        }
+
+        public string NoJefe()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select NoEmp from empleados where empleados.Nombre ='" + comboJefe.SelectedItem + "';", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["NoEmp"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
         }
 
         private void Guardar_Click(object sender, EventArgs e)
@@ -39,7 +64,7 @@ namespace ActivoFijo.Catalogos.Empleados
                 string SqlString = "Insert Into empleados (NoEmp,Nombre,Departamento,JefeDepto,NombrePliegos,NoLicencia," +
                     "FechaVencimiento,Bloqueado,Textobloqueado,Baja,NoEmpleadoJefe,ActivoPliegos,NoVerifica) " +
                     "SELECT 1 + COALESCE((SELECT MAX(NoEmp) FROM Empleados), 0),'" + NombreEmpleado + "','" + comboDepto.SelectedItem.ToString() + "',"+Jefe+ ",'" + NombreM.Text + "','" + NumLicencia.Text + "'," +
-                    "(convert('" + FechaVencimiento.Value.Year + "-" + FechaVencimiento.Value.Month + "-" + FechaVencimiento.Value.Day + " 00:00:00',datetime)),1,'',"+Baja+ ",'" + comboJefe.SelectedItem.ToString() + "'," + pliegos + "," + SinPliego + ");";
+                    "(convert('" + FechaVencimiento.Value.Year + "-" + FechaVencimiento.Value.Month + "-" + FechaVencimiento.Value.Day + " 00:00:00',datetime)),1,'',"+Baja+ "," + NoJefe() + "," + pliegos + "," + SinPliego + ";";
 
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)

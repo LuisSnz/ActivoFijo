@@ -33,7 +33,7 @@ namespace ActivoFijo.Catalogos.Articulos
                 Clases.Variables.ConsultaBuscar = "select CatArticulos.Id, CatArticulos.Descripcion as Articulo, Familia.Descripcion as Familia, " +
                 "CatArticulos.inventariable as Inventariable, CatArticulos.Medida,TipoArticulo.Descripcion as Tipo, CatArticulos.ActivoContratos as Contrato " +
                 "from CatArticulos inner join Familia on Familia.Id=CatArticulos.IdFamilia left outer join TipoArticulo on TipoArticulo.id=CatArticulos.IdTipoArticulo " +
-                "where Familia LIKE '%" + comboBox1.Text + "%' order by id";
+                "where Familia.Descripcion LIKE '%" + comboBox1.Text + "%' order by id";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
