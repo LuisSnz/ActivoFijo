@@ -15,11 +15,11 @@ namespace ActivoFijo.Catalogos.Marcas
             if (Descripcion.Text.Length > 0)
             {
                 string ConnString = Clases.Variables.scon;
-                string SqlString = "Insert Into marca (Descripcion) values ('" + Descripcion.Text + "');";
+                string SqlString = "INSERT INTO marca (id,Descripcion) SELECT 1 + COALESCE((SELECT MAX(id) FROM marca), 0),'" + Descripcion.Text + "';";
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)
                 {
-                    MessageBox.Show("Familia agregada correctamente");
+                    MessageBox.Show("Marca agregada correctamente");
                     this.Close();
                     this.DialogResult = DialogResult.OK;
                 }

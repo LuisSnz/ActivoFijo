@@ -12,13 +12,13 @@ namespace ActivoFijo.Catalogos.Empleados
 
         private void Modificar_Load(object sender, EventArgs e)
         {
-            if (Clases.Variables.EmpleadosBaja == "True")
+            if (Clases.Variables.EmpleadosBaja == "1")
                 checkBaja.Checked = true;
-            if (Clases.Variables.EmpleadosJefe == "True")
+            if (Clases.Variables.EmpleadosJefe == "1")
                 checkJefe.Checked = true;
-            if (Clases.Variables.EmpleadosPliegos == "True")
+            if (Clases.Variables.EmpleadosPliegos == "1")
                 checkPliegos.Checked = true;
-            if (Clases.Variables.EmpleadosNoPliegos == "True")
+            if (Clases.Variables.EmpleadosNoPliegos == "1")
                 checkSinPliegos.Checked = true;
             Clases.Empleados.CBJefe(comboJefe);
             Clases.Empleados.CBDeptos(comboDepto);
