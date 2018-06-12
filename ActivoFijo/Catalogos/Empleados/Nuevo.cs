@@ -37,11 +37,9 @@ namespace ActivoFijo.Catalogos.Empleados
                 string materno = Materno.Text;
                 string NombreEmpleado = nombres + " " + paterno + " " + materno;
                 string SqlString = "Insert Into empleados (NoEmp,Nombre,Departamento,JefeDepto,NombrePliegos,NoLicencia," +
-                    "FechaVencimiento,Bloqueado,Textobloqueado,Baja,NoEmpleadoJefe,ActivoPliegos,NoVerifica) values " +
-                    "((select (Max(NoEmp))+1 from empleados),'" + NombreEmpleado + "','" + comboDepto.SelectedItem.ToString() + "'," +
-                    Jefe + ",'" + NombreM.Text + "','" + NumLicencia.Text + "',(convert(datetime,'" + FechaVencimiento.Text + "')),1," +
-                    "''," + Baja + ",(select NoEmp from empleados where Nombre='" +
-                    comboJefe.SelectedItem.ToString() + "')," + pliegos + "," + SinPliego + ");";
+                    "FechaVencimiento,Bloqueado,Textobloqueado,Baja,NoEmpleadoJefe,ActivoPliegos,NoVerifica) " +
+                    "SELECT 1 + COALESCE((SELECT MAX(NoEmp) FROM Empleados), 0),'" + NombreEmpleado + "','" + comboDepto.SelectedItem.ToString() + "',"+Jefe+ ",'" + NombreM.Text + "','" + NumLicencia.Text + "'," +
+                    "(convert('" + FechaVencimiento.Value.Year + "-" + FechaVencimiento.Value.Month + "-" + FechaVencimiento.Value.Day + " 00:00:00',datetime)),1,'',"+Baja+ ",'" + comboJefe.SelectedItem.ToString() + "'," + pliegos + "," + SinPliego + ");";
 
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)
