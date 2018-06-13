@@ -832,9 +832,8 @@ namespace ActivoFijo.Clases
                 else
                     return 0;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
                 return 2;
             }
         }
