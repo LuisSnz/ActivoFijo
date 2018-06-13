@@ -353,15 +353,11 @@ namespace ActivoFijo.Activo.Bienes
                 string ConnString = Clases.Variables.scon;
                 for (int x = 0; x < Cantidad.Value; x++)
                 {
-                    string SqlString = "Insert Into bienes (Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
+                    string SqlString = "Insert Into bienes (Id,Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
                         "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
-                        "Consumible,Estado,Creador) values (" + etiqueta + "," + TBNoOrden.Text + ",9,2013,'" +
-                        TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos " +
-                        "where descripcion='" + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "'," +
-                        "(select NoEmp from empleados where nombre='" + CBEmpleado.SelectedItem + "')," +
-                        "(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')," +
-                        "(convert('" + TimeFecha.Text + "',DATE)),0,(select top 1 id from marca where descripcion='" +
-                        CBMarca.SelectedItem + "'),'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
+                        "Consumible,Estado,Creador) values (" + Id() + "," + etiqueta + "," + TBNoOrden.Text + ",9,2013,'" +
+                        TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2," + Articulo() + ",'" + TBObservaciones.Text + "'," + Empleado() + "," + Proveedor() +
+                        ",convert('" + TimeFecha.Value.Year + "-" + TimeFecha.Value.Month + "-" + TimeFecha.Value.Day + " 00:00:00',DATETIME),0," + Marca() + ",'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
                         "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + Clases.Variables.Usuario + "')";
                     Clases.Inserciones.BEjecucion(SqlString);
                     etiqueta = etiqueta + 1;

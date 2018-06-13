@@ -17,7 +17,7 @@ namespace ActivoFijo.Catalogos.Articulos
             Catalogos.Articulos.Nuevo nuevo = new Catalogos.Articulos.Nuevo();
             nuevo.ShowDialog();
             if (nuevo.DialogResult == DialogResult.OK)
-                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "cararticulos");
+                Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "CatArticulos");
         }
 
         private void Modificar_Click(object sender, EventArgs e)
