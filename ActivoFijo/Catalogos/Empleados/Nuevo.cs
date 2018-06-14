@@ -60,7 +60,7 @@ namespace ActivoFijo.Catalogos.Empleados
                 string nombres = Nombre.Text;
                 string paterno = Paterno.Text;
                 string materno = Materno.Text;
-                string NombreEmpleado = nombres + " " + paterno + " " + materno;
+                string NombreEmpleado = paterno + " " + materno + " " + nombres;
                 string SqlString = "Insert Into empleados (NoEmp,Nombre,Departamento,JefeDepto,NombrePliegos,NoLicencia," +
                     "FechaVencimiento,Bloqueado,Textobloqueado,Baja,NoEmpleadoJefe,ActivoPliegos,NoVerifica) " +
                     "SELECT 1 + COALESCE((SELECT MAX(NoEmp) FROM Empleados), 0),'" + NombreEmpleado + "','" + comboDepto.SelectedItem.ToString() + "',"+Jefe+ ",'" + NombreM.Text + "','" + NumLicencia.Text + "'," +

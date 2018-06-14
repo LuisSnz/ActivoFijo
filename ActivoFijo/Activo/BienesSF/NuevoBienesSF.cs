@@ -349,7 +349,7 @@ namespace ActivoFijo.Activo.BienesSF
         {
             if (CBArticulo.SelectedIndex >= 0 && CBConservacion.SelectedIndex >= 0 && CBEmpleado.SelectedIndex >= 0 && CBProveedor.SelectedIndex >= 0 && CBMarca.SelectedIndex >= 0 && TBNoOrden.Text.Length > 0 && TBPrecio.Text.Length > 0)
             {
-                int etiqueta = int.Parse(TBEtiqueta.Text);
+                int etiqueta = int.Parse(llenaretiqueta());
                 var con = 0;
                 if (CHConsumible.Checked == true)
                     con = 1;
@@ -366,7 +366,6 @@ namespace ActivoFijo.Activo.BienesSF
                     "'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text + "',0," + con + ",'" + CBConservacion.SelectedItem + "','"
                     + Clases.Variables.Usuario + "')";
                     Clases.Inserciones.BEjecucion(SqlString);
-                    etiqueta = etiqueta + 1;
                 }
                 if (Clases.Variables.ErrorB == false)
                 {
@@ -384,7 +383,7 @@ namespace ActivoFijo.Activo.BienesSF
                     Clases.Variables.ImprimirBienesSerieSF = TBSerie.Text;
                     Clases.Variables.ImprimirBienesObservacionSF = TBObservaciones.Text;
                     Clases.Variables.ImprimirBienesCantidadSF = Cantidad.Value.ToString();
-                    int EtiquetaInicial = int.Parse(TBEtiqueta.Text);
+                    int EtiquetaInicial = etiqueta;
                     decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value - 1;
                     if (Cantidad.Value == 1)
                     {
