@@ -13,15 +13,16 @@ namespace ActivoFijo.Activo.Bienes
 
         private void NuevoBienes_Load(object sender, EventArgs e)
         {
-            llenaretiqueta();
+            TBEtiqueta.Text=llenaretiqueta();
             Clases.Empleados.CBNombreSB(CBEmpleado);
             Clases.Articulos.CBBuscarArticulo(CBArticulo);
             Clases.Bienes.CBMarca(CBMarca);
             Clases.Bienes.CBProveedor(CBProveedor);
         }
 
-        private void llenaretiqueta()
+        public string llenaretiqueta()
         {
+            string etiqueta="";
             MySqlCommand cmd;
             MySqlDataReader dr;
             MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
@@ -32,7 +33,7 @@ namespace ActivoFijo.Activo.Bienes
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    TBEtiqueta.Text = dr["etiqueta"].ToString();
+                    etiqueta = dr["etiqueta"].ToString();
                 }
                 cn.Close();
             }
@@ -40,6 +41,7 @@ namespace ActivoFijo.Activo.Bienes
             {
                 MessageBox.Show("Error al llenar :" + ex.ToString());
             }
+            return etiqueta;
         }
 
         public string Empleado()
@@ -240,7 +242,7 @@ namespace ActivoFijo.Activo.Bienes
                 {
                     string SqlString = "Insert Into bienes (Id,Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
                         "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
-                        "Consumible,Estado,Creador) values ("+Id()+"," + etiqueta + "," + TBNoOrden.Text + ",9,2013,'" +
+                        "Consumible,Estado,Creador) values ("+Id()+"," + llenaretiqueta() + "," + TBNoOrden.Text + ",9,2013,'" +
                         TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,"+Articulo()+",'" + TBObservaciones.Text + "',"+Empleado()+"," +Proveedor()+
                         ",convert('" + TimeFecha.Value.Year+"-"+ TimeFecha.Value.Month +"-"+ TimeFecha.Value.Day+ " 00:00:00',DATETIME),0," +Marca()+",'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
                         "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + Clases.Variables.Usuario + "')";
@@ -355,7 +357,7 @@ namespace ActivoFijo.Activo.Bienes
                 {
                     string SqlString = "Insert Into bienes (Id,Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
                         "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
-                        "Consumible,Estado,Creador) values (" + Id() + "," + etiqueta + "," + TBNoOrden.Text + ",9,2013,'" +
+                        "Consumible,Estado,Creador) values (" + Id() + "," + llenaretiqueta() + "," + TBNoOrden.Text + ",9,2013,'" +
                         TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2," + Articulo() + ",'" + TBObservaciones.Text + "'," + Empleado() + "," + Proveedor() +
                         ",convert('" + TimeFecha.Value.Year + "-" + TimeFecha.Value.Month + "-" + TimeFecha.Value.Day + " 00:00:00',DATETIME),0," + Marca() + ",'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
                         "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + Clases.Variables.Usuario + "')";
@@ -368,6 +370,29 @@ namespace ActivoFijo.Activo.Bienes
                         MessageBox.Show("Bien agregado correctamente.");
                     else
                         MessageBox.Show("Bienes agregados correctamente.");
+
+                    Clases.Variables.ImprimirBienesOrdenCompra = TBNoOrden.Text;
+                    Clases.Variables.ImprimirBienesFactura = TBFactura.Text;
+                    Clases.Variables.ImprimirBienesTotal = TBPrecio.Text;
+                    Clases.Variables.ImprimirBienesDepartamento = LBDepartamento.Text;
+                    Clases.Variables.ImprimirBienesDescripcionArticulo = CBArticulo.Text;
+                    Clases.Variables.ImprimirBienesEmpleado = CBEmpleado.Text;
+                    Clases.Variables.ImprimirBienesFamilia = LBFamilia.Text;
+                    Clases.Variables.ImprimirBienesSerie = TBSerie.Text;
+                    Clases.Variables.ImprimirBienesObservacion = TBObservaciones.Text;
+                    Clases.Variables.ImprimirBienesCantidad = Cantidad.Value.ToString();
+                    int EtiquetaInicial = int.Parse(TBEtiqueta.Text);
+                    decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value - 1;
+                    if (Cantidad.Value == 1)
+                    {
+                        Clases.Variables.ImprimirBienesEtiqueta = EtiquetaInicial.ToString();
+                    }
+                    else
+                    {
+                        Clases.Variables.ImprimirBienesEtiqueta = EtiquetaInicial.ToString() + " a " + EtiquetaFinal.ToString();
+                    }
+                    Activo.Bienes.ImprimirBienes reporteBienes = new ImprimirBienes();
+                    reporteBienes.ShowDialog();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -375,28 +400,7 @@ namespace ActivoFijo.Activo.Bienes
                 {
                     MessageBox.Show("No fue posible agregar los bienes.");
                 }
-                Clases.Variables.ImprimirBienesOrdenCompra = TBNoOrden.Text;
-                Clases.Variables.ImprimirBienesFactura = TBFactura.Text;
-                Clases.Variables.ImprimirBienesTotal = TBPrecio.Text;
-                Clases.Variables.ImprimirBienesDepartamento = LBDepartamento.Text;
-                Clases.Variables.ImprimirBienesDescripcionArticulo = CBArticulo.Text;
-                Clases.Variables.ImprimirBienesEmpleado = CBEmpleado.Text;
-                Clases.Variables.ImprimirBienesFamilia = LBFamilia.Text;
-                Clases.Variables.ImprimirBienesSerie = TBSerie.Text;
-                Clases.Variables.ImprimirBienesObservacion = TBObservaciones.Text;
-                Clases.Variables.ImprimirBienesCantidad = Cantidad.Value.ToString();
-                int EtiquetaInicial = int.Parse(TBEtiqueta.Text);
-                decimal EtiquetaFinal = EtiquetaInicial + Cantidad.Value-1;
-                if (Cantidad.Value == 1)
-                {
-                    Clases.Variables.ImprimirBienesEtiqueta = EtiquetaInicial.ToString();
-                }
-                else
-                {
-                    Clases.Variables.ImprimirBienesEtiqueta = EtiquetaInicial.ToString() + " a " + EtiquetaFinal.ToString();
-                }
-                Activo.Bienes.ImprimirBienes reporteBienes = new ImprimirBienes();
-                reporteBienes.ShowDialog();
+                
             }
             else
             {
