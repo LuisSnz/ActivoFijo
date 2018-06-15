@@ -11,7 +11,7 @@ namespace ActivoFijo.Clases
         public static MySqlCommand cmd;
         public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static MySqlConnection cn = new MySqlConnection(conexion);
+        static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBArticulosFamilia(ComboBox CB)
         {
@@ -44,8 +44,6 @@ namespace ActivoFijo.Clases
                 {
                     CB.Items.Add(dr["Descripcion"].ToString());
                 }
-                //CB.SelectedIndex = 0;
-                //dr.Close();
                 cn.Close();
             }
             catch (Exception ex)
@@ -98,7 +96,7 @@ namespace ActivoFijo.Clases
         public static MySqlCommand cmd;
         public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static MySqlConnection cn = new MySqlConnection(conexion);
+        static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBCambio(ComboBox CB)
         {
@@ -308,7 +306,7 @@ namespace ActivoFijo.Clases
         public static MySqlCommand cmd;
         public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static MySqlConnection cn = new MySqlConnection(conexion);
+        static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBEtiqueta(ComboBox CB)
         {
@@ -417,7 +415,7 @@ namespace ActivoFijo.Clases
         public static MySqlCommand cmd;
         public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static MySqlConnection cn = new MySqlConnection(conexion);
+        static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBAreas(ComboBox CB)
         {
@@ -462,7 +460,7 @@ namespace ActivoFijo.Clases
         public static MySqlCommand cmd;
         public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static MySqlConnection cn = new MySqlConnection(conexion);
+        static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBJefe(ComboBox CB)
         {
@@ -572,7 +570,7 @@ namespace ActivoFijo.Clases
         public static MySqlCommand cmd;
         public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static MySqlConnection cn = new MySqlConnection(conexion);
+        static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void Modificar(TextBox Nombre, TextBox Direccion, TextBox Fax, TextBox Ciudad, TextBox Contacto,
             TextBox RFC, TextBox CURP, TextBox Email, TextBox Telefono, TextBox Giro, TextBox Padron, TextBox Certificacion,
@@ -639,7 +637,7 @@ namespace ActivoFijo.Clases
         public static MySqlCommand cmd;
         public static MySqlDataReader dr;
         public static string conexion = Clases.Variables.scon;
-        public static MySqlConnection cn = new MySqlConnection(conexion);
+        static MySqlConnection cn = new MySqlConnection(conexion);
 
         public static void CBEtiqueta(ComboBox CB)
         {
