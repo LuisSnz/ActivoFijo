@@ -500,6 +500,12 @@
     <Compile Include="Reportes\HistoricoDeBienes.Designer.cs">
       <DependentUpon>HistoricoDeBienes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteAsech.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteAsech.Designer.cs">
+      <DependentUpon>ReporteAsech.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ResguardoPorEmleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -745,6 +751,9 @@
     </Compile>
     <EmbeddedResource Include="Reportes\HistoricoDeBienes.resx">
       <DependentUpon>HistoricoDeBienes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteAsech.resx">
+      <DependentUpon>ReporteAsech.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ResguardoPorEmleado.resx">
       <DependentUpon>ResguardoPorEmleado.cs</DependentUpon>

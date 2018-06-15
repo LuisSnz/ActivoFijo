@@ -136,7 +136,7 @@ namespace ActivoFijo.Clases
         public static string ImprimirBienesDepartamentoSF;
         public static string ImprimirBienesObservacionSF;
         public static string ImprimirBienesCantidadSF;
-
-
+        //ASECH
+        public static string ConsultaAsech;
     }
 }
