@@ -15,11 +15,11 @@ namespace ActivoFijo.Catalogos.Proveedores
             if (Nombre.Text.Length > 0 && Fax.Text.Length>0 && Ciudad.Text.Length>0)
             {
                 string ConnString = Clases.Variables.scon;
-                string SqlString = "Insert Into Proveedores (Nombre,Direccion,Rfc, Fax, Ciudad,Contacto,Giro,PadronGobierno," +
-                    "Certificaciones,Email,Observaciones,Telefono,Accionistas,Curp) values ('" + Nombre.Text + "','" + Direccion.Text +
+                string SqlString = "Insert Into Proveedores (id,Nombre,Direccion,Rfc, Fax, Ciudad,Contacto,Giro,PadronGobierno," +
+                    "Certificaciones,Email,Observaciones,Telefono,Accionistas,Curp)  SELECT 1 + COALESCE((SELECT MAX(id) FROM Proveedores), 0),'" + Nombre.Text + "','" + Direccion.Text +
                     "','" + RFC.Text + "','" + Fax.Text + "','" + Ciudad.Text + "','" + Contacto.Text + "','" + Giro.Text + "','" + Padron.Text +
                     "','" + Certificaciones.Text + "','" + eMail.Text + "','" + Observaciones.Text + "','" + Telefono.Text + "','" +
-                    Accionistas.Text + "','" + CURP.Text + "');";
+                    Accionistas.Text + "','" + CURP.Text + "';";
                 bool resultado = Clases.Inserciones.Ejecucion(SqlString);
                 if (resultado == true)
                 {
