@@ -48,6 +48,7 @@
             this.Reportes = new System.Windows.Forms.ToolStripMenuItem();
             this.Historico = new System.Windows.Forms.ToolStripMenuItem();
             this.ValorBienes = new System.Windows.Forms.ToolStripMenuItem();
+            this.resguardoDeUnEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Configuracion = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigurarImpresora = new System.Windows.Forms.ToolStripMenuItem();
             this.suariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,7 @@
             this.PanelBase = new System.Windows.Forms.Panel();
             this.LogoLocal = new System.Windows.Forms.PictureBox();
             this.LogoEstatal = new System.Windows.Forms.PictureBox();
-            this.resguardoDeUnEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteParaAsechToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEstatal)).BeginInit();
@@ -216,7 +217,8 @@
             this.Reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Historico,
             this.ValorBienes,
-            this.resguardoDeUnEmpleadoToolStripMenuItem});
+            this.resguardoDeUnEmpleadoToolStripMenuItem,
+            this.reporteParaAsechToolStripMenuItem});
             this.Reportes.Image = global::ActivoFijo.Properties.Resources.catalogo;
             this.Reportes.Name = "Reportes";
             this.Reportes.Size = new System.Drawing.Size(89, 21);
@@ -237,6 +239,14 @@
             this.ValorBienes.Size = new System.Drawing.Size(222, 22);
             this.ValorBienes.Text = "Valor en Bienes";
             this.ValorBienes.Click += new System.EventHandler(this.ValorBienes_Click);
+            // 
+            // resguardoDeUnEmpleadoToolStripMenuItem
+            // 
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Image = global::ActivoFijo.Properties.Resources.articulos;
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Name = "resguardoDeUnEmpleadoToolStripMenuItem";
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Text = "Resguardo por empleado";
+            this.resguardoDeUnEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.resguardoDeUnEmpleadoToolStripMenuItem_Click);
             // 
             // Configuracion
             // 
@@ -322,13 +332,12 @@
             this.LogoEstatal.TabIndex = 5;
             this.LogoEstatal.TabStop = false;
             // 
-            // resguardoDeUnEmpleadoToolStripMenuItem
+            // reporteParaAsechToolStripMenuItem
             // 
-            this.resguardoDeUnEmpleadoToolStripMenuItem.Image = global::ActivoFijo.Properties.Resources.articulos;
-            this.resguardoDeUnEmpleadoToolStripMenuItem.Name = "resguardoDeUnEmpleadoToolStripMenuItem";
-            this.resguardoDeUnEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.resguardoDeUnEmpleadoToolStripMenuItem.Text = "Resguardo por empleado";
-            this.resguardoDeUnEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.resguardoDeUnEmpleadoToolStripMenuItem_Click);
+            this.reporteParaAsechToolStripMenuItem.Name = "reporteParaAsechToolStripMenuItem";
+            this.reporteParaAsechToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.reporteParaAsechToolStripMenuItem.Text = "Reporte para Asech";
+            this.reporteParaAsechToolStripMenuItem.Click += new System.EventHandler(this.reporteParaAsechToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -389,6 +398,7 @@
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem conexionDeBDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resguardoDeUnEmpleadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteParaAsechToolStripMenuItem;
     }
 }
 

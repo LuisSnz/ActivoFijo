@@ -170,5 +170,11 @@ namespace ActivoFijo
             Auxiliares.ReporteResguardoPE resguardo = new Auxiliares.ReporteResguardoPE();
             resguardo.ShowDialog();
         }
+
+        private void reporteParaAsechToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteAsech asech = new Reportes.ReporteAsech();
+            asech.ShowDialog();
+        }
     }
 }
