@@ -323,6 +323,26 @@ namespace ActivoFijo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imprimirxrango {
+            get {
+                object obj = ResourceManager.GetObject("imprimirxrango", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imprimirxrango1 {
+            get {
+                object obj = ResourceManager.GetObject("imprimirxrango1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_pirata {
             get {
                 object obj = ResourceManager.GetObject("logo pirata", resourceCulture);

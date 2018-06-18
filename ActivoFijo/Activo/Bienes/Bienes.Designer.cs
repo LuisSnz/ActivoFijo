@@ -38,6 +38,7 @@
             this.Excel = new System.Windows.Forms.ToolStripButton();
             this.Etiqueta = new System.Windows.Forms.ToolStripButton();
             this.Imprimir = new System.Windows.Forms.ToolStripButton();
+            this.ImprimirPorRango = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.CambioEmpleado = new System.Windows.Forms.ToolStripButton();
             this.CambioBien = new System.Windows.Forms.ToolStripButton();
@@ -62,6 +63,7 @@
             this.Excel,
             this.Etiqueta,
             this.Imprimir,
+            this.ImprimirPorRango,
             this.toolStripSeparator3,
             this.CambioEmpleado,
             this.CambioBien});
@@ -158,6 +160,16 @@
             this.Imprimir.ToolTipText = "Imprimir";
             this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
             // 
+            // ImprimirPorRango
+            // 
+            this.ImprimirPorRango.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ImprimirPorRango.Image = global::ActivoFijo.Properties.Resources.imprimirxrango1;
+            this.ImprimirPorRango.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ImprimirPorRango.Name = "ImprimirPorRango";
+            this.ImprimirPorRango.Size = new System.Drawing.Size(44, 42);
+            this.ImprimirPorRango.Text = "Imprimir Por Rango";
+            this.ImprimirPorRango.Click += new System.EventHandler(this.ImprimirPorRango_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -239,5 +251,6 @@
         private System.Windows.Forms.ToolStripButton CambioEmpleado;
         private System.Windows.Forms.ToolStripButton CambioBien;
         public System.Windows.Forms.DataGridView GridBienes;
+        private System.Windows.Forms.ToolStripButton ImprimirPorRango;
     }
 }

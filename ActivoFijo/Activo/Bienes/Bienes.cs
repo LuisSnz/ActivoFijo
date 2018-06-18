@@ -128,5 +128,11 @@ namespace ActivoFijo.Activo.Bienes
             if (modificar.DialogResult == DialogResult.OK)
                 Clases.LLenadoGrids.llenarGrid(GridBienes, Clases.Variables.ConsultaBuscar, "bienes");
         }
+
+        private void ImprimirPorRango_Click(object sender, EventArgs e)
+        {
+            Activo.Bienes.ImprimirPorRango imprimirPorRango = new ImprimirPorRango();
+            imprimirPorRango.ShowDialog();
+        }
     }
 }
