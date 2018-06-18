@@ -163,6 +163,9 @@
   <data name="subdirecciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subdirecciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Unidos Logo con valor -Vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidos Logo con valor -Vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bienes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bienes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,6 +211,9 @@
   <data name="pasar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pasar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imprimirxrango" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imprimirxrango.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="casa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\casa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,7 +241,7 @@
   <data name="pasartodo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pasartodo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Unidos Logo con valor -Vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unidos Logo con valor -Vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imprimirxrango1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imprimirxrango1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

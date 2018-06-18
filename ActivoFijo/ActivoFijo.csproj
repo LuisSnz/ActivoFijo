@@ -196,6 +196,12 @@
     <Compile Include="Activo\Bienes\BuscarBienes.Designer.cs">
       <DependentUpon>BuscarBienes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Activo\Bienes\ImprimirPorRango.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\Bienes\ImprimirPorRango.Designer.cs">
+      <DependentUpon>ImprimirPorRango.cs</DependentUpon>
+    </Compile>
     <Compile Include="Activo\Bienes\ModificarBienes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -591,6 +597,9 @@
     <EmbeddedResource Include="Activo\Bienes\BuscarBienes.resx">
       <DependentUpon>BuscarBienes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Activo\Bienes\ImprimirPorRango.resx">
+      <DependentUpon>ImprimirPorRango.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activo\Bienes\ModificarBienes.resx">
       <DependentUpon>ModificarBienes.cs</DependentUpon>
     </EmbeddedResource>
@@ -959,6 +968,8 @@
     <None Include="Resources\bd.png" />
     <Content Include="icono1.ico" />
     <None Include="Resources\Unidos Logo con valor -Vertical.png" />
+    <None Include="Resources\imprimirxrango.png" />
+    <None Include="Resources\imprimirxrango1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
