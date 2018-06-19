@@ -57,7 +57,7 @@ namespace ActivoFijo.Reportes.ValorBienes
         private void Imprimir_Click(object sender, EventArgs e)
         {
             ReporteValor reporte = new ReporteValor();
-            reporte.ShowDialog();
+            reporte.Show();
         }
     }
 }

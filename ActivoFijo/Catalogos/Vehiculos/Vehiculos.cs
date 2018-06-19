@@ -29,7 +29,7 @@ namespace ActivoFijo.Catalogos.Vehiculos
         private void Imprimir_Click(object sender, EventArgs e)
         {
             Catalogos.Vehiculos.ReporteVehiculos reporteVehiculos = new ReporteVehiculos();
-            reporteVehiculos.ShowDialog();
+            reporteVehiculos.Show();
         }
 
         private void Excel_Click(object sender, EventArgs e)

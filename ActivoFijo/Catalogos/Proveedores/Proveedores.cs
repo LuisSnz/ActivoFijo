@@ -72,7 +72,7 @@ namespace ActivoFijo.Catalogos.Proveedores
         private void Imprimir_Click(object sender, EventArgs e)
         {
             Catalogos.Proveedores.ReporteProveedores viewer = new ReporteProveedores();
-            viewer.ShowDialog();
+            viewer.Show();
         }
 
         private void GridProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

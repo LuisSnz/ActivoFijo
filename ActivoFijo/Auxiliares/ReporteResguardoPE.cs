@@ -32,7 +32,7 @@ namespace ActivoFijo.Auxiliares
                     "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON CatArticulos.IdFamilia = Familia.Id " +
                     "LEFT OUTER JOIN marca on bienes.IdMarca=marca.Id where empleados.Nombre='" + CBNombre.SelectedItem.ToString() + "'";
                 Reportes.ResguardoPorEmleado resguardo = new Reportes.ResguardoPorEmleado();
-                resguardo.ShowDialog();
+                resguardo.Show();
             }
             else
                 MessageBox.Show("Seleccione un empleado");
