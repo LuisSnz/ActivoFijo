@@ -424,6 +424,8 @@ namespace ActivoFijo.Clases
                 cn.Open();
                 cmd = new MySqlCommand("select Descripcion from areas", cn);
                 dr = cmd.ExecuteReader();
+                CB.Items.Clear();
+                CB.Text = "";
                 while (dr.Read())
                 {
                     CB.Items.Add(dr["Descripcion"].ToString());
