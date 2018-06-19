@@ -38,6 +38,7 @@
             this.Excel = new System.Windows.Forms.ToolStripButton();
             this.Etiqueta = new System.Windows.Forms.ToolStripButton();
             this.Imprimir = new System.Windows.Forms.ToolStripButton();
+            this.ImprimirPorRangoSF = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.CambioPorEmpleado = new System.Windows.Forms.ToolStripButton();
             this.CambioDeBien = new System.Windows.Forms.ToolStripButton();
@@ -62,6 +63,7 @@
             this.Excel,
             this.Etiqueta,
             this.Imprimir,
+            this.ImprimirPorRangoSF,
             this.toolStripSeparator3,
             this.CambioPorEmpleado,
             this.CambioDeBien});
@@ -158,6 +160,16 @@
             this.Imprimir.ToolTipText = "Imprimir";
             this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
             // 
+            // ImprimirPorRangoSF
+            // 
+            this.ImprimirPorRangoSF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ImprimirPorRangoSF.Image = global::ActivoFijo.Properties.Resources.imprimirxrango1;
+            this.ImprimirPorRangoSF.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ImprimirPorRangoSF.Name = "ImprimirPorRangoSF";
+            this.ImprimirPorRangoSF.Size = new System.Drawing.Size(44, 42);
+            this.ImprimirPorRangoSF.Text = "toolStripButton1";
+            this.ImprimirPorRangoSF.Click += new System.EventHandler(this.ImprimirPorRangoSF_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -240,5 +252,6 @@
         private System.Windows.Forms.ToolStripButton CambioPorEmpleado;
         private System.Windows.Forms.ToolStripButton CambioDeBien;
         private System.Windows.Forms.DataGridView GridBienesSF;
+        private System.Windows.Forms.ToolStripButton ImprimirPorRangoSF;
     }
 }

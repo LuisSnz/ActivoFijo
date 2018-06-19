@@ -154,6 +154,12 @@
     <Compile Include="Activo\BienesSF\BuscarBienesSF.Designer.cs">
       <DependentUpon>BuscarBienesSF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Activo\BienesSF\ImprimirPorRangoSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activo\BienesSF\ImprimirPorRangoSF.Designer.cs">
+      <DependentUpon>ImprimirPorRangoSF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Activo\BienesSF\ModificarBienesSF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -575,6 +581,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activo\BienesSF\BuscarBienesSF.resx">
       <DependentUpon>BuscarBienesSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activo\BienesSF\ImprimirPorRangoSF.resx">
+      <DependentUpon>ImprimirPorRangoSF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activo\BienesSF\ModificarBienesSF.resx">
       <DependentUpon>ModificarBienesSF.cs</DependentUpon>
