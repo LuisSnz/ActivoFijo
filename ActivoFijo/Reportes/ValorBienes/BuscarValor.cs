@@ -19,13 +19,7 @@ namespace ActivoFijo.Reportes.ValorBienes
 
         private void BuscarValor_Load(object sender, EventArgs e)
         {
-            Clases.Bienes.CBEtiqueta(CBBuscar);
-        }
-
-        private void Etiqueta_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Etiqueta.Checked == true)
-                Clases.Bienes.CBEtiqueta(CBBuscar);
+            Clases.Empleados.CBNombre(CBBuscar);
         }
 
         private void Articulo_CheckedChanged(object sender, EventArgs e)
@@ -50,13 +44,7 @@ namespace ActivoFijo.Reportes.ValorBienes
         {
             if (CBBuscar.SelectedIndex >= 0)
             {
-                if (Etiqueta.Checked == true)
-                    Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
-                       "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.Total " +
-                       "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
-                       "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-                       "CatArticulos.IdFamilia = Familia.Id where bienes.Etiqueta=" + CBBuscar.Text;
-                else if (Articulo.Checked == true)
+                if (Articulo.Checked == true)
                     Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
                        "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.Total " +
                        "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
@@ -74,6 +62,12 @@ namespace ActivoFijo.Reportes.ValorBienes
                        "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                        "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                        "CatArticulos.IdFamilia = Familia.Id where Familia.Descripcion='" + CBBuscar.Text + "'";
+                else if (Departamento.Checked == true)
+                    Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
+                       "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.Total " +
+                       "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
+                       "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
+                       "CatArticulos.IdFamilia = Familia.Id where empleados.Departamento='" + CBBuscar.Text + "'";
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -97,6 +91,12 @@ namespace ActivoFijo.Reportes.ValorBienes
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Departamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Departamento.Checked == true)
+                Clases.Empleados.CBDeptos(CBBuscar);
         }
     }
 }
