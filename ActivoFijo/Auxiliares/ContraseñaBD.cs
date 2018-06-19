@@ -24,7 +24,7 @@ namespace ActivoFijo.Auxiliares
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            if (Contraseña.Text == "qwerty123")
+            if (Contraseña.Text == "afmysql02")
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();

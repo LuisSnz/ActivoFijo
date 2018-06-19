@@ -49,6 +49,7 @@
             this.Historico = new System.Windows.Forms.ToolStripMenuItem();
             this.ValorBienes = new System.Windows.Forms.ToolStripMenuItem();
             this.resguardoDeUnEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteParaAsechToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Configuracion = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigurarImpresora = new System.Windows.Forms.ToolStripMenuItem();
             this.suariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,6 @@
             this.PanelBase = new System.Windows.Forms.Panel();
             this.LogoLocal = new System.Windows.Forms.PictureBox();
             this.LogoEstatal = new System.Windows.Forms.PictureBox();
-            this.reporteParaAsechToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEstatal)).BeginInit();
@@ -248,6 +248,14 @@
             this.resguardoDeUnEmpleadoToolStripMenuItem.Text = "Resguardo por empleado";
             this.resguardoDeUnEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.resguardoDeUnEmpleadoToolStripMenuItem_Click);
             // 
+            // reporteParaAsechToolStripMenuItem
+            // 
+            this.reporteParaAsechToolStripMenuItem.Image = global::ActivoFijo.Properties.Resources.calendario;
+            this.reporteParaAsechToolStripMenuItem.Name = "reporteParaAsechToolStripMenuItem";
+            this.reporteParaAsechToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.reporteParaAsechToolStripMenuItem.Text = "Reporte para Asech";
+            this.reporteParaAsechToolStripMenuItem.Click += new System.EventHandler(this.reporteParaAsechToolStripMenuItem_Click);
+            // 
             // Configuracion
             // 
             this.Configuracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -331,13 +339,6 @@
             this.LogoEstatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoEstatal.TabIndex = 5;
             this.LogoEstatal.TabStop = false;
-            // 
-            // reporteParaAsechToolStripMenuItem
-            // 
-            this.reporteParaAsechToolStripMenuItem.Name = "reporteParaAsechToolStripMenuItem";
-            this.reporteParaAsechToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.reporteParaAsechToolStripMenuItem.Text = "Reporte para Asech";
-            this.reporteParaAsechToolStripMenuItem.Click += new System.EventHandler(this.reporteParaAsechToolStripMenuItem_Click);
             // 
             // Inicio
             // 

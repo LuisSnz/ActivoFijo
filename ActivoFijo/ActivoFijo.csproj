@@ -979,6 +979,7 @@
     <None Include="Resources\Unidos Logo con valor -Vertical.png" />
     <None Include="Resources\imprimirxrango.png" />
     <None Include="Resources\imprimirxrango1.png" />
+    <None Include="Resources\calendario.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
