@@ -77,7 +77,7 @@ namespace ActivoFijo.Activo.BienesSF
         {
             Clases.Variables.BienesSFCantidad = "1";
             ReporteBienesSF reporte = new ReporteBienesSF();
-            reporte.ShowDialog();
+            reporte.Show();
         }
 
         private void CambioPorEmpleado_Click(object sender, EventArgs e)
@@ -123,6 +123,12 @@ namespace ActivoFijo.Activo.BienesSF
             modificar.ShowDialog();
             if (modificar.DialogResult == DialogResult.OK)
                 Clases.LLenadoGrids.llenarGrid(GridBienesSF, Clases.Variables.ConsultaBuscar, "bienes");
+        }
+
+        private void ImprimirPorRangoSF_Click(object sender, EventArgs e)
+        {
+            Activo.BienesSF.ImprimirPorRangoSF imprimirPorRangoSF = new ImprimirPorRangoSF();
+            imprimirPorRangoSF.ShowDialog();
         }
     }
 }

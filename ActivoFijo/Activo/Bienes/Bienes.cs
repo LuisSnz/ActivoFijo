@@ -81,7 +81,7 @@ namespace ActivoFijo.Activo.Bienes
         {
             Clases.Variables.BienesCantidad = "1";
             ReporteBienes reporteBienes = new ReporteBienes();
-            reporteBienes.ShowDialog();
+            reporteBienes.Show();
         }
 
         private void CambioEmpleado_Click(object sender, EventArgs e)
