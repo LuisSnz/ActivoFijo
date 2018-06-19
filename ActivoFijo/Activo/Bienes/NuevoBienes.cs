@@ -391,7 +391,7 @@ namespace ActivoFijo.Activo.Bienes
                         Clases.Variables.ImprimirBienesEtiqueta = EtiquetaInicial.ToString() + " a " + EtiquetaFinal.ToString();
                     }
                     Activo.Bienes.ImprimirBienes reporteBienes = new ImprimirBienes();
-                    reporteBienes.ShowDialog();
+                    reporteBienes.Show();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

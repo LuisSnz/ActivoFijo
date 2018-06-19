@@ -52,7 +52,7 @@ namespace ActivoFijo.Activo.BienesBaja
         private void Imprimir_Click(object sender, EventArgs e)
         {
             ReporteBienesDDBaja reporte = new ReporteBienesDDBaja();
-            reporte.ShowDialog();
+            reporte.Show();
         }
 
         private void GridBaja_CellEnter(object sender, DataGridViewCellEventArgs e)

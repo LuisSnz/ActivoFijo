@@ -394,7 +394,7 @@ namespace ActivoFijo.Activo.BienesSF
                         Clases.Variables.ImprimirBienesEtiquetaSF = EtiquetaInicial.ToString() + " a " + EtiquetaFinal.ToString();
                     }
                     Activo.BienesSF.ImprimirBienesSF reporteImprimirBienesSF = new ImprimirBienesSF();
-                    reporteImprimirBienesSF.ShowDialog();
+                    reporteImprimirBienesSF.Show();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
