@@ -78,10 +78,10 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(51, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(387, 34);
+            this.label2.Size = new System.Drawing.Size(343, 34);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Data Source=DirecciondelServidor ; Initial Catalog=NombreBD;\r\nUser ID=Usuario; Pa" +
-    "ssword=Contraseña;";
+            this.label2.Text = "Server=192.168.0.1;Port=3306;Database=BasedeDatos; \r\nUid=Usuario;Pwd=Contraseña;S" +
+    "slMode=none";
             // 
             // ConBD
             // 
