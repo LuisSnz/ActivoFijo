@@ -137,183 +137,211 @@ namespace ActivoFijo.Activo.CambioBienes
 
         private void PasarIzquierda_Click(object sender, EventArgs e)
         {
-            string ConnString = Clases.Variables.scon;
-            string SqlString = "Update bienes set NoEmpleado=(select NoEmp from empleados where Nombre='" +
-                CBDerecho.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
-                CBIzquierdo.SelectedItem.ToString() + "') and Etiqueta=" + GridIzquierdo.CurrentRow.Cells[0].Value.ToString() + ";";
-
-            string SqlString2 = "insert into HistoricoBienes values ("+Id()+"," + GridIzquierdo.CurrentRow.Cells[0].Value.ToString() + ",(" +
-                "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
-            try
+            string message = "¿Esta seguro de que desea realizar el cambio?";
+            string caption = "Traspaso de bienes";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.Yes)
             {
-                using (MySqlConnection conn = new MySqlConnection(ConnString))
+                string ConnString = Clases.Variables.scon;
+                string SqlString = "Update bienes set NoEmpleado=(select NoEmp from empleados where Nombre='" +
+                    CBDerecho.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
+                    CBIzquierdo.SelectedItem.ToString() + "') and Etiqueta=" + GridIzquierdo.CurrentRow.Cells[0].Value.ToString() + ";";
+
+                string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridIzquierdo.CurrentRow.Cells[0].Value.ToString() + ",(" +
+                    "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
+                try
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
+                    using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
-                        cmd.CommandType = CommandType.Text;
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
+                        {
+                            cmd.CommandType = CommandType.Text;
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
+                        {
+                            cmd.CommandType = CommandType.Text;
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
                     }
-                    using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
-                    {
-                        cmd.CommandType = CommandType.Text;
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                    }
-                }
-                Clases.LLenadoGrids.llenarGrid(GridIzquierdo, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
-                "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
-                " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "')", "bienes");
+                    Clases.LLenadoGrids.llenarGrid(GridIzquierdo, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
+                    "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
+                    " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "')", "bienes");
 
-                Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
-                "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
-                " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "')", "bienes");
-                ComprobarIzquierda();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("El cambio no pudo llevarse a cabo. \n" + ex.ToString());
-                DateTime hoy = DateTime.Today;
+                    Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
+                    "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
+                    " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "')", "bienes");
+                    ComprobarIzquierda();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El cambio no pudo llevarse a cabo. \n" + ex.ToString());
+                    DateTime hoy = DateTime.Today;
+                }
             }
         }
 
         private void PasarDerecha_Click(object sender, EventArgs e)
         {
-            string ConnString = Clases.Variables.scon;
-            string SqlString = "Update bienes set NoEmpleado=(select NoEmp from empleados where Nombre='" +
-                CBIzquierdo.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
-                CBDerecho.SelectedItem.ToString() + "') and Etiqueta=" + GridDerecho.CurrentRow.Cells[0].Value.ToString() + ";";
-
-            string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridDerecho.CurrentRow.Cells[0].Value.ToString() + ",(" +
-                "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-"+DateTime.Today.Month+"-"+DateTime.Today.Day+" 00:00:00',DATETIME)));";
-            try
+            string message = "¿Esta seguro de que desea realizar el cambio?";
+            string caption = "Traspaso de bienes";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.Yes)
             {
-                using (MySqlConnection conn = new MySqlConnection(ConnString))
+                string ConnString = Clases.Variables.scon;
+                string SqlString = "Update bienes set NoEmpleado=(select NoEmp from empleados where Nombre='" +
+                    CBIzquierdo.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
+                    CBDerecho.SelectedItem.ToString() + "') and Etiqueta=" + GridDerecho.CurrentRow.Cells[0].Value.ToString() + ";";
+
+                string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridDerecho.CurrentRow.Cells[0].Value.ToString() + ",(" +
+                    "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
+                try
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
+                    using (MySqlConnection conn = new MySqlConnection(ConnString))
                     {
-                        cmd.CommandType = CommandType.Text;
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
+                        {
+                            cmd.CommandType = CommandType.Text;
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                        using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
+                        {
+                            cmd.CommandType = CommandType.Text;
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
                     }
-                    using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
-                    {
-                        cmd.CommandType = CommandType.Text;
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                    }
-                }
-                Clases.LLenadoGrids.llenarGrid(GridIzquierdo, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
-                "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
-                " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "')", "bienes");
+                    Clases.LLenadoGrids.llenarGrid(GridIzquierdo, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
+                    "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
+                    " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "')", "bienes");
 
-                Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
-                "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
-                " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "')", "bienes");
-                ComprobarDerecha();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("El cambio no pudo llevarse a cabo. \n" + ex.ToString());
-                DateTime hoy = DateTime.Today;
+                    Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
+                    "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
+                    " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "')", "bienes");
+                    ComprobarDerecha();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El cambio no pudo llevarse a cabo. \n" + ex.ToString());
+                    DateTime hoy = DateTime.Today;
+                }
             }
         }
 
         private void TodoIzquierda_Click(object sender, EventArgs e)
         {
-            string ConnString = Clases.Variables.scon;
-            try
+            string message = "¿Esta seguro de que desea traspasar todos los bienes de este empleado?";
+            string caption = "Traspaso de bienes";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.Yes)
             {
-                for (int i = 0; i < GridIzquierdo.RowCount; i++)
+                string ConnString = Clases.Variables.scon;
+                try
                 {
-                    string SqlString = "Update bienes set NoEmpleado=(select NoEmp from empleados where Nombre='" +
-                 CBDerecho.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
-                 CBIzquierdo.SelectedItem.ToString() + "') and Etiqueta=" + GridIzquierdo.Rows[i].Cells[0].Value.ToString() + ";";
-
-                    string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridIzquierdo.Rows[i].Cells[0].Value.ToString() + ",(" +
-                        "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
-                    using (MySqlConnection conn = new MySqlConnection(ConnString))
+                    for (int i = 0; i < GridIzquierdo.RowCount; i++)
                     {
-                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
+                        string SqlString = "Update bienes set NoEmpleado=(select NoEmp from empleados where Nombre='" +
+                     CBDerecho.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
+                     CBIzquierdo.SelectedItem.ToString() + "') and Etiqueta=" + GridIzquierdo.Rows[i].Cells[0].Value.ToString() + ";";
+
+                        string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridIzquierdo.Rows[i].Cells[0].Value.ToString() + ",(" +
+                            "Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
+                        using (MySqlConnection conn = new MySqlConnection(ConnString))
                         {
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                        }
-                        using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
-                        {
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
+                            using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
+                            {
+                                cmd.CommandType = CommandType.Text;
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                            }
+                            using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
+                            {
+                                cmd.CommandType = CommandType.Text;
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                            }
                         }
                     }
-                }
-                Clases.LLenadoGrids.llenarGrid(GridIzquierdo, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
-                "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
-                " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "')", "bienes");
+                    Clases.LLenadoGrids.llenarGrid(GridIzquierdo, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
+                    "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
+                    " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "')", "bienes");
 
-                Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
-                "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
-                " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "')", "bienes");
-                ComprobarIzquierda();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("El cambio no pudo llevarse a cabo. \n" + ex.ToString());
-                DateTime hoy = DateTime.Today;
+                    Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
+                    "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
+                    " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "')", "bienes");
+                    ComprobarIzquierda();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El cambio no pudo llevarse a cabo. \n" + ex.ToString());
+                    DateTime hoy = DateTime.Today;
+                }
             }
         }
 
         private void TodoDerecha_Click(object sender, EventArgs e)
         {
-            string ConnString = Clases.Variables.scon;
-            try
+            string message = "¿Esta seguro de que desea traspasar todos los bienes de este empleado?";
+            string caption = "Traspaso de bienes";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.Yes)
             {
-                for (int i = 0; i < GridDerecho.RowCount; i++)
+                string ConnString = Clases.Variables.scon;
+                try
                 {
-                    string SqlString = "Update bienes set NoEmpleado=(select NoEmp from empleados where Nombre='" +
-                 CBIzquierdo.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
-                 CBDerecho.SelectedItem.ToString() + "') and Etiqueta=" + GridDerecho.Rows[i].Cells[0].Value.ToString() + ";";
-
-                    string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridDerecho.Rows[i].Cells[0].Value.ToString() + ",(" +
-                        "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
-                    using (MySqlConnection conn = new MySqlConnection(ConnString))
+                    for (int i = 0; i < GridDerecho.RowCount; i++)
                     {
-                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
+                        string SqlString = "Update bienes set NoEmpleado=(select NoEmp from empleados where Nombre='" +
+                     CBIzquierdo.SelectedItem.ToString() + "') where NoEmpleado=(select NoEmp from empleados where Nombre='" +
+                     CBDerecho.SelectedItem.ToString() + "') and Etiqueta=" + GridDerecho.Rows[i].Cells[0].Value.ToString() + ";";
+
+                        string SqlString2 = "insert into HistoricoBienes values (" + Id() + "," + GridDerecho.Rows[i].Cells[0].Value.ToString() + ",(" +
+                            "Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)));";
+                        using (MySqlConnection conn = new MySqlConnection(ConnString))
                         {
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                        }
-                        using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
-                        {
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
+                            using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
+                            {
+                                cmd.CommandType = CommandType.Text;
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                            }
+                            using (MySqlCommand cmd = new MySqlCommand(SqlString2, conn))
+                            {
+                                cmd.CommandType = CommandType.Text;
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                            }
                         }
                     }
-                }
-                Clases.LLenadoGrids.llenarGrid(GridIzquierdo, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
-                "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
-                " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "')", "bienes");
+                    Clases.LLenadoGrids.llenarGrid(GridIzquierdo, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
+                    "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
+                    " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBIzquierdo.SelectedItem.ToString() + "')", "bienes");
 
-                Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
-                "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
-                " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "')", "bienes");
-                ComprobarDerecha();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("El cambio no pudo llevarse a cabo. \n" + ex.ToString());
-                DateTime hoy = DateTime.Today;
+                    Clases.LLenadoGrids.llenarGrid(GridDerecho, "Select bienes.Etiqueta, CatArticulos.Descripcion, Bienes.total as Precio," +
+                    "bienes.Observacion from bienes inner join CatArticulos ON bienes.IdArticulo=CatArticulos.Id" +
+                    " where bienes.NoEmpleado=(Select NoEmp from empleados where Nombre='" + CBDerecho.SelectedItem.ToString() + "')", "bienes");
+                    ComprobarDerecha();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El cambio no pudo llevarse a cabo. \n" + ex.ToString());
+                    DateTime hoy = DateTime.Today;
+                }
             }
         }
 
