@@ -105,7 +105,7 @@ namespace ActivoFijo.Activo.Bienes
                 string SqlString = "Update bienes set NoOrden=" + Orden.Text + ",NoFactura='" + Factura.Text + "'," +
                     "IdArticulo="+XArticulo()+",Observacion='" + Observaciones.Text + "',IdProveedor="+XProveedor()+",FechaCompra=(" +
                     "convert('" + Fecha.Value.Year.ToString() + "-" + Fecha.Value.Month.ToString() + "-" + Fecha.Value.Day.ToString() + " 00:00:00',DATETIME))," +
-                    "IdMarca="+XMarca()+"," +"Serie='" + Serie.Text + "',Modelo='" + Modelo.Text + "',Color='" + Modelo.Text + "',Consumible=" + TFConsumible +
+                    "IdMarca="+XMarca()+"," +"Serie='" + Serie.Text + "',Modelo='" + Modelo.Text + "',Color='" + Color.Text + "',Consumible=" + TFConsumible +
                     ",Estado='" + Conservacion.SelectedItem.ToString() + "' where Id=" + Clases.Variables.IdBienes + ";";
                 try
                 {
