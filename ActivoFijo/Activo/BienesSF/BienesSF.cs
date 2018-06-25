@@ -70,7 +70,11 @@ namespace ActivoFijo.Activo.BienesSF
         private void Etiqueta_Click(object sender, EventArgs e)
         {
             Clases.Variables.IEtiqueta = GridBienesSF.CurrentRow.Cells[1].Value.ToString();
-            Clases.Etiquetas.ImprimirEtiquetas( Clases.Variables.IEtiqueta, Clases.Variables.IEtiqueta);
+            Clases.Etiquetas.Impresora();
+            if (Clases.Variables.ConfImpresora == null)
+                MessageBox.Show("Impresora no asignada, porfavor dirijase a (Configuracion/Impresora de etiqueta) y especifique el nombre de la impresora");
+            else
+                Clases.Etiquetas.ImprimirEtiquetas( Clases.Variables.IEtiqueta, Clases.Variables.IEtiqueta);
         }
 
         private void Imprimir_Click(object sender, EventArgs e)

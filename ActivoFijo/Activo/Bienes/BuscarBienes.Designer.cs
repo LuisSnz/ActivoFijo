@@ -105,7 +105,7 @@
             this.Departamento.Location = new System.Drawing.Point(178, 105);
             this.Departamento.Name = "Departamento";
             this.Departamento.Size = new System.Drawing.Size(110, 21);
-            this.Departamento.TabIndex = 6;
+            this.Departamento.TabIndex = 7;
             this.Departamento.Text = "Departamento";
             this.Departamento.UseVisualStyleBackColor = true;
             this.Departamento.CheckedChanged += new System.EventHandler(this.Departamento_CheckedChanged);
@@ -118,7 +118,7 @@
             this.CBBuscar.Location = new System.Drawing.Point(6, 143);
             this.CBBuscar.Name = "CBBuscar";
             this.CBBuscar.Size = new System.Drawing.Size(300, 25);
-            this.CBBuscar.TabIndex = 5;
+            this.CBBuscar.TabIndex = 1;
             // 
             // Empleado
             // 
@@ -151,7 +151,7 @@
             this.Proveedor.Location = new System.Drawing.Point(178, 19);
             this.Proveedor.Name = "Proveedor";
             this.Proveedor.Size = new System.Drawing.Size(87, 21);
-            this.Proveedor.TabIndex = 2;
+            this.Proveedor.TabIndex = 5;
             this.Proveedor.Text = "Proveedor";
             this.Proveedor.UseVisualStyleBackColor = true;
             this.Proveedor.CheckedChanged += new System.EventHandler(this.Proveedor_CheckedChanged);
@@ -163,7 +163,7 @@
             this.Factura.Location = new System.Drawing.Point(177, 61);
             this.Factura.Name = "Factura";
             this.Factura.Size = new System.Drawing.Size(97, 21);
-            this.Factura.TabIndex = 1;
+            this.Factura.TabIndex = 6;
             this.Factura.Text = "No. Factura";
             this.Factura.UseVisualStyleBackColor = true;
             this.Factura.CheckedChanged += new System.EventHandler(this.Factura_CheckedChanged);
@@ -176,7 +176,7 @@
             this.Etiqueta.Location = new System.Drawing.Point(6, 19);
             this.Etiqueta.Name = "Etiqueta";
             this.Etiqueta.Size = new System.Drawing.Size(74, 21);
-            this.Etiqueta.TabIndex = 0;
+            this.Etiqueta.TabIndex = 2;
             this.Etiqueta.TabStop = true;
             this.Etiqueta.Text = "Etiqueta";
             this.Etiqueta.UseVisualStyleBackColor = true;
