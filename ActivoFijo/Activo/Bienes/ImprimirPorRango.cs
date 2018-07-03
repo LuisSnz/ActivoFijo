@@ -21,7 +21,7 @@ namespace ActivoFijo.Activo.Bienes
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            if (CBArticulo.SelectedIndex > 0 && CBFactura.SelectedIndex > 0 && CBNombre.SelectedIndex > 0 && minimo.Value > 0 && maximo.Value > 0)
+            if (CBArticulo.SelectedIndex >= 0 && CBFactura.SelectedIndex >= 0 && CBNombre.SelectedIndex >= 0 && minimo.Value > 0 && maximo.Value > 0)
             {
                 try
                 {
@@ -37,22 +37,30 @@ namespace ActivoFijo.Activo.Bienes
                         "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor = Proveedores.Id " +
                         "where Bienes.Etiqueta BETWEEN " + minimo.Value + " and  " + maximo.Value + " AND CatArticulos.Descripcion = '" + CBArticulo.SelectedItem + "' " +
                         "AND bienes.NoFactura = " + CBFactura.SelectedItem + " AND empleados.Nombre = '" + CBNombre.SelectedItem + "' group by NoFactura,Total",cn);
+                    
                     dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    if (dr.Read())
                     {
-                        Clases.Variables.BienesCantidad = dr["Cantidad"].ToString();
-                        Clases.Variables.BienesEtiqueta = dr["Minimo"].ToString() +" a "+ dr["Maximo"].ToString();
-                        Clases.Variables.BienesOrdenCompra = dr["NoOrden"].ToString();
-                        Clases.Variables.BienesFactura = dr["Factura"].ToString();
-                        Clases.Variables.BienesSerie = dr["Serie"].ToString();
-                        Clases.Variables.BienesTotal = dr["Total"].ToString();
-                        Clases.Variables.BienesFamilia = dr["Familia"].ToString();
-                        Clases.Variables.BienesDescripcionArticulo = dr["Articulo"].ToString();
-                        Clases.Variables.BienesEmpleado = dr["Empleado"].ToString();
-                        Clases.Variables.BienesDepartamento = dr["Departamento"].ToString();
-                        Clases.Variables.BienesObservacion = dr["Observacion"].ToString();
-                        ReporteBienes reporteBienes = new ReporteBienes();
-                        reporteBienes.Show();
+                        while (dr.Read())
+                        {
+                            Clases.Variables.BienesCantidad = dr["Cantidad"].ToString();
+                            Clases.Variables.BienesEtiqueta = dr["Minimo"].ToString() + " a " + dr["Maximo"].ToString();
+                            Clases.Variables.BienesOrdenCompra = dr["NoOrden"].ToString();
+                            Clases.Variables.BienesFactura = dr["Factura"].ToString();
+                            Clases.Variables.BienesSerie = dr["Serie"].ToString();
+                            Clases.Variables.BienesTotal = dr["Total"].ToString();
+                            Clases.Variables.BienesFamilia = dr["Familia"].ToString();
+                            Clases.Variables.BienesDescripcionArticulo = dr["Articulo"].ToString();
+                            Clases.Variables.BienesEmpleado = dr["Empleado"].ToString();
+                            Clases.Variables.BienesDepartamento = dr["Departamento"].ToString();
+                            Clases.Variables.BienesObservacion = dr["Observacion"].ToString();
+                            ReporteBienes reporteBienes = new ReporteBienes();
+                            reporteBienes.Show();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontro coincidencia en la busqueda, intente de nuevo");
                     }
                     dr.Close();
                     
