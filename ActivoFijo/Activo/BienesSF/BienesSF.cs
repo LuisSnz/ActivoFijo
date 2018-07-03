@@ -133,7 +133,7 @@ namespace ActivoFijo.Activo.BienesSF
         private void ImprimirPorRangoSF_Click(object sender, EventArgs e)
         {
             Activo.BienesSF.ImprimirPorRangoSF imprimirPorRangoSF = new ImprimirPorRangoSF();
-            imprimirPorRangoSF.ShowDialog();
+            imprimirPorRangoSF.Show();
         }
     }
 }

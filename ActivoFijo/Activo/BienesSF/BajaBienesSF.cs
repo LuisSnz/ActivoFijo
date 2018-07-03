@@ -120,39 +120,27 @@ namespace ActivoFijo.Activo.BienesSF
                     Clases.Variables.BienesSFConsumible + ",'" + Clases.Variables.Usuario + "');";
                 try
                 {
-                    using (MySqlConnection conn = new MySqlConnection(ConnString))
-                    {
-                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
-                        {
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                        }
-                    }
+                    MySqlConnection conn = new MySqlConnection(ConnString);
+                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);   
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    SqlString = "Delete from bienes where Etiqueta=" + Etiqueta.Text;
+                    cmd = new MySqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("La baja se realizo de manera correcta.");
+                    this.Close();
+                    this.DialogResult = DialogResult.OK;
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al dar de baja el bien: \n" + ex.ToString());
                 }
-            }
-            SqlString = "Delete from bienes where Etiqueta=" + Etiqueta.Text;
-            try
-            {
-                MySqlConnection conn = new MySqlConnection(ConnString);
-                MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                cmd.CommandType = CommandType.Text;
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("La baja se realizo de manera correcta.");
-                this.Close();
-                this.DialogResult = DialogResult.OK;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al dar de baja el bien: \n" + ex.ToString());
             }
         }
 
