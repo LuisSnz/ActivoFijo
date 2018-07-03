@@ -273,6 +273,7 @@
             // 
             // Observaciones
             // 
+            this.Observaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Observaciones.Location = new System.Drawing.Point(6, 24);
             this.Observaciones.MaxLength = 250;
             this.Observaciones.Name = "Observaciones";

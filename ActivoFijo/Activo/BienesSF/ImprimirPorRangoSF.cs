@@ -20,12 +20,13 @@ namespace ActivoFijo.Activo.BienesSF
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            if (CBArticulo.SelectedIndex > 0 && CBNombre.SelectedIndex > 0 && minimo.Value > 0 && maximo.Value > 0)
+            if (CBArticulo.SelectedIndex > 0 && CBNombre.SelectedIndex > 0)
             {
                 try
                 {
                     MySqlCommand cmd;
                     MySqlDataReader dr;
+                    MySqlDataReader dr1;
                     MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
                     cn.Open();
                     cmd = new MySqlCommand("SELECT COUNT(Etiqueta) as Cantidad,MIN(bienes.Etiqueta) as Minimo,MAX(bienes.Etiqueta) as Maximo, bienes.NoOrden as NoOrden, bienes.serie as Serie, " +
@@ -34,25 +35,36 @@ namespace ActivoFijo.Activo.BienesSF
                         "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                         "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                         "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor = Proveedores.Id " +
-                        "where Bienes.Etiqueta BETWEEN " + minimo.Value + " and  " + maximo.Value + " AND CatArticulos.Descripcion = '" + CBArticulo.SelectedItem + "' " +
+                        "where CatArticulos.Descripcion = '" + CBArticulo.SelectedItem + "' " +
                         "AND bienes.NoFactura='' AND empleados.Nombre = '" + CBNombre.SelectedItem + "' group by Articulo,Total", cn);
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
+
+                    dr1 = cmd.ExecuteReader();
+                    if (dr1.Read())
                     {
-                        Clases.Variables.BienesSFCantidad = dr["Cantidad"].ToString();
-                        Clases.Variables.BienesSFEtiqueta = dr["Minimo"].ToString() + " a " + dr["Maximo"].ToString();
-                        Clases.Variables.BienesSFOrdenCompra = dr["NoOrden"].ToString();
-                        Clases.Variables.BienesSFSerie = dr["Serie"].ToString();
-                        Clases.Variables.BienesSFTotal = dr["Total"].ToString();
-                        Clases.Variables.BienesSFFamilia = dr["Familia"].ToString();
-                        Clases.Variables.BienesSFDescripcionArticulo = dr["Articulo"].ToString();
-                        Clases.Variables.BienesSFEmpleado = dr["Empleado"].ToString();
-                        Clases.Variables.BienesSFDepartamento = dr["Departamento"].ToString();
-                        Clases.Variables.BienesSFObservacion = dr["Observacion"].ToString();
-                        ReporteBienesSF reporteBienes = new ReporteBienesSF();
-                        reporteBienes.Show();
+                        cn.Close();
+                        cn.Open();
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            Clases.Variables.BienesSFCantidad = dr["Cantidad"].ToString();
+                            Clases.Variables.BienesSFEtiqueta = dr["Minimo"].ToString() + " a " + dr["Maximo"].ToString();
+                            Clases.Variables.BienesSFOrdenCompra = dr["NoOrden"].ToString();
+                            Clases.Variables.BienesSFSerie = dr["Serie"].ToString();
+                            Clases.Variables.BienesSFTotal = dr["Total"].ToString();
+                            Clases.Variables.BienesSFFamilia = dr["Familia"].ToString();
+                            Clases.Variables.BienesSFDescripcionArticulo = dr["Articulo"].ToString();
+                            Clases.Variables.BienesSFEmpleado = dr["Empleado"].ToString();
+                            Clases.Variables.BienesSFDepartamento = dr["Departamento"].ToString();
+                            Clases.Variables.BienesSFObservacion = dr["Observacion"].ToString();
+                            ReporteBienesSF reporteBienes = new ReporteBienesSF();
+                            reporteBienes.Show();
+                        }
                     }
-                    dr.Close();
+                    else
+                    {
+                        MessageBox.Show("No se encontro coincidencia en la busqueda, intente de nuevo");
+                    }
+                    cn.Close();
 
                 }
                 catch (Exception ex)

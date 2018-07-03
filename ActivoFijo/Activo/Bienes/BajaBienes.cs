@@ -112,7 +112,6 @@ namespace ActivoFijo.Activo.Bienes
                     "'" + Marca.Text + "','" + Serie.Text + "','" + Modelo.Text + "','" + Clases.Variables.MotivoBaja + "',NULL," +
                     "(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)),'" + Observaciones.Text + "',NULL,0," +
                     Clases.Variables.BienesConsumible + ",'" + Clases.Variables.Usuario + "');";
-
                 try
                 {
                     MySqlConnection conn = new MySqlConnection(ConnString);
