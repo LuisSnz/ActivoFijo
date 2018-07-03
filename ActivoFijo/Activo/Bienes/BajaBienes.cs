@@ -106,47 +106,36 @@ namespace ActivoFijo.Activo.Bienes
             string SqlString;
             if (Clases.Variables.MotivoBaja != "ERROR")
             {
-                SqlString = "Insert Into BajaBienes values ("+Id()+"," + Etiqueta.Text + ","+Clases.Variables.BienesOrdenCompra+ "," + Clases.Variables.BienesFactura + "," + Precio.Text + ",0," +
-                    Precio.Text + ",'" + Articulo.Text + "','"+Clases.Variables.BienesObservacion+"',NULL,'" + Empleado.Text + "'," +
-                    "convert('"+fechac.Value.Year+"-"+fechac.Value.Month+"-"+fechac.Value.Day+" 00:00:00',DATETIME)," +
+                SqlString = "Insert Into BajaBienes values (" + Id() + "," + Etiqueta.Text + "," + Clases.Variables.BienesOrdenCompra + ",'" + Clases.Variables.BienesFactura + "'," + Precio.Text + ",0," +
+                    Precio.Text + ",'" + Articulo.Text + "','" + Clases.Variables.BienesObservacion + "',NULL,'" + Empleado.Text + "'," +
+                    "convert('" + fechac.Value.Year + "-" + fechac.Value.Month + "-" + fechac.Value.Day + " 00:00:00',DATETIME)," +
                     "'" + Marca.Text + "','" + Serie.Text + "','" + Modelo.Text + "','" + Clases.Variables.MotivoBaja + "',NULL," +
-                    "(convert('"+DateTime.Today.Year+"-"+DateTime.Today.Month+"-"+DateTime.Today.Day+" 00:00:00',DATETIME)),'" + Observaciones.Text + "',NULL,0," +
-                    Clases.Variables.BienesConsumible+",'" + Clases.Variables.Usuario + "');";
+                    "(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)),'" + Observaciones.Text + "',NULL,0," +
+                    Clases.Variables.BienesConsumible + ",'" + Clases.Variables.Usuario + "');";
+
                 try
                 {
-                    using (MySqlConnection conn = new MySqlConnection(ConnString))
-                    {
-                        using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
-                        {
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                        }
-                    }
+                    MySqlConnection conn = new MySqlConnection(ConnString);
+                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    SqlString = "Delete from bienes where Etiqueta=" + Etiqueta.Text;
+                    cmd = new MySqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("La baja se realizo de manera correcta.");
+                    this.Close();
+                    this.DialogResult = DialogResult.OK;
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al dar de baja el bien: \n" + ex.ToString());
                 }
-            }
-            SqlString = "Delete from bienes where Etiqueta=" + Etiqueta.Text;
-            try
-            {
-                MySqlConnection conn = new MySqlConnection(ConnString);
-                MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                cmd.CommandType = CommandType.Text;
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("La baja se realizo de manera correcta.");
-                this.Close();
-                this.DialogResult = DialogResult.OK;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al dar de baja el bien: \n" + ex.ToString());
             }
         }
 
