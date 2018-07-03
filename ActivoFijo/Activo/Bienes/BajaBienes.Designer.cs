@@ -69,7 +69,7 @@
             this.Cancelar.Location = new System.Drawing.Point(295, 353);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(84, 34);
-            this.Cancelar.TabIndex = 13;
+            this.Cancelar.TabIndex = 8;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -82,7 +82,7 @@
             this.Aceptar.Location = new System.Drawing.Point(130, 353);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(85, 34);
-            this.Aceptar.TabIndex = 12;
+            this.Aceptar.TabIndex = 7;
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = false;
             this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
@@ -273,11 +273,12 @@
             // 
             // Observaciones
             // 
+            this.Observaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Observaciones.Location = new System.Drawing.Point(6, 24);
             this.Observaciones.MaxLength = 250;
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.Size = new System.Drawing.Size(473, 25);
-            this.Observaciones.TabIndex = 0;
+            this.Observaciones.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -301,7 +302,7 @@
             this.NoFunciona.Location = new System.Drawing.Point(6, 24);
             this.NoFunciona.Name = "NoFunciona";
             this.NoFunciona.Size = new System.Drawing.Size(101, 21);
-            this.NoFunciona.TabIndex = 8;
+            this.NoFunciona.TabIndex = 2;
             this.NoFunciona.TabStop = true;
             this.NoFunciona.Text = "No Funciona";
             this.NoFunciona.UseVisualStyleBackColor = true;
@@ -313,7 +314,7 @@
             this.Robo.Location = new System.Drawing.Point(6, 51);
             this.Robo.Name = "Robo";
             this.Robo.Size = new System.Drawing.Size(57, 21);
-            this.Robo.TabIndex = 9;
+            this.Robo.TabIndex = 3;
             this.Robo.Text = "Robo";
             this.Robo.UseVisualStyleBackColor = true;
             this.Robo.CheckedChanged += new System.EventHandler(this.Robo_CheckedChanged);
@@ -324,7 +325,7 @@
             this.Extravio.Location = new System.Drawing.Point(6, 78);
             this.Extravio.Name = "Extravio";
             this.Extravio.Size = new System.Drawing.Size(75, 21);
-            this.Extravio.TabIndex = 10;
+            this.Extravio.TabIndex = 4;
             this.Extravio.Text = "Extravio";
             this.Extravio.UseVisualStyleBackColor = true;
             this.Extravio.CheckedChanged += new System.EventHandler(this.Extravio_CheckedChanged);
@@ -335,7 +336,7 @@
             this.Donacion.Location = new System.Drawing.Point(232, 24);
             this.Donacion.Name = "Donacion";
             this.Donacion.Size = new System.Drawing.Size(82, 21);
-            this.Donacion.TabIndex = 11;
+            this.Donacion.TabIndex = 5;
             this.Donacion.Text = "Donacion";
             this.Donacion.UseVisualStyleBackColor = true;
             this.Donacion.CheckedChanged += new System.EventHandler(this.Donacion_CheckedChanged);
@@ -346,7 +347,7 @@
             this.Error.Location = new System.Drawing.Point(232, 51);
             this.Error.Name = "Error";
             this.Error.Size = new System.Drawing.Size(123, 21);
-            this.Error.TabIndex = 12;
+            this.Error.TabIndex = 6;
             this.Error.Text = "Error de captura";
             this.Error.UseVisualStyleBackColor = true;
             this.Error.CheckedChanged += new System.EventHandler(this.Error_CheckedChanged);

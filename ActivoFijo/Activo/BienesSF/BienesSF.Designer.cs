@@ -167,7 +167,7 @@
             this.ImprimirPorRangoSF.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ImprimirPorRangoSF.Name = "ImprimirPorRangoSF";
             this.ImprimirPorRangoSF.Size = new System.Drawing.Size(44, 42);
-            this.ImprimirPorRangoSF.Text = "toolStripButton1";
+            this.ImprimirPorRangoSF.Text = "Imprimir Por Rango";
             this.ImprimirPorRangoSF.Click += new System.EventHandler(this.ImprimirPorRangoSF_Click);
             // 
             // toolStripSeparator3
@@ -194,7 +194,7 @@
             this.CambioDeBien.Name = "CambioDeBien";
             this.CambioDeBien.Size = new System.Drawing.Size(44, 42);
             this.CambioDeBien.Text = "toolStripButton2";
-            this.CambioDeBien.ToolTipText = "Cambiar Bien";
+            this.CambioDeBien.ToolTipText = "Cambio por Bien Seleccionado";
             this.CambioDeBien.Click += new System.EventHandler(this.CambioDeBien_Click);
             // 
             // GridBienesSF
