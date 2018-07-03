@@ -28,6 +28,7 @@ namespace ActivoFijo.Activo.Bienes
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                 "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id where NoFactura <>''";
             Clases.LLenadoGrids.llenarGrid(GridBienes, Clases.Variables.ConsultaBuscar, "bienes");
+            GridBienes.Columns[0].Visible = false;
         }
 
         private void Nuevo_Click(object sender, EventArgs e)
