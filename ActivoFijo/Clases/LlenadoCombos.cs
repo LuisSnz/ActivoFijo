@@ -103,7 +103,7 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new MySqlCommand("select nombre from empleados order by Nombre", cn);
+                cmd = new MySqlCommand("select nombre from empleados where baja=0 order by Nombre", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
