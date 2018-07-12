@@ -35,32 +35,6 @@ namespace ActivoFijo.Catalogos.Marcas
                 Clases.LLenadoGrids.llenarGrid(GridMarcas, Clases.Variables.ConsultaBuscar, "marca");
         }
 
-        private void Eliminar_Click(object sender, EventArgs e)
-        {
-            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
-            confirmacion.ShowDialog();
-            if (confirmacion.DialogResult == DialogResult.OK)
-            {
-                string ConnString = Clases.Variables.scon;
-                string SqlString = "Delete from marca where Id=" + Clases.Variables.IDMarcas;
-                try
-                {
-                    MySqlConnection conn = new MySqlConnection(ConnString);
-                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Marca eliminada correctamente.");
-                    Clases.LLenadoGrids.llenarGrid(GridMarcas, Clases.Variables.ConsultaBuscar, "marca");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
-                }
-            }
-        }
-
         private void GridMarcas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Catalogos.Marcas.Modificar modificar = new Catalogos.Marcas.Modificar();

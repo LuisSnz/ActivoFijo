@@ -30,32 +30,6 @@ namespace ActivoFijo.Catalogos.Proveedores
                 Clases.LLenadoGrids.llenarGrid(GridProveedor, Clases.Variables.ConsultaBuscar, "Proveedores");
         }
 
-        private void Eliminar_Click(object sender, EventArgs e)
-        {
-            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
-            confirmacion.ShowDialog();
-            if (confirmacion.DialogResult == DialogResult.OK)
-            {
-                string ConnString = Clases.Variables.scon;
-                string SqlString = "Delete from Proveedores where Id=" + Clases.Variables.IdProveedores;
-                try
-                {
-                    MySqlConnection conn = new MySqlConnection(ConnString);
-                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Proveedor eliminado correctamente.");
-                    Clases.LLenadoGrids.llenarGrid(GridProveedor, Clases.Variables.ConsultaBuscar, "Proveedores");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
-                }
-            }
-        }
-
         private void Excel_Click(object sender, EventArgs e)
         {
             Clases.Excel.GridViewExcel(GridProveedor);

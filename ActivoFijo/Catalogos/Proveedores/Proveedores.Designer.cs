@@ -31,8 +31,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Nuevo = new System.Windows.Forms.ToolStripButton();
             this.Modificar = new System.Windows.Forms.ToolStripButton();
-            this.Eliminar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Excel = new System.Windows.Forms.ToolStripButton();
             this.Buscar = new System.Windows.Forms.ToolStripButton();
             this.Imprimir = new System.Windows.Forms.ToolStripButton();
@@ -50,8 +48,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Nuevo,
             this.Modificar,
-            this.Eliminar,
-            this.toolStripSeparator1,
             this.Excel,
             this.Buscar,
             this.Imprimir});
@@ -82,22 +78,6 @@
             this.Modificar.Text = "Modificar";
             this.Modificar.ToolTipText = "Modificar";
             this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Eliminar.Image = global::ActivoFijo.Properties.Resources.eliminar_;
-            this.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(44, 42);
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.ToolTipText = "Eliminar";
-            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 45);
             // 
             // Excel
             // 
@@ -171,8 +151,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Nuevo;
         private System.Windows.Forms.ToolStripButton Modificar;
-        private System.Windows.Forms.ToolStripButton Eliminar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton Excel;
         private System.Windows.Forms.ToolStripButton Buscar;
         private System.Windows.Forms.ToolStripButton Imprimir;

@@ -19,13 +19,16 @@ namespace ActivoFijo.Activo.BienesSF
 
         private void BuscarBienesSF_Load(object sender, EventArgs e)
         {
-            Clases.BienesSinFactura.CBEtiqueta(CBBuscar);
+
         }
 
         private void Etiqueta_CheckedChanged(object sender, EventArgs e)
         {
             if (Etiqueta.Checked == true)
-                Clases.BienesSinFactura.CBEtiqueta(CBBuscar);
+            {
+                CBBuscar.Items.Clear();
+                CBBuscar.Text = "";
+            }
         }
 
         private void Articulo_CheckedChanged(object sender, EventArgs e)
@@ -50,7 +53,7 @@ namespace ActivoFijo.Activo.BienesSF
         {
             if (Etiqueta.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
-                "bienes.Total, Familia.Descripcion, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
+                "bienes.Total, Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
                 "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
@@ -58,7 +61,7 @@ namespace ActivoFijo.Activo.BienesSF
                 "where bienes.Etiqueta LIKE '%" + CBBuscar.Text + "%' and NoFactura=''";
             else if (Articulo.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie," +
-                "bienes.Total, Familia.Descripcion, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
+                "bienes.Total, Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
                 "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
@@ -66,7 +69,7 @@ namespace ActivoFijo.Activo.BienesSF
                 "where CatArticulos.Descripcion LIKE '%" + CBBuscar.Text + "%'" + " and NoFactura=''";
             else if (Empleado.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
-                "bienes.Total, Familia.Descripcion, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
+                "bienes.Total, Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
                 "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
@@ -74,7 +77,7 @@ namespace ActivoFijo.Activo.BienesSF
                 "where empleados.Nombre LIKE '%" + CBBuscar.Text + "%'" + " and NoFactura=''";
             else if (Proveedor.Checked == true)
                 Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
-                "bienes.Total, Familia.Descripcion, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
+                "bienes.Total, Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
                 "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
@@ -87,7 +90,7 @@ namespace ActivoFijo.Activo.BienesSF
         private void Todo_Click(object sender, EventArgs e)
         {
             Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
-                "bienes.Total, Familia.Descripcion, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
+                "bienes.Total, Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
                 "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +

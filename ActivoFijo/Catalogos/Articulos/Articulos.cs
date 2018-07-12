@@ -63,31 +63,5 @@ namespace ActivoFijo.Catalogos.Articulos
             if (modificar.DialogResult == DialogResult.OK)
                 Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "CatArticulos");
         }
-
-        private void Borrar_Click(object sender, EventArgs e)
-        {
-            Auxiliares.Confirmacion Confirmacion = new Auxiliares.Confirmacion();
-            Confirmacion.ShowDialog();
-            if (Confirmacion.DialogResult == DialogResult.OK)
-            {
-                string ConnString = Clases.Variables.scon;
-                string SqlString = "Delete from CatArticulos where Descripcion='" + Clases.Variables.ArticuloDescripcion + "'";
-                try
-                {
-                    MySqlConnection conn = new MySqlConnection(ConnString);
-                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Articulo eliminado correctamente.");
-                    Clases.LLenadoGrids.llenarGrid(GVCatArticulos, Clases.Variables.ConsultaBuscar, "CatArticulos");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
-                }
-            }
-        }
     }
 }

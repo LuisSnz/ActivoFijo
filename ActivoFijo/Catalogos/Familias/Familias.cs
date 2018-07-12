@@ -34,32 +34,6 @@ namespace ActivoFijo.Catalogos.Familias
                 Clases.LLenadoGrids.llenarGrid(GridFamilias, Clases.Variables.ConsultaBuscar, "Familia");
         }
 
-        private void Eliminar_Click(object sender, EventArgs e)
-        {
-            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
-            confirmacion.ShowDialog();
-            if (confirmacion.DialogResult == DialogResult.OK)
-            {
-                string ConnString = Clases.Variables.scon;
-                string SqlString = "Delete from Familia where Id=" + Clases.Variables.IDFamilia;
-                try
-                {
-                    MySqlConnection conn = new MySqlConnection(ConnString);
-                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Familia eliminada correctamente.");
-                    Clases.LLenadoGrids.llenarGrid(GridFamilias, Clases.Variables.ConsultaBuscar, "Familia");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
-                }
-            }
-        }
-
         private void GridFamilias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Catalogos.Familias.Modificar modificar = new Catalogos.Familias.Modificar();

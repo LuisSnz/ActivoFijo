@@ -50,31 +50,5 @@ namespace ActivoFijo.Catalogos.Departamentos
             Clases.Variables.ConsultaBuscar = "select CLAVE, DESCRIPCION, DIRECCION, SUBDIRECCION from DEPTOS";
             Clases.LLenadoGrids.llenarGrid(GridDeptos, Clases.Variables.ConsultaBuscar, "DEPTOS");
         }
-
-        private void Eliminar_Click(object sender, EventArgs e)
-        {
-            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
-            confirmacion.ShowDialog();
-            if (confirmacion.DialogResult == DialogResult.OK)
-            {
-                string ConnString = Clases.Variables.scon;
-                string SqlString = "Delete from DEPTOS where Clave=" + Clases.Variables.IdDeptos;
-                try
-                {
-                    MySqlConnection conn = new MySqlConnection(ConnString);
-                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Departamento eliminado correctamente.");
-                    Clases.LLenadoGrids.llenarGrid(GridDeptos, Clases.Variables.ConsultaBuscar, "DEPTOS");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
-                }
-            }
-        }
     }
 }

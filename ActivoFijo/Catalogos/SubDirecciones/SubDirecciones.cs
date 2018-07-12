@@ -34,32 +34,6 @@ namespace ActivoFijo.Catalogos.SubDirecciones
                 Clases.LLenadoGrids.llenarGrid(GridSubD, Clases.Variables.ConsultaBuscar, "subdireccion");
         }
 
-        private void Eliminar_Click(object sender, EventArgs e)
-        {
-            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
-            confirmacion.ShowDialog();
-            if (confirmacion.DialogResult == DialogResult.OK)
-            {
-                string ConnString = Clases.Variables.scon;
-                string SqlString = "Delete from subdireccion where ID=" + Clases.Variables.IdSubD;
-                try
-                {
-                    MySqlConnection conn = new MySqlConnection(ConnString);
-                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("SubDireccion eliminada correctamente.");
-                    Clases.LLenadoGrids.llenarGrid(GridSubD, Clases.Variables.ConsultaBuscar, "subdireccion");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor no se pudo eliminar. \n" + ex.ToString());
-                }
-            }
-        }
-
         private void GridSubD_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Catalogos.SubDirecciones.Modificar modificarSD = new Modificar();
