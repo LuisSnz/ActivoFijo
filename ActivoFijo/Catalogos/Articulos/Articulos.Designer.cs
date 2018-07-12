@@ -31,7 +31,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Nuevo = new System.Windows.Forms.ToolStripButton();
             this.Modificar = new System.Windows.Forms.ToolStripButton();
-            this.Borrar = new System.Windows.Forms.ToolStripButton();
             this.Buscar = new System.Windows.Forms.ToolStripButton();
             this.GVCatArticulos = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
@@ -47,7 +46,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Nuevo,
             this.Modificar,
-            this.Borrar,
             this.Buscar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -74,16 +72,6 @@
             this.Modificar.Size = new System.Drawing.Size(44, 42);
             this.Modificar.Text = "Modificar";
             this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
-            // 
-            // Borrar
-            // 
-            this.Borrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Borrar.Image = global::ActivoFijo.Properties.Resources.eliminar_;
-            this.Borrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Borrar.Name = "Borrar";
-            this.Borrar.Size = new System.Drawing.Size(44, 42);
-            this.Borrar.Text = "Eliminar";
-            this.Borrar.Click += new System.EventHandler(this.Borrar_Click);
             // 
             // Buscar
             // 
@@ -138,7 +126,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Nuevo;
         private System.Windows.Forms.ToolStripButton Modificar;
-        private System.Windows.Forms.ToolStripButton Borrar;
         private System.Windows.Forms.ToolStripButton Buscar;
         private System.Windows.Forms.DataGridView GVCatArticulos;
     }

@@ -28,32 +28,6 @@ namespace ActivoFijo.Catalogos.Areas
                 Clases.LLenadoGrids.llenarGrid(GridAreas, Clases.Variables.ConsultaBuscar, "areas");
         }
 
-        private void Eliminar_Click(object sender, EventArgs e)
-        {
-            Auxiliares.Confirmacion confirmacion = new Auxiliares.Confirmacion();
-            confirmacion.ShowDialog();
-            if (confirmacion.DialogResult == DialogResult.OK)
-            {
-                string ConnString = Clases.Variables.scon;
-                string SqlString = "Delete from areas where Clave=" + Clases.Variables.IdAreas;
-                try
-                {
-                    MySqlConnection conn = new MySqlConnection(ConnString);
-                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Area eliminada correctamente.");
-                    Clases.LLenadoGrids.llenarGrid(GridAreas, Clases.Variables.ConsultaBuscar, "areas");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("El valor seleccionado no es valido. \n" + ex.ToString());
-                }
-            }
-        }
-
         private void Areas_Load(object sender, EventArgs e)
         {
             Clases.Variables.ConsultaBuscar = "select Clave, Descripcion from areas";
