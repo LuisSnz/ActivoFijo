@@ -40,6 +40,8 @@
             this.Proveedor = new System.Windows.Forms.RadioButton();
             this.Factura = new System.Windows.Forms.RadioButton();
             this.Etiqueta = new System.Windows.Forms.RadioButton();
+            this.Familia = new System.Windows.Forms.RadioButton();
+            this.Orden = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             // 
             this.Todo.BackColor = System.Drawing.Color.White;
             this.Todo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Todo.Location = new System.Drawing.Point(119, 214);
+            this.Todo.Location = new System.Drawing.Point(119, 243);
             this.Todo.Name = "Todo";
             this.Todo.Size = new System.Drawing.Size(97, 35);
             this.Todo.TabIndex = 10;
@@ -60,7 +62,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.White;
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(228, 214);
+            this.Cancelar.Location = new System.Drawing.Point(228, 243);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(97, 35);
             this.Cancelar.TabIndex = 9;
@@ -72,7 +74,7 @@
             // 
             this.Buscar.BackColor = System.Drawing.Color.White;
             this.Buscar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscar.Location = new System.Drawing.Point(12, 214);
+            this.Buscar.Location = new System.Drawing.Point(12, 243);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(97, 35);
             this.Buscar.TabIndex = 8;
@@ -83,6 +85,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.Orden);
+            this.groupBox1.Controls.Add(this.Familia);
             this.groupBox1.Controls.Add(this.Departamento);
             this.groupBox1.Controls.Add(this.CBBuscar);
             this.groupBox1.Controls.Add(this.Empleado);
@@ -93,7 +97,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(313, 185);
+            this.groupBox1.Size = new System.Drawing.Size(313, 219);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione una opcion";
@@ -115,7 +119,7 @@
             this.CBBuscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CBBuscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CBBuscar.FormattingEnabled = true;
-            this.CBBuscar.Location = new System.Drawing.Point(6, 143);
+            this.CBBuscar.Location = new System.Drawing.Point(6, 182);
             this.CBBuscar.Name = "CBBuscar";
             this.CBBuscar.Size = new System.Drawing.Size(300, 25);
             this.CBBuscar.TabIndex = 1;
@@ -182,6 +186,30 @@
             this.Etiqueta.UseVisualStyleBackColor = true;
             this.Etiqueta.CheckedChanged += new System.EventHandler(this.Etiqueta_CheckedChanged);
             // 
+            // Familia
+            // 
+            this.Familia.AutoSize = true;
+            this.Familia.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Familia.Location = new System.Drawing.Point(6, 146);
+            this.Familia.Name = "Familia";
+            this.Familia.Size = new System.Drawing.Size(68, 21);
+            this.Familia.TabIndex = 8;
+            this.Familia.Text = "Familia";
+            this.Familia.UseVisualStyleBackColor = true;
+            this.Familia.CheckedChanged += new System.EventHandler(this.Familia_CheckedChanged);
+            // 
+            // Orden
+            // 
+            this.Orden.AutoSize = true;
+            this.Orden.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Orden.Location = new System.Drawing.Point(178, 146);
+            this.Orden.Name = "Orden";
+            this.Orden.Size = new System.Drawing.Size(89, 21);
+            this.Orden.TabIndex = 9;
+            this.Orden.Text = "No. Orden";
+            this.Orden.UseVisualStyleBackColor = true;
+            this.Orden.CheckedChanged += new System.EventHandler(this.Orden_CheckedChanged);
+            // 
             // BuscarBienes
             // 
             this.AcceptButton = this.Buscar;
@@ -189,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.CancelButton = this.Cancelar;
-            this.ClientSize = new System.Drawing.Size(342, 262);
+            this.ClientSize = new System.Drawing.Size(342, 291);
             this.Controls.Add(this.Todo);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Buscar);
@@ -220,5 +248,7 @@
         private System.Windows.Forms.RadioButton Proveedor;
         private System.Windows.Forms.RadioButton Factura;
         private System.Windows.Forms.RadioButton Etiqueta;
+        private System.Windows.Forms.RadioButton Orden;
+        private System.Windows.Forms.RadioButton Familia;
     }
 }
