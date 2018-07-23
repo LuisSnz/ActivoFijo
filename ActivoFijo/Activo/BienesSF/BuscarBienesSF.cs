@@ -83,6 +83,31 @@ namespace ActivoFijo.Activo.BienesSF
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
                 "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id " +
                 "where RTRIM(Proveedores.Nombre) LIKE '%" + CBBuscar.Text + "%'" + " and NoFactura=''";
+            else if (Departamento.Checked == true)
+                Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
+                "bienes.Total, Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
+                "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
+                "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
+                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
+                "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id " +
+                "where Departamento LIKE '%" + CBBuscar.Text + "%'" + " and NoFactura=''";
+            else if (Familia.Checked == true)
+                Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
+                "bienes.Total, Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
+                "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
+                "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
+                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
+                "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id " +
+                "where Familia.Descripcion LIKE '%" + CBBuscar.Text + "%'" + " and NoFactura=''";
+            else if (Orden.Checked == true)
+                Clases.Variables.ConsultaBuscar = "SELECT bienes.Id, bienes.Etiqueta, bienes.NoOrden,Bienes.Serie, " +
+                "bienes.Total, Familia.Descripcion as Familia, CatArticulos.Descripcion AS Articulo, empleados.Nombre AS Empleado," +
+                "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
+                "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
+                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
+                "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id " +
+                "where NoOrden=" + CBBuscar.Text + "" + " and NoFactura=''";
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -102,6 +127,27 @@ namespace ActivoFijo.Activo.BienesSF
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Departamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Departamento.Checked == true)
+                Clases.Bienes.CBDeptos(CBBuscar);
+        }
+
+        private void Familia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Familia.Checked == true)
+                Clases.Articulos.CBArticulosFamilia(CBBuscar);
+        }
+
+        private void Orden_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Empleado.Checked == true)
+            {
+                CBBuscar.Items.Clear();
+                CBBuscar.Text = "";
+            }
         }
     }
 }
