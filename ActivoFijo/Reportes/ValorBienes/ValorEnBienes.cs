@@ -22,6 +22,8 @@ namespace ActivoFijo.Reportes.ValorBienes
             GridCosto.Height = Clases.Variables.GridHeight - 40;
             label1.Location = new Point(20, Clases.Variables.GridHeight + 30);
             Total.Location = new Point(140, Clases.Variables.GridHeight + 30);
+            label2.Location = new Point(600, Clases.Variables.GridHeight + 30);
+            LBTotalBienes.Location = new Point(730, Clases.Variables.GridHeight + 30);
             Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
                "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.Total " +
                "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
@@ -29,6 +31,7 @@ namespace ActivoFijo.Reportes.ValorBienes
                "CatArticulos.IdFamilia = Familia.Id";
             Clases.LLenadoGrids.llenarGrid(GridCosto, Clases.Variables.ConsultaBuscar, "bienes");
             Clases.Bienes.Suma(Total);
+            LBTotalBienes.Text = GridCosto.RowCount.ToString();
         }
 
         private void Excel_Click(object sender, EventArgs e)

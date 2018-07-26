@@ -36,6 +36,8 @@
             this.Imprimir = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.GridCosto = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LBTotalBienes = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridCosto)).BeginInit();
             this.SuspendLayout();
@@ -128,12 +130,34 @@
             this.GridCosto.Size = new System.Drawing.Size(810, 594);
             this.GridCosto.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(391, 659);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 19);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Total de bienes :";
+            // 
+            // LBTotalBienes
+            // 
+            this.LBTotalBienes.AutoSize = true;
+            this.LBTotalBienes.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBTotalBienes.Location = new System.Drawing.Point(510, 659);
+            this.LBTotalBienes.Name = "LBTotalBienes";
+            this.LBTotalBienes.Size = new System.Drawing.Size(0, 19);
+            this.LBTotalBienes.TabIndex = 11;
+            this.LBTotalBienes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ValorEnBienes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(590, 687);
+            this.Controls.Add(this.LBTotalBienes);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
@@ -159,5 +183,7 @@
         private System.Windows.Forms.ToolStripButton Imprimir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView GridCosto;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LBTotalBienes;
     }
 }
