@@ -357,14 +357,11 @@ namespace ActivoFijo.Activo.BienesSF
                 for (int x = 0; x < Cantidad.Value; x++)
                 {
                     string SqlString = "Insert Into bienes (Id,Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
-                    "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
-                    "Consumible,Estado,Creador) values ("+Id()+"," + llenaretiqueta() + "," + TBNoOrden.Text + ",9,2013,''," +
-                    "" + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,(select id from CatArticulos where descripcion='"
-                    + CBArticulo.SelectedItem + "'),'" + TBObservaciones.Text + "',(select NoEmp from empleados where nombre='"
-                    + CBEmpleado.SelectedItem + "'),(select id from proveedores where nombre='" + CBProveedor.SelectedItem + "')" +
-                    ",(convert('" + TimeFecha.Text + "',,DATE)),0,(select top 1 id from marca where descripcion='" + CBMarca.SelectedItem + "')," +
-                    "'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text + "',0," + con + ",'" + CBConservacion.SelectedItem + "','"
-                    + Clases.Variables.Usuario + "')";
+                         "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
+                         "Consumible,Estado,Creador) values (" + Id() + "," + llenaretiqueta() + "," + TBNoOrden.Text + ",9,2013,''," +
+                         TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2," + Articulo() + ",'" + TBObservaciones.Text + "'," + Empleado() + "," + Proveedor() +
+                         ",convert('" + TimeFecha.Value.Year.ToString() + "-" + TimeFecha.Value.Month.ToString() + "-" + TimeFecha.Value.Day.ToString() + " 00:00:00',DATETIME),0," + Marca() + ",'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
+                         "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + Clases.Variables.Usuario + "')";
                     Clases.Inserciones.BEjecucion(SqlString);
                 }
                 if (Clases.Variables.ErrorB == false)
