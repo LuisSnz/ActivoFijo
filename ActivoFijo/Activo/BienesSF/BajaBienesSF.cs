@@ -113,7 +113,7 @@ namespace ActivoFijo.Activo.BienesSF
             try
             {
                 cn.Open();
-                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM bajabienes", cn);
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM bajabienes_Error", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
