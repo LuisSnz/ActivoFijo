@@ -207,6 +207,30 @@ namespace ActivoFijo.Activo.Bienes
             }
         }
 
+        public string IdHis()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM historicobienes", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["Id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
+
         private void CBEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
             MySqlCommand cmd;
@@ -233,7 +257,7 @@ namespace ActivoFijo.Activo.Bienes
         {
             if (CBArticulo.SelectedIndex >= 0 && CBConservacion.SelectedIndex >= 0 && CBEmpleado.SelectedIndex >= 0 && CBProveedor.SelectedIndex >= 0 && CBMarca.SelectedIndex >= 0 && TBFactura.Text.Length > 0 && TBNoOrden.Text.Length > 0 && TBPrecio.Text.Length > 0)
             {
-                int etiqueta = int.Parse(TBEtiqueta.Text);
+                int etiqueta = int.Parse(llenaretiqueta());
                 var con = 0;
                 if (CHConsumible.Checked == true)
                     con = 1;
@@ -242,11 +266,14 @@ namespace ActivoFijo.Activo.Bienes
                 {
                     string SqlString = "Insert Into bienes (Id,Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
                         "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
-                        "Consumible,Estado,Creador) values ("+Id()+"," + llenaretiqueta() + "," + TBNoOrden.Text + ",9,2013,'" +
+                        "Consumible,Estado,Creador) values ("+Id()+"," + etiqueta.ToString() + "," + TBNoOrden.Text + ",9,2013,'" +
                         TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2,"+Articulo()+",'" + TBObservaciones.Text + "',"+Empleado()+"," +Proveedor()+
                         ",convert('" + TimeFecha.Value.Year+"-"+ TimeFecha.Value.Month +"-"+ TimeFecha.Value.Day+ " 00:00:00',DATETIME),0," +Marca()+",'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
                         "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + Clases.Variables.Usuario + "')";
                     Clases.Inserciones.BEjecucion(SqlString);
+                    string SqlString1 = "insert into HistoricoBienes (Id,Etiqueta,NoEmpleado,FechaCambio) values (" + IdHis() + "," + etiqueta.ToString() + ",(select NoEmp from empleados where nombre='" +
+                        CBEmpleado.SelectedItem + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)))";
+                    Clases.Inserciones.BEjecucion(SqlString1);
                     etiqueta = etiqueta + 1;
                 }
                 if (Clases.Variables.ErrorB == false)
@@ -357,11 +384,14 @@ namespace ActivoFijo.Activo.Bienes
                 {
                     string SqlString = "Insert Into bienes (Id,Etiqueta,NoOrden,Mes,AOrden,NoFactura,Precio,iva,total,TipoIva," +
                         "IdArticulo,Observacion,NoEmpleado,IdProveedor,FechaCompra,Baja,IdMarca,Serie,Modelo,Color,Bloqueado," +
-                        "Consumible,Estado,Creador) values (" + Id() + "," + llenaretiqueta() + "," + TBNoOrden.Text + ",9,2013,'" +
+                        "Consumible,Estado,Creador) values (" + Id() + "," + etiqueta.ToString() + "," + TBNoOrden.Text + ",9,2013,'" +
                         TBFactura.Text + "'," + TBPrecio.Text + ",0.00," + TBPrecio.Text + ",2," + Articulo() + ",'" + TBObservaciones.Text + "'," + Empleado() + "," + Proveedor() +
                         ",convert('" + TimeFecha.Value.Year + "-" + TimeFecha.Value.Month + "-" + TimeFecha.Value.Day + " 00:00:00',DATETIME),0," + Marca() + ",'" + TBSerie.Text + "','" + TBModelo.Text + "','" + TBColor.Text +
                         "',0," + con + ",'" + CBConservacion.SelectedItem + "','" + Clases.Variables.Usuario + "')";
                     Clases.Inserciones.BEjecucion(SqlString);
+                    string SqlString1 = "insert into HistoricoBienes (Id,Etiqueta,NoEmpleado,FechaCambio) values (" + IdHis() + "," + etiqueta.ToString() + ",(select NoEmp from empleados where nombre='" +
+                        CBEmpleado.SelectedItem + "'),(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)))";
+                    Clases.Inserciones.BEjecucion(SqlString1);
                 }
                 if (Clases.Variables.ErrorB == false)
                 {

@@ -26,7 +26,7 @@ namespace ActivoFijo.Reportes
 
         private void HistoricoDeBienes_Load(object sender, EventArgs e)
         {
-            Clases.Bienes.CBEtiqueta(Etiqueta);
+            Clases.Bienes.CBEtiquetaHistorico(Etiqueta);
             Clases.Variables.ConsultaBuscar = "Select HistoricoBienes.Etiqueta, empleados.Nombre, HistoricoBienes.FechaCambio" +
                 " from HistoricoBienes inner join empleados on HistoricoBienes.NoEmpleado=empleados.NoEmp";
             Clases.LLenadoGrids.llenarGrid(GridHistorico, Clases.Variables.ConsultaBuscar, "HistoricoBienes");

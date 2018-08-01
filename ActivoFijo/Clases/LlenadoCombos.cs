@@ -154,6 +154,26 @@ namespace ActivoFijo.Clases
                 MessageBox.Show("Error al llenar :" + ex.ToString());
             }
         }
+        public static void CBEtiquetaHistorico(ComboBox CB)
+        {
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("select Etiqueta from historicobienes group by Etiqueta", cn);
+                dr = cmd.ExecuteReader();
+                CB.Text = "";
+                CB.Items.Clear();
+                while (dr.Read())
+                {
+                    CB.Items.Add(dr["Etiqueta"].ToString());
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+        }
         public static void CBFactura(ComboBox CB)
         {
             try
