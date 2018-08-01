@@ -19,7 +19,7 @@ namespace ActivoFijo.Usuarios
 
         private void Lista_Usuarios_Load(object sender, EventArgs e)
         {
-            Clases.Variables.ConsultaBuscar = "Select empleados.Nombre, Usuarios.Usuario from Usuarios Inner join empleados " +
+            Clases.Variables.ConsultaBuscar = "Select empleados.Nombre, Usuarios.Usuario, Usuarios.Password from Usuarios Inner join empleados " +
                 "on Usuarios.NoEmpleado=empleados.NoEmp";
             Clases.LLenadoGrids.llenarGrid(GridUsuarios, Clases.Variables.ConsultaBuscar, "Usuarios");
         }

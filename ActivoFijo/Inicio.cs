@@ -144,8 +144,13 @@ namespace ActivoFijo
 
         private void nuevoUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Usuarios.Lista_Usuarios Lista = new Usuarios.Lista_Usuarios();
-            Lista.ShowDialog();
+            Auxiliares.ContraseñaBD contraseñaBD = new Auxiliares.ContraseñaBD();
+            contraseñaBD.ShowDialog();
+            if (contraseñaBD.DialogResult == DialogResult.OK)
+            {
+                Usuarios.Lista_Usuarios Lista = new Usuarios.Lista_Usuarios();
+                Lista.ShowDialog();
+            }
         }
 
         private void cambiarContraseñaToolStripMenuItem1_Click(object sender, EventArgs e)
