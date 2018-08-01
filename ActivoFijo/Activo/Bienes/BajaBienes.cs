@@ -98,6 +98,29 @@ namespace ActivoFijo.Activo.Bienes
             return x;
         }
 
+        public string IdE()
+        {
+            MySqlCommand cmd;
+            MySqlDataReader dr;
+            string x = "";
+            MySqlConnection cn = new MySqlConnection(Clases.Variables.scon);
+            try
+            {
+                cn.Open();
+                cmd = new MySqlCommand("SELECT MAX(Id)+1 as Id FROM bajabienes", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    x = dr["Id"].ToString();
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar :" + ex.ToString());
+            }
+            return x;
+        }
         private void Aceptar_Click(object sender, EventArgs e)
         {
             DateTimePicker fechac = new DateTimePicker();
@@ -138,7 +161,7 @@ namespace ActivoFijo.Activo.Bienes
             }
             else
             {
-                SqlString = "Insert Into bajabienes_Error values (" + Id() + "," + Etiqueta.Text + "," + Clases.Variables.BienesOrdenCompra + ",'" + Clases.Variables.BienesFactura + "'," + Precio.Text + ",0," +
+                SqlString = "Insert Into bajabienes_Error values (" + IdE() + "," + Etiqueta.Text + "," + Clases.Variables.BienesOrdenCompra + ",'" + Clases.Variables.BienesFactura + "'," + Precio.Text + ",0," +
                     Precio.Text + ",'" + Articulo.Text + "','" + Clases.Variables.BienesObservacion + "',NULL,'" + Empleado.Text + "'," +
                     "convert('" + fechac.Value.Year + "-" + fechac.Value.Month + "-" + fechac.Value.Day + " 00:00:00',DATETIME)," +
                     "'" + Marca.Text + "','" + Serie.Text + "','" + Modelo.Text + "','" + Clases.Variables.MotivoBaja + "',NULL," +
