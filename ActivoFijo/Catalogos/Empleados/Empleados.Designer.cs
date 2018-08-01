@@ -84,8 +84,8 @@
             this.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(44, 42);
-            this.Eliminar.Text = "Buscar";
-            this.Eliminar.ToolTipText = "Buscar";
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.ToolTipText = "Eliminar";
             this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Buscar
@@ -95,8 +95,8 @@
             this.Buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(44, 42);
-            this.Buscar.Text = "Eliminar";
-            this.Buscar.ToolTipText = "Eliminar";
+            this.Buscar.Text = "Buscar";
+            this.Buscar.ToolTipText = "Buscar";
             this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // GridEmp
