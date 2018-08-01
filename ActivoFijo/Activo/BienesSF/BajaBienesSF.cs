@@ -142,6 +142,38 @@ namespace ActivoFijo.Activo.BienesSF
                     MessageBox.Show("Error al dar de baja el bien: \n" + ex.ToString());
                 }
             }
+            else
+            {
+                SqlString = "Insert Into bajabienes_Error values (" + Id() + "," + Etiqueta.Text + "," + Clases.Variables.BienesSFOrdenCompra + ",''," + Precio.Text + ",0," +
+                    Precio.Text + ",'" + Articulo.Text + "','" + Clases.Variables.BienesSFObservacion + "',NULL,'" + Empleado.Text + "'," +
+                    "convert('" + fechac.Value.Year + "-" + fechac.Value.Month + "-" + fechac.Value.Day + " 00:00:00',DATETIME)," +
+                    "'" + Marca.Text + "','" + Serie.Text + "','" + Modelo.Text + "','" + Clases.Variables.MotivoBaja + "',NULL," +
+                    "(convert('" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " 00:00:00',DATETIME)),'" + Observaciones.Text + "',NULL,0," +
+                    Clases.Variables.BienesSFConsumible + ",'" + Clases.Variables.Usuario + "');";
+                try
+                {
+                    MySqlConnection conn = new MySqlConnection(ConnString);
+                    MySqlCommand cmd = new MySqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    SqlString = "Delete from bienes where Etiqueta=" + Etiqueta.Text;
+                    cmd = new MySqlCommand(SqlString, conn);
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("La baja se realizo de manera correcta.");
+                    this.Close();
+                    this.DialogResult = DialogResult.OK;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al dar de baja el bien: \n" + ex.ToString());
+                }
+            }
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
