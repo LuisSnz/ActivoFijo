@@ -25,10 +25,10 @@ namespace ActivoFijo.Reportes.ValorBienes
             label2.Location = new Point(600, Clases.Variables.GridHeight + 30);
             LBTotalBienes.Location = new Point(730, Clases.Variables.GridHeight + 30);
             Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
-               "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.Total " +
+               "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
                "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-               "CatArticulos.IdFamilia = Familia.Id";
+               "CatArticulos.IdFamilia = Familia.Id order by Familia";
             Clases.LLenadoGrids.llenarGrid(GridCosto, Clases.Variables.ConsultaBuscar, "bienes");
             Clases.Bienes.Suma(Total);
             LBTotalBienes.Text = GridCosto.RowCount.ToString();
@@ -49,17 +49,23 @@ namespace ActivoFijo.Reportes.ValorBienes
                 float x = 0;
                 foreach (DataGridViewRow row in GridCosto.Rows)
                 {
-                    x = x + float.Parse(row.Cells[4].Value.ToString());
+                    x = x + float.Parse(row.Cells[5].Value.ToString());
                 }
                 Total.Text = x.ToString("C");
                 Clases.Variables.Total = Total.Text;
-
+                LBTotalBienes.Text = GridCosto.RowCount.ToString();
             }
         }
 
         private void Imprimir_Click(object sender, EventArgs e)
         {
             ReporteValor reporte = new ReporteValor();
+            reporte.Show();
+        }
+
+        private void ImprimirPorFecha_Click(object sender, EventArgs e)
+        {
+            ReportePorFecha reporte = new ReportePorFecha();
             reporte.Show();
         }
     }
