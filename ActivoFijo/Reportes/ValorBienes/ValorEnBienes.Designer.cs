@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ValorEnBienes));
             this.Total = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.label1 = new System.Windows.Forms.Label();
-            this.GridCosto = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LBTotalBienes = new System.Windows.Forms.Label();
             this.Buscar = new System.Windows.Forms.ToolStripButton();
             this.Excel = new System.Windows.Forms.ToolStripButton();
             this.Imprimir = new System.Windows.Forms.ToolStripButton();
             this.ImprimirPorFecha = new System.Windows.Forms.ToolStripButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.GridCosto = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LBTotalBienes = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridCosto)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,53 @@
             this.toolStrip1.Size = new System.Drawing.Size(590, 45);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // Buscar
+            // 
+            this.Buscar.AutoSize = false;
+            this.Buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Buscar.Image = global::ActivoFijo.Properties.Resources.buscar;
+            this.Buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(50, 50);
+            this.Buscar.Text = "toolStripButton1";
+            this.Buscar.ToolTipText = "Buscar";
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
+            // 
+            // Excel
+            // 
+            this.Excel.AutoSize = false;
+            this.Excel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Excel.Image = global::ActivoFijo.Properties.Resources.excel;
+            this.Excel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Excel.Name = "Excel";
+            this.Excel.Size = new System.Drawing.Size(50, 50);
+            this.Excel.Text = "toolStripButton2";
+            this.Excel.ToolTipText = "Importar a Excel";
+            this.Excel.Click += new System.EventHandler(this.Excel_Click);
+            // 
+            // Imprimir
+            // 
+            this.Imprimir.AutoSize = false;
+            this.Imprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Imprimir.Image = global::ActivoFijo.Properties.Resources.impresora;
+            this.Imprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Imprimir.Name = "Imprimir";
+            this.Imprimir.Size = new System.Drawing.Size(50, 50);
+            this.Imprimir.Text = "toolStripButton3";
+            this.Imprimir.ToolTipText = "Imprimir Reporte";
+            this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
+            // 
+            // ImprimirPorFecha
+            // 
+            this.ImprimirPorFecha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ImprimirPorFecha.Image = global::ActivoFijo.Properties.Resources.imprimirporfecha;
+            this.ImprimirPorFecha.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ImprimirPorFecha.Name = "ImprimirPorFecha";
+            this.ImprimirPorFecha.Size = new System.Drawing.Size(44, 42);
+            this.ImprimirPorFecha.Text = "ImprimirPorFecha";
+            this.ImprimirPorFecha.ToolTipText = "Imprimir por Fecha";
+            this.ImprimirPorFecha.Click += new System.EventHandler(this.ImprimirPorFecha_Click);
             // 
             // label1
             // 
@@ -115,53 +162,6 @@
             this.LBTotalBienes.Size = new System.Drawing.Size(0, 19);
             this.LBTotalBienes.TabIndex = 11;
             this.LBTotalBienes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Buscar
-            // 
-            this.Buscar.AutoSize = false;
-            this.Buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Buscar.Image = global::ActivoFijo.Properties.Resources.buscar;
-            this.Buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(50, 50);
-            this.Buscar.Text = "toolStripButton1";
-            this.Buscar.ToolTipText = "Buscar";
-            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
-            // 
-            // Excel
-            // 
-            this.Excel.AutoSize = false;
-            this.Excel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Excel.Image = global::ActivoFijo.Properties.Resources.excel;
-            this.Excel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Excel.Name = "Excel";
-            this.Excel.Size = new System.Drawing.Size(50, 50);
-            this.Excel.Text = "toolStripButton2";
-            this.Excel.ToolTipText = "Importar a Excel";
-            this.Excel.Click += new System.EventHandler(this.Excel_Click);
-            // 
-            // Imprimir
-            // 
-            this.Imprimir.AutoSize = false;
-            this.Imprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Imprimir.Image = global::ActivoFijo.Properties.Resources.impresora;
-            this.Imprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Imprimir.Name = "Imprimir";
-            this.Imprimir.Size = new System.Drawing.Size(50, 50);
-            this.Imprimir.Text = "toolStripButton3";
-            this.Imprimir.ToolTipText = "Imprimir Reporte";
-            this.Imprimir.Click += new System.EventHandler(this.Imprimir_Click);
-            // 
-            // ImprimirPorFecha
-            // 
-            this.ImprimirPorFecha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ImprimirPorFecha.Image = global::ActivoFijo.Properties.Resources.calendario;
-            this.ImprimirPorFecha.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ImprimirPorFecha.Name = "ImprimirPorFecha";
-            this.ImprimirPorFecha.Size = new System.Drawing.Size(44, 42);
-            this.ImprimirPorFecha.Text = "ImprimirPorFecha";
-            this.ImprimirPorFecha.ToolTipText = "Imprimir por Fecha";
-            this.ImprimirPorFecha.Click += new System.EventHandler(this.ImprimirPorFecha_Click);
             // 
             // ValorEnBienes
             // 

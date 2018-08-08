@@ -59,6 +59,7 @@ namespace ActivoFijo.Reportes.ValorBienes
 
         private void Imprimir_Click(object sender, EventArgs e)
         {
+
             ReporteValor reporte = new ReporteValor();
             reporte.Show();
         }
@@ -66,7 +67,22 @@ namespace ActivoFijo.Reportes.ValorBienes
         private void ImprimirPorFecha_Click(object sender, EventArgs e)
         {
             ReportePorFecha reporte = new ReportePorFecha();
-            reporte.Show();
+            reporte.ShowDialog();
+            if (reporte.DialogResult == DialogResult.OK)
+            {
+                Clases.LLenadoGrids.llenarGrid(GridCosto, Clases.Variables.ConsultaBuscar, "bienes");
+                float x = 0;
+                foreach (DataGridViewRow row in GridCosto.Rows)
+                {
+                    x = x + float.Parse(row.Cells[5].Value.ToString());
+                }
+                Total.Text = x.ToString("C");
+                Clases.Variables.Total = Total.Text;
+                LBTotalBienes.Text = GridCosto.RowCount.ToString();
+                ReporteValor reportes = new ReporteValor();
+                reportes.Show();
+            }
+            
         }
     }
 }
