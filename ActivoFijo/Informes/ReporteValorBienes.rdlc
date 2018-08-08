@@ -450,7 +450,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!FechaCompra.Value</Value>
+                                  <Value>=CDate(Fields!FechaCompra.Value)</Value>
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                   </Style>
