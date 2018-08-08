@@ -12,6 +12,7 @@ namespace ActivoFijo.Reportes.ValorBienes
 {
     public partial class BuscarValor : Form
     {
+        public string factura = " bienes.NoFactura<>''";
         public BuscarValor()
         {
             InitializeComponent();
@@ -49,25 +50,25 @@ namespace ActivoFijo.Reportes.ValorBienes
                        "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
                        "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                        "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-                       "CatArticulos.IdFamilia = Familia.Id where CatArticulos.Descripcion='" + CBBuscar.Text + "'";
+                       "CatArticulos.IdFamilia = Familia.Id where CatArticulos.Descripcion='" + CBBuscar.Text + "' and"+factura;
                 else if (Empleado.Checked == true)
                     Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
                        "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
                        "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                        "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-                       "CatArticulos.IdFamilia = Familia.Id where empleados.Nombre='" + CBBuscar.Text + "'";
+                       "CatArticulos.IdFamilia = Familia.Id where empleados.Nombre='" + CBBuscar.Text + "' and" + factura;
                 else if (Familia.Checked == true)
                     Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
                        "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
                        "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                        "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-                       "CatArticulos.IdFamilia = Familia.Id where Familia.Descripcion='" + CBBuscar.Text + "'";
+                       "CatArticulos.IdFamilia = Familia.Id where Familia.Descripcion='" + CBBuscar.Text + "' and" + factura;
                 else if (Departamento.Checked == true)
                     Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
                        "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
                        "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                        "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-                       "CatArticulos.IdFamilia = Familia.Id where empleados.Departamento='" + CBBuscar.Text + "'";
+                       "CatArticulos.IdFamilia = Familia.Id where empleados.Departamento='" + CBBuscar.Text + "' and" + factura;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -83,7 +84,7 @@ namespace ActivoFijo.Reportes.ValorBienes
                "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
                "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-               "CatArticulos.IdFamilia = Familia.Id order by Familia";
+               "CatArticulos.IdFamilia = Familia.Id where"+factura+" order by Familia";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -97,6 +98,18 @@ namespace ActivoFijo.Reportes.ValorBienes
         {
             if (Departamento.Checked == true)
                 Clases.Empleados.CBDeptos(CBBuscar);
+        }
+
+        private void ConFactura_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ConFactura.Checked==true)
+                factura = " bienes.NoFactura<>''";
+        }
+
+        private void SinFactura_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SinFactura.Checked == true)
+                factura = " bienes.NoFactura=''";
         }
     }
 }

@@ -17,6 +17,8 @@ namespace ActivoFijo.Reportes.ValorBienes
             InitializeComponent();
         }
 
+        public string factura = " bienes.NoFactura<>'' and";
+
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -29,10 +31,28 @@ namespace ActivoFijo.Reportes.ValorBienes
                "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
                "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-               "CatArticulos.IdFamilia = Familia.Id where FechaCompra " +
+               "CatArticulos.IdFamilia = Familia.Id where"+factura+" FechaCompra " +
                 "BETWEEN '" + Inicio.Text + "' AND '" + Fin.Text + "' order by FechaCompra ";
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void ConFactura_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ConFactura.Checked==true)
+                factura = " bienes.NoFactura<>'' and";
+        }
+
+        private void SinFactura_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SinFactura.Checked == true)
+                factura = " bienes.NoFactura='' and";
+        }
+
+        private void Ambos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Ambos.Checked == true)
+                factura = "";
         }
     }
 }

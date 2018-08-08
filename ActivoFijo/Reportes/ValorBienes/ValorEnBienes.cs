@@ -28,7 +28,7 @@ namespace ActivoFijo.Reportes.ValorBienes
                "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
                "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-               "CatArticulos.IdFamilia = Familia.Id order by Familia";
+               "CatArticulos.IdFamilia = Familia.Id where bienes.NoFactura<>'' order by Familia";
             Clases.LLenadoGrids.llenarGrid(GridCosto, Clases.Variables.ConsultaBuscar, "bienes");
             Clases.Bienes.Suma(Total);
             LBTotalBienes.Text = GridCosto.RowCount.ToString();
