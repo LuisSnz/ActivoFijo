@@ -25,6 +25,14 @@ namespace ActivoFijo.Reportes.ValorBienes
         private void Generar_Click(object sender, EventArgs e)
         {
 
+        Clases.Variables.ConsultaBuscar = "SELECT bienes.Etiqueta, CatArticulos.Descripcion AS Articulo," +
+               "Familia.Descripcion as Familia, empleados.Nombre AS Resguardo,bienes.FechaCompra,bienes.Total " +
+               "FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
+               "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
+               "CatArticulos.IdFamilia = Familia.Id where FechaCompra " +
+                "BETWEEN '" + Inicio.Text + "' AND '" + Fin.Text + "' order by FechaCompra ";
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
