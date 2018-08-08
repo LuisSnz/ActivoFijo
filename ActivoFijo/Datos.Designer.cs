@@ -2315,6 +2315,8 @@ namespace ActivoFijo {
             
             private global::System.Data.DataColumn columnObservaciones;
             
+            private global::System.Data.DataColumn columnFechaCompra;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public BienesDataTable() {
@@ -2446,6 +2448,14 @@ namespace ActivoFijo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FechaCompraColumn {
+                get {
+                    return this.columnFechaCompra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2481,7 +2491,7 @@ namespace ActivoFijo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BienesRow AddBienesRow(string Etiqueta, string Articulo, string Familia, string Resguardo, string Total, string Marca, string Modelo, string Serie, string Color, string Orden, string Factura, string Observaciones) {
+            public BienesRow AddBienesRow(string Etiqueta, string Articulo, string Familia, string Resguardo, string Total, string Marca, string Modelo, string Serie, string Color, string Orden, string Factura, string Observaciones, string FechaCompra) {
                 BienesRow rowBienesRow = ((BienesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Etiqueta,
@@ -2495,7 +2505,8 @@ namespace ActivoFijo {
                         Color,
                         Orden,
                         Factura,
-                        Observaciones};
+                        Observaciones,
+                        FechaCompra};
                 rowBienesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBienesRow);
                 return rowBienesRow;
@@ -2530,6 +2541,7 @@ namespace ActivoFijo {
                 this.columnOrden = base.Columns["Orden"];
                 this.columnFactura = base.Columns["Factura"];
                 this.columnObservaciones = base.Columns["Observaciones"];
+                this.columnFechaCompra = base.Columns["FechaCompra"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2559,6 +2571,8 @@ namespace ActivoFijo {
                 base.Columns.Add(this.columnFactura);
                 this.columnObservaciones = new global::System.Data.DataColumn("Observaciones", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnObservaciones);
+                this.columnFechaCompra = new global::System.Data.DataColumn("FechaCompra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaCompra);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4745,6 +4759,22 @@ namespace ActivoFijo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string FechaCompra {
+                get {
+                    try {
+                        return ((string)(this[this.tableBienes.FechaCompraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaCompra\' de la tabla \'Bienes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBienes.FechaCompraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsEtiquetaNull() {
                 return this.IsNull(this.tableBienes.EtiquetaColumn);
             }
@@ -4885,6 +4915,18 @@ namespace ActivoFijo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetObservacionesNull() {
                 this[this.tableBienes.ObservacionesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFechaCompraNull() {
+                return this.IsNull(this.tableBienes.FechaCompraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFechaCompraNull() {
+                this[this.tableBienes.FechaCompraColumn] = global::System.Convert.DBNull;
             }
         }
         
