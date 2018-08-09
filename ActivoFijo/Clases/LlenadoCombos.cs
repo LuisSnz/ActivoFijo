@@ -304,11 +304,11 @@ namespace ActivoFijo.Clases
             try
             {
                 cn.Open();
-                cmd = new MySqlCommand("select SUM(total) as Total from bienes", cn);
+                cmd = new MySqlCommand("select SUM(total) as Total from bienes where NoFactura<>''", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    float x = float.Parse(dr["Total"].ToString());
+                    decimal x = decimal.Parse(dr["Total"].ToString());
                     Total.Text = x.ToString("C");
                     Clases.Variables.Total = Total.Text;
                 }

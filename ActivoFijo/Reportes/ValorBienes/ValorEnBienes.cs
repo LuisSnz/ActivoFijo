@@ -46,10 +46,10 @@ namespace ActivoFijo.Reportes.ValorBienes
             if (buscar.DialogResult == DialogResult.OK)
             {
                 Clases.LLenadoGrids.llenarGrid(GridCosto, Clases.Variables.ConsultaBuscar, "bienes");
-                float x = 0;
+                decimal x = 0;
                 foreach (DataGridViewRow row in GridCosto.Rows)
                 {
-                    x = x + float.Parse(row.Cells[5].Value.ToString());
+                    x = x + decimal.Parse(row.Cells[5].Value.ToString());
                 }
                 Total.Text = x.ToString("C");
                 Clases.Variables.Total = Total.Text;
@@ -71,10 +71,10 @@ namespace ActivoFijo.Reportes.ValorBienes
             if (reporte.DialogResult == DialogResult.OK)
             {
                 Clases.LLenadoGrids.llenarGrid(GridCosto, Clases.Variables.ConsultaBuscar, "bienes");
-                float x = 0;
+                decimal x = 0;
                 foreach (DataGridViewRow row in GridCosto.Rows)
                 {
-                    x = x + float.Parse(row.Cells[5].Value.ToString());
+                    x = x + decimal.Parse(row.Cells[5].Value.ToString());
                 }
                 Total.Text = x.ToString("C");
                 Clases.Variables.Total = Total.Text;
