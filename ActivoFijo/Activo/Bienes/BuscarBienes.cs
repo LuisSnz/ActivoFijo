@@ -60,7 +60,20 @@ namespace ActivoFijo.Activo.Bienes
             if (Departamento.Checked == true)
                 Clases.Bienes.CBDeptos(CBBuscar);
         }
+        private void Familia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Familia.Checked == true)
+                Clases.Articulos.CBArticulosFamilia(CBBuscar);
+        }
 
+        private void Orden_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Orden.Checked == true)
+            {
+                CBBuscar.Items.Clear();
+                CBBuscar.Text = "";
+            }
+        }
         private void Buscar_Click(object sender, EventArgs e)
         {
             if (Etiqueta.Checked == true)
@@ -125,8 +138,8 @@ namespace ActivoFijo.Activo.Bienes
                 "empleados.Departamento, bienes.Consumible, RTRIM(Proveedores.Nombre) AS Proveedor,bienes." +
                 "Observacion AS Observacion FROM bienes INNER JOIN empleados ON bienes.NoEmpleado = empleados.NoEmp " +
                 "INNER JOIN CatArticulos ON bienes.IdArticulo = CatArticulos.Id LEFT OUTER JOIN Familia ON " +
-                "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id where NoFactura <>''" +
-                "and NoOrden="+CBBuscar.Text;
+                "CatArticulos.IdFamilia = Familia.Id LEFT OUTER JOIN Proveedores on bienes.IdProveedor=Proveedores.Id where NoFactura <>'' " +
+                "and NoOrden='"+CBBuscar.Text+"'";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -148,19 +161,6 @@ namespace ActivoFijo.Activo.Bienes
             this.Close();
         }
 
-        private void Familia_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Familia.Checked == true)
-                Clases.Articulos.CBArticulosFamilia(CBBuscar);
-        }
 
-        private void Orden_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Empleado.Checked == true)
-            {
-                CBBuscar.Items.Clear();
-                CBBuscar.Text = "";
-            }
-        }
     }
 }
