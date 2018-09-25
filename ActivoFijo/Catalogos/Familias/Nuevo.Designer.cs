@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nuevo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Saldo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Desccripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Cancelar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
-            this.Saldo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(329, 94);
             this.panel1.TabIndex = 19;
+            // 
+            // Saldo
+            // 
+            this.Saldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.Saldo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Saldo.Location = new System.Drawing.Point(110, 52);
+            this.Saldo.MaxLength = 50;
+            this.Saldo.Name = "Saldo";
+            this.Saldo.Size = new System.Drawing.Size(206, 25);
+            this.Saldo.TabIndex = 15;
+            this.Saldo.Leave += new System.EventHandler(this.Saldo_Leave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Saldo Inicial:";
             // 
             // Desccripcion
             // 
@@ -96,26 +117,6 @@
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
-            // 
-            // Saldo
-            // 
-            this.Saldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.Saldo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Saldo.Location = new System.Drawing.Point(110, 52);
-            this.Saldo.MaxLength = 50;
-            this.Saldo.Name = "Saldo";
-            this.Saldo.Size = new System.Drawing.Size(206, 25);
-            this.Saldo.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 17);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Saldo Inicial:";
             // 
             // Nuevo
             // 

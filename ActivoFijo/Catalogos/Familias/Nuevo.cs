@@ -28,12 +28,23 @@ namespace ActivoFijo.Catalogos.Familias
                     MessageBox.Show("Ha ocurrido un error inesperado \n" + Clases.Variables.Error);
             }
             else
-                MessageBox.Show("El campo debe contener un valor");
+                MessageBox.Show("Los campos deben contener un valor");
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Saldo_Leave(object sender, EventArgs e)
+        {
+            decimal numero = default(decimal);
+            bool bln = decimal.TryParse(Saldo.Text, out numero);
+            if ((!(bln)) && Saldo.Text.Length > 0)
+            {
+                Saldo.Clear();
+                MessageBox.Show("Saldo Incorrecto");
+            }
         }
     }
 }

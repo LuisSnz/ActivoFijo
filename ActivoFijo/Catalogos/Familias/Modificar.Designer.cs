@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Cancelar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
+            this.Saldo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,11 +43,13 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.Saldo);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Descripcion);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(424, 50);
+            this.panel1.Size = new System.Drawing.Size(424, 95);
             this.panel1.TabIndex = 19;
             // 
             // Descripcion
@@ -73,7 +77,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.White;
             this.Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(265, 79);
+            this.Cancelar.Location = new System.Drawing.Point(265, 122);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(93, 28);
             this.Cancelar.TabIndex = 18;
@@ -85,7 +89,7 @@
             // 
             this.Guardar.BackColor = System.Drawing.Color.White;
             this.Guardar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Guardar.Location = new System.Drawing.Point(90, 79);
+            this.Guardar.Location = new System.Drawing.Point(90, 122);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(86, 28);
             this.Guardar.TabIndex = 17;
@@ -93,13 +97,34 @@
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
+            // Saldo
+            // 
+            this.Saldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.Saldo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Saldo.Location = new System.Drawing.Point(112, 51);
+            this.Saldo.MaxLength = 50;
+            this.Saldo.Name = "Saldo";
+            this.Saldo.Size = new System.Drawing.Size(292, 25);
+            this.Saldo.TabIndex = 15;
+            this.Saldo.Leave += new System.EventHandler(this.Saldo_Leave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Saldo Inicial:";
+            // 
             // Modificar
             // 
             this.AcceptButton = this.Guardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(448, 121);
+            this.ClientSize = new System.Drawing.Size(448, 161);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Guardar);
@@ -123,5 +148,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Button Guardar;
+        private System.Windows.Forms.TextBox Saldo;
+        private System.Windows.Forms.Label label2;
     }
 }
