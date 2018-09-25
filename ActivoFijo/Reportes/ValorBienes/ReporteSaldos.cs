@@ -27,11 +27,11 @@ namespace ActivoFijo.Reportes.ValorBienes
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(rds);
 
-            ReportParameter[] reporte = new ReportParameter[1];
-            reporte[0] = new ReportParameter("total", Clases.Variables.Total);
-            reportViewer1.LocalReport.SetParameters(reporte);
+            //ReportParameter[] reporte = new ReportParameter[1];
+            //reporte[0] = new ReportParameter("total", Clases.Variables.Total);
+            //reportViewer1.LocalReport.SetParameters(reporte);
             
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
     }
 }
