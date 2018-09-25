@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Luis Saenz\Pictures\</PublishUrl>
+    <PublishUrl>C:\Users\Eduardo\Desktop\ActivoFijo\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -536,6 +536,12 @@
     <Compile Include="Reportes\ValorBienes\ReportePorFecha.Designer.cs">
       <DependentUpon>ReportePorFecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ValorBienes\ReporteSaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ValorBienes\ReporteSaldos.Designer.cs">
+      <DependentUpon>ReporteSaldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ValorBienes\ReporteValor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -750,6 +756,7 @@
     <EmbeddedResource Include="Catalogos\Vehiculos\Vehiculos.resx">
       <DependentUpon>Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\ReporteFamilias.rdlc" />
     <EmbeddedResource Include="Informes\ReportePorEmpleado.rdlc" />
     <EmbeddedResource Include="Informes\ReporteValorBienes.rdlc" />
     <EmbeddedResource Include="Informes\ReporteBaja.rdlc" />
@@ -787,6 +794,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ValorBienes\ReportePorFecha.resx">
       <DependentUpon>ReportePorFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ValorBienes\ReporteSaldos.resx">
+      <DependentUpon>ReporteSaldos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ValorBienes\ReporteValor.resx">
       <DependentUpon>ReporteValor.cs</DependentUpon>
