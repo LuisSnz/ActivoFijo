@@ -59,9 +59,16 @@ namespace ActivoFijo.Reportes.ValorBienes
 
         private void Imprimir_Click(object sender, EventArgs e)
         {
-
-            ReporteValor reporte = new ReporteValor();
-            reporte.Show();
+            if (Clases.Variables.CheckSeleccionado == "1")
+            {
+                ReporteSaldos reportesaldos = new ReporteSaldos();
+                reportesaldos.Show();
+            }
+            else
+            {
+                ReporteValor reporte = new ReporteValor();
+                reporte.Show();
+            }
         }
 
         private void ImprimirPorFecha_Click(object sender, EventArgs e)
