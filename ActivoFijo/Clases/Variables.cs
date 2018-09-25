@@ -18,6 +18,8 @@ namespace ActivoFijo.Clases
         //familias
         public static string IDFamilia;
         public static string DescripcionFamilia;
+        public static string SaldoInicial;
+        public static string TotalContable;
         //marcas
         public static string IDMarcas;
         public static string DescripcionMarcas;

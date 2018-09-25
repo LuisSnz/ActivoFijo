@@ -14,7 +14,7 @@ namespace ActivoFijo.Catalogos.Familias
 
         private void Familias_Load(object sender, EventArgs e)
         {
-            Clases.Variables.ConsultaBuscar = "select Id, Descripcion from Familia";
+            Clases.Variables.ConsultaBuscar = "select Id, Descripcion, Saldo_Inicial as 'Saldo Inicial' from Familia";
             Clases.LLenadoGrids.llenarGrid(GridFamilias, Clases.Variables.ConsultaBuscar, "Familia");
         }
 
@@ -47,6 +47,7 @@ namespace ActivoFijo.Catalogos.Familias
             var filaSeleccionada = GridFamilias.CurrentRow;
             Clases.Variables.IDFamilia = filaSeleccionada.Cells[0].Value.ToString();
             Clases.Variables.DescripcionFamilia = filaSeleccionada.Cells[1].Value.ToString();
+            Clases.Variables.SaldoInicial = filaSeleccionada.Cells[2].Value.ToString();
         }
     }
 }
